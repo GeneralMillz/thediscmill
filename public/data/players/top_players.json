@@ -1,0 +1,16 @@
+[
+  {
+    "id": "12345",
+    "name": "Paul McBeth",
+    "pdgaNumber": "27523",
+    "rating": 1050,
+    "location": "Huntington Beach, CA"
+  },
+  {
+    "id": "67890",
+    "name": "Ricky Wysocki",
+    "pdgaNumber": "38008",
+    "rating": 1052,
+    "location": "Fort Mill, SC"
+  }
+]

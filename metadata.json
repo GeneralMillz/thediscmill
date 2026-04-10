@@ -1,0 +1,5 @@
+{
+  "name": "The Disc Mill",
+  "description": "The best disc golf site on the internet: national course intelligence, PDGA-powered players/events, and disc intelligence.",
+  "requestFramePermissions": ["geolocation"]
+}

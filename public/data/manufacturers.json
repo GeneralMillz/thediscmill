@@ -1,0 +1,269 @@
+[
+  {
+    "id": "innova",
+    "name": "Innova Champion Discs",
+    "shortName": "Innova",
+    "country": "US",
+    "website": "https://www.innovadiscs.com",
+    "founded": 1983,
+    "description": "The world's largest disc golf manufacturer and pioneer of the modern sport. Home to the Destroyer, Aviar, and Teebird."
+  },
+  {
+    "id": "discraft",
+    "name": "Discraft",
+    "shortName": "Discraft",
+    "country": "US",
+    "website": "https://www.discraft.com",
+    "founded": 1978,
+    "description": "One of the oldest disc manufacturers in the world. Official disc of the PDGA and home to the Buzzz, Nuke, and Zone."
+  },
+  {
+    "id": "dynamic-discs",
+    "name": "Dynamic Discs",
+    "shortName": "Dynamic Discs",
+    "country": "US",
+    "website": "https://www.dynamicdiscs.com",
+    "founded": 2005,
+    "description": "Part of the Trilogy family. Known for the Judge putter and Truth midrange. One of the fastest-growing brands in disc golf.",
+    "trilogy": true
+  },
+  {
+    "id": "latitude-64",
+    "name": "Latitude 64",
+    "shortName": "Latitude 64",
+    "country": "SE",
+    "website": "https://www.latitude64.se",
+    "founded": 2004,
+    "description": "Swedish manufacturer and member of the Trilogy family. Known for the Pure putter, River, and high-glide fairway drivers.",
+    "trilogy": true
+  },
+  {
+    "id": "westside-discs",
+    "name": "Westside Discs",
+    "shortName": "Westside",
+    "country": "FI",
+    "website": "https://www.westsidediscs.com",
+    "founded": 2007,
+    "description": "Finnish manufacturer and the third member of the Trilogy family. Known for the Harp and World.",
+    "trilogy": true
+  },
+  {
+    "id": "mvp-disc-sports",
+    "name": "MVP Disc Sports",
+    "shortName": "MVP",
+    "country": "US",
+    "website": "https://www.mvpdiscsports.com",
+    "founded": 2010,
+    "description": "Michigan-based manufacturer known for their unique GYRO overmold technology. Parent company of Axiom and Streamline.",
+    "mvpFamily": true
+  },
+  {
+    "id": "axiom-discs",
+    "name": "Axiom Discs",
+    "shortName": "Axiom",
+    "country": "US",
+    "website": "https://www.mvpdiscsports.com/axiom",
+    "founded": 2013,
+    "description": "A subsidiary of MVP Disc Sports featuring colorful GYRO overmolds. Known for the Envy, Hex, Mayhem, and Crave.",
+    "mvpFamily": true
+  },
+  {
+    "id": "streamline-discs",
+    "name": "Streamline Discs",
+    "shortName": "Streamline",
+    "country": "US",
+    "website": "https://www.mvpdiscsports.com/streamline",
+    "founded": 2016,
+    "description": "The entry-level line from the MVP family, offering the same GYRO technology at accessible price points.",
+    "mvpFamily": true
+  },
+  {
+    "id": "prodigy-disc",
+    "name": "Prodigy Disc",
+    "shortName": "Prodigy",
+    "country": "US",
+    "website": "https://www.prodigydisc.com",
+    "founded": 2012,
+    "description": "Founded by disc golf pros. Uses a clean alphanumeric naming system (D1, D2, M3, etc.) and is known for quality plastics."
+  },
+  {
+    "id": "discmania",
+    "name": "Discmania",
+    "shortName": "Discmania",
+    "country": "FI",
+    "website": "https://www.discmania.net",
+    "founded": 2006,
+    "description": "Finnish brand co-founded by Jussi Meresmaa, partnered with Innova for production. Home of the P2, FD, and PD."
+  },
+  {
+    "id": "infinite-discs",
+    "name": "Infinite Discs",
+    "shortName": "Infinite Discs",
+    "country": "US",
+    "website": "https://www.infinitediscs.com",
+    "founded": 2012,
+    "description": "Utah-based retailer and manufacturer. Produces their own line of discs including the Sphinx, Anubis, and Exodus."
+  },
+  {
+    "id": "gateway-disc-sports",
+    "name": "Gateway Disc Sports",
+    "shortName": "Gateway",
+    "country": "US",
+    "website": "https://www.gatewaydiscsports.com",
+    "founded": 1994,
+    "description": "Pioneer manufacturer known for soft rubber putters. Home of the legendary Wizard putter used by countless pros."
+  },
+  {
+    "id": "kastaplast",
+    "name": "Kastaplast",
+    "shortName": "Kastaplast",
+    "country": "SE",
+    "website": "https://www.kastaplast.se",
+    "founded": 2013,
+    "description": "Swedish manufacturer known for premium plastics and distinctive designs. Home of the Berg, Reko, and Grym."
+  },
+  {
+    "id": "millennium-golf-discs",
+    "name": "Millennium Golf Discs",
+    "shortName": "Millennium",
+    "country": "US",
+    "website": "https://www.millenniumgolfdiscs.com",
+    "founded": 1991,
+    "description": "Pioneer manufacturer using unique organic polymer blends. Known for the Omega, Orion, and Polaris series."
+  },
+  {
+    "id": "thought-space-athletics",
+    "name": "Thought Space Athletics",
+    "shortName": "TSA",
+    "country": "US",
+    "website": "https://www.thoughtspaceathletics.com",
+    "founded": 2016,
+    "description": "Boutique manufacturer known for premium artwork and limited runs. Home of the Mana, Omen, and Synapse."
+  },
+  {
+    "id": "mint-discs",
+    "name": "Mint Discs",
+    "shortName": "Mint Discs",
+    "country": "US",
+    "website": "https://www.mintdiscs.com",
+    "founded": 2019,
+    "description": "Texas-based manufacturer known for animal-themed discs and quality mid-range plastics. Home of the Goat and Freetail."
+  },
+  {
+    "id": "ev-7",
+    "name": "EV-7",
+    "shortName": "EV-7",
+    "country": "US",
+    "website": "https://www.ev-7disc.com",
+    "founded": 2015,
+    "description": "Small-batch manufacturer known for premium putter plastics and disc-first design philosophy. Home of the Phi and OG."
+  },
+  {
+    "id": "clash-discs",
+    "name": "Clash Discs",
+    "shortName": "Clash",
+    "country": "FI",
+    "website": "https://www.clashdiscs.com",
+    "founded": 2016,
+    "description": "Finnish manufacturer known for fruit-themed discs and vibrant colors. Home of the Berry putter and Sunshine midrange."
+  },
+  {
+    "id": "rpm-discs",
+    "name": "RPM Discs",
+    "shortName": "RPM",
+    "country": "NZ",
+    "website": "https://www.rpmdiscs.com",
+    "founded": 2009,
+    "description": "New Zealand manufacturer with discs named after native birds. Home of the Tui, Kea, and Huia."
+  },
+  {
+    "id": "dga",
+    "name": "Disc Golf Association",
+    "shortName": "DGA",
+    "country": "US",
+    "website": "https://www.discgolf.com",
+    "founded": 1976,
+    "description": "One of the oldest organizations in disc golf, also producing equipment. Known for the Squall and Sail."
+  },
+  {
+    "id": "divergent-discs",
+    "name": "Divergent Discs",
+    "shortName": "Divergent",
+    "country": "CA",
+    "website": "https://www.divergentdiscs.com",
+    "founded": 2019,
+    "description": "Canadian manufacturer known for unique molds and vibrant stamp artwork."
+  },
+  {
+    "id": "yikun-discs",
+    "name": "Yikun Discs",
+    "shortName": "Yikun",
+    "country": "CN",
+    "website": "https://www.yikun.com",
+    "founded": 2013,
+    "description": "Chinese manufacturer helping grow the sport in Asia. Produces a full range of discs at competitive price points."
+  },
+  {
+    "id": "prodiscus",
+    "name": "Prodiscus",
+    "shortName": "Prodiscus",
+    "country": "FI",
+    "website": "https://www.prodiscus.com",
+    "founded": 2003,
+    "description": "Finnish manufacturer known for their premium Ultra and Basic plastic blends."
+  },
+  {
+    "id": "dino-discs",
+    "name": "Dino Discs",
+    "shortName": "Dino",
+    "country": "US",
+    "website": "https://www.dinodiscs.com",
+    "founded": null,
+    "description": "Boutique manufacturer known for dinosaur-themed discs popular with families and younger players."
+  },
+  {
+    "id": "lightning-discs",
+    "name": "Lightning Golf Discs",
+    "shortName": "Lightning",
+    "country": "US",
+    "website": "https://www.lightninggolfdiscs.com",
+    "founded": 1982,
+    "description": "One of the original disc golf manufacturers, still producing classic molds beloved by long-time players."
+  },
+  {
+    "id": "ching-sports",
+    "name": "Ching Sports",
+    "shortName": "Ching",
+    "country": "US",
+    "website": "https://www.chingsports.com",
+    "founded": null,
+    "description": "Manufacturer known for recreational discs and family-friendly designs."
+  },
+  {
+    "id": "hyzer-bomb",
+    "name": "Hyzer Bomb",
+    "shortName": "Hyzer Bomb",
+    "country": "US",
+    "website": "https://www.hyzerbomb.com",
+    "founded": null,
+    "description": "Boutique manufacturer focused on high-performance distance drivers for power throwers."
+  },
+  {
+    "id": "elevation-disc-golf",
+    "name": "Elevation Disc Golf",
+    "shortName": "Elevation",
+    "country": "US",
+    "website": "https://www.elevationdisc.com",
+    "founded": null,
+    "description": "Small-batch manufacturer known for premium plastics and limited-edition releases."
+  },
+  {
+    "id": "trash-panda",
+    "name": "Trash Panda Disc Golf",
+    "shortName": "Trash Panda",
+    "country": "US",
+    "website": "https://www.trashpanda.golf",
+    "founded": null,
+    "description": "Boutique manufacturer with a devoted following for their affordable, high-quality discs."
+  }
+]

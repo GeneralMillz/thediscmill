@@ -1,0 +1,10 @@
+{
+  "code": "5000",
+  "message": "An error occurred, please try again later.",
+  "error": "An error occurred while executing the command definition. See the inner exception for details.",
+  "draw": 0,
+  "TotalAvailable": 0,
+  "recordsFiltered": 0,
+  "recordsTotal": 0,
+  "data": []
+}

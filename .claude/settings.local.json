@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(python3 -c \"import json; data = json.load\\(open\\('/d/thediscmill/data/discs.json'\\)\\); print\\(json.dumps\\(data[0], indent=2\\)\\)\")",
+      "Bash(xargs ls:*)",
+      "Bash(python3)",
+      "Bash(grep -n \"bg-\" \"d:/thediscmill/src/components\"/*.tsx \"d:/thediscmill/src/components\"/**/*.tsx)",
+      "Bash(find /d/thediscmill/src -name \"*.tsx\" -exec grep -l \"img.*alt=\\\\\"\\\\\"\" {} \\\\;)",
+      "Bash(find \"d:/thediscmill/src/components\" -name \"*.tsx\" -exec grep -l \"bg-gray-8\\\\|bg-indigo-9\\\\|from-gray-900\" {} \\\\;)",
+      "Bash(ls d:/thediscmill/node_modules/react/*.d.ts)",
+      "Bash(npm install:*)"
+    ]
+  }
+}

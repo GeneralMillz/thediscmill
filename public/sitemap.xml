@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://thediscmill.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://thediscmill.com/discs</loc><priority>0.9</priority></url>
+  <url><loc>https://thediscmill.com/courses</loc><priority>0.9</priority></url>
+  <url><loc>https://thediscmill.com/course-finder</loc><priority>0.8</priority></url>
+  <url><loc>https://thediscmill.com/players</loc><priority>0.8</priority></url>
+  <url><loc>https://thediscmill.com/events</loc><priority>0.8</priority></url>
+  <url><loc>https://thediscmill.com/manufacturers</loc><priority>0.8</priority></url>
+  <url><loc>https://thediscmill.com/disc-finder</loc><priority>0.7</priority></url>
+  <url><loc>https://thediscmill.com/bag-builder</loc><priority>0.7</priority></url>
+  <url><loc>https://thediscmill.com/analyzer</loc><priority>0.7</priority></url>
+  <url><loc>https://thediscmill.com/gear</loc><priority>0.7</priority></url>
+  <url><loc>https://thediscmill.com/guides</loc><priority>0.7</priority></url>
+  <url><loc>https://thediscmill.com/blog</loc><priority>0.6</priority></url>
+  <url><loc>https://thediscmill.com/disc-return</loc><priority>0.6</priority></url>
+</urlset>

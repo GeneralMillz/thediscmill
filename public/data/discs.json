@@ -1,0 +1,24 @@
+[
+  {
+    "id": "buzzz",
+    "brand": "Discraft",
+    "name": "Buzzz",
+    "speed": 5,
+    "glide": 4,
+    "turn": -1,
+    "fade": 1,
+    "category": "Midrange",
+    "stability": "Stable"
+  },
+  {
+    "id": "destroyer",
+    "brand": "Innova",
+    "name": "Destroyer",
+    "speed": 12,
+    "glide": 5,
+    "turn": -1,
+    "fade": 3,
+    "category": "Distance Driver",
+    "stability": "Overstable"
+  }
+]
