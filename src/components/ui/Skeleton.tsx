@@ -11,7 +11,7 @@ export function Skeleton({ className }: SkeletonProps) {
 
 export function SkeletonCard() {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 space-y-3">
       <div className="flex items-center gap-3">
         <Skeleton className="w-10 h-10 rounded-xl shrink-0" />
         <div className="flex-1 space-y-2">
@@ -29,7 +29,7 @@ export function SkeletonCard() {
 
 export function SkeletonDiscCard() {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-5 space-y-4">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 space-y-4">
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
           <Skeleton className="w-10 h-10 rounded-xl" />

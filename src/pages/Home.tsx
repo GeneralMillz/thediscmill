@@ -184,14 +184,14 @@ export function Home() {
       </section>
 
       {/* Feature grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-base font-bold text-indigo-600 uppercase tracking-widest mb-3">Everything You Need</h2>
-            <p className="text-4xl font-black text-gray-900 tracking-tight">
+            <h2 className="text-base font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">Everything You Need</h2>
+            <p className="text-4xl font-black text-gray-900 dark:text-white tracking-tight">
               One Platform. The Entire Game.
             </p>
-            <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Live data from PDGA.com. No accounts. No paywalls.
             </p>
           </div>
@@ -209,13 +209,13 @@ export function Home() {
                 >
                   <Link
                     to={feature.link}
-                    className={`block bg-white border border-gray-200 ${feature.border} rounded-3xl p-6 h-full hover:shadow-lg transition-all group`}
+                    className={`block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 ${feature.border} rounded-3xl p-6 h-full hover:shadow-lg transition-all group`}
                   >
-                    <div className={`w-12 h-12 ${feature.bg} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-12 h-12 ${feature.bg} dark:bg-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <Icon className={`w-6 h-6 ${feature.color}`} />
                     </div>
-                    <h3 className="font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-sm text-gray-500 leading-relaxed mb-4">{feature.desc}</p>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">{feature.desc}</p>
                     <div className={`inline-flex items-center text-sm font-bold ${feature.color} gap-1`}>
                       {feature.cta}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

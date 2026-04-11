@@ -83,9 +83,9 @@ export function Events() {
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
               <Calendar className="text-white w-5 h-5" />
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">PDGA Events</h1>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">PDGA Events</h1>
           </div>
-          <p className="text-gray-500 text-lg ml-[52px]">Live tournament data from PDGA.com.</p>
+          <p className="text-gray-500 dark:text-gray-400 text-lg ml-0 sm:ml-[52px]">Live tournament data from PDGA.com.</p>
         </div>
 
         {/* State + Search */}
@@ -93,7 +93,7 @@ export function Events() {
           <select
             value={stateFilter}
             onChange={e => { setStateFilter(e.target.value); setQuery(''); setTierFilter('All'); }}
-            className="border border-gray-200 rounded-xl py-3 px-4 text-sm text-gray-900 focus:ring-2 focus:ring-indigo-500 outline-none shadow-sm bg-white"
+            className="border border-gray-200 dark:border-gray-700 rounded-xl py-3 px-4 text-sm text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 outline-none shadow-sm bg-white dark:bg-gray-800"
           >
             <option value="">Select a state...</option>
             {US_STATES.map(s => (
@@ -107,7 +107,7 @@ export function Events() {
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder="Search events or location..."
-              className="pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-64 shadow-sm text-sm"
+              className="pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-64 shadow-sm text-sm"
             />
           </div>
         </div>
@@ -124,7 +124,7 @@ export function Events() {
               className={`px-3 py-1.5 rounded-full text-xs font-bold border transition-all ${
                 tierFilter === tier
                   ? 'bg-indigo-600 text-white border-indigo-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-indigo-300'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600'
               }`}
             >
               {tier}
@@ -135,10 +135,10 @@ export function Events() {
 
       {/* Idle — no state selected */}
       {!stateFilter && !loading && (
-        <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-gray-200">
-          <Calendar className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Select a state to browse events</h3>
-          <p className="text-gray-500">Choose a state above to load PDGA tournaments for that area.</p>
+        <div className="text-center py-24 bg-white dark:bg-gray-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-700">
+          <Calendar className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Select a state to browse events</h3>
+          <p className="text-gray-500 dark:text-gray-400">Choose a state above to load PDGA tournaments for that area.</p>
         </div>
       )}
 
@@ -169,13 +169,13 @@ export function Events() {
               key="empty"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-gray-200"
+              className="text-center py-24 bg-white dark:bg-gray-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-700"
             >
-              <Calendar className="w-12 h-12 text-gray-200 mx-auto mb-3" />
-              <p className="font-bold text-gray-700">No events match your filters</p>
+              <Calendar className="w-12 h-12 text-gray-200 dark:text-gray-600 mx-auto mb-3" />
+              <p className="font-bold text-gray-700 dark:text-gray-300">No events match your filters</p>
               <button
                 onClick={() => { setQuery(''); setTierFilter('All'); }}
-                className="mt-4 text-sm text-indigo-600 hover:underline"
+                className="mt-4 text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
               >
                 Clear filters
               </button>
@@ -183,7 +183,7 @@ export function Events() {
           ) : (
             <motion.div key="list" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-3">
               <div className="flex items-center justify-between px-1 mb-2">
-                <span className="text-sm font-bold text-gray-500">{filtered.length} event{filtered.length !== 1 ? 's' : ''}</span>
+                <span className="text-sm font-bold text-gray-500 dark:text-gray-400">{filtered.length} event{filtered.length !== 1 ? 's' : ''}</span>
               </div>
 
               {filtered.map((event, idx) => (
@@ -192,24 +192,24 @@ export function Events() {
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm hover:border-indigo-200 hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                  className="bg-white dark:bg-gray-800 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-md transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
                   <div className="flex items-center gap-4">
                     {/* Index or tier icon */}
-                    <div className="w-11 h-11 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 font-black text-sm shrink-0">
+                    <div className="w-11 h-11 bg-indigo-50 dark:bg-indigo-950/40 rounded-xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-black text-sm shrink-0">
                       {idx + 1}
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900 leading-tight">{event.name}</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white leading-tight">{event.name}</h3>
                       <div className="flex items-center gap-3 mt-1.5 flex-wrap">
                         {event.location && (
-                          <span className="text-xs text-gray-500 flex items-center">
+                          <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
                             <MapPin className="w-3 h-3 mr-1 shrink-0" />
                             {event.location}
                           </span>
                         )}
                         {event.date && (
-                          <span className="text-xs text-gray-500 flex items-center">
+                          <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
                             <Calendar className="w-3 h-3 mr-1 shrink-0" />
                             {event.date}
                           </span>

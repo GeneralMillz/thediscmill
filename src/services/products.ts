@@ -16,6 +16,10 @@ export interface Product {
   };
   beginnerNotes?: string;
   sponsored?: boolean;
+  /** Monetization provider ID (e.g. 'mvp-dropship'). Scaffolding — unused by UI. */
+  providerId?: string;
+  /** How this product is monetized. Scaffolding — unused by UI. */
+  monetizationType?: 'affiliate' | 'dropship';
   price?: string;
   description?: string;
   image?: string;

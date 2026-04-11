@@ -10,9 +10,11 @@ export interface Disc {
   stability: string;
   description?: string;
   image?: string;
-  /** Direct amzn.to short link — overrides search-based link when present. */
+  /** Raw Amazon ASIN (e.g. "B00B73BYG0") — builds a /dp/ product URL. */
+  asin?: string;
+  /** Direct amzn.to short link — overrides everything when present. */
   amazonShort?: string;
-  /** Canonical Amazon search phrase (e.g. "Innova Aviar disc golf putter"). Used when no amazonShort is set. */
+  /** Canonical Amazon search phrase (e.g. "Innova Aviar disc golf putter"). Fallback when no asin/amazonShort. */
   amazonQuery?: string;
 }
 
@@ -87,4 +89,30 @@ export interface ServiceAudit {
 
 export interface AuditStore {
   [serviceName: string]: ServiceAudit;
+}
+
+// ---------------------------------------------------------------------------
+// Monetization Provider Framework (scaffolding — not yet wired to any UI)
+// ---------------------------------------------------------------------------
+
+/** Minimal shape a product must satisfy to participate in the provider system. */
+export interface MonetizableProduct {
+  asin?: string;
+  amazonShort?: string;
+  amazonQuery?: string;
+  monetizationType?: 'affiliate' | 'dropship';
+  providerId?: string;
+}
+
+/** A monetization provider (affiliate, dropship, etc.) registered in the system. */
+export interface MonetizationProvider {
+  id: string;
+  type: 'affiliate' | 'dropship';
+  isAvailable(product: MonetizableProduct): boolean;
+  getLink(product: MonetizableProduct): string | null;
+  metadata: {
+    label: string;
+    logo?: string;
+    disclosure?: string;
+  };
 }

@@ -6,7 +6,7 @@ import { ScanResult } from '../components/discReturn/ScanResult';
 import { HeroBadge } from '../components/discReturn/HeroBadge';
 import { AlertCircle, Disc } from 'lucide-react';
 import { fetchProducts, Product } from '../services/products';
-import { amazonLink } from '../utils/amazon';
+import { buildAmazonLink } from '../utils/amazon';
 import { Featured } from '../components/monetization/Featured';
 
 export function ReturnScan() {
@@ -48,8 +48,8 @@ export function ReturnScan() {
     return (
       <div className="pt-32 pb-8 px-4 max-w-md mx-auto text-center">
         <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-6" />
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Invalid Tag</h1>
-        <p className="text-gray-600 mb-8">This return tag appears to be broken or corrupted.</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Invalid Tag</h1>
+        <p className="text-gray-600 dark:text-gray-400 mb-8">This return tag appears to be broken or corrupted.</p>
         <a href="/" className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold inline-block">
           Return Home
         </a>
@@ -65,8 +65,8 @@ export function ReturnScan() {
       </Helmet>
       <div className="text-center mb-12">
         <HeroBadge />
-        <h1 className="text-4xl font-bold text-gray-900 mt-6 mb-4">You Found a Disc!</h1>
-        <p className="text-xl text-gray-600">You are officially a Disc Hero. Here is how to reach the owner.</p>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mt-6 mb-4">You Found a Disc!</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400">You are officially a Disc Hero. Here is how to reach the owner.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -75,8 +75,8 @@ export function ReturnScan() {
         </div>
 
         <div className="lg:col-span-5 space-y-8">
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
-            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
               <Disc className="w-5 h-5 mr-2 text-indigo-600" />
               Lost & Found Essentials
             </h3>
@@ -86,7 +86,12 @@ export function ReturnScan() {
                   key={item.id}
                   title={item.name}
                   description={item.description || ''}
-                  link={item.asin ? amazonLink(item.asin) : "#"}
+                  link={
+                    buildAmazonLink({
+                      asin: item.asin,
+                      amazonQuery: `${item.brand} ${item.name} disc golf`,
+                    }) ?? '#'
+                  }
                 />
               ))}
             </div>

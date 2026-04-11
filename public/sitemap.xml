@@ -7,67 +7,67 @@
   </url>
   <url>
     <loc>https://thediscmill.com/discs</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/courses</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/players</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/events</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/manufacturers</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/guides</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/gear</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/disc-finder</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/bag-builder</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/analyzer</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/blog</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/disc-return</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://thediscmill.com/course-finder</loc>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
@@ -1431,5 +1431,53 @@
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-beginner-discs</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-putters-straight</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-bags-new-players</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-shoes-disc-golf</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-rangefinders</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-starter-sets</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-midranges-control</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thediscmill.com/guides/best-fairways-low-power</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

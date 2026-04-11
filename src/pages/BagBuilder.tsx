@@ -64,21 +64,21 @@ function DiscPicker({ slot, discs, onSelect, onClose }: PickerProps) {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 40 }}
-        className="bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[85vh] flex flex-col overflow-hidden"
+        className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl w-full max-w-lg max-h-[85vh] flex flex-col overflow-hidden"
       >
         {/* Header */}
-        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+        <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
           <div>
-            <h3 className="font-bold text-gray-900">Choose {slot.label}</h3>
-            <p className="text-xs text-gray-400">{slot.description}</p>
+            <h3 className="font-bold text-gray-900 dark:text-white">Choose {slot.label}</h3>
+            <p className="text-xs text-gray-400 dark:text-gray-500">{slot.description}</p>
           </div>
-          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors dark:text-gray-400">
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Search */}
-        <div className="px-4 py-3 border-b border-gray-50">
+        <div className="px-4 py-3 border-b border-gray-50 dark:border-gray-700">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
@@ -87,7 +87,7 @@ function DiscPicker({ slot, discs, onSelect, onClose }: PickerProps) {
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder="Search all discs by name or brand..."
-              className="w-full pl-9 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full pl-9 pr-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 dark:text-white dark:placeholder-gray-500 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </div>
           {!query && (
@@ -106,14 +106,14 @@ function DiscPicker({ slot, discs, onSelect, onClose }: PickerProps) {
               <button
                 key={disc.id}
                 onClick={() => onSelect(disc)}
-                className="w-full text-left flex items-center gap-3 p-3 rounded-xl hover:bg-indigo-50 transition-colors group"
+                className="w-full text-left flex items-center gap-3 p-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-colors group"
               >
                 <div className={`w-9 h-9 ${slot.bg} rounded-lg flex items-center justify-center shrink-0`}>
                   <Disc className={`w-5 h-5 ${slot.color}`} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-bold text-sm text-gray-900 truncate">{disc.name}</div>
-                  <div className="text-xs text-gray-400 truncate">{disc.brand}</div>
+                  <div className="font-bold text-sm text-gray-900 dark:text-white truncate">{disc.name}</div>
+                  <div className="text-xs text-gray-400 dark:text-gray-500 truncate">{disc.brand}</div>
                 </div>
                 {disc.speed > 0 && (
                   <div className="text-xs text-gray-400 font-mono shrink-0">
@@ -143,7 +143,7 @@ function SlotCard({ slot, disc, onAdd, onRemove }: SlotCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className={`bg-white border rounded-2xl overflow-hidden transition-all ${disc ? 'border-gray-200 shadow-sm' : 'border-dashed border-gray-300'}`}>
+    <div className={`bg-white dark:bg-gray-800 border rounded-2xl overflow-hidden transition-all ${disc ? 'border-gray-200 dark:border-gray-700 shadow-sm' : 'border-dashed border-gray-300 dark:border-gray-600'}`}>
       <div className="p-4 flex items-center gap-3">
         {/* Icon */}
         <div className={`w-10 h-10 ${slot.bg} rounded-xl flex items-center justify-center shrink-0`}>
@@ -152,12 +152,12 @@ function SlotCard({ slot, disc, onAdd, onRemove }: SlotCardProps) {
 
         {/* Slot info */}
         <div className="flex-1 min-w-0">
-          <div className="text-xs font-bold text-gray-400 uppercase tracking-wider">{slot.role}</div>
-          <div className="font-bold text-gray-900 text-sm truncate">{disc ? disc.name : slot.label}</div>
+          <div className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">{slot.role}</div>
+          <div className="font-bold text-gray-900 dark:text-white text-sm truncate">{disc ? disc.name : slot.label}</div>
           {disc ? (
-            <div className="text-xs text-gray-400">{disc.brand} · {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}</div>
+            <div className="text-xs text-gray-400 dark:text-gray-500">{disc.brand} · {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}</div>
           ) : (
-            <div className="text-xs text-gray-400">{slot.description}</div>
+            <div className="text-xs text-gray-400 dark:text-gray-500">{slot.description}</div>
           )}
         </div>
 
@@ -166,7 +166,7 @@ function SlotCard({ slot, disc, onAdd, onRemove }: SlotCardProps) {
           <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={() => setExpanded(v => !v)}
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"
+              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-400 dark:text-gray-500"
               title={expanded ? 'Collapse' : 'Where to buy'}
             >
               {expanded ? <ChevronUp className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
@@ -192,7 +192,7 @@ function SlotCard({ slot, disc, onAdd, onRemove }: SlotCardProps) {
 
       {/* Expandable WhereToBuy */}
       {disc && expanded && (
-        <div className="border-t border-gray-100 p-4">
+        <div className="border-t border-gray-100 dark:border-gray-700 p-4">
           <WhereToBuy sku={disc.name.toLowerCase().replace(/\s+/g, '-')} />
         </div>
       )}
@@ -283,9 +283,9 @@ export function BagBuilder() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <ShoppingBag className="text-white w-5 h-5" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Bag Builder</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Bag Builder</h1>
         </div>
-        <p className="text-lg text-gray-500 ml-[52px]">
+        <p className="text-lg text-gray-500 dark:text-gray-400 ml-0 sm:ml-[52px]">
           Build your perfect disc golf bag. Click any slot to search {loading ? '...' : discs.length.toLocaleString()} discs.
         </p>
       </div>
@@ -322,9 +322,9 @@ export function BagBuilder() {
           <BagSummary bag={bag} />
 
           {/* Tips */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6">
-            <h3 className="font-bold text-gray-900 mb-4">Bag Building Tips</h3>
-            <div className="space-y-3 text-sm text-gray-600">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Bag Building Tips</h3>
+            <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               {[
                 'Start with a putter you trust. Consistency in putting wins more than distance.',
                 'A stable midrange covers more situations than any other disc.',

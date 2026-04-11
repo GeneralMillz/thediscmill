@@ -146,11 +146,11 @@ export function DiscReturn() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 px-4 bg-gray-50">
+      <section id="how-it-works" className="py-24 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-black text-gray-900 mb-3">How It Works</h2>
-            <p className="text-gray-500 text-lg">Four simple steps. No app, no account, no server.</p>
+            <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-3">How It Works</h2>
+            <p className="text-gray-500 dark:text-gray-400 text-lg">Four simple steps. No app, no account, no server.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {HOW_IT_WORKS.map(({ step, icon: Icon, title, desc, color, bg }, i) => (
@@ -160,14 +160,14 @@ export function DiscReturn() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-3xl p-6 border border-gray-200 shadow-sm"
+                className="bg-white dark:bg-gray-800 rounded-3xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm"
               >
                 <div className={`w-12 h-12 ${bg} rounded-2xl flex items-center justify-center mb-4`}>
                   <Icon className={`w-6 h-6 ${color}`} />
                 </div>
-                <div className="text-xs font-black text-gray-300 mb-1">{step}</div>
-                <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
+                <div className="text-xs font-black text-gray-300 dark:text-gray-600 mb-1">{step}</div>
+                <h3 className="font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -175,7 +175,7 @@ export function DiscReturn() {
       </section>
 
       {/* CTA split */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Lost a disc */}
           <motion.div
@@ -207,15 +207,15 @@ export function DiscReturn() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <div className="bg-gray-50 border-2 border-gray-200 text-gray-900 p-8 rounded-3xl">
-              <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-6">
-                <Smartphone className="w-7 h-7 text-green-600" />
+            <div className="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white p-8 rounded-3xl">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mb-6">
+                <Smartphone className="w-7 h-7 text-green-600 dark:text-green-400" />
               </div>
               <h3 className="text-2xl font-black mb-3">I Found a Disc</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
                 Simply open your phone's camera app and point it at the QR code on the disc. The return page opens instantly — no app needed.
               </p>
-              <div className="bg-white border border-gray-200 rounded-2xl p-4 text-sm text-gray-600 space-y-2">
+              <div className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-2xl p-4 text-sm text-gray-600 dark:text-gray-300 space-y-2">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
                   Works with any smartphone camera
@@ -235,19 +235,19 @@ export function DiscReturn() {
       </section>
 
       {/* Feature grid */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-black text-gray-900">Why The Disc Mill Return Network?</h2>
+            <h2 className="text-2xl font-black text-gray-900 dark:text-white">Why The Disc Mill Return Network?</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {FEATURES.map(({ icon: Icon, label, desc }) => (
-              <div key={label} className="bg-white border border-gray-200 rounded-2xl p-5 text-center">
-                <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Icon className="w-5 h-5 text-indigo-600" />
+              <div key={label} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 text-center">
+                <div className="w-10 h-10 bg-indigo-50 dark:bg-indigo-950/40 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Icon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
-                <div className="font-bold text-gray-900 text-sm mb-1">{label}</div>
-                <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
+                <div className="font-bold text-gray-900 dark:text-white text-sm mb-1">{label}</div>
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>

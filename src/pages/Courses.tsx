@@ -54,15 +54,15 @@ function difficultyStyle(d: string) {
 
 function SkeletonCard() {
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5 animate-pulse">
+    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 animate-pulse">
       <div className="flex justify-between mb-3">
-        <div className="h-5 bg-gray-200 rounded w-2/3" />
-        <div className="h-5 bg-gray-200 rounded w-12" />
+        <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-2/3" />
+        <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-12" />
       </div>
-      <div className="h-4 bg-gray-100 rounded w-1/2 mb-4" />
-      <div className="flex justify-between pt-4 border-t border-gray-100">
-        <div className="h-4 bg-gray-100 rounded w-16" />
-        <div className="h-4 bg-gray-100 rounded w-20" />
+      <div className="h-4 bg-gray-100 dark:bg-gray-700 rounded w-1/2 mb-4" />
+      <div className="flex justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
+        <div className="h-4 bg-gray-100 dark:bg-gray-700 rounded w-16" />
+        <div className="h-4 bg-gray-100 dark:bg-gray-700 rounded w-20" />
       </div>
     </div>
   );
@@ -82,12 +82,12 @@ function CourseCard({ course, distanceMi, index }: CourseCardProps) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: Math.min(index * 0.025, 0.4) }}
-      className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-200 active:scale-[0.99] transition-all duration-200 flex flex-col"
+      className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-200 dark:hover:border-indigo-700 active:scale-[0.99] transition-all duration-200 flex flex-col"
     >
       <div className="p-5 flex flex-col flex-1">
         {/* Name + holes badge */}
         <div className="flex justify-between items-start gap-2 mb-2">
-          <h3 className="font-bold text-base text-gray-900 leading-snug">
+          <h3 className="font-bold text-base text-gray-900 dark:text-white leading-snug">
             <Link to={`/course/${course.id}`} className="hover:text-indigo-600 transition-colors">
               {course.name}
             </Link>
@@ -100,7 +100,7 @@ function CourseCard({ course, distanceMi, index }: CourseCardProps) {
         </div>
 
         {/* Location */}
-        <div className="flex items-center text-gray-500 text-sm mb-3">
+        <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
           <MapPin className="w-3.5 h-3.5 mr-1 shrink-0" />
           <span className="truncate">
             {course.city && course.state
@@ -117,14 +117,14 @@ function CourseCard({ course, distanceMi, index }: CourseCardProps) {
             </span>
           )}
           {course.tags?.slice(0, 3).map(tag => (
-            <span key={tag} className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">
+            <span key={tag} className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded-full">
               {tag}
             </span>
           ))}
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100 dark:border-gray-700">
           <div className="flex items-center gap-3">
             {distanceMi !== null && (
               <span className="flex items-center text-xs font-medium text-indigo-600">
@@ -281,9 +281,9 @@ export function Courses() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <Disc className="text-white w-5 h-5" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Course Directory</h1>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">Course Directory</h1>
         </div>
-        <p className="text-gray-500 ml-[52px]">
+        <p className="text-gray-500 dark:text-gray-400 ml-0 sm:ml-[52px]">
           Live from PDGA — browse, filter, or find courses near you.
         </p>
       </div>
@@ -304,8 +304,8 @@ export function Courses() {
       {/* Result count + data source badge */}
       {!loading && (
         <div className="flex items-center justify-between mb-5">
-          <p className="text-sm text-gray-500">
-            <span className="font-bold text-gray-900">{filtered.length.toLocaleString()}</span>{' '}
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            <span className="font-bold text-gray-900 dark:text-white">{filtered.length.toLocaleString()}</span>{' '}
             course{filtered.length !== 1 ? 's' : ''}
             {activeCount > 0 ? ' matching filters' : ''}
           </p>
@@ -330,24 +330,24 @@ export function Courses() {
           {Array.from({ length: 9 }).map((_, i) => <SkeletonCard key={i} />)}
         </div>
       ) : error ? (
-        <div className="bg-red-50 text-red-600 p-5 rounded-xl border border-red-200">
+        <div className="bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 p-5 rounded-xl border border-red-200 dark:border-red-900">
           <p className="font-semibold mb-1">Could not load courses</p>
           <p className="text-sm">{error}</p>
         </div>
       ) : !stateFilter ? (
-        <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-gray-200">
-          <Disc className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Select a state to browse courses</h3>
-          <p className="text-gray-500">Use the State filter above to load courses for your area.</p>
+        <div className="text-center py-24 bg-white dark:bg-gray-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-700">
+          <Disc className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Select a state to browse courses</h3>
+          <p className="text-gray-500 dark:text-gray-400">Use the State filter above to load courses for your area.</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-gray-200">
-          <Disc className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <h3 className="text-xl font-bold text-gray-900 mb-2">No courses found</h3>
-          <p className="text-gray-500 mb-4">Try adjusting your filters.</p>
+        <div className="text-center py-24 bg-white dark:bg-gray-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-700">
+          <Disc className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">No courses found</h3>
+          <p className="text-gray-500 dark:text-gray-400 mb-4">Try adjusting your filters.</p>
           <button
             onClick={clearFilters}
-            className="text-indigo-600 font-semibold hover:underline text-sm"
+            className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline text-sm"
           >
             Clear all filters
           </button>

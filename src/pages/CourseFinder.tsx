@@ -32,11 +32,11 @@ export function CourseFinder() {
         <meta name="description" content="Find disc golf courses near you using geolocation. Sorted by distance with hole counts and ratings." />
       </Helmet>
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center">
           <Compass className="mr-3 text-indigo-600 w-10 h-10" />
           Course Finder
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Find the best disc golf courses near your current location.
         </p>
       </div>
@@ -61,10 +61,10 @@ export function CourseFinder() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm"
+              className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm"
             >
-              <h3 className="font-bold text-xl mb-2">{course.name}</h3>
-              <p className="text-gray-500 text-sm mb-4 flex items-center">
+              <h3 className="font-bold text-xl mb-2 dark:text-white">{course.name}</h3>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 flex items-center">
                 <MapPin className="w-4 h-4 mr-1" />
                 {course.location}
               </p>

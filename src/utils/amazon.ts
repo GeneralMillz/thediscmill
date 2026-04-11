@@ -36,3 +36,12 @@ export function buildAmazonLink(opts: AmazonLinkOptions): string | null {
   if (opts.amazonQuery) return `https://www.amazon.com/s?k=${encodeURIComponent(opts.amazonQuery)}&tag=${TAG}`;
   return null;
 }
+
+/**
+ * Builds an Amazon search URL from a product name.
+ * Used for Gear page items that don't have ASINs.
+ * Do NOT use this for disc pages — those use buildAmazonLink() with structured opts.
+ */
+export function buildAmazonSearchUrl(name: string): string {
+  return `https://www.amazon.com/s?k=${encodeURIComponent(name)}&tag=${TAG}`;
+}

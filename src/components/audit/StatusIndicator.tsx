@@ -12,13 +12,13 @@ interface StatusIndicatorProps {
 export function StatusIndicator({ latency, lastError, parserDrift, compact = false }: StatusIndicatorProps) {
   const isError = !!lastError || parserDrift;
   const isSlow = latency > 1500;
-  
+
   const status = isError ? 'Error' : isSlow ? 'Slow' : 'OK';
-  
+
   const colors = {
-    OK: "bg-green-50 text-green-700 border-green-100",
-    Slow: "bg-amber-50 text-amber-700 border-amber-100",
-    Error: "bg-red-50 text-red-700 border-red-100"
+    OK: "bg-green-50 dark:bg-green-950/40 text-green-700 dark:text-green-400 border-green-100 dark:border-green-900",
+    Slow: "bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border-amber-100 dark:border-amber-900",
+    Error: "bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-400 border-red-100 dark:border-red-900"
   };
 
   if (compact) {

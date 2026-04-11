@@ -33,20 +33,8 @@ export function WhereToBuy({ asin, amazonShort, amazonQuery, sku, brand }: Where
             <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-indigo-600" />
           </a>
         )}
-        {false && sku && (
-          <a 
-            href={`https://otbdiscs.com/product/${sku}/?ref=thediscmill`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-between p-3 bg-gray-50 rounded-xl hover:bg-indigo-50 transition-colors group"
-          >
-            <div className="flex items-center">
-              <img src="https://otbdiscs.com/wp-content/uploads/2018/06/OTB-Discs-Logo-300x150.png" alt="OTB" className="h-4 mr-3" loading="lazy" referrerPolicy="no-referrer" />
-              <span className="text-sm font-medium text-gray-700">OTB Discs</span>
-            </div>
-            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-indigo-600" />
-          </a>
-        )}
+        {/* OTB Discs integration: re-enable by removing this comment and adding the
+            brand partner link once the OTB affiliate programme is confirmed. */}
       </div>
       <p className="mt-4 text-[10px] text-gray-400 leading-tight">
         * The Disc Mill may earn a small commission from qualifying purchases made through these links.

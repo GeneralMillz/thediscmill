@@ -114,5 +114,20 @@
     "sponsored": false,
     "price": "$19.99",
     "description": "A unique training aid that uses a towel to simulate disc resistance."
+  },
+  {
+    "id": "basket-mvp-black-hole-pro-hd",
+    "name": "MVP Black Hole Pro HD Basket",
+    "brand": "MVP",
+    "type": "accessory",
+    "role": "other",
+    "sku": "mvp-black-hole-pro-hd",
+    "asin": "B00XXXXXXX",
+    "monetizationType": "dropship",
+    "providerId": "mvp-dropship",
+    "beginnerNotes": "Durable, portable, and used by pros for backyard practice.",
+    "sponsored": false,
+    "price": "$199.99",
+    "description": "The Black Hole Pro HD is MVP's premium portable disc golf basket, built for backyard practice and tournament use."
   }
 ]

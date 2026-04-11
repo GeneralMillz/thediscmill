@@ -19,14 +19,14 @@ export function DiscFinder() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <Disc className="text-white w-6 h-6" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900">Disc Finder</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Disc Finder</h1>
         </div>
-        <p className="text-xl text-gray-600 max-w-2xl">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
           Our intelligent engine matches your physical stats and desired shot shapes to the perfect disc in our catalog.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
         <div className="lg:col-span-4">
           <div className="sticky top-24">
             <FinderForm criteria={criteria} onChange={setCriteria} />

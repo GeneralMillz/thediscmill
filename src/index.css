@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ─── Dark Mode (class-based: .dark on <html>) ───────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ─── Design Tokens ─────────────────────────────────────────────────────────── */
 
 @theme {
@@ -44,7 +47,7 @@ html {
 }
 
 body {
-  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white font-sans antialiased;
   /* Prevent horizontal scroll */
   overflow-x: hidden;
   /* Improve tap responsiveness */
@@ -62,6 +65,10 @@ body {
   border-radius: 4px;
 }
 
+.dark :focus-visible {
+  outline-color: #818cf8; /* indigo-400 — visible on dark backgrounds */
+}
+
 /* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
@@ -72,6 +79,9 @@ body {
 ::-webkit-scrollbar-thumb  { @apply bg-gray-300 rounded-full; }
 ::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
 
+.dark ::-webkit-scrollbar-thumb { @apply bg-gray-600; }
+.dark ::-webkit-scrollbar-thumb:hover { @apply bg-gray-500; }
+
 /* ─── Skeleton / Shimmer ────────────────────────────────────────────────────── */
 
 .skeleton {
@@ -79,6 +89,11 @@ body {
   background-size: 200% 100%;
   animation: shimmer 1.6s ease-in-out infinite;
   border-radius: 0.5rem;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
 }
 
 /* ─── Typography Utilities ──────────────────────────────────────────────────── */
@@ -99,8 +114,8 @@ body {
 /* ─── Interactive Card ──────────────────────────────────────────────────────── */
 
 .card-interactive {
-  @apply bg-white border border-gray-200 rounded-2xl shadow-sm transition-all duration-200;
-  @apply hover:shadow-md hover:border-indigo-200 active:scale-[0.99];
+  @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm transition-all duration-200;
+  @apply hover:shadow-md hover:border-indigo-200 dark:hover:border-indigo-700 active:scale-[0.99];
 }
 
 /* ─── Reduced Motion Support ────────────────────────────────────────────────── */
@@ -112,4 +127,5 @@ body {
     transition-duration: 0.01ms !important;
   }
   .skeleton { animation: none; background: #e2e8f0; }
+  .dark .skeleton { animation: none; background: #334155; }
 }

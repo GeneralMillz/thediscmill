@@ -16,19 +16,19 @@ const BASE     = "https://thediscmill.com";
 
 const STATIC = [
   { path: "/",              priority: "1.0", changefreq: "daily"   },
-  { path: "/discs",         priority: "0.8", changefreq: "yearly"  },
-  { path: "/courses",       priority: "0.8", changefreq: "yearly"  },
-  { path: "/players",       priority: "0.8", changefreq: "yearly"  },
-  { path: "/events",        priority: "0.8", changefreq: "yearly"  },
-  { path: "/manufacturers", priority: "0.7", changefreq: "yearly"  },
-  { path: "/guides",        priority: "0.7", changefreq: "yearly"  },
-  { path: "/gear",          priority: "0.7", changefreq: "yearly"  },
-  { path: "/disc-finder",   priority: "0.5", changefreq: "yearly"  },
-  { path: "/bag-builder",   priority: "0.5", changefreq: "yearly"  },
-  { path: "/analyzer",      priority: "0.5", changefreq: "yearly"  },
-  { path: "/blog",          priority: "0.5", changefreq: "yearly"  },
-  { path: "/disc-return",   priority: "0.5", changefreq: "yearly"  },
-  { path: "/course-finder", priority: "0.5", changefreq: "yearly"  },
+  { path: "/discs",         priority: "0.8", changefreq: "monthly" },
+  { path: "/courses",       priority: "0.8", changefreq: "monthly" },
+  { path: "/players",       priority: "0.8", changefreq: "monthly" },
+  { path: "/events",        priority: "0.8", changefreq: "monthly" },
+  { path: "/manufacturers", priority: "0.7", changefreq: "monthly" },
+  { path: "/guides",        priority: "0.7", changefreq: "monthly" },
+  { path: "/gear",          priority: "0.7", changefreq: "monthly" },
+  { path: "/disc-finder",   priority: "0.5", changefreq: "monthly" },
+  { path: "/bag-builder",   priority: "0.5", changefreq: "monthly" },
+  { path: "/analyzer",      priority: "0.5", changefreq: "monthly" },
+  { path: "/blog",          priority: "0.5", changefreq: "monthly" },
+  { path: "/disc-return",   priority: "0.5", changefreq: "monthly" },
+  { path: "/course-finder", priority: "0.5", changefreq: "monthly" },
 ];
 
 // ── Category filter pages ─────────────────────────────────────────────────────
@@ -40,10 +40,32 @@ const CATEGORIES = [
   "Distance Driver",
 ];
 
+// ── Guide detail pages ────────────────────────────────────────────────────────
+// Keep this list in sync with the GUIDES array in src/pages/GuideDetail.tsx.
+
+const GUIDES = [
+  "best-beginner-discs",
+  "best-putters-straight",
+  "best-bags-new-players",
+  "best-shoes-disc-golf",
+  "best-rangefinders",
+  "best-starter-sets",
+  "best-midranges-control",
+  "best-fairways-low-power",
+];
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
+/**
+ * Canonical brand slug — mirrors src/utils/brandSlug.ts.
+ * Keep both implementations in sync: lowercase, collapse non-alphanumeric to
+ * single hyphens, strip leading/trailing hyphens.
+ */
 const brandSlug = (brand) =>
-  brand.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+  brand
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 const xmlEscape = (s) =>
   String(s)
@@ -114,6 +136,16 @@ async function main() {
     }));
   }
 
+  // 5. Guide detail pages
+  for (const guideId of GUIDES) {
+    blocks.push(urlBlock({
+      loc:        `${BASE}/guides/${guideId}`,
+      lastmod,
+      changefreq: "monthly",
+      priority:   "0.8",
+    }));
+  }
+
   const xml = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
     `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
@@ -124,7 +156,7 @@ async function main() {
   await writeFile(OUT, xml, "utf-8");
 
   // ── Summary ─────────────────────────────────────────────────────────────────
-  const total = STATIC.length + CATEGORIES.length + brands.length + discs.length;
+  const total = STATIC.length + CATEGORIES.length + brands.length + discs.length + GUIDES.length;
 
   console.log(`
 ────────────────────────────────────────────
@@ -134,6 +166,7 @@ async function main() {
   Category : ${CATEGORIES.length}
   Brand    : ${brands.length}
   Disc     : ${discs.length}
+  Guides   : ${GUIDES.length}
   ─────────────────────────────────────────
   Total    : ${total} URLs
 ────────────────────────────────────────────`);
@@ -145,6 +178,7 @@ async function main() {
     ...CATEGORIES.map((c) => `${BASE}/discs?category=${encodeURIComponent(c)}`),
     ...brands.map((b) => `${BASE}/manufacturer/${brandSlug(b)}`),
     ...discs.map((d) => `${BASE}/disc/${d.id}`),
+    ...GUIDES.map((g) => `${BASE}/guides/${g}`),
   ];
   allLocs.slice(0, 20).forEach((u, i) => console.log(`  ${String(i + 1).padStart(2)}. ${u}`));
 }

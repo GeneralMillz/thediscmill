@@ -42,9 +42,9 @@ export function Manufacturers() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <Factory className="text-white w-5 h-5" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Disc Manufacturers</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Disc Manufacturers</h1>
         </div>
-        <p className="text-gray-500 text-lg ml-[52px]">
+        <p className="text-gray-500 dark:text-gray-400 text-lg ml-0 sm:ml-[52px]">
           {manufacturers.length > 0 ? `${manufacturers.length} brands` : 'Loading...'} — click any to browse their disc lineup.
         </p>
       </div>
@@ -52,10 +52,10 @@ export function Manufacturers() {
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="bg-white border border-gray-100 rounded-2xl p-6 animate-pulse">
-              <div className="h-4 w-16 bg-gray-100 rounded mb-3" />
-              <div className="h-6 w-40 bg-gray-100 rounded mb-2" />
-              <div className="h-12 bg-gray-50 rounded" />
+            <div key={i} className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 animate-pulse">
+              <div className="h-4 w-16 bg-gray-100 dark:bg-gray-700 rounded mb-3" />
+              <div className="h-6 w-40 bg-gray-100 dark:bg-gray-700 rounded mb-2" />
+              <div className="h-12 bg-gray-50 dark:bg-gray-700 rounded" />
             </div>
           ))}
         </div>
@@ -70,7 +70,7 @@ export function Manufacturers() {
             >
               <Link
                 to={`/manufacturer/${m.id}`}
-                className="block bg-white border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 hover:shadow-md transition-all group h-full"
+                className="block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all group h-full"
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -86,16 +86,16 @@ export function Manufacturers() {
                         <span className="text-[10px] font-bold bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">MVP</span>
                       )}
                     </div>
-                    <h2 className="text-lg font-black text-gray-900 group-hover:text-indigo-600 transition-colors">
+                    <h2 className="text-lg font-black text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       {m.shortName || m.name}
                     </h2>
                     {m.shortName !== m.name && (
-                      <p className="text-xs text-gray-400">{m.name}</p>
+                      <p className="text-xs text-gray-400 dark:text-gray-500">{m.name}</p>
                     )}
                   </div>
                   <ExternalLink className="w-4 h-4 text-gray-300 group-hover:text-indigo-400 transition-colors shrink-0 mt-1" />
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">{m.description}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-3">{m.description}</p>
                 <div className="mt-4 text-xs font-bold text-indigo-600 group-hover:text-indigo-800 transition-colors">
                   View discs →
                 </div>

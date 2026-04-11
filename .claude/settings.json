@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(code-review-graph install:*)",
+      "Bash(code-review-graph build:*)",
+      "mcp__code-review-graph__list_graph_stats_tool",
+      "mcp__code-review-graph__get_architecture_overview_tool",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f'{len\\(d\\)} products, {len\\(set\\(p[\\\\\"brand\\\\\"] for p in d\\)\\)} brands'\\)\")",
+      "Bash(node -e \"const d=require\\('./public/data/products.json'\\); console.log\\(d.length + ' products, ' + new Set\\(d.map\\(p=>p.brand\\)\\).size + ' brands: ' + [...new Set\\(d.map\\(p=>p.brand\\)\\)].join\\(', '\\)\\)\")",
+      "Bash(npm run:*)",
+      "Read(//c/Users/Jerry/.claude/projects/d--thediscmill/**)",
+      "Bash(python3 ui_ux_pro_max_skill/scripts/search.py \"sports outdoor discovery platform\" --domain style)",
+      "Bash(python3 ui_ux_pro_max_skill/scripts/search.py \"mobile navigation bottom bar\" --domain ux)",
+      "Bash(grep -r \"pt-20\\\\|pt-24\" src/pages/*.tsx)",
+      "Bash(node -e ':*)",
+      "Bash(wc -l /d/thediscmill/src/components/*.tsx)",
+      "Bash(wc -l /d/thediscmill/data/*.json /d/thediscmill/public/data/*.json)",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('/d/thediscmill/public/data/discs_fallback.json','utf-8'\\)\\); console.log\\('Total discs:', d.length\\); console.log\\('With flight data:', d.filter\\(x => x.speed || x.glide || x.turn || x.fade\\).length\\); console.log\\('With zero flight:', d.filter\\(x => !x.speed && !x.glide && !x.turn && !x.fade\\).length\\); console.log\\('With descriptions:', d.filter\\(x => x.description\\).length\\); console.log\\('HTML in desc:', d.filter\\(x => x.description && x.description.includes\\('<'\\)\\).length\\);\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('./public/data/discs_fallback.json','utf-8'\\)\\); console.log\\('Total discs:', d.length\\); console.log\\('With flight data:', d.filter\\(x => x.speed || x.glide || x.turn || x.fade\\).length\\); console.log\\('With zero flight:', d.filter\\(x => !x.speed && !x.glide && !x.turn && !x.fade\\).length\\); console.log\\('With descriptions:', d.filter\\(x => x.description\\).length\\); console.log\\('HTML in desc:', d.filter\\(x => x.description && x.description.includes\\('<'\\)\\).length\\);\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('./data/discs_final.json','utf-8'\\)\\); console.log\\('Total discs in final:', d.length\\); console.log\\('With flight data:', d.filter\\(x => x.speed || x.glide || x.turn || x.fade\\).length\\); console.log\\('With zero flight:', d.filter\\(x => !x.speed && !x.glide && !x.turn && !x.fade\\).length\\); console.log\\('With descriptions:', d.filter\\(x => x.description\\).length\\); console.log\\('HTML in desc:', d.filter\\(x => x.description && x.description.includes\\('<'\\)\\).length\\);\")",
+      "Bash(node scripts/generate-sitemap.js)",
+      "Bash(find /d/thediscmill/src/pages -name \"*.tsx\" -exec wc -l {} +)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Jerry\\.claude\\projects\\d--thediscmill"
+    ]
+  }
+}

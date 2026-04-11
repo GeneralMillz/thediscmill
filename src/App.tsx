@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <Router>
-      <div className={`min-h-dvh transition-colors duration-300 ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
+      <div className="min-h-dvh transition-colors duration-300">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         {/* Mobile: extra bottom clearance for the bottom nav + safe area */}
         <main className="pb-[calc(56px+env(safe-area-inset-bottom,0px))] lg:pb-0">

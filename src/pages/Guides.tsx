@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { BookOpen, ChevronRight, Tag } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { buildCanonical } from '../utils/seo';
 
 const ALL_GUIDES = [
   {
@@ -72,6 +73,7 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export function Guides() {
+  const { pathname } = useLocation();
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filtered = activeCategory === 'All'
@@ -83,6 +85,7 @@ export function Guides() {
       <Helmet>
         <title>Buying Guides | The Disc Mill</title>
         <meta name="description" content="Expert disc golf gear guides for beginners and advanced players." />
+        <link rel="canonical" href={buildCanonical(pathname)} />
       </Helmet>
       {/* Header */}
       <div className="mb-10">
@@ -90,9 +93,9 @@ export function Guides() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <BookOpen className="text-white w-5 h-5" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Guides & Gear Reviews</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Guides & Gear Reviews</h1>
         </div>
-        <p className="text-lg text-gray-500 ml-[52px]">
+        <p className="text-lg text-gray-500 dark:text-gray-400 ml-0 sm:ml-[52px]">
           Honest, beginner-first gear recommendations. No hype. Just what actually works.
         </p>
       </div>
@@ -107,7 +110,7 @@ export function Guides() {
             className={`px-4 py-2 rounded-full text-sm font-bold border transition-all ${
               activeCategory === cat
                 ? 'bg-indigo-600 text-white border-indigo-600'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-indigo-300'
+                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600'
             }`}
           >
             {cat}
@@ -126,7 +129,7 @@ export function Guides() {
           >
             <Link
               to={`/guides/${guide.id}`}
-              className="block bg-white border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 hover:shadow-md transition-all group"
+              className="block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all group"
             >
               <div className="flex justify-between items-start gap-4">
                 <div className="flex-grow min-w-0">
@@ -136,10 +139,10 @@ export function Guides() {
                     </span>
                     <span className="text-xs text-gray-400">{guide.readTime} read</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors mb-1.5">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-1.5">
                     {guide.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{guide.excerpt}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{guide.excerpt}</p>
                 </div>
                 <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0 mt-1" />
               </div>

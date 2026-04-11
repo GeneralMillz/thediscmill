@@ -33,11 +33,11 @@ export function DiscReturnCreate() {
       </Link>
 
       <div className="mb-12">
-        <h1 className="text-3xl font-bold text-gray-900 flex items-center mb-4">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white flex items-center mb-4">
           <Shield className="mr-3 text-indigo-600 w-8 h-8" />
           Create Your Return Tag
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 dark:text-gray-400">
           Enter the information you want to share with someone who finds your disc. This data is encoded directly into the QR code and is not stored on our servers.
         </p>
       </div>

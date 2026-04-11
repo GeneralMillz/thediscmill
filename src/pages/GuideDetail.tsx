@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams, Link } from 'react-router-dom';
-import { BookOpen, ChevronLeft, ExternalLink, Star, CheckCircle, ShoppingBag } from 'lucide-react';
+import { useParams, Link, useLocation } from 'react-router-dom';
+import { BookOpen, ChevronLeft, CheckCircle } from 'lucide-react';
 import { motion } from 'motion/react';
-import { amazonLink } from '../utils/amazon';
 import { WhereToBuy } from '../components/monetization/WhereToBuy';
+import { buildCanonical, SITE_URL } from '../utils/seo';
 
 interface ProductCard {
   name: string;
@@ -164,23 +164,65 @@ function LevelBadge({ level }: { level: ProductCard['level'] }) {
 
 export function GuideDetail() {
   const { id } = useParams<{ id: string }>();
+  const { pathname } = useLocation();
   const guide = GUIDES.find(g => g.id === id);
 
   if (!guide) {
     return (
       <div className="pt-20 pb-8 px-4 max-w-3xl mx-auto text-center">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">Guide not found</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Guide not found</h1>
         <Link to="/guides" className="text-indigo-600 hover:underline">← Back to Guides</Link>
       </div>
     );
   }
+
+  const canonicalUrl = buildCanonical(pathname);
+
+  // ── JSON-LD ────────────────────────────────────────────────────────────────
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: guide.title,
+        description: guide.excerpt,
+        url: canonicalUrl,
+        publisher: {
+          '@type': 'Organization',
+          name: 'The Disc Mill',
+          url: SITE_URL,
+        },
+      },
+      {
+        '@type': 'ItemList',
+        name: guide.title,
+        numberOfItems: guide.products.length,
+        itemListElement: guide.products.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: `${p.brand} ${p.name}`,
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home',   item: SITE_URL },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+          { '@type': 'ListItem', position: 3, name: guide.title, item: canonicalUrl },
+        ],
+      },
+    ],
+  };
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-3xl mx-auto">
       <Helmet>
         <title>{guide.title} | The Disc Mill</title>
         <meta name="description" content={guide.excerpt || `${guide.title} — disc golf buying guide from The Disc Mill.`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
+
       {/* Back */}
       <Link to="/guides" className="inline-flex items-center text-sm text-gray-500 hover:text-indigo-600 mb-8 gap-1.5 font-medium">
         <ChevronLeft className="w-4 h-4" />
@@ -190,8 +232,8 @@ export function GuideDetail() {
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
         <span className="text-xs font-bold text-indigo-600 uppercase tracking-widest">{guide.category}</span>
-        <h1 className="text-4xl font-black text-gray-900 mt-2 mb-4 leading-tight">{guide.title}</h1>
-        <p className="text-xl text-gray-500 leading-relaxed">{guide.intro}</p>
+        <h1 className="text-4xl font-black text-gray-900 dark:text-white mt-2 mb-4 leading-tight">{guide.title}</h1>
+        <p className="text-xl text-gray-500 dark:text-gray-400 leading-relaxed">{guide.intro}</p>
       </motion.div>
 
       {/* Products */}
@@ -202,61 +244,51 @@ export function GuideDetail() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
-            className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm"
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl overflow-hidden shadow-sm"
           >
             <div className="p-6">
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-black text-sm">
-                    {i + 1}
+              {/* Product header */}
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-8 h-8 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-700 font-black text-sm shrink-0">
+                  {i + 1}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="font-black text-gray-900 dark:text-white text-lg leading-tight">{product.name}</h3>
+                    {product.sponsored && (
+                      <span className="text-[10px] font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Sponsored</span>
+                    )}
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-black text-gray-900 text-lg leading-tight">{product.name}</h3>
-                      {product.sponsored && (
-                        <span className="text-[10px] font-bold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Sponsored</span>
-                      )}
-                    </div>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-sm text-gray-500">{product.brand}</span>
-                      <LevelBadge level={product.level} />
-                    </div>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">{product.brand}</span>
+                    <LevelBadge level={product.level} />
                   </div>
                 </div>
-                {product.asin && (
-                  <a
-                    href={amazonLink(product.asin)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-amber-900 px-4 py-2 rounded-xl font-bold text-sm transition-colors shrink-0"
-                  >
-                    <ShoppingBag className="w-3.5 h-3.5" />
-                    Buy
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                )}
               </div>
 
-              <div className="flex items-start gap-2 bg-gray-50 rounded-2xl p-4">
+              {/* Why this disc */}
+              <div className="flex items-start gap-2 bg-gray-50 dark:bg-gray-700/50 rounded-2xl p-4">
                 <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                <p className="text-sm text-gray-700 leading-relaxed">{product.why}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{product.why}</p>
               </div>
             </div>
 
-            {(product.asin || product.sku) && (
-              <div className="border-t border-gray-100 p-4">
-                <WhereToBuy asin={product.asin} sku={product.sku} />
-              </div>
-            )}
+            {/* Where to buy — always search URL, never ASIN */}
+            <div className="border-t border-gray-100 dark:border-gray-700 p-4">
+              <WhereToBuy
+                amazonQuery={`${product.brand} ${product.name} disc golf`}
+                sku={product.sku}
+              />
+            </div>
           </motion.div>
         ))}
       </div>
 
       {/* Closing */}
-      <div className="bg-indigo-50 border border-indigo-100 rounded-3xl p-6">
+      <div className="bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900 rounded-3xl p-6">
         <div className="flex items-start gap-3">
-          <Star className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5 fill-indigo-200" />
-          <p className="text-gray-700 leading-relaxed font-medium">{guide.closing}</p>
+          <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5" />
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-medium">{guide.closing}</p>
         </div>
       </div>
 

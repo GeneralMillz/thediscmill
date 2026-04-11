@@ -19,8 +19,8 @@ export function EventDetail() {
     }
   }, [id]);
 
-  if (loading) return <div className="pt-40 text-center">Loading event intelligence...</div>;
-  if (!event) return <div className="pt-40 text-center">Event not found.</div>;
+  if (loading) return <div className="pt-40 text-center text-gray-500 dark:text-gray-400">Loading event intelligence...</div>;
+  if (!event) return <div className="pt-40 text-center text-gray-500 dark:text-gray-400">Event not found.</div>;
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
@@ -61,32 +61,32 @@ export function EventDetail() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm mb-12">
-              <h2 className="text-2xl font-bold mb-8 flex items-center">
+            <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm mb-12">
+              <h2 className="text-2xl font-bold mb-8 flex items-center dark:text-white">
                 <Activity className="mr-2 text-indigo-600" />
                 Live Leaderboard
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="text-left border-b border-gray-100">
-                      <th className="pb-4 font-bold text-gray-400 uppercase text-xs">Pos</th>
-                      <th className="pb-4 font-bold text-gray-400 uppercase text-xs">Player</th>
-                      <th className="pb-4 font-bold text-gray-400 uppercase text-xs">Score</th>
-                      <th className="pb-4 font-bold text-gray-400 uppercase text-xs">Thru</th>
+                    <tr className="text-left border-b border-gray-100 dark:border-gray-700">
+                      <th className="pb-4 font-bold text-gray-400 dark:text-gray-500 uppercase text-xs">Pos</th>
+                      <th className="pb-4 font-bold text-gray-400 dark:text-gray-500 uppercase text-xs">Player</th>
+                      <th className="pb-4 font-bold text-gray-400 dark:text-gray-500 uppercase text-xs">Score</th>
+                      <th className="pb-4 font-bold text-gray-400 dark:text-gray-500 uppercase text-xs">Thru</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-50">
+                  <tbody className="divide-y divide-gray-50 dark:divide-gray-700">
                     {[1, 2, 3, 4, 5].map(i => (
-                      <tr key={i} className="hover:bg-gray-50 transition-colors">
-                        <td className="py-4 font-bold text-gray-900">{i}</td>
+                      <tr key={i} className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                        <td className="py-4 font-bold text-gray-900 dark:text-white">{i}</td>
                         <td className="py-4">
-                          <Link to={`/player/${i * 1000}`} className="font-bold text-indigo-600 hover:underline">
+                          <Link to={`/player/${i * 1000}`} className="font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
                             Pro Player {i}
                           </Link>
                         </td>
-                        <td className="py-4 font-mono font-bold text-green-600">-{15 - i}</td>
-                        <td className="py-4 text-gray-500">F</td>
+                        <td className="py-4 font-mono font-bold text-green-600 dark:text-green-400">-{15 - i}</td>
+                        <td className="py-4 text-gray-500 dark:text-gray-400">F</td>
                       </tr>
                     ))}
                   </tbody>
@@ -97,33 +97,33 @@ export function EventDetail() {
         </div>
 
         <div className="space-y-8">
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
-            <h3 className="text-xl font-bold mb-6 flex items-center">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h3 className="text-xl font-bold mb-6 flex items-center dark:text-white">
               <Users className="mr-2 w-5 h-5 text-indigo-600" />
               Field Stats
             </h3>
             <div className="space-y-4">
               <div className="flex justify-between">
-                <span className="text-gray-500">Total Players</span>
+                <span className="text-gray-500 dark:text-gray-400">Total Players</span>
                 <span className="font-bold">144</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Avg Rating</span>
+                <span className="text-gray-500 dark:text-gray-400">Avg Rating</span>
                 <span className="font-bold">1012</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">Cut Line</span>
+                <span className="text-gray-500 dark:text-gray-400">Cut Line</span>
                 <span className="font-bold text-red-600">+2</span>
               </div>
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
-            <h3 className="font-bold text-xl mb-6 flex items-center">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h3 className="font-bold text-xl mb-6 flex items-center dark:text-white">
               <Info className="mr-2 w-5 h-5 text-indigo-600" />
               Event Info
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
               This event is part of the PDGA National Tour. Live scoring is provided by PDGA Live. 
               The Disc Mill provides real-time intelligence and historical context for every shot.
             </p>

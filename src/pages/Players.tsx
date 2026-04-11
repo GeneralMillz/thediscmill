@@ -33,16 +33,16 @@ function PlayerCard({ player, index }: { player: Player; index: number }) {
     >
       <Link
         to={`/player/${player.id}`}
-        className="flex items-center gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:border-indigo-300 hover:shadow-md transition-all group"
+        className="flex items-center gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-5 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all group"
       >
-        <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-indigo-100 transition-colors">
+        <div className="w-14 h-14 bg-indigo-50 dark:bg-indigo-950/40 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40 transition-colors">
           <UserCircle className="w-8 h-8 text-indigo-400" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="font-bold text-gray-900 truncate">{player.name}</h3>
+            <h3 className="font-bold text-gray-900 dark:text-white truncate">{player.name}</h3>
             {player.classification && (
-              <span className="text-[10px] font-bold bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full uppercase tracking-wider">
+              <span className="text-[10px] font-bold bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded-full uppercase tracking-wider">
                 {player.classification}
               </span>
             )}
@@ -113,9 +113,9 @@ export function Players() {
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
             <Users className="text-white w-5 h-5" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">Player Intelligence</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Player Intelligence</h1>
         </div>
-        <p className="text-lg text-gray-500 ml-[52px]">
+        <p className="text-lg text-gray-500 dark:text-gray-400 ml-0 sm:ml-[52px]">
           Search the PDGA database — live ratings, classifications, and career profiles.
         </p>
       </div>
@@ -124,8 +124,8 @@ export function Players() {
         {/* Main search column */}
         <div className="lg:col-span-2 space-y-6">
           {/* Search bar */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900 mb-4">Search PDGA Database</h2>
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6 shadow-sm">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Search PDGA Database</h2>
             <div className="flex gap-3">
               <div className="relative flex-1">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -135,7 +135,7 @@ export function Players() {
                   onChange={e => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Search by name or PDGA #..."
-                  className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm"
+                  className="w-full pl-11 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm"
                 />
               </div>
               <button
@@ -176,10 +176,10 @@ export function Players() {
 
             {!loading && !error && searched && results.length === 0 && (
               <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                className="text-center py-16 bg-white rounded-3xl border-2 border-dashed border-gray-200">
-                <Users className="w-12 h-12 text-gray-200 mx-auto mb-3" />
-                <p className="font-bold text-gray-700">No players found</p>
-                <p className="text-sm text-gray-400 mt-1">Try a different name or PDGA number.</p>
+                className="text-center py-16 bg-white dark:bg-gray-800 rounded-3xl border-2 border-dashed border-gray-200 dark:border-gray-700">
+                <Users className="w-12 h-12 text-gray-200 dark:text-gray-600 mx-auto mb-3" />
+                <p className="font-bold text-gray-700 dark:text-gray-300">No players found</p>
+                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">Try a different name or PDGA number.</p>
               </motion.div>
             )}
 
@@ -187,8 +187,8 @@ export function Players() {
               <motion.div key="results" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="space-y-3">
                 <div className="flex items-center justify-between px-1">
-                  <h3 className="font-bold text-gray-700">{results.length} player{results.length !== 1 ? 's' : ''} found</h3>
-                  <span className="text-xs text-gray-400">Click a player to see full profile</span>
+                  <h3 className="font-bold text-gray-700 dark:text-gray-300">{results.length} player{results.length !== 1 ? 's' : ''} found</h3>
+                  <span className="text-xs text-gray-400 dark:text-gray-500">Click a player to see full profile</span>
                 </div>
                 {results.map((player, i) => (
                   <React.Fragment key={player.id || i}>
@@ -199,7 +199,7 @@ export function Players() {
                   <button
                     onClick={() => doSearch(query, page + 1)}
                     disabled={loading}
-                    className="w-full py-3 border-2 border-dashed border-gray-200 rounded-2xl text-sm font-semibold text-gray-500 hover:border-indigo-300 hover:text-indigo-600 transition-colors disabled:opacity-40"
+                    className="w-full py-3 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-2xl text-sm font-semibold text-gray-500 dark:text-gray-400 hover:border-indigo-300 dark:hover:border-indigo-600 hover:text-indigo-600 transition-colors disabled:opacity-40"
                   >
                     Load more results
                   </button>
@@ -209,10 +209,10 @@ export function Players() {
 
             {!searched && !loading && (
               <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-3xl p-8 text-center">
-                <Search className="w-12 h-12 text-indigo-200 mx-auto mb-4" />
-                <h3 className="font-bold text-gray-700 text-lg mb-2">Search any PDGA player</h3>
-                <p className="text-gray-500 text-sm max-w-sm mx-auto">
+                className="bg-gradient-to-br from-indigo-50 dark:from-indigo-950/40 to-white dark:to-gray-800 border border-indigo-100 dark:border-indigo-900 rounded-3xl p-8 text-center">
+                <Search className="w-12 h-12 text-indigo-200 dark:text-indigo-800 mx-auto mb-4" />
+                <h3 className="font-bold text-gray-700 dark:text-gray-300 text-lg mb-2">Search any PDGA player</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm max-w-sm mx-auto">
                   Enter a name and press Search or hit Enter to pull live data from the PDGA database.
                 </p>
               </motion.div>
@@ -249,8 +249,8 @@ export function Players() {
           </div>
 
           {/* Stats panel */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6 shadow-sm">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
               <Star className="w-4 h-4 text-amber-400" />
               PDGA Facts
             </h3>
@@ -262,16 +262,16 @@ export function Players() {
                 { label: 'Rating Scale', value: '0 – 1100+' },
               ].map(({ label, value }) => (
                 <div key={label} className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">{label}</span>
-                  <span className="text-sm font-bold text-gray-900">{value}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">{label}</span>
+                  <span className="text-sm font-bold text-gray-900 dark:text-white">{value}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Rating guide */}
-          <div className="bg-white border border-gray-200 rounded-3xl p-6 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-4">Rating Guide</h3>
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6 shadow-sm">
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Rating Guide</h3>
             <div className="space-y-2">
               {[
                 { range: '1000+', label: 'World Class', color: 'bg-purple-100 text-purple-700' },
@@ -282,7 +282,7 @@ export function Players() {
               ].map(({ range, label, color }) => (
                 <div key={range} className="flex items-center justify-between">
                   <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${color}`}>{range}</span>
-                  <span className="text-xs text-gray-500">{label}</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{label}</span>
                 </div>
               ))}
             </div>
