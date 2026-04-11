@@ -88,7 +88,7 @@ const FEATURES = [
 ];
 
 const STATS = [
-  { value: '10,000+', label: 'PDGA Discs' },
+  { value: '200+', label: 'PDGA Discs' },
   { value: '14,000+', label: 'Courses Nationwide' },
   { value: '250k+',   label: 'PDGA Players' },
 ];
