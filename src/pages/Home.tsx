@@ -8,7 +8,7 @@ const FEATURES = [
   {
     icon: Disc,
     title: 'Disc Catalog',
-    desc: '10,000+ PDGA-approved discs with flight numbers, stability ratings, and honest beginner notes.',
+    desc: '200+ PDGA-approved discs with flight numbers, stability ratings, and honest beginner notes.',
     link: '/discs',
     cta: 'Browse Discs',
     color: 'text-indigo-600',
