@@ -6,9 +6,6 @@
 **National disc golf intelligence — open data, client-side, zero backend.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-indigo.svg)](LICENSE)
-[![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.x-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
 [thediscmill.com](https://thediscmill.com) · [Disc Catalog](/discs) · [Buying Guides](/guides) · [Course Finder](/course-finder)
 
