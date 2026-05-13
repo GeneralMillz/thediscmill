@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Disc } from '../types';
+import { DiscImage } from './DiscImage';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  STABILITY LOGIC
@@ -149,15 +150,23 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
 
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className={`text-[11px] font-black uppercase tracking-widest truncate ${bColor}`}>
-            {disc.brand}
-          </p>
-          <h3 className="text-xl font-black text-gray-900 dark:text-white leading-tight">{disc.name}</h3>
-          <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{disc.category}</p>
+        <div className="flex gap-4 min-w-0">
+          <DiscImage 
+            src={disc.image} 
+            name={disc.name} 
+            brand={disc.brand} 
+            className="w-14 h-14 shrink-0" 
+          />
+          <div className="min-w-0 flex flex-col justify-center">
+            <p className={`text-[11px] font-black uppercase tracking-widest truncate ${bColor}`}>
+              {disc.brand}
+            </p>
+            <h3 className="text-xl font-black text-gray-900 dark:text-white leading-tight truncate">{disc.name}</h3>
+            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mt-0.5">{disc.category}</p>
+          </div>
         </div>
 
-        <span className={`shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg ${catCfg.bg} ${catCfg.color}`}>
+        <span className={`shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg ${catCfg.bg} ${catCfg.color} mt-1`}>
           {disc.category || '—'}
         </span>
       </div>

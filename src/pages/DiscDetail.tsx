@@ -8,6 +8,7 @@ import { buildAmazonLink } from '../utils/amazon';
 import { deriveStability, STABILITY_CONFIG, CATEGORY_CONFIG } from '../components/DiscCard';
 import { buildCanonical, SITE_URL } from '../utils/seo';
 import { brandSlug } from '../utils/brandSlug';
+import { DiscImage } from '../components/DiscImage';
 
 function FlightTile({ label, value, sub, color }: { label: string; value: number; sub: string; color: string }) {
   return (
@@ -121,10 +122,11 @@ export function DiscDetail() {
             </div>
           </div>
           {disc.image && (
-            <img
+            <DiscImage
               src={disc.image}
-              alt={disc.name}
-              className="w-32 h-32 object-contain rounded-2xl border border-gray-100 bg-white shadow-sm"
+              name={disc.name}
+              brand={disc.brand}
+              className="w-32 h-32 md:w-40 md:h-40 shrink-0"
             />
           )}
         </div>
