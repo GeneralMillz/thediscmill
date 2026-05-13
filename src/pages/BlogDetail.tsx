@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
@@ -44,11 +44,46 @@ export function BlogDetail() {
     );
   }
 
+  const { pathname } = useLocation();
+  const canonicalUrl = \`https://thediscmill.com\${pathname}\`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl
+    },
+    headline: post?.title,
+    description: post?.excerpt,
+    author: {
+      '@type': 'Organization',
+      name: post?.author || 'The Disc Mill'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Disc Mill',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://thediscmill.com/logo.png'
+      }
+    },
+    datePublished: post?.date ? new Date(post.date).toISOString() : undefined,
+    dateModified: post?.date ? new Date(post.date).toISOString() : undefined,
+  };
+
   return (
     <div className="pt-24 pb-20 px-4 max-w-4xl mx-auto">
       <Helmet>
-        <title>{post.title} | The Disc Mill</title>
+        <title>{post.title} | The Disc Mill Blog</title>
         <meta name="description" content={post.excerpt} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <Link to="/blog" className="inline-flex items-center text-sm font-bold text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 mb-10 transition-colors uppercase tracking-wider">

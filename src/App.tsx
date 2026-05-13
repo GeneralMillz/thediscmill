@@ -57,6 +57,7 @@ export default function App() {
             <Route path="/analyzer" element={<ThrowAnalyzer />} />
             <Route path="/discs" element={<Discs />} />
             <Route path="/disc/:id" element={<DiscDetail />} />
+            <Route path="/disc/:brandSlug/:discSlug" element={<DiscDetail />} />
             <Route path="/manufacturers" element={<Manufacturers />} />
             <Route path="/manufacturer/:id" element={<ManufacturerDetail />} />
             <Route path="/disc-finder" element={<DiscFinder />} />

@@ -4,6 +4,7 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useDiscById } from '../hooks/useDiscById';
+import { useDiscs } from '../hooks/useDiscs';
 import { buildAmazonLink } from '../utils/amazon';
 import { deriveStability, STABILITY_CONFIG, CATEGORY_CONFIG } from '../components/DiscCard';
 import { buildCanonical, SITE_URL } from '../utils/seo';
@@ -23,9 +24,13 @@ function FlightTile({ label, value, sub, color }: { label: string; value: number
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export function DiscDetail() {
-  const { id } = useParams<{ id: string }>();
+  const { id, brandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
   const { pathname } = useLocation();
-  const { data: disc, loading } = useDiscById(id);
+  
+  // Calculate the id to look up if using the new route
+  const lookupId = id || (brandSlug && discSlug ? `${brandSlug}-${discSlug}` : undefined);
+  
+  const { data: disc, loading } = useDiscById(lookupId);
 
   if (loading) {
     return (
@@ -235,6 +240,60 @@ export function DiscDetail() {
           </div>
         </div>
       </motion.div>
+      <SimilarDiscs currentDisc={disc} />
+    </div>
+  );
+}
+
+function SimilarDiscs({ currentDisc }: { currentDisc: any }) {
+  const { data: allDiscs } = useDiscs();
+  
+  if (!allDiscs || allDiscs.length === 0) return null;
+  
+  // Find discs with the exact same speed and stability, but different brand if possible
+  const currentStability = deriveStability(currentDisc.turn, currentDisc.fade, currentDisc.stability);
+  
+  const similar = allDiscs
+    .filter(d => d.id !== currentDisc.id)
+    .filter(d => d.category === currentDisc.category)
+    .filter(d => Math.abs((d.speed || 0) - (currentDisc.speed || 0)) <= 1)
+    .filter(d => deriveStability(d.turn, d.fade, d.stability) === currentStability)
+    // Sort by same brand first, then other brands
+    .sort((a, b) => {
+      const aBrandMatch = a.brand === currentDisc.brand ? -1 : 1;
+      const bBrandMatch = b.brand === currentDisc.brand ? -1 : 1;
+      return aBrandMatch - bBrandMatch;
+    })
+    .slice(0, 4);
+
+  if (similar.length === 0) return null;
+
+  return (
+    <div className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-800">
+      <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-6">People Also Throw</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {similar.map(disc => (
+          <Link
+            key={disc.id}
+            to={`/disc/${disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`}
+            className="group bg-white dark:bg-gray-800 rounded-2xl p-4 border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors flex items-center gap-4"
+          >
+            <DiscImage 
+              src={disc.image} 
+              name={disc.name} 
+              brand={disc.brand} 
+              className="w-12 h-12 shrink-0" 
+            />
+            <div className="min-w-0">
+              <p className="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest truncate">{disc.brand}</p>
+              <h3 className="font-bold text-gray-900 dark:text-white truncate group-hover:text-indigo-600 transition-colors">{disc.name}</h3>
+              <p className="text-xs font-mono text-gray-500 dark:text-gray-400 mt-0.5">
+                {disc.speed} / {disc.glide} / {disc.turn} / {disc.fade}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

@@ -29,25 +29,31 @@ async function main() {
   const emailContent = fs.readFileSync(emailPath, 'utf-8');
   console.log(`Processing email from ${emailFile}...`);
 
-  const prompt = `
-You are an expert content editor. 
+  const prompt = \`
+You are an expert SEO content editor and disc golf writer. 
 I have a daily disc golf intelligence email ("Zo email") below.
-Please extract the information and format it as a JSON object suitable for a blog post.
+Extract the information and format it as a highly SEO-optimized JSON object suitable for a blog post.
 The JSON object must have these exact keys:
-- id: A URL-friendly slug based on the title (e.g., "zo-brief-may-14").
-- title: A catchy, appropriate title for the blog post.
-- excerpt: A 1-2 sentence summary of the brief.
+- id: A highly SEO-optimized, URL-friendly slug based on the primary topic (e.g., "innova-firebird-retool-mvp-drop-may-2026").
+- title: A catchy, SEO-optimized title for the blog post (include keywords like "Disc Golf", brands, or disc names).
+- excerpt: A compelling, keyword-rich meta description (max 160 characters).
 - author: "DiscMill"
-- category: "Daily Intelligence"
-- content: The full email content formatted nicely in Markdown.
+- category: A single string representing the most relevant SEO category (e.g., "Industry News", "New Releases", "Pro Tour").
+- tags: An array of string tags representing the brands, players, and discs mentioned (e.g., ["Innova", "Paul McBeth", "Destroyer"]).
+- content: The full email content formatted beautifully in Markdown.
 
-CRITICAL INSTRUCTION: The email often contains internal notes starting at "8. Content Ideas for DiscMill". You MUST IGNORE and STRIP OUT everything from section 8 onwards. The final content should only contain sections 1 through 7.
+CRITICAL INSTRUCTIONS:
+1. INTERNAL LINKING: Whenever you mention a specific disc or manufacturer, you MUST hyper-link it using Markdown to our site's SEO URL structure.
+   - For a disc: [Brand DiscName](/disc/brand-slug/disc-slug) -> Example: [Innova Destroyer](/disc/innova/destroyer)
+   - For a manufacturer: [Brand Name](/manufacturer/brand-slug) -> Example: [Discmania](/manufacturer/discmania)
+2. MARKDOWN FORMATTING: Use appropriate ## and ### headings, bulleted lists, and bold text to make it easy to read.
+3. STRIP INTERNAL NOTES: The email often contains internal notes starting at "8. Content Ideas for DiscMill". You MUST IGNORE and STRIP OUT everything from section 8 onwards. The final content should only contain sections 1 through 7.
 
 Email Content:
-${emailContent}
+\${emailContent}
 
-Return ONLY valid JSON. Do not wrap in markdown codeblocks like \`\`\`json.
-`;
+Return ONLY valid JSON. Do not wrap in markdown codeblocks like \\\`\\\`\\\`json.
+\`;
 
   try {
     const response = await ai.models.generateContent({

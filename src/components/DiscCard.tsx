@@ -130,9 +130,12 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
   const bColor    = brandColor(disc.brand);
   const bBgColor  = brandBgColor(disc.brand);
 
+  const brandSlug = disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const discSlug = disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+
   return (
     <Link
-      to={`/disc/${disc.id}`}
+      to={`/disc/${brandSlug}/${discSlug}`}
       className={`
         group bg-white dark:bg-gray-800
         rounded-3xl p-6

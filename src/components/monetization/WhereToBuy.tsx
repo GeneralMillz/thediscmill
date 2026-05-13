@@ -33,7 +33,7 @@ export function WhereToBuy({ asin, amazonShort, amazonQuery, sku, brand }: Where
             whileTap={{ scale: 0.98 }}
             href={amazonHref}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="nofollow sponsored noopener noreferrer"
             className="flex items-center justify-between p-4 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-colors group"
           >
             <div className="flex items-center gap-3">
