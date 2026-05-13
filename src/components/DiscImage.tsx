@@ -44,10 +44,12 @@ export function DiscImage({ src, name, brand, className, alt, interactive = fals
       <svg
         ref={svgRef}
         viewBox="0 0 120 120"
-        className={cn('select-none', className)}
+        className={cn('select-none animate-spin', className)}
         style={{
-          animation: 'discSpin 18s linear infinite',
-          filter: 'drop-shadow(0 0 12px color-mix(in srgb, var(--disc-a) 60%, transparent))',
+          animationDuration: '18s',
+          animationTimingFunction: 'linear',
+          transformOrigin: 'center',
+          filter: `drop-shadow(0 0 12px color-mix(in srgb, ${palette.a} 60%, transparent))`
         }}
         role="img"
         aria-label={`${brand} ${name} disc`}
@@ -158,13 +160,6 @@ export function DiscImage({ src, name, brand, className, alt, interactive = fals
         >
           {brand.slice(0, 14).toUpperCase()}
         </text>
-
-        <style>{`
-          @keyframes discSpin {
-            from { transform: rotate(0deg); }
-            to   { transform: rotate(360deg); }
-          }
-        `}</style>
       </svg>
     );
   }
@@ -173,9 +168,11 @@ export function DiscImage({ src, name, brand, className, alt, interactive = fals
     <img
       src={src}
       alt={alt || `${brand} ${name}`}
-      className={cn('object-contain', className)}
+      className={cn('object-contain animate-spin', className)}
       style={{
-        animation: 'discSpin 18s linear infinite',
+        animationDuration: '18s',
+        animationTimingFunction: 'linear',
+        transformOrigin: 'center',
         filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.4))',
       }}
       onError={() => setImgError(true)}
