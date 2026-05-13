@@ -27,7 +27,7 @@ import { Manufacturers } from './pages/Manufacturers';
 import { ManufacturerDetail } from './pages/ManufacturerDetail';
 
 export default function App() {
-  const [theme, setTheme] = React.useState(() => localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = React.useState<'dark' | 'light'>(() => (localStorage.getItem('theme') as 'dark' | 'light') || 'light');
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
