@@ -24,11 +24,11 @@ function FlightTile({ label, value, sub, color }: { label: string; value: number
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export function DiscDetail() {
-  const { id, brandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
+  const { id, brandSlug: paramBrandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
   const { pathname } = useLocation();
   
   // Calculate the id to look up if using the new route
-  const lookupId = id || (brandSlug && discSlug ? `${brandSlug}-${discSlug}` : undefined);
+  const lookupId = id || (paramBrandSlug && discSlug ? `${paramBrandSlug}-${discSlug}` : undefined);
   
   const { data: disc, loading } = useDiscById(lookupId);
 

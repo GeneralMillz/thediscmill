@@ -45,7 +45,7 @@ export function BlogDetail() {
   }
 
   const { pathname } = useLocation();
-  const canonicalUrl = \`https://thediscmill.com\${pathname}\`;
+  const canonicalUrl = `https://thediscmill.com${pathname}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',

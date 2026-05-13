@@ -137,41 +137,43 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
     <Link
       to={`/disc/${brandSlug}/${discSlug}`}
       className={`
-        group bg-white dark:bg-gray-800
-        rounded-3xl p-6
+        group relative bg-white dark:bg-gray-800
+        rounded-3xl p-6 overflow-hidden
         border border-gray-300 dark:border-gray-700
-        shadow-[0_2px_16px_rgba(0,0,0,0.10)] dark:shadow-[0_2px_16px_rgba(0,0,0,0.4)]
-        hover:shadow-[0_8px_32px_rgba(0,0,0,0.16)] dark:hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)]
-        hover:-translate-y-[3px]
-        active:scale-[0.98] active:shadow-md
-        transition-all duration-200 flex flex-col gap-5
+        shadow-sm hover:shadow-xl
+        hover:-translate-y-[2px]
+        transition-all duration-300 flex flex-col gap-5
         ${className}
       `}
     >
       {/* Brand accent line */}
-      <div className={`h-[3px] w-full rounded-full ${bBgColor}`} />
+      <div className={`absolute top-0 left-0 w-full h-[3px] ${bBgColor}`} />
 
-      {/* Header */}
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex gap-4 min-w-0">
+      {/* Header layout */}
+      <div className="flex items-start justify-between gap-4 mt-1">
+        {/* Text Side */}
+        <div className="min-w-0 flex-1">
+          <p className={`text-[11px] font-black uppercase tracking-widest truncate ${bColor}`}>
+            {disc.brand}
+          </p>
+          <h3 className="text-xl font-black text-gray-900 dark:text-white leading-tight mt-1 truncate">{disc.name}</h3>
+          
+          <div className="flex items-center gap-2 mt-2">
+            <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-md ${catCfg.bg} ${catCfg.color}`}>
+              {disc.category || '—'}
+            </span>
+          </div>
+        </div>
+
+        {/* Image Side - Placed beautifully on the right */}
+        <div className="relative w-16 h-16 shrink-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 ease-out z-10">
           <DiscImage 
             src={disc.image} 
             name={disc.name} 
             brand={disc.brand} 
-            className="w-14 h-14 shrink-0" 
+            className="w-full h-full" 
           />
-          <div className="min-w-0 flex flex-col justify-center">
-            <p className={`text-[11px] font-black uppercase tracking-widest truncate ${bColor}`}>
-              {disc.brand}
-            </p>
-            <h3 className="text-xl font-black text-gray-900 dark:text-white leading-tight truncate">{disc.name}</h3>
-            <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mt-0.5">{disc.category}</p>
-          </div>
         </div>
-
-        <span className={`shrink-0 text-[10px] font-bold px-2 py-1 rounded-lg ${catCfg.bg} ${catCfg.color} mt-1`}>
-          {disc.category || '—'}
-        </span>
       </div>
 
       {/* Stability badge */}
