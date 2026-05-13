@@ -10,6 +10,7 @@ import { PlayerDetail } from './pages/PlayerDetail';
 import { Events } from './pages/Events';
 import { EventDetail } from './pages/EventDetail';
 import { Blog } from './pages/Blog';
+import { BlogDetail } from './pages/BlogDetail';
 import { LiveDataAudit } from './pages/LiveDataAudit';
 import { ThrowAnalyzer } from './pages/ThrowAnalyzer';
 import { DiscFinder } from './pages/DiscFinder';
@@ -51,6 +52,7 @@ export default function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/event/:id" element={<EventDetail />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
             <Route path="/audit" element={<LiveDataAudit />} />
             <Route path="/analyzer" element={<ThrowAnalyzer />} />
             <Route path="/discs" element={<Discs />} />

@@ -1,0 +1,84 @@
+Disc Golf Daily Intelligence Brief — May 12, 2026
+1. Daily Summary
+Prodigy NERF Soft Flight line PDGA-approved May 11 — Partnership with Hasbro yields foam discs (Ultimate, Driver, Putter + another model) that are legal for competitive play
+Paul Ulibarri (Discraft) wins 2026 Open at Austin — DGPT Co-Captain takes down the Barbasol Open at Austin; Holyn Handley wins FPO
+Innova FL announced as New Mold Monday (May 11) — Longer, straighter Firebird-type mold; first look video posted
+MVP/Axiom 2026 OTB Open Wave 2 drops — Proton Tesla, Axiom Soft Proton Proxy, and other team-series discs released
+Discmania DD4 Swirl S-Line Prototype — New Originals mold confirmed via EO2026 fundraiser
+Discraft Ledgestone Season 2 Wave 2 underway — Molds include Avenger SS, Archer, Drone, Zone, Undertaker, Force, Buzzz OS, Nuke SS, Crush, Machete, Challenger OS
+DGA TS Swirl Quake — Sullivan Tipton 2026 Tour Series — 5/3/0/3 overstable midrange released
+Prodigy NERF discs: ~100g foam, denser than Elevation/Blowfly/Woodchuck — Will still sting if hit, PDGA approved despite soft construction
+2. New Mold Releases / Approvals
+| Mold | Manufacturer | Category | Flight Numbers | Notes |
+|------|-------------|----------|---------------|-------|
+| NERF Ultimate | Prodigy | Distance Driver | — | Speed 11; approved May 11, 2026 |
+| NERF Driver | Prodigy | Driver | — | Approved May 11, 2026 |
+| NERF Putter | Prodigy | Putter | — | Approved May 11, 2026 |
+| FL | Innova | Fairway Driver | — | New Mold Monday (May 11); straighter Firebird |
+| DD4 | Discmania | Distance Driver | — | Swirl S-Line Prototype; EO2026 fundraiser |
+| Testi Lento Caliber | Discraft | Captain's Mold | — | Seppo Paju collaboration; commemorative release |
+| Tesla | MVP | Fairway Driver | — | Proton version (2026 OTB Open) |
+| Proxy (Soft) | Axiom | Fairway Driver | — | Proton Soft version (2026 OTB Open) |
+
+Source: PDGA NERF Approvals | Reddit r/discgolf
+
+3. New Plastics / Special Runs / Limited Drops
+Prodigy NERF Soft Flight — Foam construction with patented soft foam; partnership with Hasbro; 4-disc lineup
+Discraft Ledgestone Season 2 Wave 2 — Full foil Zone, CryZtal Confetti Undertaker, Ti Colorshift Stratus, Z Confetti Captain's Raptor
+MVP/Axiom Particle Glow Soft Proton — UV-glow particles in Rhythm ("Wings" stamp) and Hex ("Vibes" stamp)
+MVP Eclipse Electron Watt — Special Edition Prototype with glow capabilities; straight-flying putter
+Axiom Fission Delirium — 14.5/5/-0.5/3; OTB Open 2026; Green C Studios artwork
+DGA TS Swirl Quake — Sullivan Tipton 2026 Tour Series; limited run
+Discmania DD4 Swirl S-Line Prototype — EO2026 fundraiser exclusive; only 1 produced per run
+Source: Infinite Discs Blog | Powergrip 2026 OTB Open
+
+4. Pro Bag Changes & Sponsorship Notes
+Paul Ulibarri wins 2026 Open at Austin — Discraft team captain takes the W; Gannon Buhr used MVP Hex on lead card; Niklas Anttila wins MPO at -34 (not Ulibarri — different event)
+Holyn Handley wins FPO at Open at Austin with -1 total; ahead of Kristin Lätt and Ohn Scoggins
+Paul McBeth — Luna tour series active; no major bag changes reported
+James Conrad — MVP Fission Trail (Team Series) released; 10-speed driver with microbubble tech
+Jeremy Koling — Axiom Cosmic Neutron Tempo (Team Series); 4/4/0/2.5
+Source: DGPT 2026 Open at Austin | StatMando
+
+5. Retailer Drops / Restocks Worth Tracking
+Infinite Discs — Large shipment of 250+ MVP discs in stock; Bodanza Scepter restock notable
+Infinite Prototypes — 3 new prototype discs in testing; feedback being collected on which should go to production
+Marshall Street Disc Golf — TS Swirl Quake released; DGA midrange
+OTB Discs — Fission Delirium available; limited stock
+Dolfin Discs — MVP Drop April 2026; Axiom Prism Neutron Panic (5 per store, 1 per customer limit)
+Ledgestone Store — Full Foil Zone sold out; Season 2 ongoing
+Source: Infinite Prototype Article | Marshall Street
+
+6. Rumors, Leaks, or Prototype Sightings
+Discmania DD4 — Confirmed via EO2026 fundraiser; not yet in full production
+Innova FL — Leaked via New Mold Monday Instagram reel; likely releasing soon
+MVP Control Prototype — OTB East posted tease for tonight (May 11); Axiom Aspect prototype also teased
+Q-Line FD — Discmania re-engineered flight plate; more weight toward rim for enhanced glide
+7. Flight Number Corrections or Contradictions
+No major contradictions detected in last 24 hours. All new releases have consistent flight numbers per manufacturer specs.
+8. Content Ideas for DiscMill
+"NERF Soft Flight: The First Foam Discs PDGA-Approved" — Explain the NERF partnership, how these differ from traditional discs, and what they mean for entry-level/school programs. Include comparison to other "soft" discs (Elevation, Blowfly, Woodchuck).
+
+"What's New in MVP/Axiom 2026 OTB Open Lineup" — Highlight the Particle Glow Soft plastics, team series releases, and the new Fission Delirium. Could tie to DiscMill's MVP manufacturer page.
+
+"Innova FL vs. Firebird: A Comparison Guide" — With the FL just announced as a straighter Firebird, this would be timely for players looking to understand the differences. Good candidate for a comparison page.
+
+9. Recommended Updates to DiscMill Catalog
+New molds to add:
+- Prodigy NERF line (3-4 discs once full lineup confirmed)
+- Innova FL (pending official release)
+- Discmania DD4 (pending production confirmation)
+- MVP Proton Tesla
+- Axiom Soft Proton Proxy
+
+Flight number updates:
+- Axiom Particle Proton Soft Hex — 5/5/-1/1 (confirm when official)
+- Axiom Particle Proton Soft Rhythm — 7/5/-2/1 (confirm when official)
+- Axiom Fission Delirium — 14.5/5/-0.5/3 (confirmed)
+
+Manufacturer metadata updates:
+- Prodigy: Add Hasbro partnership note; NERF line tags
+- MVP/Axiom: Add 2026 OTB Open branding to affected products
+- Discmania: Add EO2026 fundraiser tag to DD4 prototype
+
+Intelligence sweep completed May 12, 2026 at 07:35 UTC. Sources: Reddit, PDGA, Instagram, Infinite Discs Blog, DGPT, manufacturer sites.

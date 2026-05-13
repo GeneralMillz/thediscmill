@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   Disc, Map as MapIcon, Users, Calendar, Activity,
   BookOpen, ShoppingBag, Home, Sun, Moon, Shield,
-  MoreHorizontal, X, ChevronRight
+  MoreHorizontal, X, ChevronRight, Newspaper
 } from 'lucide-react';
 import { cn } from '../utils';
 import { motion, AnimatePresence } from 'motion/react';
@@ -14,15 +14,15 @@ const PRIMARY_NAV = [
   { name: 'Home',    path: '/',            icon: Home,        desc: 'Start here' },
   { name: 'Discs',   path: '/discs',       icon: Disc,        desc: '10k+ PDGA discs' },
   { name: 'Courses', path: '/courses',     icon: MapIcon,     desc: 'National directory' },
-  { name: 'Return',  path: '/disc-return', icon: Shield,      desc: 'Lost disc network' },
+  { name: 'Blog',    path: '/blog',        icon: Newspaper,   desc: 'Daily Intel' },
 ];
 
 const MORE_NAV = [
+  { name: 'Return',       path: '/disc-return', icon: Shield,      desc: 'Lost disc network' },
   { name: 'Bag Builder',  path: '/bag-builder', icon: ShoppingBag, desc: 'Build your perfect bag' },
   { name: 'Players',      path: '/players',     icon: Users,       desc: 'PDGA player search' },
   { name: 'Events',       path: '/events',      icon: Calendar,    desc: 'Live tournaments' },
   { name: 'Guides',       path: '/guides',      icon: BookOpen,    desc: 'Gear reviews & tips' },
-  { name: 'Live Audit',   path: '/audit',       icon: Activity,    desc: 'Data health dashboard' },
 ];
 
 const ALL_NAV = [...PRIMARY_NAV, ...MORE_NAV];

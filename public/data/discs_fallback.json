@@ -9,7 +9,12 @@
     "fade": 0,
     "category": "Putter",
     "stability": "Stable",
-    "description": "The Acacia from Above Ground Level seems to be a new putter from Above Ground Level. They are making some unique discs, especially putters, with amazing plastic blends. Look forward to this one. It was approved on July 24th, 2023."
+    "description": "The Acacia from Above Ground Level seems to be a new putter from Above Ground Level. They are making some unique discs, especially putters, with amazing plastic blends. Look forward to this one. It was approved on July 24th, 2023.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Acacia disc golf"
   },
   {
     "id": "above-ground-level-baobab",
@@ -21,7 +26,12 @@
     "fade": 3,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The AGL Discs Baobab is an extremely overstable putt and approach disc golf disc. The Baobab sports a unique flight. This disc does not like to fly and when it does, it likes to fade hard. It has quickly become a favorite among those who have thrown it. The Boabab features a top bead and flat top making it comfortable to throw both backhand and forehand further increasing its versatility. This disc becomes a freight train of a forehand roller disc, hence earning the title the \"Bao-Bowler\"! Whether you need a long putt to fall quickly to avoid trouble, need a tight s-curve flight, or just need a disc to dump hard the Baobab will take your approach game Above Ground Level."
+    "description": "The AGL Discs Baobab is an extremely overstable putt and approach disc golf disc. The Baobab sports a unique flight. This disc does not like to fly and when it does, it likes to fade hard. It has quickly become a favorite among those who have thrown it. The Boabab features a top bead and flat top making it comfortable to throw both backhand and forehand further increasing its versatility. This disc becomes a freight train of a forehand roller disc, hence earning the title the \"Bao-Bowler\"! Whether you need a long putt to fall quickly to avoid trouble, need a tight s-curve flight, or just need a disc to dump hard the Baobab will take your approach game Above Ground Level.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Baobab disc golf"
   },
   {
     "id": "above-ground-level-beech",
@@ -33,7 +43,12 @@
     "fade": 3,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The AGL Discs Beech is an overstable midrange disc with a double bead on it. It's also got a very unique angle from the flight plate down to the edge of the disc, giving you amazing grip when throwing it both forehand and backhand. With the flight numbers of 5/2/0/3 the Beech can definitely handle the power on those flex forehand shots, while still being a reliable overstable backhand mid. Some have called the Beech \"the distance Bab\". Although it doesn't have as much glide as our other mid-range, it can if one is found with a little dome. Most of the Woodland models came out pretty flat, while the Alpine can have a little dome to them. We are very excited to bring to market a new mold that can be a great compliment to our current lineup. Enjoy that Beech life at AGL Discs!"
+    "description": "The AGL Discs Beech is an overstable midrange disc with a double bead on it. It's also got a very unique angle from the flight plate down to the edge of the disc, giving you amazing grip when throwing it both forehand and backhand. With the flight numbers of 5/2/0/3 the Beech can definitely handle the power on those flex forehand shots, while still being a reliable overstable backhand mid. Some have called the Beech \"the distance Bab\". Although it doesn't have as much glide as our other mid-range, it can if one is found with a little dome. Most of the Woodland models came out pretty flat, while the Alpine can have a little dome to them. We are very excited to bring to market a new mold that can be a great compliment to our current lineup. Enjoy that Beech life at AGL Discs!",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Beech disc golf"
   },
   {
     "id": "above-ground-level-cedar",
@@ -45,7 +60,12 @@
     "fade": 3,
     "category": "Distance Driver",
     "stability": "Overstable",
-    "description": "The AGL Discs Cedar is an overstable distance driver which came onto the scene in March of 2020. The Cedar was molded to replace our very first disc, the now out of production Cypress distance driver. The Cedar is perfect for forehands or for really cranking on your shot with a big anhyzer because it can handle big arm speed, or headwinds. With flight numbers which rate at 11/5/0/3 this disc is long, but predictable. The Cedar is the flagship driver in the AGL lineup, but it is one that can be relied upon. Those who remember the Cypress will find that the Cedar fits nicely into the hole left in the bag when the Cypress went out of production. Take your distance game Above Ground Level and bag your Cedar today."
+    "description": "The AGL Discs Cedar is an overstable distance driver which came onto the scene in March of 2020. The Cedar was molded to replace our very first disc, the now out of production Cypress distance driver. The Cedar is perfect for forehands or for really cranking on your shot with a big anhyzer because it can handle big arm speed, or headwinds. With flight numbers which rate at 11/5/0/3 this disc is long, but predictable. The Cedar is the flagship driver in the AGL lineup, but it is one that can be relied upon. Those who remember the Cypress will find that the Cedar fits nicely into the hole left in the bag when the Cypress went out of production. Take your distance game Above Ground Level and bag your Cedar today.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Cedar disc golf"
   },
   {
     "id": "above-ground-level-elm",
@@ -57,7 +77,12 @@
     "fade": 3,
     "category": "Distance Driver",
     "stability": "Overstable",
-    "description": "The AGL Elm is a reliable fairway driver with a strong, overstable finish. With flight numbers of 9/4/0/3, it offers a controlled flight that holds its line before finishing with a solid dump as it slows down. It's a dependable option for both backhand and forehand throws and handles wind with ease. The Elm gives players a fairway they can trust to push forward before finishing hard and on-target."
+    "description": "The AGL Elm is a reliable fairway driver with a strong, overstable finish. With flight numbers of 9/4/0/3, it offers a controlled flight that holds its line before finishing with a solid dump as it slows down. It's a dependable option for both backhand and forehand throws and handles wind with ease. The Elm gives players a fairway they can trust to push forward before finishing hard and on-target.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Elm disc golf"
   },
   {
     "id": "above-ground-level-juniper",
@@ -69,7 +94,12 @@
     "fade": 1,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "An understable midrange with exceptional glide and easy turn. Ideal for anhyzer lines, hyzer-flips, and players with moderate arm speed looking for distance."
+    "description": "An understable midrange with exceptional glide and easy turn. Ideal for anhyzer lines, hyzer-flips, and players with moderate arm speed looking for distance.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Juniper disc golf"
   },
   {
     "id": "above-ground-level-koa",
@@ -81,7 +111,12 @@
     "fade": 1,
     "category": "Putter",
     "stability": "Stable",
-    "description": "The AGL Koa is a dependable putter designed for both throwing and putting. It offers a clean, straight flight with just enough stability to handle power without drifting off line. The shape is comfortable in the hand with a feel that works well for both spin and push styles. It holds the line you put it on and finishes with control, making it a solid choice for putts, approaches, and short drives."
+    "description": "The AGL Koa is a dependable putter designed for both throwing and putting. It offers a clean, straight flight with just enough stability to handle power without drifting off line. The shape is comfortable in the hand with a feel that works well for both spin and push styles. It holds the line you put it on and finishes with control, making it a solid choice for putts, approaches, and short drives.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Koa disc golf"
   },
   {
     "id": "above-ground-level-locust",
@@ -93,7 +128,12 @@
     "fade": 3,
     "category": "Distance Driver",
     "stability": "Very Overstable",
-    "description": "The AGL Discs Locust, the newest fairway to our lineup, is a 9-Speed but is also an undercover distance driver. The Locust is quickly becoming one of AGL's best selling discs of all time. We are truly amazed at how FAR this disc flies, and it has been called the farthest flying disc in our lineup. This disc sports flight numbers of 9/4/-1/3 which makes this disc a very versatile fairway driver. The 4 Glide and -1 Turn mean this disc can stand up to some headwinds and still fly true. The Locust also provides that consistent and predictable left to right finish that can make all the difference when lining up a long drive. Whether you are looking for that perfectly placed drive, or just need more confidence in your throw; the Locust will be sure to take your distance game Above Ground Level."
+    "description": "The AGL Discs Locust, the newest fairway to our lineup, is a 9-Speed but is also an undercover distance driver. The Locust is quickly becoming one of AGL's best selling discs of all time. We are truly amazed at how FAR this disc flies, and it has been called the farthest flying disc in our lineup. This disc sports flight numbers of 9/4/-1/3 which makes this disc a very versatile fairway driver. The 4 Glide and -1 Turn mean this disc can stand up to some headwinds and still fly true. The Locust also provides that consistent and predictable left to right finish that can make all the difference when lining up a long drive. Whether you are looking for that perfectly placed drive, or just need more confidence in your throw; the Locust will be sure to take your distance game Above Ground Level.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Locust disc golf"
   },
   {
     "id": "above-ground-level-madrone",
@@ -105,7 +145,12 @@
     "fade": 1,
     "category": "Putter",
     "stability": "Stable",
-    "description": "The AGL Discs Madrone is a straight flying, neutral to slightly stable, putt and approach disc golf disc with a micro-bead and a shallow thumb track. These features make this disc comfortable in the hand and give it a smooth flight with a subtle right to left finish for right handed throwers. Sporting flight numbers of 3/3/0/1 this putter has become a staple in people's bags. This disc is torque resistant and can really handle full power off the tee for those shots where you NEED a putter, off the tee. Whether shooting approach shots or sinking those important putts the Madrone will give you the confidence you need to perform Above Ground Level."
+    "description": "The AGL Discs Madrone is a straight flying, neutral to slightly stable, putt and approach disc golf disc with a micro-bead and a shallow thumb track. These features make this disc comfortable in the hand and give it a smooth flight with a subtle right to left finish for right handed throwers. Sporting flight numbers of 3/3/0/1 this putter has become a staple in people's bags. This disc is torque resistant and can really handle full power off the tee for those shots where you NEED a putter, off the tee. Whether shooting approach shots or sinking those important putts the Madrone will give you the confidence you need to perform Above Ground Level.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Madrone disc golf"
   },
   {
     "id": "above-ground-level-magnolia",
@@ -117,7 +162,12 @@
     "fade": 2,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "A neutral-to-overstable midrange with consistent, reliable flight. Holds the line on straight shots and finishes with a predictable fade."
+    "description": "A neutral-to-overstable midrange with consistent, reliable flight. Holds the line on straight shots and finishes with a predictable fade.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Magnolia disc golf"
   },
   {
     "id": "above-ground-level-manzanita",
@@ -129,7 +179,12 @@
     "fade": 2,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "The AGL Discs Manzanita is a stable to slightly over-stable putt and approach disc with a beadless rim, featuring a shallow thumb track. The Manzanita is a go to disc for some headwind putts, for hitting those tight forehand approach shots, and for those backhand shots which require a predictable fade. Featuring flight numbers of 3/3/0/2 the Manzanita is very torque resistant, and we would say \"the most stable of the AGL putters\". Need a long C2 putt? Maybe a long hyzer shot into a protected pin? Do you have a tricky long headwind putt? Just reach for the Manzanita and take your game Above Ground Level."
+    "description": "The AGL Discs Manzanita is a stable to slightly over-stable putt and approach disc with a beadless rim, featuring a shallow thumb track. The Manzanita is a go to disc for some headwind putts, for hitting those tight forehand approach shots, and for those backhand shots which require a predictable fade. Featuring flight numbers of 3/3/0/2 the Manzanita is very torque resistant, and we would say \"the most stable of the AGL putters\". Need a long C2 putt? Maybe a long hyzer shot into a protected pin? Do you have a tricky long headwind putt? Just reach for the Manzanita and take your game Above Ground Level.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Manzanita disc golf"
   },
   {
     "id": "above-ground-level-maple",
@@ -141,7 +196,12 @@
     "fade": 2,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The AGL Discs Woodland Maple is an overstable approach disc built for control and consistency. With flight numbers of 4/2/0/2, it resists torque and maintains stability on both backhand and forehand throws. The Maple delivers a dependable fade and feels solid in the hand, making it a trusted option for upshots and short drives at any arm speed."
+    "description": "The AGL Discs Woodland Maple is an overstable approach disc built for control and consistency. With flight numbers of 4/2/0/2, it resists torque and maintains stability on both backhand and forehand throws. The Maple delivers a dependable fade and feels solid in the hand, making it a trusted option for upshots and short drives at any arm speed.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Maple disc golf"
   },
   {
     "id": "above-ground-level-ponderosa",
@@ -153,7 +213,12 @@
     "fade": 0,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "The AGL Discs Ponderosa is an understable, GLIDEY putter. The Ponderosa is perfect for beginners and veterans alike, as it really does take a lot of the work out of putting. The flight numbers which ring in at 3/4/-2/0 mean that this disc pops up and flies straight and long for slower arms, and it provides long arcing turn over shots for those with a bit more power. The glide on this disc is CRAZY and means that the ponderosa is also a great circle 2 putter. The Ponderosa is the least stable of the AGL putters with the others in the lineup each adding an additional level of fade. Whether you are new to the game or looking to add a new dimension to your short game, the Ponderosa will take your putts Above Ground Level."
+    "description": "The AGL Discs Ponderosa is an understable, GLIDEY putter. The Ponderosa is perfect for beginners and veterans alike, as it really does take a lot of the work out of putting. The flight numbers which ring in at 3/4/-2/0 mean that this disc pops up and flies straight and long for slower arms, and it provides long arcing turn over shots for those with a bit more power. The glide on this disc is CRAZY and means that the ponderosa is also a great circle 2 putter. The Ponderosa is the least stable of the AGL putters with the others in the lineup each adding an additional level of fade. Whether you are new to the game or looking to add a new dimension to your short game, the Ponderosa will take your putts Above Ground Level.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Ponderosa disc golf"
   },
   {
     "id": "above-ground-level-sequoia",
@@ -165,7 +230,12 @@
     "fade": 3,
     "category": "Distance Driver",
     "stability": "Very Overstable",
-    "description": "The AGL Sequoia is a long-distance driver built for controlled power and reliable fade. It holds up to strong throws without turning too much and finishes with a consistent, confident fade. The flight is steady and predictable, which makes it easy to reach for in a wide range of conditions."
+    "description": "The AGL Sequoia is a long-distance driver built for controlled power and reliable fade. It holds up to strong throws without turning too much and finishes with a consistent, confident fade. The flight is steady and predictable, which makes it easy to reach for in a wide range of conditions.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Sequoia disc golf"
   },
   {
     "id": "above-ground-level-spruce",
@@ -177,7 +247,12 @@
     "fade": 1.9,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "A slightly understable midrange that delivers glide and a gentle turn. Versatile enough for wooded fairways and touch shots requiring accuracy."
+    "description": "A slightly understable midrange that delivers glide and a gentle turn. Versatile enough for wooded fairways and touch shots requiring accuracy.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Spruce disc golf"
   },
   {
     "id": "above-ground-level-sycamore",
@@ -189,7 +264,12 @@
     "fade": 1,
     "category": "Fairway Driver",
     "stability": "Stable",
-    "description": "A stable fairway driver with a smooth, controlled flight. Reliable in wind and ideal for straight drives with a soft fade at the finish."
+    "description": "A stable fairway driver with a smooth, controlled flight. Reliable in wind and ideal for straight drives with a soft fade at the finish.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Above Ground Level Sycamore disc golf"
   },
   {
     "id": "axiom-crave",
@@ -200,7 +280,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Crave disc golf"
   },
   {
     "id": "axiom-envy",
@@ -211,7 +296,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Envy disc golf"
   },
   {
     "id": "axiom-hex",
@@ -222,7 +312,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Hex disc golf"
   },
   {
     "id": "axiom-insanity",
@@ -233,7 +328,12 @@
     "turn": -2,
     "fade": 1.5,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Insanity disc golf"
   },
   {
     "id": "axiom-mayhem",
@@ -244,7 +344,12 @@
     "turn": -1.5,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Mayhem disc golf"
   },
   {
     "id": "axiom-theorem",
@@ -255,7 +360,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Theorem disc golf"
   },
   {
     "id": "axiom-volt",
@@ -266,7 +376,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Axiom Discs Volt disc golf"
   },
   {
     "id": "clash-berry",
@@ -277,7 +392,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Clash Discs Berry disc golf"
   },
   {
     "id": "clash-popcorn",
@@ -288,7 +408,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Clash Discs Popcorn disc golf"
   },
   {
     "id": "clash-sunshine",
@@ -299,7 +424,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Clash Discs Sunshine disc golf"
   },
   {
     "id": "discmania-dd",
@@ -310,7 +440,12 @@
     "turn": -3,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania DD disc golf"
   },
   {
     "id": "discmania-dd3",
@@ -321,7 +456,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania DD3 disc golf"
   },
   {
     "id": "discmania-fd",
@@ -332,7 +472,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania FD disc golf"
   },
   {
     "id": "discmania-fd3",
@@ -343,7 +488,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania FD3 disc golf"
   },
   {
     "id": "discmania-link",
@@ -354,7 +504,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania Link disc golf"
   },
   {
     "id": "discmania-md3",
@@ -365,7 +520,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania MD3 disc golf"
   },
   {
     "id": "discmania-p1x",
@@ -376,7 +536,12 @@
     "turn": 0,
     "fade": 0,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania P1x disc golf"
   },
   {
     "id": "discmania-p2",
@@ -388,7 +553,12 @@
     "fade": 1,
     "category": "Putter",
     "stability": "Stable",
-    "description": "Discmania's iconic putter, trusted by players worldwide for its consistent, clean flight."
+    "description": "Discmania's iconic putter, trusted by players worldwide for its consistent, clean flight.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania P2 disc golf"
   },
   {
     "id": "discmania-pd",
@@ -399,7 +569,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania PD disc golf"
   },
   {
     "id": "discmania-pd2",
@@ -410,7 +585,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discmania PD2 disc golf"
   },
   {
     "id": "discraft-anax",
@@ -421,7 +601,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Anax disc golf"
   },
   {
     "id": "discraft-avenger-ss",
@@ -432,7 +617,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Avenger SS disc golf"
   },
   {
     "id": "discraft-banger-gt",
@@ -443,7 +633,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Banger GT disc golf"
   },
   {
     "id": "discraft-buzzz",
@@ -455,7 +650,12 @@
     "fade": 1,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The most popular midrange in disc golf. Perfect benchmark disc for all skill levels."
+    "description": "The most popular midrange in disc golf. Perfect benchmark disc for all skill levels.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Buzzz disc golf"
   },
   {
     "id": "discraft-buzzz-os",
@@ -466,7 +666,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Buzzz OS disc golf"
   },
   {
     "id": "discraft-buzzz-ss",
@@ -477,7 +682,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Buzzz SS disc golf"
   },
   {
     "id": "discraft-challenger",
@@ -488,7 +698,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Challenger disc golf"
   },
   {
     "id": "discraft-comet",
@@ -499,7 +714,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Comet disc golf"
   },
   {
     "id": "discraft-crank-ss",
@@ -510,7 +730,12 @@
     "turn": -3,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Crank SS disc golf"
   },
   {
     "id": "discraft-drone",
@@ -521,7 +746,12 @@
     "turn": 1,
     "fade": 4,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Drone disc golf"
   },
   {
     "id": "discraft-fierce",
@@ -533,7 +763,12 @@
     "fade": 0,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "Paige Pierce's signature putter. Great glide and comfortable grip."
+    "description": "Paige Pierce's signature putter. Great glide and comfortable grip.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Fierce disc golf"
   },
   {
     "id": "discraft-flash",
@@ -544,7 +779,12 @@
     "turn": -2,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Flash disc golf"
   },
   {
     "id": "discraft-flick",
@@ -555,7 +795,12 @@
     "turn": 1,
     "fade": 5,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Flick disc golf"
   },
   {
     "id": "discraft-force",
@@ -566,7 +811,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Force disc golf"
   },
   {
     "id": "discraft-heat",
@@ -577,19 +827,29 @@
     "turn": -3,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Heat disc golf"
   },
   {
     "id": "discraft-luna",
     "brand": "Discraft",
     "name": "Luna",
     "speed": 3,
-    "glide": 4,
+    "glide": 3,
     "turn": 0,
-    "fade": 2,
+    "fade": 3,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "Paul McBeth's signature putter. Extremely straight flight for confident putting."
+    "description": "Paul McBeth's signature putter. Extremely straight flight for confident putting.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Luna disc golf"
   },
   {
     "id": "discraft-machete",
@@ -600,7 +860,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Machete disc golf"
   },
   {
     "id": "discraft-magnet",
@@ -611,7 +876,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Magnet disc golf"
   },
   {
     "id": "discraft-malta",
@@ -622,7 +892,12 @@
     "turn": 1,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Malta disc golf"
   },
   {
     "id": "discraft-mantis",
@@ -633,7 +908,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Mantis disc golf"
   },
   {
     "id": "discraft-meteor",
@@ -644,7 +924,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Meteor disc golf"
   },
   {
     "id": "discraft-nuke",
@@ -655,7 +940,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Nuke disc golf"
   },
   {
     "id": "discraft-nuke-ss",
@@ -666,7 +956,12 @@
     "turn": -3,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Nuke SS disc golf"
   },
   {
     "id": "discraft-raptor",
@@ -677,7 +972,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Raptor disc golf"
   },
   {
     "id": "discraft-roach",
@@ -688,7 +988,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Roach disc golf"
   },
   {
     "id": "discraft-stalker",
@@ -699,7 +1004,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Stalker disc golf"
   },
   {
     "id": "discraft-surge-ss",
@@ -710,7 +1020,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Surge SS disc golf"
   },
   {
     "id": "discraft-undertaker",
@@ -722,7 +1037,12 @@
     "fade": 2,
     "category": "Distance Driver",
     "stability": "Overstable",
-    "description": "Paul McBeth's workhorse fairway driver. Reliable and versatile."
+    "description": "Paul McBeth's workhorse fairway driver. Reliable and versatile.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Undertaker disc golf"
   },
   {
     "id": "discraft-vulture",
@@ -733,7 +1053,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Vulture disc golf"
   },
   {
     "id": "discraft-wasp",
@@ -744,7 +1069,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Wasp disc golf"
   },
   {
     "id": "discraft-zeus",
@@ -755,7 +1085,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Zeus disc golf"
   },
   {
     "id": "discraft-zone",
@@ -767,7 +1102,12 @@
     "fade": 3,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The elite forehand and approach disc. Heavy fade, excellent skip control."
+    "description": "The elite forehand and approach disc. Heavy fade, excellent skip control.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Zone disc golf"
   },
   {
     "id": "discraft-zone-os",
@@ -778,7 +1118,12 @@
     "turn": 1,
     "fade": 5,
     "category": "Midrange",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Discraft Zone OS disc golf"
   },
   {
     "id": "dd-commander",
@@ -789,7 +1134,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Commander disc golf"
   },
   {
     "id": "dd-deputy",
@@ -800,7 +1150,12 @@
     "turn": -1.5,
     "fade": 0,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Deputy disc golf"
   },
   {
     "id": "dd-enforcer",
@@ -811,7 +1166,12 @@
     "turn": 0.5,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Enforcer disc golf"
   },
   {
     "id": "dd-escape",
@@ -822,7 +1182,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Escape disc golf"
   },
   {
     "id": "dd-felon",
@@ -833,7 +1198,12 @@
     "turn": 0.5,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Felon disc golf"
   },
   {
     "id": "dd-judge",
@@ -845,7 +1215,12 @@
     "fade": 1,
     "category": "Putter",
     "stability": "Stable",
-    "description": "One of the most popular putters in disc golf. Straight with a reliable fade."
+    "description": "One of the most popular putters in disc golf. Straight with a reliable fade.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Judge disc golf"
   },
   {
     "id": "dd-justice",
@@ -856,7 +1231,12 @@
     "turn": 0.5,
     "fade": 4,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Justice disc golf"
   },
   {
     "id": "dd-marshal",
@@ -867,7 +1247,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Marshal disc golf"
   },
   {
     "id": "dd-maverick",
@@ -878,7 +1263,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Maverick disc golf"
   },
   {
     "id": "dd-raider",
@@ -889,7 +1279,12 @@
     "turn": -0.5,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Raider disc golf"
   },
   {
     "id": "dd-sheriff",
@@ -900,7 +1295,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Sheriff disc golf"
   },
   {
     "id": "dd-suspect",
@@ -911,7 +1311,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Suspect disc golf"
   },
   {
     "id": "dd-trespass",
@@ -922,7 +1327,12 @@
     "turn": -0.5,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Trespass disc golf"
   },
   {
     "id": "dd-truth",
@@ -934,7 +1344,12 @@
     "fade": 1,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "Dynamic Discs' flagship midrange. Neutral flight with great accuracy."
+    "description": "Dynamic Discs' flagship midrange. Neutral flight with great accuracy.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Truth disc golf"
   },
   {
     "id": "dd-vandal",
@@ -945,7 +1360,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Vandal disc golf"
   },
   {
     "id": "dd-verdict",
@@ -956,7 +1376,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Verdict disc golf"
   },
   {
     "id": "dd-witness",
@@ -967,7 +1392,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Dynamic Discs Witness disc golf"
   },
   {
     "id": "ev7-og-base",
@@ -978,7 +1408,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "EV-7 OG Base disc golf"
   },
   {
     "id": "ev7-og-medium",
@@ -989,7 +1424,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "EV-7 OG Medium disc golf"
   },
   {
     "id": "ev7-phi",
@@ -1000,7 +1440,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "EV-7 Phi disc golf"
   },
   {
     "id": "gateway-avenger",
@@ -1011,7 +1456,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Gateway Disc Sports Avenger disc golf"
   },
   {
     "id": "gateway-ninja",
@@ -1022,7 +1472,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Gateway Disc Sports Ninja disc golf"
   },
   {
     "id": "gateway-sure-shot",
@@ -1033,7 +1488,12 @@
     "turn": -1,
     "fade": 0,
     "category": "Putter",
-    "stability": "Understable"
+    "stability": "Understable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Gateway Disc Sports Sure Shot disc golf"
   },
   {
     "id": "gateway-wizard",
@@ -1045,7 +1505,12 @@
     "fade": 2,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "Classic Gateway putter with a rubber feel. Used by disc golf legends worldwide."
+    "description": "Classic Gateway putter with a rubber feel. Used by disc golf legends worldwide.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Gateway Disc Sports Wizard disc golf"
   },
   {
     "id": "innova-ape",
@@ -1056,7 +1521,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Ape disc golf"
   },
   {
     "id": "innova-atlas",
@@ -1067,7 +1537,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Atlas disc golf"
   },
   {
     "id": "innova-aviar",
@@ -1079,7 +1554,12 @@
     "fade": 1,
     "category": "Putter",
     "stability": "Stable",
-    "description": "The most popular putter in disc golf. Straight and predictable for all skill levels."
+    "description": "The most popular putter in disc golf. Straight and predictable for all skill levels.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Aviar disc golf"
   },
   {
     "id": "innova-beast",
@@ -1090,7 +1570,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Beast disc golf"
   },
   {
     "id": "innova-birdie",
@@ -1101,7 +1586,12 @@
     "turn": 0,
     "fade": 0,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Birdie disc golf"
   },
   {
     "id": "innova-boss",
@@ -1112,7 +1602,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Boss disc golf"
   },
   {
     "id": "innova-caiman",
@@ -1123,7 +1618,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Fairway Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Caiman disc golf"
   },
   {
     "id": "innova-cobra",
@@ -1134,7 +1634,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Cobra disc golf"
   },
   {
     "id": "innova-colossus",
@@ -1142,10 +1647,15 @@
     "name": "Colossus",
     "speed": 14,
     "glide": 5,
-    "turn": -2,
+    "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Colossus disc golf"
   },
   {
     "id": "innova-colt",
@@ -1156,7 +1666,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Colt disc golf"
   },
   {
     "id": "innova-comet",
@@ -1168,7 +1683,12 @@
     "fade": 1,
     "category": "Midrange",
     "stability": "Understable",
-    "description": "Beloved understable midrange for turnover shots and roller lines."
+    "description": "Beloved understable midrange for turnover shots and roller lines.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Comet disc golf"
   },
   {
     "id": "innova-coyote",
@@ -1179,7 +1699,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Coyote disc golf"
   },
   {
     "id": "innova-dart",
@@ -1190,7 +1715,12 @@
     "turn": 0,
     "fade": 0,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Dart disc golf"
   },
   {
     "id": "innova-destroyer",
@@ -1202,7 +1732,12 @@
     "fade": 3,
     "category": "Distance Driver",
     "stability": "Very Overstable",
-    "description": "One of the best-selling distance drivers of all time. Power and reliability combined."
+    "description": "One of the best-selling distance drivers of all time. Power and reliability combined.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Destroyer disc golf"
   },
   {
     "id": "innova-eagle",
@@ -1213,7 +1748,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Fairway Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Eagle disc golf"
   },
   {
     "id": "innova-emperor",
@@ -1224,7 +1764,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Emperor disc golf"
   },
   {
     "id": "innova-firebird",
@@ -1236,7 +1781,12 @@
     "fade": 4,
     "category": "Distance Driver",
     "stability": "Very Overstable",
-    "description": "The gold standard for overstable fairway drives and forehand shots."
+    "description": "The gold standard for overstable fairway drives and forehand shots.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Firebird disc golf"
   },
   {
     "id": "innova-gator",
@@ -1247,7 +1797,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Gator disc golf"
   },
   {
     "id": "innova-gazelle",
@@ -1258,7 +1813,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Gazelle disc golf"
   },
   {
     "id": "innova-groove",
@@ -1269,7 +1829,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Groove disc golf"
   },
   {
     "id": "innova-invader",
@@ -1280,7 +1845,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Invader disc golf"
   },
   {
     "id": "innova-katana",
@@ -1291,7 +1861,12 @@
     "turn": -3,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Katana disc golf"
   },
   {
     "id": "innova-krait",
@@ -1302,7 +1877,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Krait disc golf"
   },
   {
     "id": "innova-leopard",
@@ -1314,7 +1894,12 @@
     "fade": 1,
     "category": "Fairway Driver",
     "stability": "Overstable",
-    "description": "The most popular beginner fairway driver. Straight with a gentle turn."
+    "description": "The most popular beginner fairway driver. Straight with a gentle turn.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Leopard disc golf"
   },
   {
     "id": "innova-leopard3",
@@ -1325,7 +1910,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Leopard3 disc golf"
   },
   {
     "id": "innova-liger",
@@ -1336,7 +1926,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Liger disc golf"
   },
   {
     "id": "innova-mako3",
@@ -1348,7 +1943,12 @@
     "fade": 0,
     "category": "Midrange",
     "stability": "Stable",
-    "description": "The most neutral midrange in disc golf. Goes exactly where you aim it."
+    "description": "The most neutral midrange in disc golf. Goes exactly where you aim it.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Mako3 disc golf"
   },
   {
     "id": "innova-monster",
@@ -1359,7 +1959,12 @@
     "turn": 0,
     "fade": 5,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Monster disc golf"
   },
   {
     "id": "innova-mystere",
@@ -1370,7 +1975,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Mystere disc golf"
   },
   {
     "id": "innova-nova",
@@ -1382,7 +1992,12 @@
     "fade": 0,
     "category": "Putter",
     "stability": "Stable",
-    "description": "Ultra-slow approach putter, excellent for beginners learning to putt."
+    "description": "Ultra-slow approach putter, excellent for beginners learning to putt.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Nova disc golf"
   },
   {
     "id": "innova-orc",
@@ -1393,7 +2008,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Orc disc golf"
   },
   {
     "id": "innova-polekat",
@@ -1404,7 +2024,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova PoleKat disc golf"
   },
   {
     "id": "innova-roadrunner",
@@ -1415,7 +2040,12 @@
     "turn": -4,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Roadrunner disc golf"
   },
   {
     "id": "innova-roc",
@@ -1427,7 +2057,12 @@
     "fade": 3,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "A classic midrange with consistent overstable flight. One of the most played midranges ever."
+    "description": "A classic midrange with consistent overstable flight. One of the most played midranges ever.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Roc disc golf"
   },
   {
     "id": "innova-roc3",
@@ -1439,7 +2074,12 @@
     "fade": 3,
     "category": "Midrange",
     "stability": "Overstable",
-    "description": "The premium Roc model with reliable overstable flight."
+    "description": "The premium Roc model with reliable overstable flight.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Roc3 disc golf"
   },
   {
     "id": "innova-shark",
@@ -1450,7 +2090,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Shark disc golf"
   },
   {
     "id": "innova-shryke",
@@ -1461,7 +2106,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Shryke disc golf"
   },
   {
     "id": "innova-sidewinder",
@@ -1472,7 +2122,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Sidewinder disc golf"
   },
   {
     "id": "innova-stingray",
@@ -1483,7 +2138,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Stingray disc golf"
   },
   {
     "id": "innova-teebird",
@@ -1495,7 +2155,12 @@
     "fade": 2,
     "category": "Fairway Driver",
     "stability": "Overstable",
-    "description": "One of the most popular fairway drivers of all time. Reliable and controllable."
+    "description": "One of the most popular fairway drivers of all time. Reliable and controllable.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Teebird disc golf"
   },
   {
     "id": "innova-teebird3",
@@ -1506,7 +2171,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Teebird3 disc golf"
   },
   {
     "id": "innova-tern",
@@ -1514,10 +2184,15 @@
     "name": "Tern",
     "speed": 12,
     "glide": 6,
-    "turn": -2,
+    "turn": -3,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Tern disc golf"
   },
   {
     "id": "innova-thunderbird",
@@ -1528,7 +2203,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Thunderbird disc golf"
   },
   {
     "id": "innova-toro",
@@ -1539,7 +2219,12 @@
     "turn": 1,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Toro disc golf"
   },
   {
     "id": "innova-valkyrie",
@@ -1550,7 +2235,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Valkyrie disc golf"
   },
   {
     "id": "innova-wolf",
@@ -1561,7 +2251,12 @@
     "turn": -4,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Wolf disc golf"
   },
   {
     "id": "innova-wraith",
@@ -1572,7 +2267,12 @@
     "turn": -1,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Wraith disc golf"
   },
   {
     "id": "innova-xcaliber",
@@ -1583,7 +2283,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Innova Xcaliber disc golf"
   },
   {
     "id": "kastaplast-berg",
@@ -1595,7 +2300,12 @@
     "fade": 2,
     "category": "Putter",
     "stability": "Overstable",
-    "description": "Ultra-slow putter with a very wide rim, designed for precision putting."
+    "description": "Ultra-slow putter with a very wide rim, designed for precision putting.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Berg disc golf"
   },
   {
     "id": "kastaplast-falk",
@@ -1606,7 +2316,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Falk disc golf"
   },
   {
     "id": "kastaplast-grym",
@@ -1617,7 +2332,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Grym disc golf"
   },
   {
     "id": "kastaplast-grym-x",
@@ -1628,7 +2348,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Grym X disc golf"
   },
   {
     "id": "kastaplast-lots",
@@ -1639,7 +2364,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Lots disc golf"
   },
   {
     "id": "kastaplast-rask",
@@ -1650,7 +2380,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Rask disc golf"
   },
   {
     "id": "kastaplast-reko",
@@ -1661,7 +2396,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Reko disc golf"
   },
   {
     "id": "kastaplast-reko-x",
@@ -1672,7 +2412,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Reko X disc golf"
   },
   {
     "id": "kastaplast-svea",
@@ -1683,7 +2428,12 @@
     "turn": -1,
     "fade": 0,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Kastaplast Svea disc golf"
   },
   {
     "id": "lat64-ballista-pro",
@@ -1694,7 +2444,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Ballista Pro disc golf"
   },
   {
     "id": "lat64-claymore",
@@ -1705,7 +2460,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Claymore disc golf"
   },
   {
     "id": "lat64-compass",
@@ -1716,7 +2476,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Compass disc golf"
   },
   {
     "id": "lat64-jade",
@@ -1727,7 +2492,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Jade disc golf"
   },
   {
     "id": "lat64-pure",
@@ -1738,7 +2508,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Pure disc golf"
   },
   {
     "id": "lat64-river",
@@ -1750,7 +2525,12 @@
     "fade": 1,
     "category": "Fairway Driver",
     "stability": "Overstable",
-    "description": "Maximum glide fairway driver, excellent for beginners and finesse shots."
+    "description": "Maximum glide fairway driver, excellent for beginners and finesse shots.",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 River disc golf"
   },
   {
     "id": "lat64-rookie",
@@ -1761,7 +2541,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Understable"
+    "stability": "Understable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Rookie disc golf"
   },
   {
     "id": "lat64-saint",
@@ -1772,7 +2557,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Latitude 64 Saint disc golf"
   },
   {
     "id": "millennium-aries",
@@ -1783,7 +2573,12 @@
     "turn": -4,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Millennium Golf Discs Aries disc golf"
   },
   {
     "id": "millennium-omega",
@@ -1794,7 +2589,12 @@
     "turn": 0,
     "fade": 0,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Millennium Golf Discs Omega disc golf"
   },
   {
     "id": "millennium-orion-lf",
@@ -1805,7 +2605,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Millennium Golf Discs Orion LF disc golf"
   },
   {
     "id": "millennium-polaris-ls",
@@ -1816,7 +2621,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Millennium Golf Discs Polaris LS disc golf"
   },
   {
     "id": "millennium-quasar",
@@ -1827,7 +2637,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Millennium Golf Discs Quasar disc golf"
   },
   {
     "id": "mint-armadillo",
@@ -1838,7 +2653,12 @@
     "turn": 0,
     "fade": 0,
     "category": "Putter",
-    "stability": "Neutral"
+    "stability": "Neutral",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Armadillo disc golf"
   },
   {
     "id": "mint-bobcat",
@@ -1849,7 +2669,12 @@
     "turn": 0,
     "fade": 2.5,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Bobcat disc golf"
   },
   {
     "id": "mint-freetail",
@@ -1860,7 +2685,12 @@
     "turn": -4,
     "fade": 1,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Freetail disc golf"
   },
   {
     "id": "mint-goat",
@@ -1871,7 +2701,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Goat disc golf"
   },
   {
     "id": "mint-jackalope",
@@ -1882,7 +2717,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Jackalope disc golf"
   },
   {
     "id": "mint-mustang",
@@ -1893,7 +2733,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Mint Discs Mustang disc golf"
   },
   {
     "id": "mvp-catalyst",
@@ -1904,7 +2749,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "MVP Disc Sports Catalyst disc golf"
   },
   {
     "id": "mvp-servo",
@@ -1915,7 +2765,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "MVP Disc Sports Servo disc golf"
   },
   {
     "id": "mvp-tesla",
@@ -1926,7 +2781,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "MVP Disc Sports Tesla disc golf"
   },
   {
     "id": "mvp-wave",
@@ -1937,7 +2797,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "MVP Disc Sports Wave disc golf"
   },
   {
     "id": "prodigy-d1",
@@ -1948,7 +2813,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc D1 disc golf"
   },
   {
     "id": "prodigy-d2",
@@ -1959,7 +2829,12 @@
     "turn": -0.5,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc D2 disc golf"
   },
   {
     "id": "prodigy-d3",
@@ -1970,7 +2845,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc D3 disc golf"
   },
   {
     "id": "prodigy-d4",
@@ -1981,7 +2861,12 @@
     "turn": -3,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc D4 disc golf"
   },
   {
     "id": "prodigy-h3",
@@ -1992,7 +2877,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc H3 disc golf"
   },
   {
     "id": "prodigy-m1",
@@ -2003,7 +2893,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc M1 disc golf"
   },
   {
     "id": "prodigy-m2",
@@ -2014,7 +2909,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc M2 disc golf"
   },
   {
     "id": "prodigy-m3",
@@ -2025,7 +2925,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc M3 disc golf"
   },
   {
     "id": "prodigy-m4",
@@ -2036,7 +2941,12 @@
     "turn": -1,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc M4 disc golf"
   },
   {
     "id": "prodigy-pa1",
@@ -2047,7 +2957,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc PA-1 disc golf"
   },
   {
     "id": "prodigy-pa2",
@@ -2058,7 +2973,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Putter",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc PA-2 disc golf"
   },
   {
     "id": "prodigy-pa3",
@@ -2069,7 +2989,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Prodigy Disc PA-3 disc golf"
   },
   {
     "id": "rpm-haast",
@@ -2080,7 +3005,12 @@
     "turn": -2,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "RPM Discs Haast disc golf"
   },
   {
     "id": "rpm-huia",
@@ -2091,7 +3021,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "RPM Discs Huia disc golf"
   },
   {
     "id": "rpm-kea",
@@ -2102,7 +3037,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "RPM Discs Kea disc golf"
   },
   {
     "id": "rpm-kotuku",
@@ -2113,7 +3053,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "RPM Discs Kotuku disc golf"
   },
   {
     "id": "rpm-tui",
@@ -2124,7 +3069,12 @@
     "turn": -1,
     "fade": 0.5,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "RPM Discs Tui disc golf"
   },
   {
     "id": "streamline-drift",
@@ -2135,7 +3085,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Streamline Discs Drift disc golf"
   },
   {
     "id": "streamline-trace",
@@ -2146,7 +3101,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Streamline Discs Trace disc golf"
   },
   {
     "id": "tsa-animus",
@@ -2157,7 +3117,12 @@
     "turn": 0,
     "fade": 2,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Animus disc golf"
   },
   {
     "id": "tsa-ethos",
@@ -2168,7 +3133,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Ethos disc golf"
   },
   {
     "id": "tsa-mana",
@@ -2179,7 +3149,12 @@
     "turn": -2,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Mana disc golf"
   },
   {
     "id": "tsa-omen",
@@ -2190,7 +3165,12 @@
     "turn": 0,
     "fade": 4,
     "category": "Distance Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Omen disc golf"
   },
   {
     "id": "tsa-pathfinder",
@@ -2201,7 +3181,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Midrange",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Pathfinder disc golf"
   },
   {
     "id": "tsa-synapse",
@@ -2212,7 +3197,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Synapse disc golf"
   },
   {
     "id": "tsa-votum",
@@ -2223,7 +3213,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Thought Space Athletics Votum disc golf"
   },
   {
     "id": "westside-harp",
@@ -2234,7 +3229,12 @@
     "turn": 0,
     "fade": 3,
     "category": "Midrange",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Westside Discs Harp disc golf"
   },
   {
     "id": "westside-stag",
@@ -2245,7 +3245,12 @@
     "turn": -1,
     "fade": 2,
     "category": "Fairway Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Westside Discs Stag disc golf"
   },
   {
     "id": "westside-swan1",
@@ -2256,7 +3261,12 @@
     "turn": 0,
     "fade": 1,
     "category": "Putter",
-    "stability": "Stable"
+    "stability": "Stable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Westside Discs Swan 1 disc golf"
   },
   {
     "id": "westside-underworld",
@@ -2267,7 +3277,12 @@
     "turn": -3,
     "fade": 1,
     "category": "Fairway Driver",
-    "stability": "Very Overstable"
+    "stability": "Very Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Westside Discs Underworld disc golf"
   },
   {
     "id": "westside-world",
@@ -2278,6 +3293,11 @@
     "turn": -0.5,
     "fade": 3,
     "category": "Distance Driver",
-    "stability": "Overstable"
+    "stability": "Overstable",
+    "plastics": [
+      "Stock"
+    ],
+    "image": "/placeholder-disc.png",
+    "amazonQuery": "Westside Discs World disc golf"
   }
 ]

@@ -10,28 +10,54 @@ import { fileURLToPath } from "url";
 // ── Config ────────────────────────────────────────────────────────────────────
 
 const __dir = dirname(fileURLToPath(import.meta.url));
-const DATA_FILE = resolve(__dir, "../data/discs.json");
+const DATA_FILE = resolve(__dir, "../public/data/discs_fallback.json");
 const API_BASE  = "https://discit-api.fly.dev/disc";
 
+// Full manufacturer coverage — no regressions, no renames, DiscIt‑compatible
 const BRANDS = [
   "Innova",
   "Discraft",
   "Dynamic Discs",
   "Latitude 64",
   "Westside Discs",
+
+  // MVP family
   "Axiom Discs",
   "MVP Disc Sports",
   "Streamline Discs",
+
+  // Prodigy family
   "Prodigy Disc",
+
+  // Euro + premium
   "Discmania",
-  "Gateway Disc Sports",
   "Kastaplast",
-  "Thought Space Athletics",
-  "Mint Discs",
-  "EV-7",
   "Clash Discs",
-  "Millennium Golf Discs",
+  "Prodiscus",
   "RPM Discs",
+
+  // US boutique + mid-size
+  "Gateway Disc Sports",
+  "Mint Discs",
+  "Thought Space Athletics",
+  "EV-7",
+  "Millennium Golf Discs",
+  "Hyzer Bomb",
+  "Above Ground Level",
+  "Elevation Disc Golf",
+
+  // Retailer brands
+  "Infinite Discs",
+
+  // Youth / lightweight
+  "Dino Discs",
+
+  // Asia-Pacific
+  "Yikun Discs",
+
+  // Legacy / classic
+  "Lightning Golf Discs",
+  "Ching Sports"
 ];
 
 // ── Pure helpers ──────────────────────────────────────────────────────────────
@@ -119,10 +145,8 @@ function normalizeApiDisc(apiDisc, brand) {
 // ── Merge logic ───────────────────────────────────────────────────────────────
 
 function merge(local, api) {
-  // Description: curated always wins
   const description = local.description ?? api.description ?? undefined;
 
-  // Flight numbers: API wins unless local already has non-zero values
   const useApiFlights = !hasFlightData(local);
   const speed = useApiFlights ? api.speed : local.speed;
   const glide = useApiFlights ? api.glide : local.glide;
@@ -130,7 +154,7 @@ function merge(local, api) {
   const fade  = useApiFlights ? api.fade  : local.fade;
 
   const result = {
-    id:        api.id,   // canonical id from API brand name
+    id:        api.id,
     brand:     api.brand,
     name:      api.name,
     speed,
@@ -148,17 +172,14 @@ function merge(local, api) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  // 1. Load local catalogue
   const localDiscs = JSON.parse(await readFile(DATA_FILE, "utf-8"));
   console.log(`Loaded ${localDiscs.length} local discs from ${DATA_FILE}`);
 
-  // Index local discs for O(1) lookup
   const byId   = new Map(localDiscs.map((d) => [d.id,            d]));
   const byName = new Map(localDiscs.map((d) => [slugify(d.name), d]));
 
-  // 2. Fetch and merge API data
-  const result  = new Map(); // id → final disc
-  const matched = new Set(); // local disc ids that were matched to an API disc
+  const result  = new Map();
+  const matched = new Set();
 
   for (const brand of BRANDS) {
     process.stdout.write(`Fetching ${brand.padEnd(26)} … `);
@@ -175,9 +196,8 @@ async function main() {
     for (const apiRaw of raw) {
       const api = normalizeApiDisc(apiRaw, brand);
       if (!api.name) continue;
-      if (result.has(api.id)) continue; // deduplicate within brand pass
+      if (result.has(api.id)) continue;
 
-      // Match strategy: id first, then name-only
       const localMatch = byId.get(api.id) ?? byName.get(slugify(api.name));
 
       if (localMatch) {
@@ -205,7 +225,6 @@ async function main() {
     console.log(`${raw.length} fetched — ${updated} merged, ${added} new`);
   }
 
-  // 3. Carry forward local-only discs (not matched to any API disc)
   let preserved = 0;
 
   for (const disc of localDiscs) {
@@ -225,8 +244,8 @@ async function main() {
       glide,
       turn,
       fade,
-      category:  flightKnown ? classifyCategory(speed)            : (disc.category  ?? "Unknown"),
-      stability: flightKnown ? classifyStability(turn, fade)      : (disc.stability ?? "Unknown"),
+      category:  flightKnown ? classifyCategory(speed)       : (disc.category  ?? "Unknown"),
+      stability: flightKnown ? classifyStability(turn, fade) : (disc.stability ?? "Unknown"),
     };
 
     if (disc.description) kept.description = disc.description;
@@ -234,14 +253,12 @@ async function main() {
     preserved++;
   }
 
-  // 4. Sort by brand → name and write
   const sorted = [...result.values()].sort(
     (a, b) => a.brand.localeCompare(b.brand) || a.name.localeCompare(b.name)
   );
 
   await writeFile(DATA_FILE, JSON.stringify(sorted, null, 2), "utf-8");
 
-  // 5. Summary
   const withFlight = sorted.filter(hasFlightData).length;
   const withDesc   = sorted.filter((d) => d.description).length;
 
@@ -249,9 +266,9 @@ async function main() {
 ─────────────────────────────────────────
   Output : ${DATA_FILE}
   Total  : ${sorted.length} discs
-  Merged : ${matched.size} (local + API)
-  New    : ${result.size - matched.size - preserved} (API-only)
-  Kept   : ${preserved} (local-only)
+  Merged : ${matched.size}
+  New    : ${result.size - matched.size - preserved}
+  Kept   : ${preserved}
 ─────────────────────────────────────────
   With flight data  : ${withFlight}
   With descriptions : ${withDesc}

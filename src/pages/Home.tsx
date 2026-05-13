@@ -209,7 +209,7 @@ export function Home() {
                 >
                   <Link
                     to={feature.link}
-                    className={`block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 ${feature.border} rounded-3xl p-6 h-full hover:shadow-lg transition-all group`}
+                    className={`block card-interactive rounded-3xl p-6 h-full group`}
                   >
                     <div className={`w-12 h-12 ${feature.bg} dark:bg-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <Icon className={`w-6 h-6 ${feature.color}`} />

@@ -1,0 +1,50 @@
+name: Ingest Daily Intelligence Brief
+
+on:
+  repository_dispatch:
+    types: [incoming_email]
+  workflow_dispatch:
+    inputs:
+      email_content:
+        description: 'The raw text content of the email to ingest'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create Temporary Email File
+        run: |
+          cat << 'EOF' > email_body.txt
+          ${{ github.event.client_payload.email_body || inputs.email_content }}
+          EOF
+
+      - name: Run Ingest Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/ingest-zo-email.js email_body.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/data/blog.json
+          git commit -m "Auto-published Daily Intelligence Brief" || echo "No changes to commit"
+          git push
