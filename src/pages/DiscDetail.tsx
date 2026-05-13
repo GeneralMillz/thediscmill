@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
-import { useDiscById } from '../hooks/useDiscById';
+import { useDiscById, useDiscBySlug } from '../hooks/useDiscById';
 import { useDiscs } from '../hooks/useDiscs';
 import { buildAmazonLink } from '../utils/amazon';
 import { deriveStability, STABILITY_CONFIG, CATEGORY_CONFIG } from '../components/DiscCard';
@@ -27,10 +27,11 @@ export function DiscDetail() {
   const { id, brandSlug: paramBrandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
   const { pathname } = useLocation();
   
-  // Calculate the id to look up if using the new route
-  const lookupId = id || (paramBrandSlug && discSlug ? `${paramBrandSlug}-${discSlug}` : undefined);
+  const { data: discById, loading: loadingById } = useDiscById(id);
+  const { data: discBySlug, loading: loadingBySlug } = useDiscBySlug(paramBrandSlug, discSlug);
   
-  const { data: disc, loading } = useDiscById(lookupId);
+  const disc = discById || discBySlug;
+  const loading = id ? loadingById : loadingBySlug;
 
   if (loading) {
     return (
