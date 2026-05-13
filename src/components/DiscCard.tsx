@@ -11,50 +11,79 @@ export function deriveStability(turn: number, fade: number, stability?: string):
   if (stability) return stability;
   if (turn <= -4) return 'Very Understable';
   if (turn <= -2) return 'Understable';
-  if (fade >= 4)  return 'Very Overstable';
+  if (fade >= 4) return 'Very Overstable';
   if (fade >= 3 && turn >= 0) return 'Overstable';
   if (fade >= 2 && turn >= 0) return 'Stable';
   if (turn <= -1) return 'Stable';
   return 'Neutral';
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+//  STABILITY CONFIG  — refined dark-mode-first tokens
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const STABILITY_CONFIG: Record<
   string,
-  { bg: string; text: string; dot: string; border: string }
+  { pill: string; glow: string; label: string }
 > = {
-  'Very Understable': { bg: 'bg-blue-50 dark:bg-blue-900/30',   text: 'text-blue-700 dark:text-blue-300',   dot: 'bg-blue-400',  border: 'border-blue-200 dark:border-blue-700' },
-  'Understable':      { bg: 'bg-sky-50 dark:bg-sky-900/30',     text: 'text-sky-700 dark:text-sky-300',     dot: 'bg-sky-400',   border: 'border-sky-200 dark:border-sky-700' },
-  'Neutral':          { bg: 'bg-gray-100 dark:bg-gray-700/50',  text: 'text-gray-600 dark:text-gray-300',   dot: 'bg-gray-400',  border: 'border-gray-200 dark:border-gray-600' },
-  'Stable':           { bg: 'bg-green-50 dark:bg-green-900/30', text: 'text-green-700 dark:text-green-300', dot: 'bg-green-500', border: 'border-green-200 dark:border-green-700' },
-  'Overstable':       { bg: 'bg-amber-50 dark:bg-amber-900/30', text: 'text-amber-700 dark:text-amber-300', dot: 'bg-amber-500', border: 'border-amber-200 dark:border-amber-700' },
-  'Very Overstable':  { bg: 'bg-red-50 dark:bg-red-900/30',     text: 'text-red-700 dark:text-red-300',     dot: 'bg-red-500',   border: 'border-red-200 dark:border-red-700' },
+  'Very Understable': {
+    pill: 'bg-blue-500/15 text-blue-300 border border-blue-500/30',
+    glow: 'shadow-[0_0_12px_rgba(59,130,246,0.25)]',
+    label: '← Very Understable',
+  },
+  'Understable': {
+    pill: 'bg-sky-500/15 text-sky-300 border border-sky-500/30',
+    glow: 'shadow-[0_0_12px_rgba(14,165,233,0.2)]',
+    label: '← Understable',
+  },
+  'Neutral': {
+    pill: 'bg-slate-500/20 text-slate-300 border border-slate-500/30',
+    glow: '',
+    label: '◆ Neutral',
+  },
+  'Stable': {
+    pill: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30',
+    glow: 'shadow-[0_0_12px_rgba(16,185,129,0.2)]',
+    label: '◆ Stable',
+  },
+  'Overstable': {
+    pill: 'bg-amber-500/15 text-amber-300 border border-amber-500/30',
+    glow: 'shadow-[0_0_12px_rgba(245,158,11,0.2)]',
+    label: '→ Overstable',
+  },
+  'Very Overstable': {
+    pill: 'bg-rose-500/15 text-rose-300 border border-rose-500/30',
+    glow: 'shadow-[0_0_12px_rgba(244,63,94,0.25)]',
+    label: '→ Very Overstable',
+  },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  CATEGORY BADGES
+//  CATEGORY CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const CATEGORY_CONFIG: Record<string, { color: string; bg: string }> = {
-  'Putter':          { color: 'text-purple-700 dark:text-purple-300', bg: 'bg-purple-50 dark:bg-purple-900/30' },
-  'Midrange':        { color: 'text-blue-700 dark:text-blue-300',     bg: 'bg-blue-50 dark:bg-blue-900/30' },
-  'Fairway Driver':  { color: 'text-teal-700 dark:text-teal-300',     bg: 'bg-teal-50 dark:bg-teal-900/30' },
-  'Distance Driver': { color: 'text-rose-700 dark:text-rose-300',     bg: 'bg-rose-50 dark:bg-rose-900/30' },
+export const CATEGORY_CONFIG: Record<string, { chip: string; abbr: string }> = {
+  'Putter': { chip: 'text-violet-300 bg-violet-500/10 border border-violet-500/25', abbr: 'PUT' },
+  'Midrange': { chip: 'text-blue-300   bg-blue-500/10   border border-blue-500/25', abbr: 'MID' },
+  'Fairway Driver': { chip: 'text-teal-300   bg-teal-500/10   border border-teal-500/25', abbr: 'FWY' },
+  'Distance Driver': { chip: 'text-rose-300   bg-rose-500/10   border border-rose-500/25', abbr: 'DST' },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  BRAND COLOR HASH
 // ─────────────────────────────────────────────────────────────────────────────
 
-const BRAND_PALETTES = [
-  'text-indigo-600', 'text-violet-600', 'text-blue-600',
-  'text-teal-600',   'text-emerald-600','text-amber-600',
-  'text-rose-600',   'text-pink-600',   'text-cyan-600', 'text-orange-600',
-];
-
-const BRAND_BG_PALETTES = [
-  'bg-indigo-500', 'bg-violet-500', 'bg-blue-500',
-  'bg-teal-500',   'bg-emerald-500','bg-amber-500',
-  'bg-rose-500',   'bg-pink-500',   'bg-cyan-500', 'bg-orange-500',
+const ACCENT_COLORS = [
+  { text: 'text-indigo-400', line: 'from-indigo-500', hex: '#6366f1' },
+  { text: 'text-violet-400', line: 'from-violet-500', hex: '#8b5cf6' },
+  { text: 'text-blue-400', line: 'from-blue-500', hex: '#3b82f6' },
+  { text: 'text-teal-400', line: 'from-teal-500', hex: '#14b8a6' },
+  { text: 'text-emerald-400', line: 'from-emerald-500', hex: '#10b981' },
+  { text: 'text-amber-400', line: 'from-amber-500', hex: '#f59e0b' },
+  { text: 'text-rose-400', line: 'from-rose-500', hex: '#f43f5e' },
+  { text: 'text-pink-400', line: 'from-pink-500', hex: '#ec4899' },
+  { text: 'text-cyan-400', line: 'from-cyan-500', hex: '#06b6d4' },
+  { text: 'text-orange-400', line: 'from-orange-500', hex: '#f97316' },
 ];
 
 function brandHash(brand: string): number {
@@ -63,59 +92,93 @@ function brandHash(brand: string): number {
   return h;
 }
 
-export function brandColor(brand: string): string {
-  return BRAND_PALETTES[brandHash(brand) % BRAND_PALETTES.length];
-}
-
-export function brandBgColor(brand: string): string {
-  return BRAND_BG_PALETTES[brandHash(brand) % BRAND_BG_PALETTES.length];
+export function brandAccent(brand: string) {
+  return ACCENT_COLORS[brandHash(brand) % ACCENT_COLORS.length];
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  FLIGHT BAR HELPERS
+//  FLIGHT NUMBER RING — single stat with arc progress
 // ─────────────────────────────────────────────────────────────────────────────
 
-function speedPct(v: number) { return Math.min(100, (v / 14) * 100); }
-function glidePct(v: number) { return Math.min(100, (v / 7)  * 100); }
-function turnPct(v: number)  { return Math.min(100, (Math.abs(v) / 5) * 100); }
-function fadePct(v: number)  { return Math.min(100, (v / 5)  * 100); }
+interface StatRingProps {
+  label: string;
+  value: number;
+  max: number;
+  color: string;   // tailwind text color
+  trackColor: string;
+}
+
+function StatRing({ label, value, max, color, trackColor }: StatRingProps) {
+  const r = 18;
+  const circ = 2 * Math.PI * r;
+  const pct = Math.min(1, Math.max(0, value < 0 ? Math.abs(value) / max : value / max));
+  const dash = pct * circ;
+
+  return (
+    <div className="flex flex-col items-center gap-1.5">
+      <div className="relative w-12 h-12">
+        <svg viewBox="0 0 44 44" className="w-full h-full -rotate-90">
+          {/* Track */}
+          <circle cx="22" cy="22" r={r} fill="none" stroke="currentColor" strokeWidth="3.5" className={trackColor} strokeOpacity="0.15" />
+          {/* Progress */}
+          <circle
+            cx="22" cy="22" r={r}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3.5"
+            className={color}
+            strokeDasharray={`${dash} ${circ}`}
+            strokeLinecap="round"
+            style={{ transition: 'stroke-dasharray 0.6s cubic-bezier(0.34,1.56,0.64,1)' }}
+          />
+        </svg>
+        <span className={`absolute inset-0 flex items-center justify-center text-xs font-black tabular-nums ${color}`}>
+          {value}
+        </span>
+      </div>
+      <span className="text-[9px] font-bold uppercase tracking-widest text-slate-500">{label}</span>
+    </div>
+  );
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  FLIGHT BARS COMPONENT
+//  FLIGHT STATS GRID
 // ─────────────────────────────────────────────────────────────────────────────
 
-interface FlightBarsProps {
+interface FlightStatsProps {
   speed: number;
   glide: number;
   turn: number;
   fade: number;
 }
 
-export function FlightBars({ speed, glide, turn, fade }: FlightBarsProps) {
-  const bars = [
-    { label: 'Spd', value: speed, pct: speedPct(speed), color: 'bg-indigo-500' },
-    { label: 'Gld', value: glide, pct: glidePct(glide), color: 'bg-teal-500' },
-    { label: 'Trn', value: turn,  pct: turnPct(turn),   color: turn < 0 ? 'bg-amber-400' : 'bg-gray-300 dark:bg-gray-500' },
-    { label: 'Fde', value: fade,  pct: fadePct(fade),   color: 'bg-rose-500' },
-  ];
-
+export function FlightStats({ speed, glide, turn, fade }: FlightStatsProps) {
   return (
-    <div className="bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-700 rounded-2xl p-3 grid grid-cols-4 gap-3">
-      {bars.map(({ label, value, pct, color }) => (
-        <div key={label} className="flex flex-col items-center gap-1">
-          <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">{label}</span>
-          <span className="text-sm font-black text-gray-900 dark:text-white tabular-nums">{value}</span>
-          <div className="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-            <div className={`h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />
-          </div>
-        </div>
-      ))}
+    <div className="rounded-2xl bg-slate-900/60 border border-slate-700/50 p-4">
+      {/* Ring row */}
+      <div className="flex justify-around items-end mb-4">
+        <StatRing label="Speed" value={speed} max={14} color="text-indigo-400" trackColor="text-indigo-400" />
+        <StatRing label="Glide" value={glide} max={7} color="text-teal-400" trackColor="text-teal-400" />
+        <StatRing label="Turn" value={Math.abs(turn)} max={5} color={turn < 0 ? 'text-amber-400' : 'text-slate-500'} trackColor={turn < 0 ? 'text-amber-400' : 'text-slate-500'} />
+        <StatRing label="Fade" value={fade} max={5} color="text-rose-400" trackColor="text-rose-400" />
+      </div>
+
+      {/* Raw number strip */}
+      <div className="flex items-center justify-center gap-1 text-[11px] font-black tabular-nums tracking-tight">
+        <span className="text-indigo-400">{speed}</span>
+        <span className="text-slate-600 font-normal px-0.5">│</span>
+        <span className="text-teal-400">{glide}</span>
+        <span className="text-slate-600 font-normal px-0.5">│</span>
+        <span className={turn < 0 ? 'text-amber-400' : 'text-slate-500'}>{turn}</span>
+        <span className="text-slate-600 font-normal px-0.5">│</span>
+        <span className="text-rose-400">{fade}</span>
+      </div>
     </div>
   );
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  DISC CARD (THE MAIN COMPONENT)
+//  DISC CARD
 // ─────────────────────────────────────────────────────────────────────────────
 
 interface DiscCardProps {
@@ -125,81 +188,107 @@ interface DiscCardProps {
 
 export function DiscCard({ disc, className = '' }: DiscCardProps) {
   const stability = deriveStability(disc.turn, disc.fade, disc.stability);
-  const stabCfg   = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
-  const catCfg    = CATEGORY_CONFIG[disc.category] ?? { color: 'text-gray-600 dark:text-gray-300', bg: 'bg-gray-100 dark:bg-gray-700/50' };
-  const bColor    = brandColor(disc.brand);
-  const bBgColor  = brandBgColor(disc.brand);
+  const stabCfg = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
+  const catCfg = CATEGORY_CONFIG[disc.category] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
+  const accent = brandAccent(disc.brand);
 
   const brandSlug = disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
   const discSlug = disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+
+  const hasFlightData = disc.speed || disc.glide || disc.turn || disc.fade;
 
   return (
     <Link
       to={`/disc/${brandSlug}/${discSlug}`}
       className={`
-        group relative bg-white dark:bg-gray-800
-        rounded-3xl p-6 overflow-hidden
-        border border-gray-300 dark:border-gray-700
-        shadow-sm hover:shadow-xl
-        hover:-translate-y-[2px]
-        transition-all duration-300 flex flex-col gap-5
+        group relative flex flex-col gap-0 overflow-hidden
+        rounded-2xl
+        bg-slate-900
+        border border-slate-700/60
+        shadow-lg
+        hover:shadow-2xl hover:border-slate-600/80
+        hover:-translate-y-1
+        transition-all duration-300
         ${className}
       `}
+      style={{
+        background: 'linear-gradient(160deg, rgb(15,23,42) 0%, rgb(17,24,39) 60%, rgb(15,23,42) 100%)',
+      }}
     >
-      {/* Brand accent line */}
-      <div className={`absolute top-0 left-0 w-full h-[3px] ${bBgColor}`} />
+      {/* ── Accent top bar ── */}
+      <div className={`h-[2px] w-full bg-gradient-to-r ${accent.line} via-transparent to-transparent opacity-80`} />
 
-      {/* Header layout */}
-      <div className="flex items-start justify-between gap-4 mt-1">
-        {/* Text Side */}
-        <div className="min-w-0 flex-1">
-          <p className={`text-[11px] font-black uppercase tracking-widest truncate ${bColor}`}>
-            {disc.brand}
-          </p>
-          <h3 className="text-xl font-black text-gray-900 dark:text-white leading-tight mt-1 truncate">{disc.name}</h3>
-          
-          <div className="flex items-center gap-2 mt-2">
-            <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-md ${catCfg.bg} ${catCfg.color}`}>
-              {disc.category || '—'}
-            </span>
+      {/* ── Card body ── */}
+      <div className="flex flex-col gap-4 p-5">
+
+        {/* ── Header: text + disc ── */}
+        <div className="flex items-start justify-between gap-3">
+
+          {/* Left: brand / name / badges */}
+          <div className="min-w-0 flex-1 flex flex-col gap-2">
+            <div>
+              <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${accent.text} truncate`}>
+                {disc.brand}
+              </p>
+              <h3 className="text-[1.35rem] font-black leading-none text-white truncate mt-1"
+                style={{ fontFamily: "'Outfit', ui-sans-serif, system-ui" }}>
+                {disc.name}
+              </h3>
+            </div>
+
+            {/* Badge row */}
+            <div className="flex items-center gap-2 flex-wrap">
+              {disc.category && (
+                <span className={`text-[9px] font-black uppercase tracking-[0.15em] px-2 py-0.5 rounded-md ${catCfg.chip}`}>
+                  {disc.category}
+                </span>
+              )}
+              <span className={`text-[9px] font-semibold px-2.5 py-0.5 rounded-full ${stabCfg.pill} ${stabCfg.glow}`}>
+                {stabCfg.label}
+              </span>
+            </div>
+          </div>
+
+          {/* Right: spinning disc */}
+          <div className="relative w-[72px] h-[72px] shrink-0 flex items-center justify-center group-hover:scale-110 group-hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out">
+            <DiscImage
+              src={disc.image}
+              name={disc.name}
+              brand={disc.brand}
+              className="w-full h-full"
+            />
           </div>
         </div>
 
-        {/* Image Side - Placed beautifully on the right */}
-        <div className="relative w-16 h-16 shrink-0 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500 ease-out z-10">
-          <DiscImage 
-            src={disc.image} 
-            name={disc.name} 
-            brand={disc.brand} 
-            className="w-full h-full" 
-          />
-        </div>
+        {/* ── Divider ── */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+
+        {/* ── Flight stats ── */}
+        {hasFlightData ? (
+          <FlightStats speed={disc.speed} glide={disc.glide} turn={disc.turn} fade={disc.fade} />
+        ) : (
+          <div className="flex items-center gap-2 py-3 px-4 rounded-xl bg-slate-800/50 border border-slate-700/40">
+            <span className="text-slate-600 text-xs">●</span>
+            <p className="text-xs text-slate-500 italic">Flight data pending</p>
+          </div>
+        )}
+
+        {/* ── Description ── */}
+        {disc.description && (
+          <p className="text-[11px] leading-relaxed text-slate-400 line-clamp-2">
+            {disc.description}
+          </p>
+        )}
+
       </div>
 
-      {/* Stability badge */}
-      <div className="flex items-center gap-2">
-        <span className={`
-          inline-flex items-center gap-1 text-[11px] font-semibold px-3 py-1 rounded-full
-          ${stabCfg.bg} ${stabCfg.text} border ${stabCfg.border}
-        `}>
-          <span className={`w-1.5 h-1.5 rounded-full ${stabCfg.dot}`} />
-          {stability}
-        </span>
-      </div>
-
-      {/* Flight bars */}
-      {(disc.speed || disc.glide || disc.turn || disc.fade) ? (
-        <FlightBars speed={disc.speed} glide={disc.glide} turn={disc.turn} fade={disc.fade} />
-      ) : (
-        <p className="text-xs text-gray-400 dark:text-gray-500 italic">Flight data pending</p>
-      )}
-
-      {/* Description */}
-      {disc.description && (
-        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-2">
-          {disc.description}
-        </p>
-      )}
+      {/* ── Hover glow overlay ── */}
+      <div
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background: `radial-gradient(ellipse at 70% 10%, ${accent.hex}0d 0%, transparent 60%)`,
+        }}
+      />
     </Link>
   );
 }

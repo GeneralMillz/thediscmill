@@ -213,10 +213,8 @@ export function Discs() {
                     onClick={() => setStability(s)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       stability === s
-                        ? 'bg-indigo-600 text-white'
-                        : cfg
-                          ? `${cfg.bg} ${cfg.text} border border-transparent hover:border-current`
-                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-indigo-300 dark:hover:border-indigo-600'
+                        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30'
+                        : 'bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-slate-200 border border-slate-700/50'
                     }`}
                   >
                     {s}

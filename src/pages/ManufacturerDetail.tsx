@@ -153,11 +153,11 @@ export function ManufacturerDetail() {
           categoryOrder
             .filter(cat => byCategory[cat]?.length > 0)
             .map(cat => {
-              const catCfg = CATEGORY_CONFIG[cat] ?? { color: 'text-gray-600', bg: 'bg-gray-100' };
+              const catCfg = CATEGORY_CONFIG[cat] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
               return (
                 <div key={cat} className="mb-10">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className={`text-xs font-bold px-3 py-1 rounded-lg ${catCfg.bg} ${catCfg.color}`}>{cat}</span>
+                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-[0.1em] ${catCfg.chip}`}>{cat}</span>
                     <span className="text-xs text-gray-400 dark:text-gray-500">{byCategory[cat].length} discs</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

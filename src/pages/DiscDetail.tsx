@@ -53,7 +53,7 @@ export function DiscDetail() {
 
   const stability  = deriveStability(disc.turn, disc.fade, disc.stability);
   const stabCfg    = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
-  const catCfg     = CATEGORY_CONFIG[disc.category] ?? { color: 'text-gray-600', bg: 'bg-gray-100' };
+  const catCfg     = CATEGORY_CONFIG[disc.category] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
   const mfgSlug    = brandSlug(disc.brand);
   const canonicalUrl = buildCanonical(pathname);
   const amazonHref = buildAmazonLink({
@@ -118,14 +118,17 @@ export function DiscDetail() {
               {disc.brand}
             </Link>
             <h1 className="text-4xl font-black text-gray-900 dark:text-white mt-0.5">{disc.name}</h1>
-            <div className="flex items-center gap-2 mt-3 flex-wrap">
-              <span className={`text-xs font-bold px-3 py-1 rounded-lg ${catCfg.bg} ${catCfg.color}`}>
-                {disc.category || 'Disc'}
+            {disc.category && (
+              <span className={`inline-block text-[10px] font-bold px-2.5 py-1 rounded-lg ${catCfg.chip} mt-1 sm:mt-0`}>
+                {disc.category}
               </span>
-              <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${stabCfg.bg} ${stabCfg.text} ${stabCfg.border}`}>
-                {stability}
-              </span>
-            </div>
+            )}
+          </div>
+          
+          <div className="flex items-center gap-2 mt-4 sm:mt-0">
+            <span className={`text-[11px] font-semibold px-3 py-1.5 rounded-full ${stabCfg.pill} ${stabCfg.glow}`}>
+              {stabCfg.label}
+            </span>
           </div>
           {disc.image && (
             <DiscImage
