@@ -285,7 +285,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Crave disc golf"
+    "amazonQuery": "Axiom Discs Crave disc golf",
+    "description": "The Axiom Crave is an understated fairway driver that produces eerily consistent lines with minimal fade, requiring precise power to maximize its surprisingly long range potential. Its flat finish and subtle turn make it extremely reliable off the tee, but also somewhat unforgiving if thrown too hard or off-center. When released slowly within its tight window, this 6.5/5/-1/1 profile truly lives up to its \"crave\" for precise placement."
   },
   {
     "id": "axiom-envy",
@@ -301,7 +302,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Envy disc golf"
+    "amazonQuery": "Axiom Discs Envy disc golf",
+    "description": "The Envy from Axiom Discs excels as a precision putter with unparalleled stability, tracking a perfectly flat flight path before slamming into the basket with intense fade. Its 0 turn rating makes it nearly immune to wind and external influences, consistently delivering predictable, pinpoint throws. When released correctly, this disc drops like a rock, earning its reputation as one of the most trusted finishing discs in professional play."
   },
   {
     "id": "axiom-hex",
@@ -317,7 +319,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Hex disc golf"
+    "amazonQuery": "Axiom Discs Hex disc golf",
+    "description": "The Axiom Hex is an exceptionally consistent midrange driver with flat, predictable lines that reward precise throws – its -1 turn and 1 fade make it particularly finicky about release angle. When released correctly, this disc exhibits a remarkably straight flight pattern, often cited as one of the most understable discs in professional play despite its relatively stable numbers. Players have come to rely on the Hex's unique \"push-pull\" characteristics that demand precision but reward incredible distance and control from 200-350 feet out."
   },
   {
     "id": "axiom-insanity",
@@ -333,7 +336,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Insanity disc golf"
+    "amazonQuery": "Axiom Discs Insanity disc golf",
+    "description": "Axiom Insanity is a precision distance driver that excels at controlled power with exceptional glide-to-speed ratios, making tight windows accessible from unexpected ranges. Its -2 turn allows for subtle shaping potential while maintaining aggressive trajectory, and 1.5 fade ensures gentle finish for pinpoint placement opportunities."
   },
   {
     "id": "axiom-mayhem",
@@ -349,7 +353,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Mayhem disc golf"
+    "amazonQuery": "Axiom Discs Mayhem disc golf",
+    "description": "The Mayhem from Axiom Discs carves out a unique niche as an exceptionally stable distance driver that resists over-rotation while delivering surprising glide potential from its moderate speed, making it a compelling alternative for players seeking predictability without sacrificing range. Its subtle turn and gentle fade make it surprisingly accessible to a wide range of arm speeds, though its overall flight remains firmly in the \"distance\" category. The Mayhem excels when paired with smooth, controlled throws that allow its nuanced characteristics to shine."
   },
   {
     "id": "axiom-theorem",
@@ -365,7 +370,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Theorem disc golf"
+    "amazonQuery": "Axiom Discs Theorem disc golf",
+    "description": "The Axiom Discs Theorem is a precision-crafted midrange driver with a subtle fade that rewards patient throws, gliding predictably through tight spaces while maintaining distance potential. Its moderate turn and gentle fade make it exceptionally reliable in windy conditions, making it a favorite among strategic players. Notably, the Theorem's understability allows for controlled approaches to basket despite its 4-speed rating, earning it a reputation as one of the most honest midranges in modern disc golf."
   },
   {
     "id": "axiom-volt",
@@ -381,7 +387,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Axiom Discs Volt disc golf"
+    "amazonQuery": "Axiom Discs Volt disc golf",
+    "description": "The Axiom Discs Volt is a precise fairway driver with an understated fade pattern, earning its reputation as one of the most consistent and predictable drivers in modern disc golf. With a subtle -1 turn and moderate 2-degree fade, this 9/5 speed profile excels at cutting through dense foliage while maintaining surprisingly long range. Its unique flight characteristics make it particularly adept at navigating tight windows between obstacles with incredible reliability."
   },
   {
     "id": "clash-berry",
@@ -397,7 +404,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Clash Discs Berry disc golf"
+    "amazonQuery": "Clash Discs Berry disc golf",
+    "description": "The Berry from Clash Discs delivers consistent midrange performance with gentle turn and subtle fade, making it perfect for players seeking predictable shot shaping in tight windows. Its balanced flight profile creates a reliable workhorse that excels at navigating fairway obstacles and landing delicate approaches on shorter holes. With a speed rating of 5 and minimal over/under stability, the Berry requires smooth control to unlock its full potential as a precision midrange driver."
   },
   {
     "id": "clash-popcorn",
@@ -413,7 +421,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Clash Discs Popcorn disc golf"
+    "amazonQuery": "Clash Discs Popcorn disc golf",
+    "description": "The Clash Discs Popcorn offers pinpoint accuracy and remarkably consistent flight paths, delivering a precision putter experience with predictable 10-15 foot turnover and gentle fade. Its extremely stable flight characteristics make it perfect for tight windows in heavy winds or precise shots off tee lines. The Popcorn's exceptional control and minimal variability earn it a reputation as one of the most reliable putters on the market."
   },
   {
     "id": "clash-sunshine",
@@ -429,7 +438,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Clash Discs Sunshine disc golf"
+    "amazonQuery": "Clash Discs Sunshine disc golf",
+    "description": "The Clash Discs Sunshine delivers pinpoint accuracy with its razor-sharp turn and minimal fade, making it perfect for navigating tight fairways and precise approach shots where control is paramount. Despite its relatively high glide potential, this 5/4/0/1 midrange consistently tracks straighter than expected, earning a reputation as one of the most predictable discs in the Clash lineup. Its understated nature belies exceptional versatility in situations requiring both precision placement and moderate distance."
   },
   {
     "id": "discmania-dd",
@@ -445,7 +455,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania DD disc golf"
+    "amazonQuery": "Discmania DD disc golf",
+    "description": "The Discmania DD is a precision-crafted distance driver with a unique blend of understability and exceptional speed, allowing players to control deep shots into headwinds while maintaining remarkable range. Its -3 turn rating creates an unpredictable flight path that demands finesse from even seasoned pros, as the disc will consistently start shallow then fade surprisingly hard for its weight class. Players targeting longer drives with some manageable unpredictability find this disc perfectly suited for navigating tight fairway windows and holding line through challenging wind conditions."
   },
   {
     "id": "discmania-dd3",
@@ -461,7 +472,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania DD3 disc golf"
+    "amazonQuery": "Discmania DD3 disc golf",
+    "description": "The DD3 from Discmania embodies precision distance control, renowned for its ability to hold tight lines and maintain a consistent fade even when thrown with moderate power – making it accessible to a wide range of throwing styles while still offering respectable downfield potential. Its understable flight profile allows experienced players to shape throws around obstacles and into tight windows, while newer throwers can trust the predictable fade without excessive horsepower. A true \"driver for all\" that demands respect from fairway to tee, but rewards thoughtful execution with remarkably accurate results."
   },
   {
     "id": "discmania-fd",
@@ -477,7 +489,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania FD disc golf"
+    "amazonQuery": "Discmania FD disc golf",
+    "description": "The Discmania FD is notoriously finicky, requiring perfect release angles to unlock its 400-foot potential while punishing even slight deviations with unrelenting fade. Its pinpoint turn and minuscule fade make it wildly unpredictable, earning a reputation as one of the most challenging fairway drivers in the game. For skilled players, however, it rewards precision with devastating accuracy that few other discs can match."
   },
   {
     "id": "discmania-fd3",
@@ -493,7 +506,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania FD3 disc golf"
+    "amazonQuery": "Discmania FD3 disc golf",
+    "description": "The Discmania FD3 operates with precision, offering a controlled distance driver experience characterized by a tight turning path that quickly stabilizes into deep fade, making it particularly effective in headwinds and on shorter holes where power needs to be tempered. Its 9 speed rating belies remarkable accuracy potential when driven properly, though high power throwers should note significant fade development. FD3 enthusiasts praise its mechanical consistency across diverse weather conditions, building confidence with each release."
   },
   {
     "id": "discmania-link",
@@ -509,7 +523,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania Link disc golf"
+    "amazonQuery": "Discmania Link disc golf",
+    "description": "The Discmania Link is a precision putter that excels at tight windows and heavy traffic baskets, offering remarkably consistent flight with minimal fade – its 1-unit fade can actually become quite subtle when released smoothly. Its zero turn rating belies surprisingly decent initial distance for a Putter category disc, making it a go-to for short approaches from unconventional lies. The Link's reputation as \"the most stable putter in the game\" is well-deserved, with many players swearing by it for clutch throws."
   },
   {
     "id": "discmania-md3",
@@ -525,7 +540,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania MD3 disc golf"
+    "amazonQuery": "Discmania MD3 disc golf",
+    "description": "The Discmania MD3 is a precision midrange that excels at controlled approaches with predictable flight - its flat top and subtle bead prevent unnecessary turns while maintaining gentle fade. Players praise this 5-speed/1-fade disc for its exceptional touch and reliability, making it ideal for technical shots around obstacles or tight windows. Its flat profile also makes it surprisingly floaty and forgiving when thrown flat, allowing even newer players to dial in consistent short game results."
   },
   {
     "id": "discmania-p1x",
@@ -541,7 +557,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania P1x disc golf"
+    "amazonQuery": "Discmania P1x disc golf",
+    "description": "The Discmania P1x offers unparalleled control and precision with its flat, stable flight profile that holds true line for extended distances, earning it a reputation as one of the most consistent putters in professional competition. Its exceptionally low speed rating of 2 combined with zero turn and fade creates an unprecedented level of predictability from any throwing angle. This unique combination has made the P1x the go-to choice for elite players seeking unwavering accuracy under pressure."
   },
   {
     "id": "discmania-p2",
@@ -574,7 +591,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania PD disc golf"
+    "amazonQuery": "Discmania PD disc golf",
+    "description": "The Discmania PD is a precision distance driver with razor-sharp accuracy and long-range potential, offering a controlled fade that rewards patient throwers who can harness its 10 speed capabilities. While it's not extremely fast, this disc makes up for lack of raw power with pinpoint trajectory control, making it ideal for navigating tight fairways or holding lines in windy conditions. The PD's 0 turn rating translates to eerily straight flight when properly thrown, with a subtle but consistent fade that demands respect from even the most confident players."
   },
   {
     "id": "discmania-pd2",
@@ -590,7 +608,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discmania PD2 disc golf"
+    "amazonQuery": "Discmania PD2 disc golf",
+    "description": "The Discmania PD2 is an exceptionally stable distance driver with a remarkably flat flight path that holds true to its 0 turn rating, maintaining a surprisingly consistent and predictable trajectory. Its modest glide numbers belie incredible range potential when thrown correctly, making it perfect for windier days or players seeking a reliable long shot option. This category-defying driver carves out unique territory as one of the most stable distance options available, earning a cult following among precision players."
   },
   {
     "id": "discraft-anax",
@@ -606,7 +625,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Anax disc golf"
+    "amazonQuery": "Discraft Anax disc golf",
+    "description": "The Discraft Anax embodies precision distance with remarkably consistent flight, delivering a laser-straight 10-speed profile that carves precise lines while maintaining subtle fade. Its clean design belies the challenging dynamics – anhyzer windows are vanishingly small, requiring pinpoint release angles to unlock full potential. Pro players praise its surgical predictability, but casual throwers should exercise caution as the Anax will harshly expose minor technique flaws."
   },
   {
     "id": "discraft-avenger-ss",
@@ -622,7 +642,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Avenger SS disc golf"
+    "amazonQuery": "Discraft Avenger SS disc golf",
+    "description": "The Discraft Avenger SS is a precision distance driver with exceptional control potential, offering a remarkably stable flight path that holds its line through turns while maintaining moderate range and gentle fade. Its unique -3 turn rating allows for incredible accuracy at long ranges, making it highly prized among experienced players seeking pinpoint throws. Despite its modest fade, the Avenger SS develops remarkable late-stage glide, often appearing to sail through the air rather than descend rapidly."
   },
   {
     "id": "discraft-banger-gt",
@@ -638,7 +659,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Banger GT disc golf"
+    "amazonQuery": "Discraft Banger GT disc golf",
+    "description": "The Discraft Banger GT is an incredibly stable putter with zero turn and minimal fade, making it perfect for high-angle shots into tight windows where control reigns supreme; its 2 speed rating belies exceptional distance potential on gentle approaches. Players praise the Banger GT's consistent finish that refuses to dip or drop unexpectedly, allowing pinpoint placements into target zones. Its Category Putter designation underplays the disc's surprising range and straight-line flight characteristics that justify its professional-level popularity among tour players."
   },
   {
     "id": "discraft-buzzz",
@@ -671,7 +693,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Buzzz OS disc golf"
+    "amazonQuery": "Discraft Buzzz OS disc golf",
+    "description": "The Discraft Buzzz OS is a precision midrange that excels at navigating dense tree lines and tight fairways with consistent, predictable flight - its 0 turn rating means it tracks straight as an arrow until the fade kicks in. The subtle 3-unit fade provides gentle slowing without dramatic drop-off, making this disc perfect for controlled approach shots to pin positions. Despite being overstable, the Buzzz OS still offers surprisingly high glide for a midrange, allowing it to carry farther than its speed would suggest."
   },
   {
     "id": "discraft-buzzz-ss",
@@ -687,7 +710,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Buzzz SS disc golf"
+    "amazonQuery": "Discraft Buzzz SS disc golf",
+    "description": "The Discraft Buzzz SS is a precision midrange disc with exceptional control and minimal fade, carving tight lines through fairways with its -2 turn rating and 1 fade signature. Its 5 speed provides reliable distance while the 4 glide number ensures consistent height retention throughout flight. This SS version enhances the already remarkable straightness of the standard Buzzz by reducing dynamic overstability."
   },
   {
     "id": "discraft-challenger",
@@ -703,7 +727,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Challenger disc golf"
+    "amazonQuery": "Discraft Challenger disc golf",
+    "description": "The Discraft Challenger offers incredible precision control with minimal speed loss, making it perfect for tight approach shots and slow, gentle putts that require pinpoint accuracy. Its remarkably flat flight pattern allows players to trust their lines even at extremely short distances, making it a favorite among professional putters. This category-putter consistently performs within 2-3 feet of its intended target, earning it a reputation as one of the most reliable and consistent discs on the market."
   },
   {
     "id": "discraft-comet",
@@ -719,7 +744,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Comet disc golf"
+    "amazonQuery": "Discraft Comet disc golf",
+    "description": "The Discraft Comet is a precision midrange driver that excels at controlled lines and pinpoint accuracy, with its -2 turn rating allowing for subtle adjustments without sacrificing stability. Its 4 speed designation belies exceptional distance potential when thrown with conviction, while the 1 fade keeps the disc remarkably trackable. The Comet's glide of 5 makes it an ideal choice for players who value finesse over brute force."
   },
   {
     "id": "discraft-crank-ss",
@@ -735,7 +761,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Crank SS disc golf"
+    "amazonQuery": "Discraft Crank SS disc golf",
+    "description": "The Discraft Crank SS is a precision distance driver that cuts through headwinds with ease, offering a consistent fade that allows for controlled approach shots into tight windows. With its moderate 13 speed, this disc generates enough power to reach distant pins while maintaining enough glide to carry over obstacles, making it a favorite among experienced players who value touch and control. The Crank SS's -3 turn rating means it will hold a relatively flat trajectory, allowing for pinpoint placement and precision accuracy."
   },
   {
     "id": "discraft-drone",
@@ -751,7 +778,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Drone disc golf"
+    "amazonQuery": "Discraft Drone disc golf",
+    "description": "The Discraft Drone is a precision-crafted midrange disc with exceptional control and understable flight characteristics – its 1-unit turn rating makes it incredibly receptive to arm speed, allowing skilled players to manipulate trajectory with subtle wrist movements. While some may describe it as slightly overstable, most experienced throwers find the Drone sits comfortably in a neutral-to-slightly-under category when thrown with average power, offering smooth glide and moderate distance potential. Its signature flight pattern rewards precise throwing technique, making it an elite choice for players seeking precision control rather than raw power."
   },
   {
     "id": "discraft-fierce",
@@ -784,7 +812,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Flash disc golf"
+    "amazonQuery": "Discraft Flash disc golf",
+    "description": "The Discraft Flash cuts through air with laser-like precision, offering a precise distance driver that's notoriously challenging to control – expert throwers can tame its aggressive fade but newcomers beware: this disc demands respect. At 10 speed and -2 turn, the Flash is designed for long bombs, not gentle approaches; trust it only when you're committed to maximum range."
   },
   {
     "id": "discraft-flick",
@@ -800,7 +829,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Flick disc golf"
+    "amazonQuery": "Discraft Flick disc golf",
+    "description": "The Discraft Flick is a notoriously understable distance driver that drops off hard, making it nearly unthrowable for most players due to its extreme fade potential and minuscule glide, but a select few have learned to harness its unique properties for extremely tight lines at long range. At 12 speed, it's quick off the tee but loses control quickly, creating an unpredictable flight that demands precision and practice. Its 5 fade rating is often hyperbolic even among experienced players who've struggled with this disc's infamous over-stability."
   },
   {
     "id": "discraft-force",
@@ -816,7 +846,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Force disc golf"
+    "amazonQuery": "Discraft Force disc golf",
+    "description": "The Discraft Force is an elite distance driver with incredibly consistent flight - its 0 turn rating means it tracks straight as an arrow off the tee before fading predictably into gentle right-hand turn. Carved from premium Z plastic for rock-solid durability, this Force disc delivers high-speed power with remarkably smooth, stable flight. Its 3 fade makes it perfect for players seeking a controllable, long-range throw without extreme drop-off at landing."
   },
   {
     "id": "discraft-heat",
@@ -832,7 +863,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Heat disc golf"
+    "amazonQuery": "Discraft Heat disc golf",
+    "description": "The Discraft Heat delivers pinpoint accuracy with a unique blend of glide and stability, making it an exceptional distance driver for precise placement at longer ranges where traditional drivers fall short. Its subtle fade allows experienced players to trust extended throws while maintaining control through dense foliage or tight fairways. Despite its moderate speed, the Heat's remarkable turn resistance enables consistent trajectories even in windy conditions."
   },
   {
     "id": "discraft-luna",
@@ -865,7 +897,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Machete disc golf"
+    "amazonQuery": "Discraft Machete disc golf",
+    "description": "The Machete cuts through dense foliage with precision, maintaining remarkable stability even at high speeds despite its moderate 0 turn rating that can sometimes become slightly more dynamic than expected. With a subtle fade, this distance driver rewards controlled throws that stay on target, particularly when driven under 400 feet where it becomes notably more manageable. Its signature characteristic is exceptional predictability for a disc with such potential power."
   },
   {
     "id": "discraft-magnet",
@@ -881,7 +914,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Magnet disc golf"
+    "amazonQuery": "Discraft Magnet disc golf",
+    "description": "The Discraft Magnet is an exceptionally stable putter that consistently holds line and finishes soft with minimal fade, making it ideal for tight windows and unpredictable surfaces. Its unique flight profile allows it to glide further than expected from its slow speed, while maintaining unparalleled control on approach shots. The Magnet's subtle -1 turn rating enables it to track straight when released correctly, becoming a trusted sidearm choice among professional players."
   },
   {
     "id": "discraft-malta",
@@ -897,7 +931,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Malta disc golf"
+    "amazonQuery": "Discraft Malta disc golf",
+    "description": "The Discraft Malta delivers precision accuracy with its tight turn and moderate fade, making it exceptionally reliable off the tee where control is paramount; its understable nature allows experienced players to shape lines while maintaining surprising distance. On slower arms, the Malta reveals a more forgiving side that can dip and recover with surprising pop. Its speed 5 designation belies considerable punch when driven with conviction."
   },
   {
     "id": "discraft-mantis",
@@ -913,7 +948,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Mantis disc golf"
+    "amazonQuery": "Discraft Mantis disc golf",
+    "description": "The Discraft Mantis is an exceptionally controllable fairway driver that excels at navigating tight windows with minimal fade, its -2 turn rating allowing for precision placement in dense woods and open fields alike. While not extremely fast, this 8/4 disc compensates with pinpoint accuracy and a remarkably consistent flight path, making it ideal for players seeking precise shot shaping. Its 2-fade rating provides just enough finish to hold lines without over-hyping, resulting in a truly reliable workhorse that rewards thoughtful execution."
   },
   {
     "id": "discraft-meteor",
@@ -929,7 +965,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Meteor disc golf"
+    "amazonQuery": "Discraft Meteor disc golf",
+    "description": "The Discraft Meteor excels as an understable midrange option with gentle turn and gradual fade, perfect for players seeking control at slower speeds; its 5/5 glide rating makes it particularly formidable in flat open terrain. While it can be pushed to generate more angle, the Meteor's true strength lies in its consistent, forgiving flight that rewards precise release technique over brute force power. At slower arm speeds, this disc develops a distinctive \"flutter\" quality with unpredictable trajectory that demands careful approach management."
   },
   {
     "id": "discraft-nuke",
@@ -945,7 +982,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Nuke disc golf"
+    "amazonQuery": "Discraft Nuke disc golf",
+    "description": "The Discraft Nuke excels as a highly overstable distance driver with an unpredictable flight that resists fading even at extreme speeds, making it perfect for headwinds and tight windows. Its -1 turn rating creates a sharp entry angle that's both intimidating to catch and challenging to handle. When released with confidence, the Nuke consistently holds its line through the fairway before eventually releasing into a soft fade."
   },
   {
     "id": "discraft-nuke-ss",
@@ -961,7 +999,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Nuke SS disc golf"
+    "amazonQuery": "Discraft Nuke SS disc golf",
+    "description": "The Discraft Nuke SS embodies precision distance with a calculated flight: piercing 400+ foot throws glide tightly to their targets while maintaining razor-sharp turn, then stabilizing into an assertive fade. Famous for its reliable, high-end performance, this 13-speed distance driver demands deliberate release and rewards thoughtful execution with pinpoint accuracy. Its subtle -3 turn creates a deceptive shape before the sharp, predictable 3-degree fade locks in place."
   },
   {
     "id": "discraft-raptor",
@@ -977,7 +1016,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Raptor disc golf"
+    "amazonQuery": "Discraft Raptor disc golf",
+    "description": "The Discraft Raptor is a precision distance driver that excels at carrying long distances with surprisingly little turn, its 0 degree rating making it one of the straightest high-speed discs in the game despite moderate fade. While not excessively overstable, it does hold a consistent line and requires deliberate power to control. As a category 9/4 speed and glide profile, Raptor delivers on distance potential but demands pinpoint throwing technique."
   },
   {
     "id": "discraft-roach",
@@ -993,7 +1033,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Roach disc golf"
+    "amazonQuery": "Discraft Roach disc golf",
+    "description": "The Discraft Roach is an exceptionally stable putter that refuses to turn off target, making it perfect for tight lines and delicate approaches where control matters most. With minimal fade potential, this 2/4/0/1 disc excels at holding its line even when released with minimal power, allowing players of all skill levels to trust their short game. Its reputation as a \"forever disc\" is well-earned, consistently delivering predictable results from the basket's edge to 30 feet out."
   },
   {
     "id": "discraft-stalker",
@@ -1009,7 +1050,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Stalker disc golf"
+    "amazonQuery": "Discraft Stalker disc golf",
+    "description": "The Discraft Stalker is an ultra-overstable fairway driver that refuses to turn, delivering consistent fade off every angle with its -1 Turn rating and 2-unit Fade. Its 7-speed power doesn't overwhelm—instead, precision placement becomes the key to unlocking this disc's potential for long-range shots where stability matters most. When paired with a strong arm, the Stalker becomes nearly uncatchable."
   },
   {
     "id": "discraft-surge-ss",
@@ -1025,7 +1067,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Surge SS disc golf"
+    "amazonQuery": "Discraft Surge SS disc golf",
+    "description": "The Discraft Surge SS carves a precise line through the air with remarkably consistent flight, its slow speed belied by deceptive distance potential that rewards precise, controlled release angles. Despite moderate glide numbers, this 11-speed Distance Driver actually exhibits surprisingly long-range capability when paired with proper throw technique. Overstable enough to withstand rough conditions but still responsive for skilled players, the Surge SS has become a favorite among strategic disc golfers."
   },
   {
     "id": "discraft-undertaker",
@@ -1058,7 +1101,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Vulture disc golf"
+    "amazonQuery": "Discraft Vulture disc golf",
+    "description": "The Discraft Vulture is a precision distance driver characterized by extremely stable flight patterns that maintain consistent line and speed through even moderate headwinds, earning it a reputation as one of the most reliable long-range discs in competitive play. Its narrow rim profile and 0-turn rating create an exceptionally straight trajectory with minimal deviation. For experienced throwers seeking unerring accuracy at extended ranges, the Vulture's understated performance makes it a trusted tool for strategic shot placement."
   },
   {
     "id": "discraft-wasp",
@@ -1074,7 +1118,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Wasp disc golf"
+    "amazonQuery": "Discraft Wasp disc golf",
+    "description": "The Discraft Wasp is a precision-crafted Midrange disc with exceptional accuracy and control, featuring a remarkably straight flight path that holds its line with minimal turn despite moderate glide potential, making it perfect for players seeking precise placement shots at shorter to medium ranges. Its 0 rating on Turn makes it one of the straightest midranges available, allowing pinpoint throws that track predictably off the tee or out of dense brush. The subtle Fade 2 gives this disc gentle late-stage pull back, requiring deliberate release and follow-through to maximize its remarkable flight characteristics."
   },
   {
     "id": "discraft-zeus",
@@ -1090,7 +1135,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Zeus disc golf"
+    "amazonQuery": "Discraft Zeus disc golf",
+    "description": "The Discraft Zeus delivers precision distance with its predictable 12 speed and 3 degree fade, consistently holding line even at high velocities while maintaining gentle turn that rarely becomes noticeable. Its unique flight characteristics make it a go-to for players seeking reliable long-range accuracy without excessive power demands. The -1 turn rating actually translates to remarkably straight flight patterns under normal conditions."
   },
   {
     "id": "discraft-zone",
@@ -1123,7 +1169,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Discraft Zone OS disc golf"
+    "amazonQuery": "Discraft Zone OS disc golf",
+    "description": "The Discraft Zone OS offers a unique blend of understability and immense fade, making it an unpredictable yet highly effective midrange choice that demands skill to navigate at slower speeds. Its 4 speed and 5 fade make it notoriously difficult to control without power, while the tight turn and low glide limit its distance potential significantly. This is not a disc for beginners - Zone OS requires finesse and trust to unlock its full potential as a challenging midrange driver."
   },
   {
     "id": "dd-commander",
@@ -1139,7 +1186,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Commander disc golf"
+    "amazonQuery": "Dynamic Discs Commander disc golf",
+    "description": "The Commander from Dynamic Discs boasts exceptional distance potential with 13 speed, yet its 0 turn rating demands precise release angles – slightly underhand to achieve maximum range without unwanted movement. Its 4 fade generates reliable finishing power that often catches players off guard, requiring deliberate approach throws. This category-defining distance driver rewards precision over brute force, separating the truly skilled from casual throwers."
   },
   {
     "id": "dd-deputy",
@@ -1155,7 +1203,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Deputy disc golf"
+    "amazonQuery": "Dynamic Discs Deputy disc golf",
+    "description": "The Dynamic Discs Deputy is a precision putter characterized by extreme understability with dramatic drop-off off even slight releases, making it extremely challenging to control for average throwers. When thrown with precision and finesse, it reveals an astonishingly straight flight pattern with minimal fade, earning its reputation as one of the most unforgiving but rewardingly accurate discs in the game. Its notorious flip nature demands perfect release technique or suffers catastrophic loss of distance and direction."
   },
   {
     "id": "dd-enforcer",
@@ -1171,7 +1220,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Enforcer disc golf"
+    "amazonQuery": "Dynamic Discs Enforcer disc golf",
+    "description": "The Dynamic Discs Enforcer excels as a precision distance driver with pinpoint accuracy, carving trajectories with minimal turn and deep fade that demands controlled release. Its 0.5 turn rating hides its exceptional workability, allowing skilled throwers to shape lines at will. This understated powerhouse rewards precise execution while punishing careless releases with unrelenting fade."
   },
   {
     "id": "dd-escape",
@@ -1187,7 +1237,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Escape disc golf"
+    "amazonQuery": "Dynamic Discs Escape disc golf",
+    "description": "The Dynamic Discs Escape is a precise distance driver that requires finesse: its -1 turn rating makes it notoriously unforgiving off-axis, while 9 speed and 5 glide numbers enable long-range potential with subtle releases. Pro players praise its predictable, slightly understable flight for strategic shots, while casual throwers must master its demanding characteristics."
   },
   {
     "id": "dd-felon",
@@ -1203,7 +1254,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Felon disc golf"
+    "amazonQuery": "Dynamic Discs Felon disc golf",
+    "description": "The Dynamic Discs Felon is a precision distance driver that excels at long-range accuracy without sacrificing control, carving through air with minimal turn and a razor-sharp fade. Its unique combination of high speed potential and extremely low turn rate makes it ideal for pinpoint shots across open fields or against headwinds. Players praise the Felon's consistently reliable fade, which can be sharp enough to drop rapidly into chains but also subtly adjustable depending on release angle and wind conditions."
   },
   {
     "id": "dd-judge",
@@ -1236,7 +1288,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Justice disc golf"
+    "amazonQuery": "Dynamic Discs Justice disc golf",
+    "description": "The Dynamic Discs Justice features a rare combination of minimal turn and extreme fade, earning its reputation as one of the most consistent, high-angle midranges in modern disc golf. Despite its moderate speed, 4-point fade makes this disc notoriously difficult to hold, demanding precision placement and controlled release. Players who master the Justice's unique characteristics find unparalleled accuracy at tight windows and uphill approaches."
   },
   {
     "id": "dd-marshal",
@@ -1252,7 +1305,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Marshal disc golf"
+    "amazonQuery": "Dynamic Discs Marshal disc golf",
+    "description": "The Dynamic Discs Marshal is a precision putter with exceptionally low speed and remarkably straight flight characteristics, earning its reputation as one of the most consistent short-range discs on the market. Its 0 turn rating translates to nearly unflappable stability in any throwing environment, making it ideal for tight approaches around obstacles. Players praise the Marshal's unwavering reliability at close range."
   },
   {
     "id": "dd-maverick",
@@ -1268,7 +1322,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Maverick disc golf"
+    "amazonQuery": "Dynamic Discs Maverick disc golf",
+    "description": "The Dynamic Discs Maverick is a precision-crafted fairway driver with an understated yet devastatingly effective profile – its -1 turn rating creates a maddening hyzer effect that catches players off guard, while its 2 fade ensures consistent finishability even in headwind conditions. Its 4 glide number belies surprisingly long carry distances, making it ideal for navigating dense woods and tight fairways where a clean release is essential. Despite relatively tame numbers, experienced throwers praise the Maverick's \"dirty\" stability – it doesn't overpromise but quietly delivers pinpoint accuracy when demanded."
   },
   {
     "id": "dd-raider",
@@ -1284,7 +1339,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Raider disc golf"
+    "amazonQuery": "Dynamic Discs Raider disc golf",
+    "description": "The Dynamic Discs Raider slices through headwinds with surprising efficiency, its modest fade making it unexpectedly reliable off the tee on windy days while maintaining piercing distance potential; players praise its consistent, gentle turnover that rarely gets out of hand. Its 13/5/0/-3 profile suggests a straightforward, flat-flying experience — yet enthusiasts note subtle pitch variations can amplify or mute this otherwise predictable design. Raider owners often find themselves reaching for it when a precision long shot demands more control than brute speed alone."
   },
   {
     "id": "dd-sheriff",
@@ -1300,7 +1356,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Sheriff disc golf"
+    "amazonQuery": "Dynamic Discs Sheriff disc golf",
+    "description": "The Sheriff is Dynamic Discs' most overstable distance driver, refusing to turn until it's done flying – a signature 1-degree turn that sets up an extremely long, 2-degree fade that often takes players by surprise with its late, hard pullback. At 13 speed with only 5 glide, this disc demands precise power and release angle but rewards perfectly executed throws with massive distance potential. Its over-the-top stability has earned the Sheriff a reputation as one of the most intimidating discs in competitive play."
   },
   {
     "id": "dd-suspect",
@@ -1316,7 +1373,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Suspect disc golf"
+    "amazonQuery": "Dynamic Discs Suspect disc golf",
+    "description": "The Dynamic Discs Suspect carves a precise line through fairways with its 0-degree turn and consistent fade, making it an ideal choice for strategic shot placement on tight holes and approach work to pinpoint targets. Its moderate speed demands deliberate release control while offering surprisingly long carry potential when thrown perfectly straight. Players praise the Suspect for its predictability and precision, especially in windy conditions where others might fall off target."
   },
   {
     "id": "dd-trespass",
@@ -1332,7 +1390,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Trespass disc golf"
+    "amazonQuery": "Dynamic Discs Trespass disc golf",
+    "description": "The Dynamic Discs Trespass operates with precision speed control, producing long, consistent drives that remain remarkably stable through the flight path despite its moderate fade. Players praise this distance driver for delivering predictable results with gentle touch, making it accessible to intermediate throwers while still challenging skilled arms. Its subtle turn and mild fade characteristics enable precise placement opportunities over 300-400 feet."
   },
   {
     "id": "dd-truth",
@@ -1365,7 +1424,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Vandal disc golf"
+    "amazonQuery": "Dynamic Discs Vandal disc golf",
+    "description": "The Dynamic Discs Vandal carves a precise line through fairways with controlled fade, expertly navigating tight windows and challenging approaches without excessive drift; its understated speed belies surprisingly deep pockets of distance potential when properly placed. Its -1 turn rating ensures consistent initial trajectory, while the 2-unit fade adds predictable back-end control – making it an elite choice for strategic shotmakers. Players seeking precision over pure velocity find Vandal's subtle power a game-changing asset."
   },
   {
     "id": "dd-verdict",
@@ -1381,7 +1441,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Verdict disc golf"
+    "amazonQuery": "Dynamic Discs Verdict disc golf",
+    "description": "The Verdict boasts pinpoint accuracy and remarkably consistent flight, with an initial glide that belies its modest speed rating and a fade that subtly but reliably pulls back to target. Its precision makes it perfect for controlled shots at distance or tight windows in the fairway, while also serving as a trusted putter for players seeking reliable touch. In the hands of experienced throwers, Verdict reveals a subtle yet powerful character capable of holding lines with surprising authority."
   },
   {
     "id": "dd-witness",
@@ -1397,7 +1458,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Dynamic Discs Witness disc golf"
+    "amazonQuery": "Dynamic Discs Witness disc golf",
+    "description": "The Witness delivers exceptional control with a moderate fade, making it a staple for precise fairway shots that hold their line longer than expected from its 8-speed rating. Its -3 turn signature allows for a subtle yet consistent shape that prevents hyzers but resists tailwinds. Players praise this disc for consistently tracking straighter than its numbers suggest, becoming an extension of the arm on tight windows."
   },
   {
     "id": "ev7-og-base",
@@ -1413,7 +1475,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "EV-7 OG Base disc golf"
+    "amazonQuery": "EV-7 OG Base disc golf",
+    "description": "The EV-7 OG Base carves out a precision putter niche with laser-sharp approach shots and extremely consistent finishing angles, earning its reputation as one of the most reliable discs in the bag for tight windows. Its 3-speed design demands careful release control yet rewards precision work with pinpoint accuracy at distance. Whether navigating dense fairway trees or short approaches around water hazards, this EV-7 excels where others often fall short."
   },
   {
     "id": "ev7-og-medium",
@@ -1429,7 +1492,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "EV-7 OG Medium disc golf"
+    "amazonQuery": "EV-7 OG Medium disc golf",
+    "description": "The EV-7 OG Medium delivers precision control with a remarkably straight flight pattern, gliding smoothly through short to medium range throws before fading predictably back toward your throwing hand. Its Category 4 turn rating ensures minimal deviation from target, while its 2-unit fade creates a gentle, consistent finish. For experienced players, this putter's understated speed and subtle drop make it an ideal choice for tight approaches and high-stakes situations."
   },
   {
     "id": "ev7-phi",
@@ -1445,7 +1509,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "EV-7 Phi disc golf"
+    "amazonQuery": "EV-7 Phi disc golf",
+    "description": "The EV-7 Phi is a precision putter that excels with gentle touch, boasting an incredibly straight flight path thanks to its 0-turn rating and minimal fade (1), making it perfect for short approach shots into tight windows. With moderate glide potential, this disc requires subtle release control to maximize distance on soft landing approaches. Experienced players will appreciate the Phi's understated consistency that rewards patient technique over raw power."
   },
   {
     "id": "gateway-avenger",
@@ -1461,7 +1526,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Gateway Disc Sports Avenger disc golf"
+    "amazonQuery": "Gateway Disc Sports Avenger disc golf",
+    "description": "The Avenger offers smooth, consistent glide with predictable fade, making it an ideal choice for controlled fairway shots that need to hold lines without excessive power. Its moderate turn and gradual fade characteristics allow players to trust their lines on a variety of terrain types, from tight woods to open fields. While not extremely fast or powerful, the Avenger's speed is well-matched to its flight profile, creating a reliable driver for strategic placement shots."
   },
   {
     "id": "gateway-ninja",
@@ -1477,7 +1543,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Gateway Disc Sports Ninja disc golf"
+    "amazonQuery": "Gateway Disc Sports Ninja disc golf",
+    "description": "The Ninja from Gateway Disc Sports is an incredibly consistent distance driver that demands precision and technique to unlock its true potential — producing sharp turns with moderate fade when released correctly. Its -1 turn rating makes tight lines possible but requires precise release angles, while 2 units of fade ensures predictable finish distances. With a moderate speed profile of 10, the Ninja rewards thoughtful approach shots and strategic placement over brute force power."
   },
   {
     "id": "gateway-sure-shot",
@@ -1493,7 +1560,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Gateway Disc Sports Sure Shot disc golf"
+    "amazonQuery": "Gateway Disc Sports Sure Shot disc golf",
+    "description": "The Gateway Disc Sports Sure Shot is a precision Putter that carves tight lines through dense foliage with its remarkable Turn rating of -1, allowing for aggressive throws into tight windows. Its flat 0 Fade ensures ultra-consistent finish angles, perfect for high-stakes approaches and scrambling situations. Players praise the Sure Shot's ability to defy expectations by producing surprisingly long flights from its humble 2 Speed rating."
   },
   {
     "id": "gateway-wizard",
@@ -1526,7 +1594,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Ape disc golf"
+    "amazonQuery": "Innova Ape disc golf",
+    "description": "The Innova Ape excels as a precision distance driver with unparalleled glide stability, holding its line without dramatic movement through even moderate headwinds. Despite modest fade potential, its incredible turn resistance makes it unusually straight for its category, demanding precise release technique to unlock full potential. This unique flight profile has earned the Ape a cult following among strategic players seeking predictable power delivery at range."
   },
   {
     "id": "innova-atlas",
@@ -1542,7 +1611,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Atlas disc golf"
+    "amazonQuery": "Innova Atlas disc golf",
+    "description": "The Innova Atlas is notorious for its unyielding stability, refusing to turn even at low power speeds – making it a trusted choice for precise approaches and high-pressure situations. Its gentle fade means you can commit fully without worrying about sudden drop-off, creating a sense of control that belies its surprisingly long range potential. Despite moderate glide numbers, the Atlas has earned a reputation as an eerily straight midrange disc capable of carrying itself surprisingly far with minimal effort."
   },
   {
     "id": "innova-aviar",
@@ -1575,7 +1645,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Beast disc golf"
+    "amazonQuery": "Innova Beast disc golf",
+    "description": "The Innova Beast is a precision-crafted distance driver renowned for its razor-sharp fade and surprisingly consistent flight pattern despite modest glide numbers, earning it a reputation as one of golf's most reliable long-range tools. Its 10 speed rating belies deep penetrating shots that carry further than expected while maintaining surprisingly clean flight lines. Reliability often trumps raw power with this disc."
   },
   {
     "id": "innova-birdie",
@@ -1591,7 +1662,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Birdie disc golf"
+    "amazonQuery": "Innova Birdie disc golf",
+    "description": "The Innova Birdie is an ultra-stable putter with unparalleled accuracy and control, flying straight as an arrow through even the most turbulent wind conditions and dense foliage. Its 1/2 speed rating belies incredible distance potential when released at peak velocity, making it a favorite among players seeking predictable placement. Consistently ranked among the fastest-gliding putters on market, it extends its trajectory to maximize accessibility for all skill levels."
   },
   {
     "id": "innova-boss",
@@ -1607,7 +1679,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Boss disc golf"
+    "amazonQuery": "Innova Boss disc golf",
+    "description": "The Innova Boss is a notoriously fast and incredibly overstable distance driver that carves through wind with exceptional stability, earning its reputation as one of the most reliable long-range throwers in professional play. Its -1 turn rating makes it nearly immune to early fade, but be prepared for an intense 3-unit finish that can snap back dramatically if not tracked perfectly. Despite its speed of 13, the Boss somehow manages to maintain astonishing glide and distance potential with minimal effort."
   },
   {
     "id": "innova-caiman",
@@ -1623,7 +1696,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Caiman disc golf"
+    "amazonQuery": "Innova Caiman disc golf",
+    "description": "The Innova Caiman carves a precise path with minimal fade, allowing players to shape shots and control lines with pinpoint accuracy; its moderate speed requires gentle power, but rewards precision with reliable flight. Notably, it's known for maintaining surprising forward momentum even after releasing, making it ideal for long-range approaches where distance is more important than pure glide. Despite its relatively low glide number, the Caiman generates enough hang time to make longer throws work surprisingly well off flat terrain."
   },
   {
     "id": "innova-cobra",
@@ -1639,7 +1713,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Cobra disc golf"
+    "amazonQuery": "Innova Cobra disc golf",
+    "description": "The Innova Cobra excels as a precision midrange with unusually deep turn potential that demands finesse and speed control to unlock its true distance capabilities. At 4/5/2/2 numbers, this disc offers both manageable power requirements and substantial flight extension for skilled throwers willing to work it. When released at ideal angles, the Cobra reveals remarkably consistent, high-angle trajectories that glide surprisingly far on an understable arc."
   },
   {
     "id": "innova-colossus",
@@ -1655,7 +1730,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Colossus disc golf"
+    "amazonQuery": "Innova Colossus disc golf",
+    "description": "The Innova Colossus is a powerful distance driver with remarkable stability, renowned for its ability to maintain high speed and glide long after release while maintaining surprisingly straight flight lines. Its -1 turn rating coupled with a moderate 3 fade creates an exceptionally forgiving driving experience that rewards smooth arm speeds rather than brute force. At 14/5/-1/3, it's not just fast—it's remarkably consistent."
   },
   {
     "id": "innova-colt",
@@ -1671,7 +1747,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Colt disc golf"
+    "amazonQuery": "Innova Colt disc golf",
+    "description": "The Innova Colt is renowned for its precision and control, offering a remarkably consistent fade that demands gentle touch yet rewards with pinpoint accuracy to the basket. Its -1 turn rating translates to an extremely flat flight path, making it ideal for short approach shots and tight windows. The Colt's 3 speed rating means power must be precise – too much and it skips unpredictably, but when handled delicately, its glide extends surprisingly far."
   },
   {
     "id": "innova-comet",
@@ -1704,7 +1781,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Coyote disc golf"
+    "amazonQuery": "Innova Coyote disc golf",
+    "description": "The Innova Coyote is a precision midrange with incredible glide and surprisingly little fade, allowing it to sail through tight windows of air without dropping off prematurely. Its zero turn rating means a remarkably straight flight path for its speed class, while subtle fade potential makes approach shots incredibly dependable. This category-defining disc earns its reputation as one of the most consistent midranges in golf."
   },
   {
     "id": "innova-dart",
@@ -1720,7 +1798,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Dart disc golf"
+    "amazonQuery": "Innova Dart disc golf",
+    "description": "The Innova Dart offers unflappable predictability as a true flying machine with zero turn and fade, allowing even slight misses to hold their line remarkably well. Its extremely stable flight pattern makes it perfect for controlled approaches and tight windows where margin matters most. When thrown properly, the Dart delivers razor-sharp accuracy and a reliably straight trajectory that's nearly unmatched at this speed level."
   },
   {
     "id": "innova-destroyer",
@@ -1753,7 +1832,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Eagle disc golf"
+    "amazonQuery": "Innova Eagle disc golf",
+    "description": "The Innova Eagle is a precision fairway driver with exceptional control, featuring a unique combination of understable turn and strong fade that demands subtle release techniques to unlock its full potential. At 7/4/-1/3 flight numbers, it produces incredibly straight flights when released correctly, making it ideal for tight windows and pinpoint shots. Its -1 turn rating makes it notoriously tricky to control, requiring precise form to generate consistent results."
   },
   {
     "id": "innova-emperor",
@@ -1769,7 +1849,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Emperor disc golf"
+    "amazonQuery": "Innova Emperor disc golf",
+    "description": "The Innova Emperor is a precision distance driver with incredible stability - its 0 turn rating makes it nearly unflappable, tracking straight and true even in windy conditions. Its modest fade (3) allows for long, gentle descents when desired, while still holding lines remarkably well; players who can handle the speed will be rewarded with phenomenal accuracy. At speed 12, this Emperor demands finesse rather than brute force - subtle touch is more crucial than raw power."
   },
   {
     "id": "innova-firebird",
@@ -1802,7 +1883,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Gator disc golf"
+    "amazonQuery": "Innova Gator disc golf",
+    "description": "The Innova Gator is an understable midrange with surprisingly gentle turn potential despite its relatively low glide numbers, allowing players to draw out shots with subtle control. Its predictable fade ensures reliable finishing distance without sudden drops, making it a favorite for approach work and tight windows. The Gator's unique flight profile enables exceptional touch and precision around the basket when thrown at moderate speeds."
   },
   {
     "id": "innova-gazelle",
@@ -1818,7 +1900,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Gazelle disc golf"
+    "amazonQuery": "Innova Gazelle disc golf",
+    "description": "The Innova Gazelle operates with laser-like precision, cutting through dense foliage while maintaining a remarkably straight flight path that belies its 6 speed rating. Its zero turn characteristic means predictable trajectories even when trees seem to close in, while subtle fade ensures gentle drop-offs rather than abrupt stalls. This category-defining fairway driver has earned a loyal following among strategic players who appreciate nuanced distance control and unerring accuracy."
   },
   {
     "id": "innova-groove",
@@ -1834,7 +1917,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Groove disc golf"
+    "amazonQuery": "Innova Groove disc golf",
+    "description": "The Innova Groove is a precise distance driver with a unique blend of speed and control, featuring a moderate fade that makes it unexpectedly accessible to slower arm speeds while still delivering 400+ foot potential. Its -2 turn rating allows for subtle shaping, but be warned: the 2 fade will lock in quickly if not managed. This disc excels at carrying distance with gentle touch, making it ideal for players who need a reliable workhorse without overpowering demands."
   },
   {
     "id": "innova-invader",
@@ -1850,7 +1934,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Invader disc golf"
+    "amazonQuery": "Innova Invader disc golf",
+    "description": "The Innova Invader is an ultra-overstable putter with incredible wind resistance and unparalleled straight-line control through tough conditions, earning its reputation as one of the most reliable discs in heavy winds or for players who need absolute predictability. Its minimal turn and strong fade guarantee a consistent finish on every throw, making it perfect for tight approaches, gusty days, and players seeking unflappable precision. Built with extremely durable plastic, this Invader becomes an extension of your arm through the toughest throwing situations."
   },
   {
     "id": "innova-katana",
@@ -1866,7 +1951,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Katana disc golf"
+    "amazonQuery": "Innova Katana disc golf",
+    "description": "The Innova Katana delivers exceptional distance with surprisingly manageable fade, allowing players of all levels to trust its long-range potential without losing control. Its unique speed and turn profile create a dynamic flight that resists turning in, but still exhibits enough lateral movement to hold true to the target line. This category 3 driver demands commitment but rewards precision throwers with sustained, accurate distance."
   },
   {
     "id": "innova-krait",
@@ -1882,7 +1968,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Krait disc golf"
+    "amazonQuery": "Innova Krait disc golf",
+    "description": "The Innova Krait is a highly technical distance driver that carves out a precise trajectory with remarkably consistent fade, allowing experienced players to dial in long shots with pinpoint accuracy. Its modest glide and relatively tight turn radius make it demanding to control, but reward precision throwers with predictably deep placements. The Krait's most notable trait is its unique \"pivot\" flight characteristic, where subtle variations in release angle produce surprisingly different outcomes."
   },
   {
     "id": "innova-leopard",
@@ -1915,7 +2002,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Leopard3 disc golf"
+    "amazonQuery": "Innova Leopard3 disc golf",
+    "description": "The Innova Leopard 3 cuts through dense foliage with unparalleled precision, its -2 turn rating making it an ace for navigating tight fairway lines while maintaining surprisingly long range potential despite moderate speed. Its shallow fade (1) ensures consistent flight paths, turning heads on the course as a versatile \"get-out-of-jail\" card; famously, this disc holds remarkably straight and controlled even when thrown with some power. For advanced players seeking nuance in fairway play, the Leopard 3 offers subtle manipulation opportunities that can make all the difference between good shots and great ones."
   },
   {
     "id": "innova-liger",
@@ -1931,7 +2019,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Liger disc golf"
+    "amazonQuery": "Innova Liger disc golf",
+    "description": "The Innova Liger is a precision-crafted midrange disc known for its incredibly consistent flight path, with a gentle fade that allows for pinpoint accuracy at distance. Its moderate glide and tight turn window create an extremely controllable throwing experience, perfect for precise shots into tight fairway windows or on windy days. The Liger's subtle fade demands finesse rather than brute force, making it a favorite among competitive players seeking strategic control over their throws."
   },
   {
     "id": "innova-mako3",
@@ -1964,7 +2053,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Monster disc golf"
+    "amazonQuery": "Innova Monster disc golf",
+    "description": "The Innova Monster is an ultra-responsive distance driver with a tight, consistent turn that demands precise release technique to unlock its full potential. Its moderate fade allows players to shape shots and trust their lines, making it both powerful and predictable. When released perfectly, the Monster unleashes explosive downfield range that's unmatched for its weight category."
   },
   {
     "id": "innova-mystere",
@@ -1980,7 +2070,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Mystere disc golf"
+    "amazonQuery": "Innova Mystere disc golf",
+    "description": "The Innova Mystere is an elite distance driver that carves out tight windows with its surprisingly clean release characteristics despite relatively sharp fade potential; players who find speed 11 challenging often discover this disc flies remarkably smoothly at slower power levels. Its unique combination of moderate glide and fast turn rate makes it exceptionally forgiving for arm speed variations, allowing skilled throwers to push it deep while still accessing gentle, controlled lines when needed. While the -2 turn value might suggest an extremely skippy flight, reality reveals a far more nuanced shape that rewards touch and technique rather than brute force."
   },
   {
     "id": "innova-nova",
@@ -2013,7 +2104,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Orc disc golf"
+    "amazonQuery": "Innova Orc disc golf",
+    "description": "The Innova Orc is renowned for its brutal fade, consistently dropping 10-15 feet more than expected, making even moderate throws feel like bombs. Its -1 turn rating allows for tight window fairway shots while maintaining enough stability to hold lines; however, a single off-center catch transforms it into an unpredictable beast. Despite modest glide, the Orc's exceptional speed and fade make it a favorite among experienced players seeking control with raw power."
   },
   {
     "id": "innova-polekat",
@@ -2029,7 +2121,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova PoleKat disc golf"
+    "amazonQuery": "Innova PoleKat disc golf",
+    "description": "The Innova PoleKat is an ultra-stable putter that holds lines and tracks with unflappable consistency, making it perfect for tight windows and precision shots where predictability is paramount. Its near-zero turn rate and strong fade ensure reliable finishes to every approach, whether you're navigating dense woods or squeezing into tight chains. A true technical specialist's choice, the PoleKat rewards precision throws with precise results that rarely disappoint."
   },
   {
     "id": "innova-roadrunner",
@@ -2045,7 +2138,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Roadrunner disc golf"
+    "amazonQuery": "Innova Roadrunner disc golf",
+    "description": "The Innova Roadrunner is a precise distance driver renowned for its exceptional accuracy and tight trajectory, slicing through dense foliage with minimal deviation from its intended path. Its unique flight profile of 9/5/-4/1 translates to powerful initial pace followed by rapid drop-off in glide potential, making it ideal for players seeking pinpoint control at maximum range. By carefully managing backhand speed, players can unlock the Roadrunner's incredible ability to track straight lines despite moderate overstable tendencies."
   },
   {
     "id": "innova-roc",
@@ -2095,7 +2189,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Shark disc golf"
+    "amazonQuery": "Innova Shark disc golf",
+    "description": "The Innova Shark carves a precise path, its 0-turn rating making it nearly immune to fade-induced deviation while maintaining consistent distance. Its moderate 4/2 fade provides subtle but reliable control for strategic shots. Despite initial hesitation, many find the Shark surprisingly forgiving with gentle arm speed."
   },
   {
     "id": "innova-shryke",
@@ -2111,7 +2206,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Shryke disc golf"
+    "amazonQuery": "Innova Shryke disc golf",
+    "description": "The Innova Shryke carves out a unique niche as a distance driver with remarkably high fade potential, capable of producing devastating hook shots when thrown with moderate power. Its understable flight characteristics belie its 13 speed rating, making it deceptively accessible to lower-powered throwers while still rewarding precision technique from stronger arms. When released correctly, the Shryke's -2 turn and 2 fade combine for a mesmerizing lateral motion that can completely change disc direction in mid-air."
   },
   {
     "id": "innova-sidewinder",
@@ -2127,7 +2223,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Sidewinder disc golf"
+    "amazonQuery": "Innova Sidewinder disc golf",
+    "description": "The Innova Sidewinder is a precision distance driver with exceptional understability, requiring precise release angles to unlock its full potential as a controlled, high-angle flyer capable of navigating tight windows in open fields. Its -3 turn rating produces a dramatic fade that can quickly become overstable if released too hot, making it both rewarding and challenging to master. Despite this, Sidewinder's 1 fade rating at slower speeds makes it usable for players who struggle with more overstable drivers."
   },
   {
     "id": "innova-stingray",
@@ -2143,7 +2240,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Stingray disc golf"
+    "amazonQuery": "Innova Stingray disc golf",
+    "description": "The Innova Stingray is an exceptionally stable midrange disc that consistently returns to its target with minimal deviation, making it ideal for players seeking pinpoint accuracy and predictable flight. Its high turn rating coupled with moderate fade creates a unique \"sprint\" effect where the disc rapidly gains speed before gradually losing momentum, allowing skilled throwers to push maximum distance from tight windows. Players rave about Stingray's uncanny ability to magically find chains on approach shots despite often being thrown at less-than-ideal angles."
   },
   {
     "id": "innova-teebird",
@@ -2176,7 +2274,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Teebird3 disc golf"
+    "amazonQuery": "Innova Teebird3 disc golf",
+    "description": "The Innova Teebird3 cuts through dense foliage with pinpoint accuracy, holding its edge on tight shots while maintaining manageable speed that won't get away from you. Its 0 turn rating means predictable flight paths without unwanted snap or flip, making it a favorite among precise players who demand consistency. A slight fade helps this fairway driver stay straight into chains and avoid roller problems."
   },
   {
     "id": "innova-tern",
@@ -2192,7 +2291,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Tern disc golf"
+    "amazonQuery": "Innova Tern disc golf",
+    "description": "The Innova Tern carves a precise path with controlled fade, earning its reputation as one of the most consistent distance drivers; it demands precision and rewards patient throwers who can harness its -3 turn rating to place sharp lines on open fields. Its 12 speed is deceptively fast when released correctly, yielding long carries that remain surprisingly tractable for a driver of this category. The Tern's fade is subtle yet dependable, making it perfect for strategic finishing shots to tight pins."
   },
   {
     "id": "innova-thunderbird",
@@ -2208,7 +2308,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Thunderbird disc golf"
+    "amazonQuery": "Innova Thunderbird disc golf",
+    "description": "The Thunderbird excels as an understable distance driver, offering surprisingly long flights when thrown with enough speed to open up its gentle turn potential. Its 0-turn rating belies remarkable flight extension on moderate throws, making it a fascinating choice for players seeking unique distance capabilities. When overthrown or used as a power disc, the Thunderbird develops a subtle fade that demands precise release control."
   },
   {
     "id": "innova-toro",
@@ -2224,7 +2325,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Toro disc golf"
+    "amazonQuery": "Innova Toro disc golf",
+    "description": "The Innova Toro excels as a precision midrange with sharp turn potential and moderate fade, allowing players to shape lines with finesse or carve tight shots through dense foliage. Its predictable flight makes it a favorite among technical throwers who appreciate nuanced control. The Toro's 1/3 turn rating unlocks creative shotmaking opportunities in tight windows."
   },
   {
     "id": "innova-valkyrie",
@@ -2240,7 +2342,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Valkyrie disc golf"
+    "amazonQuery": "Innova Valkyrie disc golf",
+    "description": "The Innova Valkyrie carves an exceptional path through the air, boasting a consistent fade that outpaces its modest turn, making it a trusted workhorse in professional players' bags for precise distance control and dependable finish. Its surprisingly strong fade makes even moderate arm speeds generate substantial pullback, while its glide is merely adequate – a testament to its purpose-built distance dominance. When paired with proper release angles, the Valkyrie transforms into an exceptionally predictable driver capable of delivering pinpoint accuracy across vast distances."
   },
   {
     "id": "innova-wolf",
@@ -2256,7 +2359,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Wolf disc golf"
+    "amazonQuery": "Innova Wolf disc golf",
+    "description": "The Innova Wolf delivers exceptional midrange control with a precise turn and mild fade, earning it a reputation as one of the most accurate discs in professional play. Its moderate speed allows for effortless arm speeds while maintaining substantial glide potential, making it highly versatile across various throwing styles and terrain types. The -4 turn rating creates a predictable, sharp banking turn that demands precision but rewards with pinpoint accuracy."
   },
   {
     "id": "innova-wraith",
@@ -2272,7 +2376,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Wraith disc golf"
+    "amazonQuery": "Innova Wraith disc golf",
+    "description": "The Innova Wraith is an ultra-durable distance driver with exceptional speed and precision, carving sharp turns at moderate angles before developing a significant fade that requires careful release control to harness. Its 3-4° of initial fade transforms quickly into 5+° by the end of flight, making precise placement critical for maximum range. Players praise this disc for its surprising accuracy when paired with a controlled throw, particularly in windy conditions where it's often chosen for its consistent, predictable flight pattern."
   },
   {
     "id": "innova-xcaliber",
@@ -2288,7 +2393,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Innova Xcaliber disc golf"
+    "amazonQuery": "Innova Xcaliber disc golf",
+    "description": "The Innova Xcaliber is a precise and powerful distance driver that carves an exceptionally straight path with minimal turn, earning its reputation as one of the most consistent long-range discs on the market. Its 0 degree turn rating translates to remarkably flat flights, allowing players to trust their lines deep into open terrain. With a subtle yet persistent fade at the end, Xcaliber rewards precise throws and demands exceptional technique to maximize its potential."
   },
   {
     "id": "kastaplast-berg",
@@ -2321,7 +2427,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Falk disc golf"
+    "amazonQuery": "Kastaplast Falk disc golf",
+    "description": "The Kastaplast Falk is a precision-crafted distance driver with a rare combination of moderate speed and surprisingly shallow fade—its -2 turn rating creates a wicked understable character that rewards skillful release but can be unpredictable in stronger arms. When released perfectly, the Falk explodes forward with 9 units of raw power and a gentle 1 degree fade, making it perfect for players seeking a predictable yet challenging workhorse. Despite its modest glide numbers, the Falk generates remarkable distance through sheer speed retention and controlled collapse."
   },
   {
     "id": "kastaplast-grym",
@@ -2337,7 +2444,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Grym disc golf"
+    "amazonQuery": "Kastaplast Grym disc golf",
+    "description": "The Kastaplast Grym is a notoriously stable distance driver that resists fade all day long, making it perfect for windy conditions or players who prefer predictable flight paths. Its -1 turn rating creates a tight, consistent shape through fairways without sacrificing significant range. This disc has earned a reputation as one of the most overstable drivers available at its speed level."
   },
   {
     "id": "kastaplast-grym-x",
@@ -2353,7 +2461,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Grym X disc golf"
+    "amazonQuery": "Kastaplast Grym X disc golf",
+    "description": "The Kastaplast Grym X is an exceptionally clean and controllable distance driver that defies its 12.5 speed rating with surprisingly deep penetrating throws, earning it a reputation for outstanding accuracy from players seeking precise placement. Its 0 turn rating belies incredible stability, making it a trusted choice for arm-speed challenged throwers, while still delivering respectable glide at moderate to long range distances. A subtle 3 degree fade rounds out this versatile performer that's quietly become a favorite among tour professionals and everyday enthusiasts alike."
   },
   {
     "id": "kastaplast-lots",
@@ -2369,7 +2478,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Lots disc golf"
+    "amazonQuery": "Kastaplast Lots disc golf",
+    "description": "The Kastaplast Lots is an understable distance driver that defies conventional expectations, featuring an unusual negative turn rating and moderate fade to create a unique release window where players can manipulate its trajectory in ways few other discs can. When released flat or slightly backhand, the Lots becomes surprisingly straight, but any angle off-axis yields dramatic, unpredictable flight lines. Despite slow speed numbers, experienced throwers will discover the Lots' hidden potential when paired with precise technique and proper wind management."
   },
   {
     "id": "kastaplast-rask",
@@ -2385,7 +2495,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Rask disc golf"
+    "amazonQuery": "Kastaplast Rask disc golf",
+    "description": "The Kastaplast Rask is an extremely stable distance driver that refuses to turn or fade early, earning its reputation as one of the most consistent long-range throws in professional competition. With minimal high-speed turnover and a controlled descent angle, this 14 speed disc demands precise release technique while delivering unparalleled predictability at extended ranges. Its remarkably flat flight path makes it ideal for power players seeking precision over extreme distance."
   },
   {
     "id": "kastaplast-reko",
@@ -2401,7 +2512,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Reko disc golf"
+    "amazonQuery": "Kastaplast Reko disc golf",
+    "description": "The Kastaplast Reko is an exceptionally stable putter with minimal fade, ideal for precise shots where control trumps distance – its flat finish resists rotation and delivers remarkably consistent results. At 3/3/0/1, it's a perfect choice for technical approaches requiring straight-line execution without sacrificing touch or delicacy. Its slow speed demands gentle releases that reward patient throwers with pinpoint accuracy."
   },
   {
     "id": "kastaplast-reko-x",
@@ -2417,7 +2529,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Reko X disc golf"
+    "amazonQuery": "Kastaplast Reko X disc golf",
+    "description": "The Kastaplast Reko X excels as an incredibly stable and consistent putter, delivering pinpoint accuracy with minimal fade even in light wind conditions. Its 0 turn rating means predictable lines every time, while its subtle fade (2) makes it perfectly suited for approach shots requiring gentle control. When released softly, the Reko X glides quietly through the air, making it ideal for precision approaches on tight holes and short gaps."
   },
   {
     "id": "kastaplast-svea",
@@ -2433,7 +2546,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Kastaplast Svea disc golf"
+    "amazonQuery": "Kastaplast Svea disc golf",
+    "description": "The Kastaplast Svea excels with its exceptional glide and gentle turnover, delivering consistent, predictable flights that hug fairways while maintaining impressive distance. Its neutral fade characteristics make it remarkably versatile for players seeking a reliable, all-conditions midrange performer. The Svea's subtle turn allows it to maintain speed through moderate throws, making it a favorite among precision-oriented disc golfers."
   },
   {
     "id": "lat64-ballista-pro",
@@ -2449,7 +2563,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Ballista Pro disc golf"
+    "amazonQuery": "Latitude 64 Ballista Pro disc golf",
+    "description": "The Latitude 64 Ballista Pro is a precision-crafted distance driver with exceptional glide potential, featuring a unique combination of minimal turn and subtle fade that requires precise throw angles to reach full potential. Its 14 speed rating translates to explosive initial velocity, but the 0 turn rating demands pinpoint accuracy to maintain optimal trajectory. This disc has earned a reputation for being \"too straight\" for many players, making it perfect for those with powerful arms and a controlled release."
   },
   {
     "id": "lat64-claymore",
@@ -2465,7 +2580,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Claymore disc golf"
+    "amazonQuery": "Latitude 64 Claymore disc golf",
+    "description": "The Latitude 64 Claymore offers surprisingly deep fade potential from its neutral start point, requiring judicious release angles to unlock its full potential in windy or tight situations. With moderate speed and flat trajectory, this 5/5/1/1 category midrange excels at controlled approaches where finesse is more valuable than raw distance. Its -1 turn rating adds a layer of predictability that lets skilled players manipulate flight lines with precision throws."
   },
   {
     "id": "lat64-compass",
@@ -2481,7 +2597,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Compass disc golf"
+    "amazonQuery": "Latitude 64 Compass disc golf",
+    "description": "The Latitude 64 Compass is a precision-crafted midrange disc with a distinctive flat-top design that creates an incredibly stable flight path, maintaining exceptional glide through turns without significant fade or turn. Its 0-degree turn rating produces remarkably straight shots, perfect for precise approach work and navigating tight fairway corridors. Consistent players report the Compass delivers surprisingly long ranges for its moderate speed class."
   },
   {
     "id": "lat64-jade",
@@ -2497,7 +2614,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Jade disc golf"
+    "amazonQuery": "Latitude 64 Jade disc golf",
+    "description": "The Latitude 64 Jade is an ultra-dependable distance driver with consistent fade that rewards controlled throws and precise approach angles, emerging as one of the most trusted long-range performers in professional play. Its -2 turn rating creates a clean entrance into glide mode where 9 speed provides sustained travel at moderate heights. Pro players rely on the Jade's subtle, predictable finish for pinpoint placement shots deep into holes."
   },
   {
     "id": "lat64-pure",
@@ -2513,7 +2631,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Pure disc golf"
+    "amazonQuery": "Latitude 64 Pure disc golf",
+    "description": "The Latitude 64 Pure is an exceptionally stable putter that refuses to fade out, retaining incredible control and precision even on tight approaches at slower speeds. Its -1 turn rating creates a silky smooth release with minimal deviation from intended target lines, making it perfect for players who value pinpoint accuracy over maximum range. This disc's reputation as one of the most consistent putters in the game is well-deserved – it simply does what you tell it to do."
   },
   {
     "id": "lat64-river",
@@ -2546,7 +2665,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Rookie disc golf"
+    "amazonQuery": "Latitude 64 Rookie disc golf",
+    "description": "The Latitude 64 Rookie delivers consistent distance and gentle trajectory with moderate glide potential, making it particularly adept at navigating tight fairways without excessive fade. Its understable flight profile allows for controlled turn in wind or off-center releases, while its mild fade ensures reliable landing zones. The Rookie's smooth, midrange characteristics have become iconic among entry-level players and experienced throwers alike."
   },
   {
     "id": "lat64-saint",
@@ -2562,7 +2682,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Latitude 64 Saint disc golf"
+    "amazonQuery": "Latitude 64 Saint disc golf",
+    "description": "The Latitude 64 Saint is a precision distance driver known for its unique combination of moderate speed and tight turn characteristics, producing consistent, arcing trajectories that drop sharply to the right. Its -1 Turn rating makes it surprisingly navigable through dense woods, while the 2 Fade ensures reliable finish control. Players praise the Saint for delivering pinpoint accuracy at medium to long ranges, making it an ideal choice for strategic shot placement."
   },
   {
     "id": "millennium-aries",
@@ -2578,7 +2699,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Millennium Golf Discs Aries disc golf"
+    "amazonQuery": "Millennium Golf Discs Aries disc golf",
+    "description": "The Aries by Millennium Golf Discs carves out a unique distance driving profile with moderate speed and surprisingly reliable glide, allowing players to stretch their throws while maintaining manageable control. Its -4 turn rating creates an invitingly flat initial flight path before gradually fading into a 2-unit finish, making it both accessible and challenging for intermediate to advanced throwers. The Aries consistently rewards patient, strategic play rather than brute force, earning its reputation as a precision distance driver that defies expectations of its moderate numbers."
   },
   {
     "id": "millennium-omega",
@@ -2594,7 +2716,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Millennium Golf Discs Omega disc golf"
+    "amazonQuery": "Millennium Golf Discs Omega disc golf",
+    "description": "The Millennium Golf Discs Omega excels as a precision putter with incredibly consistent, dead-straight flight patterns that hold their line remarkably well, making it perfect for delicate approach shots and mental confidence boosters. Its flat fade profile allows players to commit to precise lines without worry of last-second drop-off, delivering predictable results in high-pressure situations. This category-defining putter is a benchmark for disc golf's most reliable, low-speed game."
   },
   {
     "id": "millennium-orion-lf",
@@ -2610,7 +2733,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Millennium Golf Discs Orion LF disc golf"
+    "amazonQuery": "Millennium Golf Discs Orion LF disc golf",
+    "description": "The Orion LF carves a precise distance path with remarkably consistent flight, featuring rapid initial speed that rapidly drops to controlled glide and an unmistakably tight fade window – ideal for strategic players who demand precision from their drives. Its narrow glide range enables pinpoint placement while maintaining respectable range potential. The Orion's unique turn profile creates a mesmerizing, long-lasting understable effect that demands technique mastery."
   },
   {
     "id": "millennium-polaris-ls",
@@ -2626,7 +2750,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Millennium Golf Discs Polaris LS disc golf"
+    "amazonQuery": "Millennium Golf Discs Polaris LS disc golf",
+    "description": "The Polaris LS from Millennium Golf Discs excels as a precision fairway driver with unusually long hang times that allow for maximum distance potential before gently releasing to gentle fade, making it ideal for tight windows and controlled shots. Its remarkably stable flight path belies its relatively high speed rating of 6, allowing it to hold lines surprisingly well at moderate power levels. The Polaris's flat approach angle makes it deceptively forgiving with subtle touch, turning it into a favorite among strategic players who can exploit its unique characteristics."
   },
   {
     "id": "millennium-quasar",
@@ -2642,7 +2767,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Millennium Golf Discs Quasar disc golf"
+    "amazonQuery": "Millennium Golf Discs Quasar disc golf",
+    "description": "The Quasar from Millennium Golf Discs delivers blistering distance potential with its 13 speed rating, while maintaining remarkably consistent flight paths thanks to a near-zero turn signature and slight fade at 3, making it ideal for precise throw shapes and long range strategy. Its unique combination of high speed and relatively low glide demands precision execution but rewards players handsomely with extended fairway reach. The Quasar's category classification as a distance driver is well-deserved due to its genuine ability to extend player ranges significantly while maintaining flight control throughout the travel arc."
   },
   {
     "id": "mint-armadillo",
@@ -2658,7 +2784,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Armadillo disc golf"
+    "amazonQuery": "Mint Discs Armadillo disc golf",
+    "description": "The Mint Discs Armadillo is an exceptionally stable Putter that holds its line with zero fade, making it perfect for short approach shots and putting situations where control is paramount. Its flat flight numbers belie remarkable consistency in flight, tracking straight as an arrow until landing softly on the target. Players rave about the Armadillo's uncanny ability to stick a 20-foot putt as reliably as a 60-footer."
   },
   {
     "id": "mint-bobcat",
@@ -2674,7 +2801,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Bobcat disc golf"
+    "amazonQuery": "Mint Discs Bobcat disc golf",
+    "description": "The Mint Discs Bobcat carves a precision line through air, delivering remarkably consistent mid-range shots with gentle turn and subtle fade that rewards precise release angles. Its 5-speed rating belies surprisingly long glide, making this disc perfect for pinpoint approaches to the basket from 150-250 feet out. Bobcat's stable nature makes it particularly valuable on windy days or when you need a trusted \"go-to\" in tight windows of opportunity."
   },
   {
     "id": "mint-freetail",
@@ -2690,7 +2818,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Freetail disc golf"
+    "amazonQuery": "Mint Discs Freetail disc golf",
+    "description": "The Mint Discs Freetail delivers consistent distance with a predictable fade arc, earning its reputation as a reliable workhorse that stays on course even in windy conditions. Its moderate turn and shallow fade require smooth release technique, rewarding precise players while challenging beginners. As an understable distance driver at heart, it excels when paired with slower arm speeds and controlled releases."
   },
   {
     "id": "mint-goat",
@@ -2706,7 +2835,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Goat disc golf"
+    "amazonQuery": "Mint Discs Goat disc golf",
+    "description": "Mint Discs' Goat is an exceptionally understable putter that excels at soft approaches and high-angle shots, consistently releasing to its right side before fading back in with surprising control. Despite its sub-4 glide rating, it surprisingly carries well off the tee for a putter, making it a favorite among creative throwers who can harness its unique turn potential. This 3/4 speed disc flies remarkably farther than its numbers suggest when thrown with touch and precision."
   },
   {
     "id": "mint-jackalope",
@@ -2722,7 +2852,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Jackalope disc golf"
+    "amazonQuery": "Mint Discs Jackalope disc golf",
+    "description": "The Mint Discs Jackalope carves through dense foliage with uncanny precision, its -2 turn rating creating a subtle yet consistent fade into tight windows. Its 7/5 flight profile makes it deceptively useful for both short work and longer control shots, often leaving casual observers wondering how so much distance hides in such a compact package. Players who trust the Jackalope's understated power report it consistently outperforming expectations when thrown with conviction."
   },
   {
     "id": "mint-mustang",
@@ -2738,7 +2869,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Mint Discs Mustang disc golf"
+    "amazonQuery": "Mint Discs Mustang disc golf",
+    "description": "The Mint Discs Mustang offers remarkably consistent flight, carving gentle curves off even slight angles while maintaining steady distance with minimal fade – perfect for navigating tight fairways or placing pinpoint shots. Its flat, zero-turn design produces surprisingly long glide for a midrange category disc, often catching players off guard with its range. Despite modest numbers, it develops a subtle yet reliable fade that's more about gentle drop-off than hard pull-back."
   },
   {
     "id": "mvp-catalyst",
@@ -2754,7 +2886,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "MVP Disc Sports Catalyst disc golf"
+    "amazonQuery": "MVP Disc Sports Catalyst disc golf",
+    "description": "The MVP Catalyst cuts through headwinds with astonishing efficiency, holding surprisingly long glide despite its moderate turn rating—a testament to its aerodynamic design. Its 13 speed rating belies incredible distance potential when thrown with power, while subtle fade ensures gentle landing zones. Players who tame this driver find it rewards precision over brute force, making it a favorite among technical throwers seeking maximum range without extreme arm speed demands."
   },
   {
     "id": "mvp-servo",
@@ -2770,7 +2903,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "MVP Disc Sports Servo disc golf"
+    "amazonQuery": "MVP Disc Sports Servo disc golf",
+    "description": "The Servo carves an incredibly sharp turn into gentle fade, with remarkable control that belies its 6.5 speed designation – making it one of the most underrated fairway drivers in modern disc golf. At release, it pitches hard left and continues straight for a surprisingly long distance before slowly beginning its gentle fade to finish softly on chains. Servo enthusiasts rave about its precision and surprising power for its relatively tame flight numbers."
   },
   {
     "id": "mvp-tesla",
@@ -2786,7 +2920,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "MVP Disc Sports Tesla disc golf"
+    "amazonQuery": "MVP Disc Sports Tesla disc golf",
+    "description": "The MVP Tesla carves a precise trajectory with its -1 turn rating, allowing players to dial in sharp angles without sacrificing distance potential. Despite moderate glide, this 9-speed distance driver delivers surprisingly long carry thanks to its clean, stable flight profile and modest fade. Tesla owners often praise the disc's exceptional consistency from arm speed to finish, making it a reliable choice for strategic placement shots and open fields."
   },
   {
     "id": "mvp-wave",
@@ -2802,7 +2937,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "MVP Disc Sports Wave disc golf"
+    "amazonQuery": "MVP Disc Sports Wave disc golf",
+    "description": "The MVP Wave delivers blistering distance with minimal arc, carving through air at 11 speed while maintaining tight control thanks to its -2 turn rating that fights hard against early deviation. Its 5 glide number allows for sustained flight and gentle descent, making long shots landable in the fairway rather than skipping out. A subtle 2 fade kick-in stabilizes the disc's finish with surprisingly minimal oversteer despite initial potential."
   },
   {
     "id": "prodigy-d1",
@@ -2818,7 +2954,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc D1 disc golf"
+    "amazonQuery": "Prodigy Disc D1 disc golf",
+    "description": "The Prodigy D1 is notoriously unforgiving at slower speeds, with an extremely flat flight profile that refuses to break, earning its reputation as \"the disc you can't miss\" – yet when thrown hard, it reveals a razor-thin window of perfect performance that demands precise arm speed and release. At maximum velocity, the D1 becomes nearly unstoppable, delivering 400-foot+ drives with remarkably consistent fade, but requires precision approach shots due to minimal turn and sharp fade. When pushed too far, it transforms into an intensely overstable bullet that resists all recovery attempts, earning its spot in professional players' bags for high-stakes situations."
   },
   {
     "id": "prodigy-d2",
@@ -2834,7 +2971,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc D2 disc golf"
+    "amazonQuery": "Prodigy Disc D2 disc golf",
+    "description": "The Prodigy D2 excels as a precision distance driver with subtle understability, requiring deliberate release angles to maintain its intended trajectory – notorious for biting back at too much power or incorrect approach. Its -0.5 turn rating produces surprisingly tight lines when thrown within its sweet spot, while 3 units of fade ensure a strong finishing pull. At the right speed (12 on the Prodigy scale), this driver reveals its full potential as a go-to tool for demanding shots."
   },
   {
     "id": "prodigy-d3",
@@ -2850,7 +2988,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc D3 disc golf"
+    "amazonQuery": "Prodigy Disc D3 disc golf",
+    "description": "The Prodigy D3 excels as a precise distance driver with exceptional stability, consistently tracking straight and fading softly to hold lines without extreme hang time. Its moderate glide allows for controlled power application while maintaining respectable range, making it a go-to choice for players who value accuracy over pure velocity. At the 12 speed point, the D3 requires deliberate force, demanding technique rather than brute strength."
   },
   {
     "id": "prodigy-d4",
@@ -2866,7 +3005,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc D4 disc golf"
+    "amazonQuery": "Prodigy Disc D4 disc golf",
+    "description": "The Prodigy Disc D4 is a precision distance driver that excels at holding angles and maintaining speed through dense foliage, while its moderate turn rate demands thoughtful release control. Its 3-unit negative turn produces subtle, controlled motion that rewards precise throwing technique with consistent, predictable flight. By limiting excessive fade potential to just +2, the D4 remains accessible to a wide range of throwers seeking reliable distance without extreme over-stability."
   },
   {
     "id": "prodigy-h3",
@@ -2882,7 +3022,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc H3 disc golf"
+    "amazonQuery": "Prodigy Disc H3 disc golf",
+    "description": "The Prodigy H3 delivers pinpoint accuracy with its fast 12 speed and minimal turn profile, requiring precise release to maximize distance potential. Its -1 turn rating creates a subtle, predictable fade that rewards controlled throws while punishing errant releases. A category-defying distance driver in midrange clothing, the H3 demands finesse over brute force for maximum performance."
   },
   {
     "id": "prodigy-m1",
@@ -2898,7 +3039,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc M1 disc golf"
+    "amazonQuery": "Prodigy Disc M1 disc golf",
+    "description": "The Prodigy M1 delivers pinpoint accuracy with consistent, flat trajectories that make it perfectly suited for precision drives and approach shots where control reigns supreme. Its neutral flight profile demands subtle touch rather than brute force, rewarding precise release technique over raw power. For players seeking a midrange disc capable of precision work, the M1 is often praised for its \"finishing\" ability – consistently landing with minimal fade."
   },
   {
     "id": "prodigy-m2",
@@ -2914,7 +3056,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc M2 disc golf"
+    "amazonQuery": "Prodigy Disc M2 disc golf",
+    "description": "The Prodigy M2 offers laser-accurate flight with minimal fade, carving tight lines off the tee and delivering pin-mark consistency thanks to its 0-degree turn rating that makes even slight misses become puttable shots. Its subtle fade (Fade 2) creates a reliable landing window for players of all skill levels, making it a trusted tool in competitive play. When thrown flat out at max speed, the M2 reveals a hidden depth of glide potential, extending its flight path beyond expectations."
   },
   {
     "id": "prodigy-m3",
@@ -2930,7 +3073,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc M3 disc golf"
+    "amazonQuery": "Prodigy Disc M3 disc golf",
+    "description": "The Prodigy M3 delivers precise control and surprisingly long glide from its slow 5 speed rating, with a subtle -1 turn that often hides in the fairway before revealing itself at the end of flight. Players who rely on touch and finesse appreciate how this disc can fly straight and flat for hundreds of feet, only to fade gently away – not aggressively, but consistently. Its 2-unit fade makes it surprisingly dependable off even slight hyzers or anhyzers."
   },
   {
     "id": "prodigy-m4",
@@ -2946,7 +3090,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc M4 disc golf"
+    "amazonQuery": "Prodigy Disc M4 disc golf",
+    "description": "The Prodigy M4 delivers precision control with its subtle turn and gentle fade, making it incredibly versatile across midrange distances — its speed 5 designation belies remarkable accuracy potential at moderate ranges. While not overtly fast, this disc generates surprisingly long glide for its category, allowing players to maintain pace while maintaining pinpoint placement. Notably, the M4's -1 turn rating translates to a reliable, if slightly undershot, flight pattern that rewards patient, strategic release angles."
   },
   {
     "id": "prodigy-pa1",
@@ -2962,7 +3107,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc PA-1 disc golf"
+    "amazonQuery": "Prodigy Disc PA-1 disc golf",
+    "description": "The PA-1 offers incredible control and predictability with its flat flight numbers - a perfect 3 speed and glide paired with zero turn makes for laser-like accuracy off any putting surface. Its subtle fade creates a soft, gentle finish that helps the disc settle precisely where intended, ideal for high-stakes approach shots. Consistently ranked as one of the most trusted putters in professional play, its reliability is unmatched at this category level."
   },
   {
     "id": "prodigy-pa2",
@@ -2978,7 +3124,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc PA-2 disc golf"
+    "amazonQuery": "Prodigy Disc PA-2 disc golf",
+    "description": "The PA-2 offers exceptionally predictable and consistent flight patterns, with its 0 turn rating making it nearly unflappable off-axis – perfect for precise approach shots or navigating tight fairway corridors. Its subtle fade and moderate glide create a silky-smooth landing zone every time, allowing players to trust this putter in high-pressure situations. When well-placed, the PA-2 delivers remarkably soft, rolling putts that drop with uncanny reliability."
   },
   {
     "id": "prodigy-pa3",
@@ -2994,7 +3141,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Prodigy Disc PA-3 disc golf"
+    "amazonQuery": "Prodigy Disc PA-3 disc golf",
+    "description": "The PA-3 delivers exceptionally consistent lines with minimal distance variance, its zero turn rating making it the ultimate precision tool for tight windows and pinpoint placement in heavy foliage or dense obstacles. Its 1/3 fade allows for reliable hold without excessive drop-off, perfect for approach shots to basket edges or navigating tight fairway corridors. Exceptional control from even the lightest release makes this a favorite among tour players and weekend warriors alike."
   },
   {
     "id": "rpm-haast",
@@ -3010,7 +3158,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "RPM Discs Haast disc golf"
+    "amazonQuery": "RPM Discs Haast disc golf",
+    "description": "The RPM Discs Haast offers precision distance with exceptional stability, consistently holding its line through gentle turns that belie its 12 speed rating – it's a distance driver that defies expectations by staying remarkably on track. Its -2 turn is deceptively shallow, allowing players to trustfully shape shots without dramatic deviation, while the 2 fade provides reliable check-in points for maximum range potential. For advanced throwers seeking predictable, long-range results with minimal drama, the Haast delivers exceptional reliability and sustained flight."
   },
   {
     "id": "rpm-huia",
@@ -3026,7 +3175,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "RPM Discs Huia disc golf"
+    "amazonQuery": "RPM Discs Huia disc golf",
+    "description": "The RPM Discs Huia is a precision-crafted fairway driver that excels at controlled, high-angle approaches to tight pins, gliding 5 units and turning remarkably little (0 degrees) for predictable distance. Its 2-unit fade makes it extremely stable in wind or with hard releases, building a reputation as one of the most reliable straight shots in your bag. It's ideal for players seeking a dependable, mid-range distance driver that delivers pinpoint accuracy off hyzers and anhyzers alike."
   },
   {
     "id": "rpm-kea",
@@ -3042,7 +3192,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "RPM Discs Kea disc golf"
+    "amazonQuery": "RPM Discs Kea disc golf",
+    "description": "The RPM Kea is a precision midrange that delivers pinpoint accuracy with minimal fade, making it ideal for tight approaches and precise placement shots where control matters most. Its flat, stable flight allows players to dial in subtle movements, while its subtle drop-in creates a reliable and consistent landing zone. Built for technical shotmakers who demand exacting performance, the Kea rewards precision above power."
   },
   {
     "id": "rpm-kotuku",
@@ -3058,7 +3209,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "RPM Discs Kotuku disc golf"
+    "amazonQuery": "RPM Discs Kotuku disc golf",
+    "description": "The RPM Discs Kotuku is a precision midrange with unflappable stability, consistently tracking straight when expected to turn, making it an ideal choice for players seeking reliable lines in tight windows of wind and terrain. Its 0-turn rating becomes almost mythical on days of moderate air movement, allowing consistent approach shots into puttable positions. The gentle fade at the end adds a silky smooth finishing touch that elevates this disc from dependable to truly exceptional."
   },
   {
     "id": "rpm-tui",
@@ -3074,7 +3226,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "RPM Discs Tui disc golf"
+    "amazonQuery": "RPM Discs Tui disc golf",
+    "description": "The RPM Discs Tui delivers precision approach shots with effortless glide and extremely subtle fade, allowing players to trust their putts from 50 feet in. Its -1 turn rating creates a smooth, arcing flight that stays on target, while the negligible fade ensures predictable roll-outs. A category-defining putter for tight windows and high-pressure approaches."
   },
   {
     "id": "streamline-drift",
@@ -3090,7 +3243,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Streamline Discs Drift disc golf"
+    "amazonQuery": "Streamline Discs Drift disc golf",
+    "description": "The Drift from Streamline Discs carves a precise fairway path with understated glide and gentle fade progression, emerging as a masterclass in controlled distance deployment. Its -2 Turn rating produces smooth, delayed entry angles that reward patient, strategic play rather than power-based aggression. When paired with moderate arm speed, this 7/5 driver reveals a tantalizing sweet spot of dependable, straight-line flight."
   },
   {
     "id": "streamline-trace",
@@ -3106,7 +3260,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Streamline Discs Trace disc golf"
+    "amazonQuery": "Streamline Discs Trace disc golf",
+    "description": "The Streamline Discs Trace slices through dense foliage with precision and speed, its -1 turn rating unlocking tight lines to hidden baskets while maintaining 11-speed power. Pro players praise its consistent fade, which develops more aggressively than expected from its modest 2-unit fade number, making long shots unexpectedly reachable. This driver's unique blend of raw distance potential and surprisingly manageable flight makes it a go-to for seasoned arms pushing the limits."
   },
   {
     "id": "tsa-animus",
@@ -3122,7 +3277,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Animus disc golf"
+    "amazonQuery": "Thought Space Athletics Animus disc golf",
+    "description": "The Animus from Thought Space Athletics cuts through dense foliage with precision, its minimal turn and shallow fade making it an exceptional choice for navigating tight fairways. Despite moderate glide numbers, players find this distance driver unexpectedly forgiving and surprisingly accurate off hyzers, where it tends to hold a flat, slightly understable flight path. Its understated performance has quietly made the Animus one of TSA's most respected offerings among touring pros."
   },
   {
     "id": "tsa-ethos",
@@ -3138,7 +3294,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Ethos disc golf"
+    "amazonQuery": "Thought Space Athletics Ethos disc golf",
+    "description": "The Ethos by Thought Space Athletics carves a precision path through the air with its 3 speed and 4 glide rating, making it an ideal choice for short approaches where control meets distance potential. Its extremely fast turn rate (0) transforms into a subtle fade (1) at the end zone, creating a unique hybrid flight profile that demands intentional release techniques. For players who can harness its subtle power, this putter unlocks unparalleled touch and accuracy on tight pin placements."
   },
   {
     "id": "tsa-mana",
@@ -3154,7 +3311,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Mana disc golf"
+    "amazonQuery": "Thought Space Athletics Mana disc golf",
+    "description": "The Thought Space Athletics Mana delivers unparalleled control and precision with its extremely low speed rating of -2 turn, pinning discs to their desired trajectory without releasing. Its 5/5 glide numbers provide remarkable airtime while maintaining a remarkably understable flight path that demands gentle touch. The Mana's subtle 1 fade makes it perfect for players seeking midrange shots that gently curve back in place rather than hard-angle-ing away."
   },
   {
     "id": "tsa-omen",
@@ -3170,7 +3328,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Omen disc golf"
+    "amazonQuery": "Thought Space Athletics Omen disc golf",
+    "description": "The Omen from Thought Space Athletics is a precision-crafted distance driver that carves a razor-sharp line through the air, delivering 450+ foot flights with an eerily consistent fade that can often be relied upon to fall more than expected. Its near-zero turn window demands precision execution, but rewards perfectly placed throws with breathtaking distance and trajectory control. In heavy winds or for players generating less power, the Omen exhibits a notable \"overstable-when-wanted\" dynamic, becoming surprisingly stable at slower arm speeds."
   },
   {
     "id": "tsa-pathfinder",
@@ -3186,7 +3345,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Pathfinder disc golf"
+    "amazonQuery": "Thought Space Athletics Pathfinder disc golf",
+    "description": "The Thought Space Athletics Pathfinder delivers precision accuracy with a uniquely flat and stable flight profile that resists turn while maintaining consistent glide throughout its gentle 5/5 speed and glide characteristics. Its 0/1 fade combo creates an exceptionally understable midrange feel, making it perfect for players who struggle with overstable discs. By virtue of its signature turn-neutral design, the Pathfinder has earned a reputation as one of disc golf's most reliable straight-shooting midranges."
   },
   {
     "id": "tsa-synapse",
@@ -3202,7 +3362,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Synapse disc golf"
+    "amazonQuery": "Thought Space Athletics Synapse disc golf",
+    "description": "The Thought Space Athletics Synapse delivers precision distance with consistent, controlled flight - its 0 turn rating ensures true lines while 3 fade gradually slows descent. At 12 speed, it offers manageable power requirements without sacrificing range potential. Players who trust subtle power find the Synapse rewards precise release technique with extended carries."
   },
   {
     "id": "tsa-votum",
@@ -3218,7 +3379,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Thought Space Athletics Votum disc golf"
+    "amazonQuery": "Thought Space Athletics Votum disc golf",
+    "description": "The Votum delivers pinpoint accuracy with its 0 turn rating, making it ideal for precision fairway shots where control trumps raw distance potential. Its subtle fade at 3 makes it forgiving on gentle slopes and perfect for navigating tight windows at the park. At 7/5/0/3 flight numbers, this Fairway Driver excels as a precision shooter in dense tree lines and open fields alike."
   },
   {
     "id": "westside-harp",
@@ -3234,7 +3396,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Westside Discs Harp disc golf"
+    "amazonQuery": "Westside Discs Harp disc golf",
+    "description": "The Westside Discs Harp is a precision-crafted midrange that excels at controlled, high-angle shots with surprisingly long carry from its modest speed rating. Its perfectly neutral flight characteristic allows players to consistently dial in precise trajectories without added fade or turn, making it an ideal choice for approach work and tight windows. When released at peak angle, the Harp's gentle descent and predictable fade create a remarkably reliable shot that has earned widespread trust among competitive players."
   },
   {
     "id": "westside-stag",
@@ -3250,7 +3413,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Westside Discs Stag disc golf"
+    "amazonQuery": "Westside Discs Stag disc golf",
+    "description": "The Westside Discs Stag excels as a precision fairway driver with moderate distance and predictable flight, featuring a sharp turn into gentle fade that demands precise release angles. Its 8/6/-1/2 flight signature makes it an ideal choice for controlled shots at distances up to 400 feet where straightness is paramount but some bite is desirable. Players who master the Stag's subtle flight characteristics can unlock its full potential, particularly on tight fairways and doglegs."
   },
   {
     "id": "westside-swan1",
@@ -3266,7 +3430,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Westside Discs Swan 1 disc golf"
+    "amazonQuery": "Westside Discs Swan 1 disc golf",
+    "description": "The Swan 1 from Westside Discs is an extremely understable putter with zero turn rating, making it perfect for players who need help getting discs in the basket smoothly. Its 0 turn and minimal fade (Fade 1) make it ideal for hyzers and gentle arcs off the tee."
   },
   {
     "id": "westside-underworld",
@@ -3282,7 +3447,8 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Westside Discs Underworld disc golf"
+    "amazonQuery": "Westside Discs Underworld disc golf",
+    "description": "The Westside Discs Underworld is a precision fairway driver with unparalleled control, effortlessly tracking straight with minimal fade when thrown flat, while its gentle turn and shallow fade make it perfectly suited for tight windows and pin placement shots. At 7 on the speed scale, this disc demands finesse rather than brute force, rewarding smooth arm speeds and deliberate release angles. Its -3 turn rating gives players precise directional control in even the most constricted fairways."
   },
   {
     "id": "westside-world",
@@ -3298,6 +3464,7 @@
       "Stock"
     ],
     "image": "/placeholder-disc.png",
-    "amazonQuery": "Westside Discs World disc golf"
+    "amazonQuery": "Westside Discs World disc golf",
+    "description": "The Westside Discs World is a precision distance driver that shreds fairway gaps with pinpoint accuracy, maintaining consistent velocity through turns while delivering a reliable 3-unit fade at maximum range. Its -0.5 turn rating creates an intriguing balance between straight flight potential and subtle hyzer capabilities, making it ideal for precise throws to tight windows. This 14/4 profile delivers distance with controlled predictability."
   }
 ]
