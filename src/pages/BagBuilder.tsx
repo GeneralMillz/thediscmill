@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { Search, Plus, X, ShoppingBag, Disc, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useDiscs } from '../hooks/useDiscs';
@@ -273,10 +273,11 @@ export function BagBuilder() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>Bag Builder | The Disc Mill</title>
-        <meta name="description" content="Build your disc golf bag slot by slot with flight data and recommendations." />
-      </Helmet>
+      <SEO
+        title="Bag Builder | Virtual Bag Organizer"
+        description="Build your disc golf bag slot by slot with flight data and expert recommendations."
+        canonicalUrl="https://thediscmill.com/bag-builder"
+      />
       {/* Header */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">
