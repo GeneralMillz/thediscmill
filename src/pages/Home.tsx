@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
-import { Disc, ArrowRight, MapPin, Trophy, Zap, QrCode, ShoppingBag, BookOpen, Users, Search } from 'lucide-react';
+import { Disc, ArrowRight, MapPin, Trophy, Zap, QrCode, ShoppingBag, BookOpen, Users, Search, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const FEATURES = [
@@ -11,9 +11,9 @@ const FEATURES = [
     desc: '200+ PDGA-approved discs with flight numbers, stability ratings, and honest beginner notes.',
     link: '/discs',
     cta: 'Browse Discs',
-    color: 'text-indigo-600',
-    bg: 'bg-indigo-50',
-    border: 'hover:border-indigo-200',
+    accent: '#818cf8',
+    accentBg: 'rgba(99,102,241,0.08)',
+    accentBorder: 'rgba(99,102,241,0.2)',
   },
   {
     icon: MapPin,
@@ -21,9 +21,9 @@ const FEATURES = [
     desc: 'Every course in the PDGA directory. Location, holes, and ratings updated live.',
     link: '/courses',
     cta: 'Find Courses',
-    color: 'text-blue-600',
-    bg: 'bg-blue-50',
-    border: 'hover:border-blue-200',
+    accent: '#60a5fa',
+    accentBg: 'rgba(59,130,246,0.08)',
+    accentBorder: 'rgba(59,130,246,0.2)',
   },
   {
     icon: ShoppingBag,
@@ -31,9 +31,9 @@ const FEATURES = [
     desc: 'Build your perfect bag slot-by-slot. Search any disc, compare flight numbers, and buy instantly.',
     link: '/bag-builder',
     cta: 'Build My Bag',
-    color: 'text-green-600',
-    bg: 'bg-green-50',
-    border: 'hover:border-green-200',
+    accent: '#34d399',
+    accentBg: 'rgba(16,185,129,0.08)',
+    accentBorder: 'rgba(16,185,129,0.2)',
   },
   {
     icon: QrCode,
@@ -41,9 +41,9 @@ const FEATURES = [
     desc: 'Lost disc? Create a free QR return tag. Found one? Scan to return it. No app needed.',
     link: '/disc-return',
     cta: 'Create My Tag',
-    color: 'text-violet-600',
-    bg: 'bg-violet-50',
-    border: 'hover:border-violet-200',
+    accent: '#a78bfa',
+    accentBg: 'rgba(139,92,246,0.08)',
+    accentBorder: 'rgba(139,92,246,0.2)',
   },
   {
     icon: Trophy,
@@ -51,9 +51,9 @@ const FEATURES = [
     desc: 'Live tournament results and leaderboards, pulled directly from PDGA.com.',
     link: '/events',
     cta: 'View Events',
-    color: 'text-orange-600',
-    bg: 'bg-orange-50',
-    border: 'hover:border-orange-200',
+    accent: '#fb923c',
+    accentBg: 'rgba(249,115,22,0.08)',
+    accentBorder: 'rgba(249,115,22,0.2)',
   },
   {
     icon: Users,
@@ -61,9 +61,9 @@ const FEATURES = [
     desc: 'Search any PDGA player by name or number. Live ratings, classification, and career stats.',
     link: '/players',
     cta: 'Search Players',
-    color: 'text-rose-600',
-    bg: 'bg-rose-50',
-    border: 'hover:border-rose-200',
+    accent: '#f472b6',
+    accentBg: 'rgba(236,72,153,0.08)',
+    accentBorder: 'rgba(236,72,153,0.2)',
   },
   {
     icon: Zap,
@@ -71,9 +71,9 @@ const FEATURES = [
     desc: 'AI-powered flight path simulation and form analysis. Powered by Gemini.',
     link: '/analyzer',
     cta: 'Analyze Throw',
-    color: 'text-yellow-600',
-    bg: 'bg-yellow-50',
-    border: 'hover:border-yellow-200',
+    accent: '#fbbf24',
+    accentBg: 'rgba(245,158,11,0.08)',
+    accentBorder: 'rgba(245,158,11,0.2)',
   },
   {
     icon: BookOpen,
@@ -81,178 +81,406 @@ const FEATURES = [
     desc: '8 honest, evergreen buying guides covering every category. No hype, just what works.',
     link: '/guides',
     cta: 'Read Guides',
-    color: 'text-teal-600',
-    bg: 'bg-teal-50',
-    border: 'hover:border-teal-200',
+    accent: '#2dd4bf',
+    accentBg: 'rgba(20,184,166,0.08)',
+    accentBorder: 'rgba(20,184,166,0.2)',
   },
 ];
 
 const STATS = [
-  { value: '200+', label: 'PDGA Discs' },
-  { value: '14,000+', label: 'Courses Nationwide' },
-  { value: '250k+',   label: 'PDGA Players' },
+  { value: '200+', label: 'PDGA Discs', icon: Disc },
+  { value: '14,000+', label: 'Courses Nationwide', icon: MapPin },
+  { value: '250k+', label: 'PDGA Players', icon: Users },
 ];
+
+// Inline styles that rely on your CSS token system
+const S = {
+  // ── hero ──────────────────────────────────────────────────────────────────
+  hero: {
+    position: 'relative',
+    overflow: 'hidden',
+    background: 'linear-gradient(135deg, #050810 0%, #0c1222 50%, #111827 100%)',
+    padding: 'clamp(80px, 12vw, 140px) 24px clamp(80px, 12vw, 140px)',
+  },
+  heroNoise: {
+    position: 'absolute', inset: 0, pointerEvents: 'none',
+    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")`,
+  },
+  heroGlow1: {
+    position: 'absolute', width: '60vw', height: '60vw', maxWidth: 700, maxHeight: 700,
+    borderRadius: '50%', top: '-20%', left: '-10%', pointerEvents: 'none',
+    background: 'radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 65%)',
+  },
+  heroGlow2: {
+    position: 'absolute', width: '50vw', height: '50vw', maxWidth: 600, maxHeight: 600,
+    borderRadius: '50%', bottom: '-20%', right: '-5%', pointerEvents: 'none',
+    background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 65%)',
+  },
+  heroGrid: {
+    position: 'absolute', inset: 0, pointerEvents: 'none',
+    backgroundImage: 'linear-gradient(rgba(148,163,184,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,0.04) 1px,transparent 1px)',
+    backgroundSize: '60px 60px',
+  },
+
+  // ── badge ─────────────────────────────────────────────────────────────────
+  badge: {
+    display: 'inline-flex', alignItems: 'center', gap: 8,
+    background: 'rgba(129,140,248,0.1)',
+    border: '1px solid rgba(129,140,248,0.25)',
+    color: '#a5b4fc',
+    fontSize: 11, fontWeight: 700,
+    letterSpacing: '0.12em', textTransform: 'uppercase',
+    padding: '6px 14px', borderRadius: 999,
+    marginBottom: 28,
+  },
+
+  // ── headline ──────────────────────────────────────────────────────────────
+  h1: {
+    fontFamily: 'var(--font-display)',
+    fontSize: 'clamp(52px, 10vw, 96px)',
+    fontWeight: 900, lineHeight: 0.9,
+    letterSpacing: '-0.03em',
+    color: '#f1f5f9',
+    margin: '0 0 8px',
+  },
+  h1Accent: { color: '#818cf8' },
+  heroSub: {
+    fontFamily: 'var(--font-sans)',
+    fontSize: 'clamp(16px, 2.5vw, 20px)',
+    fontWeight: 300, lineHeight: 1.65,
+    color: 'rgba(148,163,184,0.75)',
+    maxWidth: 540, margin: '20px auto 40px',
+  },
+
+  // ── CTA buttons ───────────────────────────────────────────────────────────
+  ctaPrimary: {
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+    background: '#818cf8',
+    color: '#050810',
+    padding: '14px 28px', borderRadius: 14,
+    fontFamily: 'var(--font-display)',
+    fontSize: 15, fontWeight: 800,
+    textDecoration: 'none', border: 'none', cursor: 'pointer',
+    boxShadow: '0 0 32px rgba(99,102,241,0.35), 0 4px 16px rgba(0,0,0,0.4)',
+    transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+  },
+  ctaSecondary: {
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+    background: 'rgba(255,255,255,0.05)',
+    backdropFilter: 'blur(12px)',
+    color: '#e2e8f0',
+    padding: '14px 28px', borderRadius: 14,
+    fontFamily: 'var(--font-display)',
+    fontSize: 15, fontWeight: 700,
+    textDecoration: 'none',
+    border: '1px solid rgba(148,163,184,0.15)',
+    transition: 'background 0.15s ease, border-color 0.15s ease',
+  },
+
+  // ── stats ─────────────────────────────────────────────────────────────────
+  statsWrap: {
+    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: 1,
+    marginTop: 72,
+    background: 'rgba(148,163,184,0.08)',
+    border: '1px solid rgba(148,163,184,0.08)',
+    borderRadius: 16, overflow: 'hidden',
+  },
+  statCell: {
+    padding: '28px 16px', textAlign: 'center',
+    background: 'rgba(12,18,34,0.6)',
+    backdropFilter: 'blur(12px)',
+  },
+  statValue: {
+    fontFamily: 'var(--font-display)',
+    fontSize: 'clamp(28px, 4vw, 40px)',
+    fontWeight: 900, lineHeight: 1,
+    color: '#f1f5f9', display: 'block',
+  },
+  statLabel: {
+    fontFamily: 'var(--font-sans)',
+    fontSize: 11, fontWeight: 400,
+    letterSpacing: '0.14em', textTransform: 'uppercase',
+    color: 'rgba(148,163,184,0.5)',
+    display: 'block', marginTop: 6,
+  },
+
+  // ── features section ──────────────────────────────────────────────────────
+  featureSection: {
+    background: 'var(--color-surface-0)',
+    padding: 'clamp(60px, 8vw, 100px) 24px',
+  },
+  sectionEyebrow: {
+    fontFamily: 'var(--font-sans)',
+    fontSize: 10, fontWeight: 700,
+    letterSpacing: '0.3em', textTransform: 'uppercase',
+    color: '#818cf8', marginBottom: 12, display: 'block',
+  },
+  sectionTitle: {
+    fontFamily: 'var(--font-display)',
+    fontSize: 'clamp(32px, 5vw, 52px)',
+    fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.05,
+    color: '#f1f5f9', margin: '0 0 12px',
+  },
+  sectionDesc: {
+    fontFamily: 'var(--font-sans)',
+    fontSize: 15, fontWeight: 300, lineHeight: 1.7,
+    color: 'rgba(148,163,184,0.6)',
+    maxWidth: 420, margin: '0 auto',
+  },
+
+  // ── feature card ──────────────────────────────────────────────────────────
+  featureGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+    gap: 16, marginTop: 56,
+  },
+
+  // ── CTA strip ─────────────────────────────────────────────────────────────
+  ctaStrip: {
+    position: 'relative', overflow: 'hidden',
+    background: 'linear-gradient(135deg, #0c1222 0%, #111827 100%)',
+    padding: 'clamp(60px, 8vw, 96px) 24px',
+    borderTop: '1px solid rgba(148,163,184,0.06)',
+  },
+  ctaStripGlow: {
+    position: 'absolute', inset: 0, pointerEvents: 'none',
+    background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(99,102,241,0.12), transparent)',
+  },
+  ctaStripIcon: {
+    width: 64, height: 64, borderRadius: 18,
+    background: 'rgba(129,140,248,0.1)',
+    border: '1px solid rgba(129,140,248,0.2)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+    margin: '0 auto 24px',
+  },
+  ctaStripH: {
+    fontFamily: 'var(--font-display)',
+    fontSize: 'clamp(28px, 5vw, 48px)',
+    fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.1,
+    color: '#f1f5f9', margin: '0 0 16px',
+  },
+  ctaStripP: {
+    fontFamily: 'var(--font-sans)',
+    fontSize: 16, fontWeight: 300, lineHeight: 1.7,
+    color: 'rgba(148,163,184,0.6)',
+    maxWidth: 480, margin: '0 auto 36px',
+  },
+};
+
+function FeatureCard({ feature, index }) {
+  const Icon = feature.icon;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.04, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+    >
+      <Link
+        to={feature.link}
+        className="disc-card"
+        style={{
+          display: 'block', padding: '24px',
+          textDecoration: 'none', height: '100%',
+          borderColor: 'rgba(148,163,184,0.1)',
+        }}
+        onMouseEnter={e => e.currentTarget.style.borderColor = feature.accentBorder}
+        onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(148,163,184,0.1)'}
+      >
+        <div style={{
+          width: 44, height: 44, borderRadius: 12,
+          background: feature.accentBg,
+          border: `1px solid ${feature.accentBorder}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          marginBottom: 16,
+        }}>
+          <Icon size={20} color={feature.accent} strokeWidth={1.75} />
+        </div>
+
+        <div style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: 15, fontWeight: 700,
+          color: '#f1f5f9', marginBottom: 8,
+        }}>
+          {feature.title}
+        </div>
+
+        <p style={{
+          fontFamily: 'var(--font-sans)',
+          fontSize: 13, fontWeight: 300, lineHeight: 1.65,
+          color: 'rgba(148,163,184,0.55)',
+          margin: '0 0 20px',
+        }}>
+          {feature.desc}
+        </p>
+
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 4,
+          fontFamily: 'var(--font-sans)',
+          fontSize: 12, fontWeight: 600,
+          color: feature.accent,
+          letterSpacing: '0.02em',
+        }}>
+          {feature.cta}
+          <ChevronRight size={13} strokeWidth={2.5} />
+        </div>
+
+        {/* Subtle bottom accent line */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 24, right: 24, height: 1,
+          background: `linear-gradient(90deg, transparent, ${feature.accent}30, transparent)`,
+          opacity: 0,
+          transition: 'opacity 0.3s ease',
+        }} className="card-accent-line" />
+      </Link>
+    </motion.div>
+  );
+}
 
 export function Home() {
   return (
-    <div className="pb-8 lg:pb-12">
-      <SEO 
-        title="The Disc Mill | Disc Golf Database, Reviews & Gear" 
-        description="The ultimate disc golf intelligence platform. Browse 10,000+ discs, find local courses, and build your perfect bag." 
-        canonicalUrl="https://thediscmill.com/" 
+    <div>
+      <SEO
+        title="The Disc Mill | Disc Golf Database, Reviews & Gear"
+        description="The ultimate disc golf intelligence platform. Browse 10,000+ discs, find local courses, and build your perfect bag."
+        canonicalUrl="https://thediscmill.com/"
       />
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-900 py-28 sm:py-36">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-violet-700/30 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-indigo-600/20 via-transparent to-transparent" />
-        </div>
 
-        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
+      {/* ── Hero ──────────────────────────────────────────────────────── */}
+      <section style={S.hero}>
+        <div style={S.heroNoise} />
+        <div style={S.heroGrid} />
+        <div style={S.heroGlow1} />
+        <div style={S.heroGlow2} />
+
+        <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
+
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center"
+            transition={{ duration: 0.5 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center bg-white/10 backdrop-blur border border-white/20 text-indigo-200 text-xs font-bold px-4 py-2 rounded-full mb-8 gap-2"
-            >
-              <Disc className="w-3.5 h-3.5" />
+            <span style={S.badge}>
+              <Disc size={12} />
               The #1 Open-Data Disc Golf Platform
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 }}
-              className="text-5xl sm:text-7xl font-black tracking-tight text-white mb-6 leading-[0.95]"
-            >
-              The Disc Mill
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-xl sm:text-2xl text-indigo-100/80 max-w-2xl mx-auto mb-10 leading-relaxed"
-            >
-              National course intelligence, live PDGA data, and disc analytics.
-              Everything you need to master the game — free, forever.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Link
-                to="/discs"
-                className="inline-flex items-center justify-center bg-white text-indigo-900 px-8 py-4 rounded-2xl font-black text-lg hover:bg-indigo-50 transition-colors shadow-xl shadow-indigo-900/40"
-              >
-                <Search className="mr-2 w-5 h-5" />
-                Find Your Disc
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <Link
-                to="/disc-return"
-                className="inline-flex items-center justify-center bg-white/10 backdrop-blur border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-colors"
-              >
-                <QrCode className="mr-2 w-5 h-5" />
-                Disc Return Network
-              </Link>
-            </motion.div>
+            </span>
           </motion.div>
 
-          {/* Stats bar */}
+          <motion.h1
+            style={S.h1}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          >
+            The Disc<br />
+            <span style={S.h1Accent}>Mill</span>
+          </motion.h1>
+
+          <motion.p
+            style={S.heroSub}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18, duration: 0.5 }}
+          >
+            National course intelligence, live PDGA data, and disc analytics.
+            Everything you need to master the game — free, forever.
+          </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6"
+            transition={{ delay: 0.28, duration: 0.5 }}
+            style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}
           >
-            {STATS.map(({ value, label }) => (
-              <div key={label} className="text-center">
-                <div className="text-3xl font-black text-white">{value}</div>
-                <div className="text-indigo-300 text-sm mt-1">{label}</div>
+            <Link
+              to="/discs"
+              style={S.ctaPrimary}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow; }}
+            >
+              <Search size={16} strokeWidth={2.5} />
+              Find Your Disc
+              <ArrowRight size={16} strokeWidth={2.5} />
+            </Link>
+            <Link
+              to="/disc-return"
+              style={S.ctaSecondary}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(148,163,184,0.25)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = S.ctaSecondary.background; e.currentTarget.style.borderColor = S.ctaSecondary.border; }}
+            >
+              <QrCode size={16} />
+              Disc Return Network
+            </Link>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            style={S.statsWrap}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.42, duration: 0.55 }}
+          >
+            {STATS.map(({ value, label, icon: Icon }) => (
+              <div key={label} style={S.statCell}>
+                <Icon size={14} color="rgba(129,140,248,0.4)" style={{ margin: '0 auto 8px' }} />
+                <span style={S.statValue}>{value}</span>
+                <span style={S.statLabel}>{label}</span>
               </div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Feature grid */}
-      <section className="py-24 bg-white dark:bg-gray-900">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-base font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-3">Everything You Need</h2>
-            <p className="text-4xl font-black text-gray-900 dark:text-white tracking-tight">
-              One Platform. The Entire Game.
-            </p>
-            <p className="mt-4 text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+      {/* ── Feature Grid ─────────────────────────────────────────────── */}
+      <section style={S.featureSection}>
+        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ textAlign: 'center', marginBottom: 0 }}
+          >
+            <span style={S.sectionEyebrow}>Everything You Need</span>
+            <h2 style={S.sectionTitle}>One platform.<br />The entire game.</h2>
+            <p style={S.sectionDesc}>
               Live data from PDGA.com. No accounts. No paywalls.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {FEATURES.map((feature, i) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <Link
-                    to={feature.link}
-                    className={`block card-interactive rounded-3xl p-6 h-full group`}
-                  >
-                    <div className={`w-12 h-12 ${feature.bg} dark:bg-white/10 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <Icon className={`w-6 h-6 ${feature.color}`} />
-                    </div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">{feature.desc}</p>
-                    <div className={`inline-flex items-center text-sm font-bold ${feature.color} gap-1`}>
-                      {feature.cta}
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+          <div style={S.featureGrid}>
+            {FEATURES.map((f, i) => (
+              <FeatureCard key={f.title} feature={f} index={i} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Disc Return CTA strip */}
-      <section className="py-20 bg-gradient-to-br from-indigo-900 to-violet-900 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* ── Disc Return CTA ──────────────────────────────────────────── */}
+      <section style={S.ctaStrip}>
+        <div style={S.ctaStripGlow} />
+        <div style={{ position: 'relative', maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-16 h-16 bg-white/10 rounded-3xl flex items-center justify-center mx-auto mb-6">
-              <QrCode className="w-8 h-8 text-white" />
+            <div style={S.ctaStripIcon}>
+              <QrCode size={28} color="#818cf8" strokeWidth={1.5} />
             </div>
-            <h2 className="text-4xl font-black text-white mb-4">
-              Lost a disc? We can help.
-            </h2>
-            <p className="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">
+            <h2 style={S.ctaStripH}>Lost a disc?<br />We can help.</h2>
+            <p style={S.ctaStripP}>
               The Disc Hero Return Network creates free QR return tags encoded with your contact info.
-              No app needed, no server, no account. Just your disc coming home.
+              No app, no server, no account. Just your disc coming home.
             </p>
             <Link
               to="/disc-return"
-              className="inline-flex items-center bg-white text-indigo-900 px-8 py-4 rounded-2xl font-black text-lg hover:bg-indigo-50 transition-colors shadow-xl"
+              style={S.ctaPrimary}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow; }}
             >
               Create a Free Return Tag
-              <ArrowRight className="ml-3 w-5 h-5" />
+              <ArrowRight size={16} strokeWidth={2.5} />
             </Link>
           </motion.div>
         </div>

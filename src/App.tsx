@@ -26,8 +26,10 @@ import { DiscDetail } from './pages/DiscDetail';
 import { Manufacturers } from './pages/Manufacturers';
 import { ManufacturerDetail } from './pages/ManufacturerDetail';
 import { Gear } from './pages/Gear';
+import SplashScreen from './components/SplashScreen';
 
 export default function App() {
+  const [showSplash, setShowSplash] = React.useState(true);
   const [theme, setTheme] = React.useState<'dark' | 'light'>(() => (localStorage.getItem('theme') as 'dark' | 'light') || 'light');
 
   React.useEffect(() => {
@@ -40,6 +42,7 @@ export default function App() {
   return (
     <Router>
       <div className="min-h-dvh transition-colors duration-300">
+        {showSplash && <SplashScreen duration={5000} onComplete={() => setShowSplash(false)} />}
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         {/* Mobile: extra bottom clearance for the bottom nav + safe area */}
         <main className="pb-[calc(56px+env(safe-area-inset-bottom,0px))] lg:pb-0">
