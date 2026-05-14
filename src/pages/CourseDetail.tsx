@@ -1,15 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { SEO } from '../components/SEO';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { fetchCourseDetail } from '../services/courses';
 import { Course } from '../types';
 import { MapPin, Info, ArrowLeft, Star, Share2, Heart, ShoppingBag } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Featured } from '../components/monetization/Featured';
 import { buildAmazonLink } from '../utils/amazon';
+import {
+  buildCanonical,
+  buildBreadcrumbs,
+  buildSportsActivityLocation,
+  SITE_URL,
+  TOPICAL_CLUSTERS,
+} from '../utils/seo';
 
 export function CourseDetail() {
   const { id } = useParams<{ id: string }>();
+  const { pathname } = useLocation();
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -24,11 +32,34 @@ export function CourseDetail() {
   if (loading) return <div className="pt-40 text-center text-gray-500 dark:text-gray-400">Loading course intelligence...</div>;
   if (!course) return <div className="pt-40 text-center text-gray-500 dark:text-gray-400">Course not found.</div>;
 
+  const canonicalUrl = buildCanonical(pathname);
+  const courseDesc = `${course!.name} in ${course!.city ?? ''}, ${course!.state ?? ''}. ${course!.holes ?? 18} holes. ${course!.description || 'Disc golf course details, ratings, and directions.'}`;
+
+  const jsonLd = [
+    buildSportsActivityLocation({
+      name: course.name,
+      url: canonicalUrl,
+      city: course.city,
+      state: course.state,
+      holes: course.holes,
+      description: course.description,
+    }),
+    buildBreadcrumbs([
+      { name: 'Home', item: SITE_URL },
+      { name: 'Courses', item: `${SITE_URL}/courses` },
+      { name: course.name, item: canonicalUrl },
+    ]),
+  ];
+
+  const clusters = TOPICAL_CLUSTERS.course;
+
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
       <SEO
         title={`${course!.name} | Disc Golf Course`}
-        description={`${course!.name} in ${course!.city}, ${course!.state}. ${course!.holes} holes. ${course!.description || 'Disc golf course details, ratings, and directions.'}`}
+        description={courseDesc}
+        canonicalUrl={canonicalUrl}
+        jsonLd={jsonLd}
       />
       <Link to="/courses" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline">
         <ArrowLeft className="mr-2 w-4 h-4" />
@@ -90,6 +121,22 @@ export function CourseDetail() {
                 {course.description || "No description available for this course. We are currently pulling live intelligence from the PDGA database."}
               </div>
             </div>
+
+            {/* Internal link cluster */}
+            <div className="mt-10 pt-8 border-t border-gray-100 dark:border-gray-800">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Explore More</p>
+              <div className="flex flex-wrap gap-3">
+                {clusters.map(link => (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="px-4 py-2 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 rounded-xl text-sm font-semibold hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors"
+                  >
+                    {link.label} →
+                  </Link>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -130,7 +177,7 @@ export function CourseDetail() {
                 description="Perfect for the tight wooded fairways at this course."
                 link={buildAmazonLink({ amazonQuery: 'Discraft Buzzz Z Line disc golf midrange' }) ?? '#'}
               />
-              <Featured 
+              <Featured
                 title="Rangefinder"
                 description="Essential for the elevation changes on the back 9."
                 link={buildAmazonLink({ amazonQuery: 'Dynamic Discs Trooper disc golf bag' }) ?? '#'}

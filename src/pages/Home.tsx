@@ -345,6 +345,7 @@ export function Home() {
         title="The Disc Mill | Disc Golf Database, Reviews & Gear"
         description="The ultimate disc golf intelligence platform. Browse 10,000+ discs, find local courses, and build your perfect bag."
         canonicalUrl="https://thediscmill.com/"
+        isRootEntity={true}
       />
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}

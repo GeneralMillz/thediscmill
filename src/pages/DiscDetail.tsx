@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SEO } from '../components/SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
@@ -6,8 +6,15 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { useDiscById, useDiscBySlug } from '../hooks/useDiscById';
 import { useDiscs } from '../hooks/useDiscs';
 import { buildAmazonLink } from '../utils/amazon';
-import { deriveStability, STABILITY_CONFIG, CATEGORY_CONFIG } from '../components/DiscCard';
-import { buildCanonical, SITE_URL } from '../utils/seo';
+import { deriveStability, STABILITY_CONFIG, CATEGORY_CONFIG, brandAccent, FlightPathArc } from '../components/DiscCard';
+import {
+  buildCanonical,
+  SITE_URL,
+  buildBreadcrumbs,
+  buildProductSchema,
+  generateOGImageDataURL,
+  TOPICAL_CLUSTERS,
+} from '../utils/seo';
 import { brandSlug } from '../utils/brandSlug';
 import { DiscImage } from '../components/DiscImage';
 
@@ -26,12 +33,32 @@ function FlightTile({ label, value, sub, color }: { label: string; value: number
 export function DiscDetail() {
   const { id, brandSlug: paramBrandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
   const { pathname } = useLocation();
-  
+  const [ogImage, setOgImage] = useState<string | undefined>(undefined);
+
   const { data: discById, loading: loadingById } = useDiscById(id);
   const { data: discBySlug, loading: loadingBySlug } = useDiscBySlug(paramBrandSlug, discSlug);
-  
+
   const disc = discById || discBySlug;
   const loading = id ? loadingById : loadingBySlug;
+
+  // Generate dynamic OG image after disc loads
+  useEffect(() => {
+    if (!disc) return;
+    try {
+      const dataUrl = generateOGImageDataURL({
+        title: disc.name,
+        subtitle: `${disc.brand} • ${disc.category} • ${disc.speed}/${disc.glide}/${disc.turn}/${disc.fade}`,
+        badge: disc.category,
+        accentColor: disc.category === 'Distance Driver' ? '#f59e0b'
+          : disc.category === 'Fairway Driver' ? '#6366f1'
+          : disc.category === 'Midrange' ? '#10b981'
+          : '#8b5cf6',
+      });
+      setOgImage(dataUrl);
+    } catch {
+      // canvas may fail in prerender env — fall through to default
+    }
+  }, [disc]);
 
   if (loading) {
     return (
@@ -63,44 +90,35 @@ export function DiscDetail() {
   });
 
   // ── JSON-LD ──────────────────────────────────────────────────────────────────
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Product',
-        name: disc.name,
-        brand: { '@type': 'Brand', name: disc.brand },
-        ...(disc.description ? { description: disc.description } : {}),
-        url: canonicalUrl,
-        ...(disc.image ? { image: disc.image } : {}),
-        ...(amazonHref ? {
-          offers: {
-            '@type': 'Offer',
-            url: amazonHref,
-            priceCurrency: 'USD',
-            availability: 'https://schema.org/OnlineOnly',
-            seller: { '@type': 'Organization', name: 'Amazon' },
-          },
-        } : {}),
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home',  item: SITE_URL },
-          { '@type': 'ListItem', position: 2, name: 'Discs', item: `${SITE_URL}/discs` },
-          { '@type': 'ListItem', position: 3, name: disc.name, item: canonicalUrl },
-        ],
-      },
-    ],
-  };
+  const jsonLd = [
+    buildProductSchema({
+      name: disc.name,
+      brand: disc.brand,
+      description: disc.description,
+      url: canonicalUrl,
+      image: disc.image,
+      offerUrl: amazonHref ?? undefined,
+      category: disc.category,
+      flightNumbers: { speed: disc.speed, glide: disc.glide, turn: disc.turn, fade: disc.fade },
+    }),
+    buildBreadcrumbs([
+      { name: 'Home', item: SITE_URL },
+      { name: 'Discs', item: `${SITE_URL}/discs` },
+      { name: disc.brand, item: `${SITE_URL}/manufacturer/${mfgSlug}` },
+      { name: disc.name, item: canonicalUrl },
+    ]),
+  ];
+
+  const discClusters = TOPICAL_CLUSTERS.disc;
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-5xl mx-auto">
       <SEO
-        title={`${disc.name} by ${disc.brand}`}
-        description={`${disc.name} by ${disc.brand} — ${disc.category}. Flight numbers: Speed ${disc.speed}, Glide ${disc.glide}, Turn ${disc.turn}, Fade ${disc.fade}.`}
+        title={`${disc.name} by ${disc.brand} | ${disc.category}`}
+        description={`${disc.name} by ${disc.brand} — ${disc.category}. Flight numbers: Speed ${disc.speed}, Glide ${disc.glide}, Turn ${disc.turn}, Fade ${disc.fade}. Find it on The Disc Mill.`}
         canonicalUrl={canonicalUrl}
-        image={disc.image}
+        image={ogImage || disc.image}
+        ogType="product"
         jsonLd={jsonLd}
       />
       <Link to="/discs" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline text-sm">
@@ -131,14 +149,29 @@ export function DiscDetail() {
               {stabCfg.label}
             </span>
           </div>
-          {disc.image && (
-            <DiscImage
-              src={disc.image}
-              name={disc.name}
-              brand={disc.brand}
-              className="w-32 h-32 md:w-40 md:h-40 shrink-0"
-            />
-          )}
+          {/* Always show branded SVG disc silhouette — never a photo */}
+          <DiscImage
+            name={disc.name}
+            brand={disc.brand}
+            category={disc.category}
+            className="w-32 h-32 md:w-40 md:h-40 shrink-0"
+          />
+        </div>
+
+        {/* Flight path arc — full-width in detail view */}
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4">
+          <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-2">Overhead Flight Path</p>
+          <FlightPathArc
+            speed={disc.speed}
+            glide={disc.glide}
+            turn={disc.turn}
+            fade={disc.fade}
+            accentHex={brandAccent(disc.brand).hex}
+          />
+          <div className="flex justify-between text-[10px] text-gray-400 dark:text-gray-500 mt-1 px-1">
+            <span>Launch</span>
+            <span className="text-rose-400">Landing</span>
+          </div>
         </div>
 
         {/* Flight number tiles */}
@@ -244,6 +277,22 @@ export function DiscDetail() {
             )}
           </div>
         </div>
+
+        {/* Internal link cluster */}
+        <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Explore More</p>
+          <div className="flex flex-wrap gap-3">
+            {discClusters.map(link => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="px-4 py-2 bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 rounded-xl text-sm font-semibold hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors"
+              >
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
       </motion.div>
       <SimilarDiscs currentDisc={disc} />
     </div>
@@ -283,11 +332,11 @@ function SimilarDiscs({ currentDisc }: { currentDisc: any }) {
             to={`/disc/${disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}/${disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')}`}
             className="group bg-white dark:bg-gray-800 rounded-2xl p-4 border border-gray-200 dark:border-gray-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors flex items-center gap-4"
           >
-            <DiscImage 
-              src={disc.image} 
-              name={disc.name} 
-              brand={disc.brand} 
-              className="w-12 h-12 shrink-0" 
+            <DiscImage
+              name={disc.name}
+              brand={disc.brand}
+              category={disc.category}
+              className="w-12 h-12 shrink-0"
             />
             <div className="min-w-0">
               <p className="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest truncate">{disc.brand}</p>

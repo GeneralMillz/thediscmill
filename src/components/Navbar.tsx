@@ -10,17 +10,17 @@ import { motion, AnimatePresence } from 'motion/react';
 
 // ─── Route definitions ────────────────────────────────────────────────────────
 
-// Order: Home > Discs > Courses > Gear > Events > Players > Return > Blog
+// Order: Home > Discs > Bag Builder > Gear Hub > Events > Players > Return > Blog > Courses
 const NAV_ITEMS = [
-  { name: 'Home', path: '/', icon: Home, desc: 'Start here' },
-  { name: 'Discs', path: '/discs', icon: Disc, desc: '10k+ PDGA discs' },
-  { name: 'Courses', path: '/courses', icon: MapIcon, desc: 'National directory' },
-  { name: 'Bag Builder', path: '/bag-builder', icon: ShoppingBag, desc: 'Slot-by-slot bag setup' },
-  { name: 'Gear Hub', path: '/gear', icon: BookOpen, desc: 'Expert buying guides' },
-  { name: 'Events', path: '/events', icon: Calendar, desc: 'Live tournaments' },
-  { name: 'Players', path: '/players', icon: Users, desc: 'PDGA player search' },
-  { name: 'Return', path: '/disc-return', icon: Shield, desc: 'Lost disc network' },
-  { name: 'Blog', path: '/blog', icon: Newspaper, desc: 'Daily intel' },
+  { name: 'Home',        path: '/',            icon: Home,      desc: 'Start here' },
+  { name: 'Discs',       path: '/discs',        icon: Disc,      desc: '10k+ PDGA discs' },
+  { name: 'Bag Builder', path: '/bag-builder',  icon: ShoppingBag, desc: 'Slot-by-slot bag setup' },
+  { name: 'Gear Hub',    path: '/gear',         icon: BookOpen,  desc: 'Expert buying guides' },
+  { name: 'Events',      path: '/events',       icon: Calendar,  desc: 'Live tournaments' },
+  { name: 'Players',     path: '/players',      icon: Users,     desc: 'PDGA player search' },
+  { name: 'Return',      path: '/disc-return',  icon: Shield,    desc: 'Lost disc network' },
+  { name: 'Blog',        path: '/blog',         icon: Newspaper, desc: 'Daily intel' },
+  { name: 'Courses',     path: '/courses',      icon: MapIcon,   desc: 'National directory' },
 ] as const;
 
 // Mobile bottom bar: first 4 primary + overflow drawer for the rest

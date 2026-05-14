@@ -63,26 +63,45 @@ export const STABILITY_CONFIG: Record<
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const CATEGORY_CONFIG: Record<string, { chip: string; abbr: string }> = {
-  'Putter': { chip: 'text-violet-300 bg-violet-500/10 border border-violet-500/25', abbr: 'PUT' },
-  'Midrange': { chip: 'text-blue-300   bg-blue-500/10   border border-blue-500/25', abbr: 'MID' },
-  'Fairway Driver': { chip: 'text-teal-300   bg-teal-500/10   border border-teal-500/25', abbr: 'FWY' },
-  'Distance Driver': { chip: 'text-rose-300   bg-rose-500/10   border border-rose-500/25', abbr: 'DST' },
+  'Putter':          { chip: 'text-violet-300 bg-violet-500/10 border border-violet-500/25', abbr: 'PUT' },
+  'Midrange':        { chip: 'text-blue-300   bg-blue-500/10   border border-blue-500/25',   abbr: 'MID' },
+  'Fairway Driver':  { chip: 'text-teal-300   bg-teal-500/10   border border-teal-500/25',   abbr: 'FWY' },
+  'Distance Driver': { chip: 'text-rose-300   bg-rose-500/10   border border-rose-500/25',   abbr: 'DST' },
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  BRAND COLOR HASH
+//  BRAND ACCENT — consistent per-manufacturer color identity
 // ─────────────────────────────────────────────────────────────────────────────
 
-const ACCENT_COLORS = [
+/**
+ * Named manufacturer accents — these are stable and intentional, not random.
+ * Matches the palette system in DiscImage.tsx.
+ */
+const BRAND_ACCENTS: Record<string, { text: string; line: string; hex: string }> = {
+  innova:           { text: 'text-sky-400',     line: 'from-sky-500',     hex: '#0ea5e9' },
+  discraft:         { text: 'text-red-400',      line: 'from-red-500',     hex: '#ef4444' },
+  'dynamic discs':  { text: 'text-emerald-400',  line: 'from-emerald-500', hex: '#10b981' },
+  'latitude 64':    { text: 'text-green-400',    line: 'from-green-500',   hex: '#22c55e' },
+  'westside discs': { text: 'text-lime-400',     line: 'from-lime-500',    hex: '#84cc16' },
+  mvp:              { text: 'text-cyan-400',     line: 'from-cyan-500',    hex: '#06b6d4' },
+  axiom:            { text: 'text-purple-400',   line: 'from-purple-500',  hex: '#a855f7' },
+  streamline:       { text: 'text-blue-300',     line: 'from-blue-400',    hex: '#38bdf8' },
+  kastaplast:       { text: 'text-amber-400',    line: 'from-amber-500',   hex: '#f59e0b' },
+  discmania:        { text: 'text-indigo-400',   line: 'from-indigo-500',  hex: '#6366f1' },
+  prodigy:          { text: 'text-rose-400',     line: 'from-rose-500',    hex: '#f43f5e' },
+  clash:            { text: 'text-orange-400',   line: 'from-orange-500',  hex: '#f97316' },
+};
+
+const FALLBACK_ACCENTS = [
   { text: 'text-indigo-400', line: 'from-indigo-500', hex: '#6366f1' },
   { text: 'text-violet-400', line: 'from-violet-500', hex: '#8b5cf6' },
-  { text: 'text-blue-400', line: 'from-blue-500', hex: '#3b82f6' },
-  { text: 'text-teal-400', line: 'from-teal-500', hex: '#14b8a6' },
-  { text: 'text-emerald-400', line: 'from-emerald-500', hex: '#10b981' },
-  { text: 'text-amber-400', line: 'from-amber-500', hex: '#f59e0b' },
-  { text: 'text-rose-400', line: 'from-rose-500', hex: '#f43f5e' },
-  { text: 'text-pink-400', line: 'from-pink-500', hex: '#ec4899' },
-  { text: 'text-cyan-400', line: 'from-cyan-500', hex: '#06b6d4' },
+  { text: 'text-blue-400',   line: 'from-blue-500',   hex: '#3b82f6' },
+  { text: 'text-teal-400',   line: 'from-teal-500',   hex: '#14b8a6' },
+  { text: 'text-emerald-400',line: 'from-emerald-500',hex: '#10b981' },
+  { text: 'text-amber-400',  line: 'from-amber-500',  hex: '#f59e0b' },
+  { text: 'text-rose-400',   line: 'from-rose-500',   hex: '#f43f5e' },
+  { text: 'text-pink-400',   line: 'from-pink-500',   hex: '#ec4899' },
+  { text: 'text-cyan-400',   line: 'from-cyan-500',   hex: '#06b6d4' },
   { text: 'text-orange-400', line: 'from-orange-500', hex: '#f97316' },
 ];
 
@@ -93,7 +112,14 @@ function brandHash(brand: string): number {
 }
 
 export function brandAccent(brand: string) {
-  return ACCENT_COLORS[brandHash(brand) % ACCENT_COLORS.length];
+  const key = brand.toLowerCase().trim();
+  if (BRAND_ACCENTS[key]) return BRAND_ACCENTS[key];
+  // Partial match
+  for (const [k, v] of Object.entries(BRAND_ACCENTS)) {
+    if (key.includes(k) || k.includes(key.split(' ')[0])) return v;
+  }
+  // Deterministic fallback
+  return FALLBACK_ACCENTS[brandHash(brand) % FALLBACK_ACCENTS.length];
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -104,7 +130,7 @@ interface StatRingProps {
   label: string;
   value: number;
   max: number;
-  color: string;   // tailwind text color
+  color: string;
   trackColor: string;
 }
 
@@ -158,9 +184,9 @@ export function FlightStats({ speed, glide, turn, fade }: FlightStatsProps) {
       {/* Ring row */}
       <div className="flex justify-around items-end mb-4">
         <StatRing label="Speed" value={speed} max={14} color="text-indigo-400" trackColor="text-indigo-400" />
-        <StatRing label="Glide" value={glide} max={7} color="text-teal-400" trackColor="text-teal-400" />
-        <StatRing label="Turn" value={Math.abs(turn)} max={5} color={turn < 0 ? 'text-amber-400' : 'text-slate-500'} trackColor={turn < 0 ? 'text-amber-400' : 'text-slate-500'} />
-        <StatRing label="Fade" value={fade} max={5} color="text-rose-400" trackColor="text-rose-400" />
+        <StatRing label="Glide" value={glide}  max={7}  color="text-teal-400"   trackColor="text-teal-400"   />
+        <StatRing label="Turn"  value={Math.abs(turn)} max={5} color={turn < 0 ? 'text-amber-400' : 'text-slate-500'} trackColor={turn < 0 ? 'text-amber-400' : 'text-slate-500'} />
+        <StatRing label="Fade"  value={fade}   max={5}  color="text-rose-400"   trackColor="text-rose-400"   />
       </div>
 
       {/* Raw number strip */}
@@ -178,6 +204,87 @@ export function FlightStats({ speed, glide, turn, fade }: FlightStatsProps) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+//  FLIGHT PATH ARC — overhead trajectory preview
+//  Purely data-driven: turn pulls the apex left/right, fade determines the
+//  end hook. Speed controls reach. Glide controls arc height.
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface FlightPathProps {
+  speed: number;
+  glide: number;
+  turn: number;
+  fade: number;
+  accentHex: string;
+}
+
+export function FlightPathArc({ speed, glide, turn, fade, accentHex }: FlightPathProps) {
+  // Normalize to a 200×48 canvas
+  const W = 200;
+  const H = 48;
+
+  // Start: left-center
+  const sx = 8;
+  const sy = H / 2;
+
+  // End: right side, displaced vertically by overstability
+  const reach  = 20 + (speed / 14) * 140;   // how far right the disc travels
+  const fadeY  = fade * 3.5;                 // downward finish (RHBH)
+  const ex     = Math.min(sx + reach, W - 8);
+  const ey     = sy + fadeY;
+
+  // Apex: pulled by turn (negative = right, positive = left for RHBH)
+  const apexX  = sx + (ex - sx) * 0.45;
+  const turnLift = glide * 2.5;               // glide = air time = upward arc
+  const turnDrift= turn * -3.5;               // turn < 0 → drifts right (understable)
+  const apexY  = sy - turnLift;
+  const apexDX = turnDrift;
+
+  // SVG cubic bezier: start → CP1 (apex) → CP2 (fade setup) → end
+  const cp1x = apexX + apexDX;
+  const cp1y = apexY;
+  const cp2x = ex - (ex - sx) * 0.18;
+  const cp2y = ey - fadeY * 0.4;
+
+  const d = `M ${sx} ${sy} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${ex} ${ey}`;
+
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      className="w-full"
+      style={{ height: 36, overflow: 'visible' }}
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id={`fp-${speed}-${turn}-${fade}`} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stopColor={accentHex} stopOpacity="0.6" />
+          <stop offset="60%"  stopColor={accentHex} stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#f43f5e"   stopOpacity="0.8" />
+        </linearGradient>
+      </defs>
+
+      {/* Path ghost (track) */}
+      <path d={d} fill="none" stroke="rgba(148,163,184,0.08)" strokeWidth="4" strokeLinecap="round" />
+
+      {/* Main flight path */}
+      <path
+        d={d}
+        fill="none"
+        stroke={`url(#fp-${speed}-${turn}-${fade})`}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeDasharray="3 2"
+      />
+
+      {/* Launch dot */}
+      <circle cx={sx} cy={sy} r="3" fill={accentHex} fillOpacity="0.9" />
+
+      {/* Landing dot */}
+      <circle cx={ex} cy={ey} r="2.5" fill="#f43f5e" fillOpacity="0.85" />
+    </svg>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 //  DISC CARD
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -188,18 +295,18 @@ interface DiscCardProps {
 
 export function DiscCard({ disc, className = '' }: DiscCardProps) {
   const stability = deriveStability(disc.turn, disc.fade, disc.stability);
-  const stabCfg = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
-  const catCfg = CATEGORY_CONFIG[disc.category] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
-  const accent = brandAccent(disc.brand);
+  const stabCfg   = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
+  const catCfg    = CATEGORY_CONFIG[disc.category] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
+  const accent    = brandAccent(disc.brand);
 
-  const brandSlug = disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-  const discSlug = disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const bSlug = disc.brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+  const dSlug = disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-  const hasFlightData = disc.speed || disc.glide || disc.turn || disc.fade;
+  const hasFlightData = disc.speed || disc.glide || disc.turn !== undefined || disc.fade;
 
   return (
     <Link
-      to={`/disc/${brandSlug}/${discSlug}`}
+      to={`/disc/${bSlug}/${dSlug}`}
       className={`
         group relative flex flex-col gap-0 overflow-hidden
         rounded-2xl
@@ -215,13 +322,13 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
         background: 'linear-gradient(160deg, rgb(15,23,42) 0%, rgb(17,24,39) 60%, rgb(15,23,42) 100%)',
       }}
     >
-      {/* ── Accent top bar ── */}
+      {/* ── Manufacturer accent bar ── */}
       <div className={`h-[2px] w-full bg-gradient-to-r ${accent.line} via-transparent to-transparent opacity-80`} />
 
       {/* ── Card body ── */}
       <div className="flex flex-col gap-4 p-5">
 
-        {/* ── Header: text + disc ── */}
+        {/* ── Header: text + disc silhouette ── */}
         <div className="flex items-start justify-between gap-3">
 
           {/* Left: brand / name / badges */}
@@ -230,8 +337,10 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
               <p className={`text-[10px] font-black uppercase tracking-[0.2em] ${accent.text} truncate`}>
                 {disc.brand}
               </p>
-              <h3 className="text-[1.35rem] font-black leading-none text-white truncate mt-1"
-                style={{ fontFamily: "'Outfit', ui-sans-serif, system-ui" }}>
+              <h3
+                className="text-[1.35rem] font-black leading-none text-white truncate mt-1"
+                style={{ fontFamily: "'Outfit', ui-sans-serif, system-ui" }}
+              >
                 {disc.name}
               </h3>
             </div>
@@ -249,12 +358,12 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
             </div>
           </div>
 
-          {/* Right: spinning disc */}
+          {/* Right: disc silhouette — brand + category colored, never a photo */}
           <div className="relative w-[72px] h-[72px] shrink-0 flex items-center justify-center group-hover:scale-110 group-hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-500 ease-out">
             <DiscImage
-              src={disc.image}
               name={disc.name}
               brand={disc.brand}
+              category={disc.category}
               className="w-full h-full"
             />
           </div>
@@ -273,6 +382,20 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
           </div>
         )}
 
+        {/* ── Flight path arc — data-driven trajectory preview ── */}
+        {hasFlightData && (
+          <div className="px-1">
+            <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-slate-600 mb-1">Flight Path</p>
+            <FlightPathArc
+              speed={disc.speed}
+              glide={disc.glide}
+              turn={disc.turn}
+              fade={disc.fade}
+              accentHex={accent.hex}
+            />
+          </div>
+        )}
+
         {/* ── Description ── */}
         {disc.description && (
           <p className="text-[11px] leading-relaxed text-slate-400 line-clamp-2">
@@ -282,7 +405,7 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
 
       </div>
 
-      {/* ── Hover glow overlay ── */}
+      {/* ── Hover glow overlay (brand-colored) ── */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
