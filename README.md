@@ -54,6 +54,8 @@ public/
 
 scripts/
 ├── generate-sitemap.js          # Generates public/sitemap.xml
+├── generate-affiliate-links.js  # Generates Amazon search links for gear
+├── ingest-zo-email.js           # Auto-converts newsletter text to blog JSON (with AMZN links)
 ├── sync-discs.js                # Syncs disc data from external APIs
 ├── scrape-flights.js            # Scrapes flight numbers
 └── patch-flights.js             # Patches individual disc flight data

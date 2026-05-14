@@ -46,8 +46,10 @@ CRITICAL INSTRUCTIONS:
 1. INTERNAL LINKING: Whenever you mention a specific disc or manufacturer, you MUST hyper-link it using Markdown to our site's SEO URL structure.
    - For a disc: [Brand DiscName](/disc/brand-slug/disc-slug) -> Example: [Innova Destroyer](/disc/innova/destroyer)
    - For a manufacturer: [Brand Name](/manufacturer/brand-slug) -> Example: [Discmania](/manufacturer/discmania)
-2. MARKDOWN FORMATTING: Use appropriate ## and ### headings, bulleted lists, and bold text to make it easy to read.
-3. STRIP INTERNAL NOTES: The email often contains internal notes starting at "8. Content Ideas for DiscMill". You MUST IGNORE and STRIP OUT everything from section 8 onwards. The final content should only contain sections 1 through 7.
+2. AFFILIATE LINKING: If any non-disc disc golf products (e.g., bags, shoes, baskets, retrievers, rangefinders, accessories) are mentioned, auto-detect them and append a suggested affiliate placeholder.
+   - Example format: [Product Name](https://www.amazon.com/s?k=url+encoded+product+name&tag=YOUR_AMZN_TAG)
+3. MARKDOWN FORMATTING: Use appropriate ## and ### headings, bulleted lists, and bold text to make it easy to read.
+4. STRIP INTERNAL NOTES: The email often contains internal notes starting at "8. Content Ideas for DiscMill". You MUST IGNORE and STRIP OUT everything from section 8 onwards. The final content should only contain sections 1 through 7.
 
 Email Content:
 \${emailContent}

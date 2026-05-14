@@ -1,22 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
 import { formatDate } from '../utils';
 import { BlogPost } from './Blog';
+import { useDiscs } from '../hooks/useDiscs';
+import { useInternalLinks } from '../utils/internalLinks';
+import { brandSlug } from '../utils/brandSlug';
+import { DiscCard } from '../components/DiscCard';
 
 export function BlogDetail() {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [allPosts, setAllPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const { pathname } = useLocation();
+  const { data: discs = [] } = useDiscs();
+  const { injectInternalLinks } = useInternalLinks();
 
   useEffect(() => {
     fetch('/data/blog.json')
       .then(res => res.json())
       .then(data => {
+        setAllPosts(data);
         const found = data.find((p: BlogPost) => p.id === id);
         setPost(found || null);
         setLoading(false);
@@ -44,7 +53,6 @@ export function BlogDetail() {
     );
   }
 
-  const { pathname } = useLocation();
   const canonicalUrl = `https://thediscmill.com${pathname}`;
 
   const jsonLd = {
@@ -74,17 +82,12 @@ export function BlogDetail() {
 
   return (
     <div className="pt-24 pb-20 px-4 max-w-4xl mx-auto">
-      <Helmet>
-        <title>{post.title} | The Disc Mill Blog</title>
-        <meta name="description" content={post.excerpt} />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.excerpt} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO
+        title={`${post.title} | The Disc Mill Blog`}
+        description={post.excerpt}
+        canonicalUrl={canonicalUrl}
+        jsonLd={jsonLd}
+      />
 
       <Link to="/blog" className="inline-flex items-center text-sm font-bold text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 mb-10 transition-colors uppercase tracking-wider">
         <ArrowLeft className="w-4 h-4 mr-2" />
@@ -123,15 +126,54 @@ export function BlogDetail() {
           prose-strong:text-indigo-900 dark:prose-strong:text-indigo-100 prose-strong:font-black
           prose-ul:my-6 prose-ul:list-none prose-ul:pl-0
           prose-li:relative prose-li:pl-6 prose-li:mb-3 before:prose-li:absolute before:prose-li:left-0 before:prose-li:top-2 before:prose-li:w-2 before:prose-li:h-2 before:prose-li:bg-indigo-500 before:prose-li:rounded-full
-          prose-table:w-full prose-table:mt-8 prose-table:mb-8 prose-table:overflow-hidden prose-table:rounded-xl prose-table:shadow-sm
+          prose-table:block prose-table:w-full prose-table:overflow-x-auto prose-table:whitespace-nowrap md:prose-table:whitespace-normal prose-table:mt-8 prose-table:mb-8 prose-table:rounded-xl prose-table:shadow-sm
           prose-th:bg-gray-50 dark:prose-th:bg-gray-800 prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:font-bold prose-th:text-gray-900 dark:prose-th:text-white prose-th:border-b-2 prose-th:border-indigo-500
           prose-td:px-4 prose-td:py-3 prose-td:border-b prose-td:border-gray-100 dark:prose-td:border-gray-800 prose-td:text-sm
         ">
           <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
-            {post.content}
+            {injectInternalLinks(post.content)}
           </ReactMarkdown>
         </div>
       </article>
+
+      {/* --- Related Entities --- */}
+      {(() => {
+        if (!post.tags || post.tags.length === 0) return null;
+
+        // Find related discs
+        const relatedDiscs = discs.filter(d => post.tags.some(t => d.name.toLowerCase().includes(t.toLowerCase()) || d.brand.toLowerCase() === t.toLowerCase())).slice(0, 3);
+        
+        // Find related posts
+        const relatedPosts = allPosts.filter(p => p.id !== post.id && p.tags?.some(t => post.tags.includes(t))).slice(0, 3);
+
+        return (
+          <div className="mt-16 space-y-16">
+            {relatedDiscs.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-6 uppercase tracking-wider" style={{ fontFamily: "'Outfit', system-ui" }}>Related Gear</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {relatedDiscs.map(d => <DiscCard key={d.id} disc={d} />)}
+                </div>
+              </div>
+            )}
+
+            {relatedPosts.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-black text-gray-900 dark:text-white mb-6 uppercase tracking-wider" style={{ fontFamily: "'Outfit', system-ui" }}>Related Briefs</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedPosts.map(rp => (
+                    <Link key={rp.id} to={`/blog/${rp.id}`} className="block p-6 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-indigo-500 transition-colors">
+                      <div className="text-xs text-indigo-500 font-bold mb-2 uppercase tracking-wider">{rp.category}</div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 leading-tight">{rp.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{rp.excerpt}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
 import { Activity, Wind, Zap, Shield, Info, ShoppingBag, Mountain, HelpCircle } from 'lucide-react';
 import { Featured } from '../components/monetization/Featured';
@@ -46,10 +46,11 @@ export function ThrowAnalyzer() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>Throw Analyzer | The Disc Mill</title>
-        <meta name="description" content="Simulate disc flight paths with wind, terrain, and AI throw coaching." />
-      </Helmet>
+      <SEO
+        title="AI Throw Analyzer"
+        description="Analyze your disc golf form using AI to get actionable feedback and improve your game."
+        canonicalUrl="https://thediscmill.com/analyzer"
+      />
       <div className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white flex items-center mb-4">
           <Activity className="mr-3 text-indigo-600 w-10 h-10" />

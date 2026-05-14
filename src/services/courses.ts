@@ -164,7 +164,7 @@ export async function fetchCourseDirectory(state = ''): Promise<Course[]> {
   }
 
   const allCourses: Course[] = [];
-  const MAX_PAGES = 20; // always fetch full directory; state narrowing is client-side only
+  const MAX_PAGES = 20;
 
   try {
     for (let page = 0; page < MAX_PAGES; page++) {
@@ -182,10 +182,18 @@ export async function fetchCourseDirectory(state = ''): Promise<Course[]> {
       const doc = parser.parseFromString(html, 'text/html');
       const pageCourses = parseCoursesFromDoc(doc, html, url);
 
+      // Drift detection: if we got html but no rows
       if (pageCourses.length === 0) {
-        // Empty page means we've hit the end (or drift)
-        updateAudit('courses', { lastProxyUsed: proxyUsed });
-        break;
+        if (page === 0) {
+          updateAudit('courses', {
+            lastError: 'Parser drift detected: 0 rows returned on page 0',
+            parserDrift: true,
+            lastHtmlSnapshot: html.slice(0, 1000),
+            lastProxyUsed: proxyUsed,
+            dataSource: 'none'
+          });
+        }
+        break; // End of pagination or drifted
       }
 
       cache.set(url, pageCourses);
@@ -206,24 +214,17 @@ export async function fetchCourseDirectory(state = ''): Promise<Course[]> {
       });
       return allCourses;
     }
-
-    // Live returned nothing — fall through to local fallback
-    updateAudit('courses', {
-      lastError: 'PDGA returned 0 courses — parser may have drifted',
-      latency: Date.now() - startTime,
-      parserDrift: true,
-      dataSource: 'none',
-    });
   } catch (error: any) {
     updateAudit('courses', {
       lastError: error.message,
       latency: Date.now() - startTime,
+      parserDrift: false,
+      dataSource: 'none'
     });
   }
 
   // ---------------------------------------------------------------------------
-  // Emergency fallback — local JSON. Reset latency timer so the dashboard
-  // reflects local load speed, not the failed live attempt.
+  // Emergency fallback — local JSON.
   // ---------------------------------------------------------------------------
   try {
     const localStart = Date.now();

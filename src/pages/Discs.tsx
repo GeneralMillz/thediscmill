@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { Link, useLocation } from 'react-router-dom';
 import { buildCanonical } from '../utils/seo';
 import { Disc as DiscIcon, Search, Filter, ChevronDown, X, Factory } from 'lucide-react';
@@ -93,11 +93,11 @@ export function Discs() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>Disc Catalog | The Disc Mill</title>
-        <meta name="description" content={`Browse ${discs.length > 0 ? `${discs.length}+` : 'hundreds of'} disc golf discs from every major manufacturer — flight numbers, stability ratings, and buying links.`} />
-        <link rel="canonical" href={buildCanonical(pathname)} />
-      </Helmet>
+      <SEO
+        title="Disc Directory | 10,000+ Discs"
+        description="Search, filter, and compare flight numbers for over 10,000 disc golf discs from top manufacturers."
+        canonicalUrl={buildCanonical(pathname)}
+      />
 
       {/* ── Page Header ─────────────────────────────────────────────────── */}
       <div className="mb-10">

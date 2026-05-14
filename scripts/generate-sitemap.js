@@ -9,17 +9,22 @@ const PUBLIC_DIR = path.resolve(__dirname, '../public');
 const SITE_URL = 'https://thediscmill.com'; // Change to actual production URL
 
 async function generateSitemap() {
-  const discsFile = path.join(PUBLIC_DIR, 'data/discs_fallback.json');
+  const discsFile = path.join(PUBLIC_DIR, 'data/discs.json');
   const blogFile = path.join(PUBLIC_DIR, 'data/blog.json');
+  const coursesFile = path.join(PUBLIC_DIR, 'data/courses.json');
 
   let discs = [];
   let blogs = [];
+  let courses = [];
 
   if (fs.existsSync(discsFile)) {
     discs = JSON.parse(fs.readFileSync(discsFile, 'utf-8'));
   }
   if (fs.existsSync(blogFile)) {
     blogs = JSON.parse(fs.readFileSync(blogFile, 'utf-8'));
+  }
+  if (fs.existsSync(coursesFile)) {
+    courses = JSON.parse(fs.readFileSync(coursesFile, 'utf-8'));
   }
 
   const urls = [];
@@ -53,6 +58,11 @@ async function generateSitemap() {
   // Dynamic routes - Blog
   blogs.forEach(post => {
     urls.push(`  <url>\n    <loc>${SITE_URL}/blog/${post.id}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
+  });
+
+  // Dynamic routes - Courses
+  courses.forEach(course => {
+    urls.push(`  <url>\n    <loc>${SITE_URL}/course/${course.id}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
   });
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>

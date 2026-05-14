@@ -25,6 +25,7 @@ import { ReturnScan } from './pages/ReturnScan';
 import { DiscDetail } from './pages/DiscDetail';
 import { Manufacturers } from './pages/Manufacturers';
 import { ManufacturerDetail } from './pages/ManufacturerDetail';
+import { Gear } from './pages/Gear';
 
 export default function App() {
   const [theme, setTheme] = React.useState<'dark' | 'light'>(() => (localStorage.getItem('theme') as 'dark' | 'light') || 'light');
@@ -44,6 +45,7 @@ export default function App() {
         <main className="pb-[calc(56px+env(safe-area-inset-bottom,0px))] lg:pb-0">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/gear" element={<Gear />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/course-finder" element={<CourseFinder />} />

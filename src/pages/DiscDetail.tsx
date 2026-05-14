@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
@@ -96,12 +96,13 @@ export function DiscDetail() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-5xl mx-auto">
-      <Helmet>
-        <title>{disc.name} by {disc.brand} | The Disc Mill</title>
-        <meta name="description" content={`${disc.name} by ${disc.brand} — ${disc.category}. Flight numbers: Speed ${disc.speed}, Glide ${disc.glide}, Turn ${disc.turn}, Fade ${disc.fade}.`} />
-        <link rel="canonical" href={canonicalUrl} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO
+        title={`${disc.name} by ${disc.brand}`}
+        description={`${disc.name} by ${disc.brand} — ${disc.category}. Flight numbers: Speed ${disc.speed}, Glide ${disc.glide}, Turn ${disc.turn}, Fade ${disc.fade}.`}
+        canonicalUrl={canonicalUrl}
+        image={disc.image}
+        jsonLd={jsonLd}
+      />
       <Link to="/discs" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline text-sm">
         <ArrowLeft className="mr-1.5 w-4 h-4" />
         Back to Discs

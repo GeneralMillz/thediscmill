@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { BookOpen, Calendar, User, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { formatDate } from '../utils';
@@ -12,6 +12,7 @@ export interface BlogPost {
   date: number;
   category: string;
   content: string;
+  tags?: string[];
 }
 
 export function Blog() {
@@ -33,10 +34,11 @@ export function Blog() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-5xl mx-auto">
-      <Helmet>
-        <title>Blog | The Disc Mill</title>
-        <meta name="description" content="Disc golf tips, gear reviews, and course deep-dives." />
-      </Helmet>
+      <SEO
+        title="Intelligence Briefs & Gear Guides"
+        description="Daily disc golf news, tournament analysis, and comprehensive gear guides."
+        canonicalUrl="https://thediscmill.com/blog"
+      />
       <div className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
           <BookOpen className="mr-3 text-indigo-600" />

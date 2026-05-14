@@ -9,12 +9,12 @@
  */
 const PROXY_CHAIN: Array<{ name: string; wrap: (url: string) => string }> = [
   {
-    name: 'allorigins',
-    wrap: (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  },
-  {
     name: 'corsproxy.io',
     wrap: (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+  },
+  {
+    name: 'allorigins',
+    wrap: (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
   },
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useDiscFinder } from '../hooks/useDiscFinder';
 import { FinderForm } from '../components/DiscFinder/FinderForm';
 import { ResultsGrid } from '../components/DiscFinder/ResultsGrid';
@@ -10,10 +10,11 @@ export function DiscFinder() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>AI Disc Finder | The Disc Mill</title>
-        <meta name="description" content="Get AI-powered disc recommendations based on your throw style and goals." />
-      </Helmet>
+      <SEO
+        title="Disc Finder & Recommendation Engine"
+        description="Find the perfect disc based on flight numbers, brand, and stability."
+        canonicalUrl="https://thediscmill.com/disc-finder"
+      />
       <div className="mb-12">
         <div className="flex items-center space-x-3 mb-4">
           <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Navigation, Disc } from 'lucide-react';
@@ -271,10 +271,10 @@ export function Courses() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>Course Finder | The Disc Mill</title>
-        <meta name="description" content="Discover disc golf courses near you with hole counts, ratings, and directions." />
-      </Helmet>
+      <SEO
+        title="Course Finder"
+        description="Discover disc golf courses near you with hole counts, ratings, and directions."
+      />
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">

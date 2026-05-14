@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useParams, Link } from 'react-router-dom';
 import { fetchCourseDetail } from '../services/courses';
 import { Course } from '../types';
@@ -26,10 +26,10 @@ export function CourseDetail() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>{course!.name} | Disc Golf Course — The Disc Mill</title>
-        <meta name="description" content={`${course!.name} in ${course!.city}, ${course!.state}. ${course!.holes} holes. ${course!.description || 'Disc golf course details, ratings, and directions.'}`} />
-      </Helmet>
+      <SEO
+        title={`${course!.name} | Disc Golf Course`}
+        description={`${course!.name} in ${course!.city}, ${course!.state}. ${course!.holes} holes. ${course!.description || 'Disc golf course details, ratings, and directions.'}`}
+      />
       <Link to="/courses" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline">
         <ArrowLeft className="mr-2 w-4 h-4" />
         Back to Directory

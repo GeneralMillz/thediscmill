@@ -10,15 +10,14 @@ import { motion, AnimatePresence } from 'motion/react';
 
 // ─── Route definitions ────────────────────────────────────────────────────────
 
-// Order: Home > Discs > Courses > Events > Players > Bag Builder > Guides > Return > Blog
+// Order: Home > Discs > Courses > Gear > Events > Players > Return > Blog
 const NAV_ITEMS = [
   { name: 'Home', path: '/', icon: Home, desc: 'Start here' },
   { name: 'Discs', path: '/discs', icon: Disc, desc: '10k+ PDGA discs' },
   { name: 'Courses', path: '/courses', icon: MapIcon, desc: 'National directory' },
+  { name: 'Gear Hub', path: '/gear', icon: ShoppingBag, desc: 'Build your perfect bag' },
   { name: 'Events', path: '/events', icon: Calendar, desc: 'Live tournaments' },
   { name: 'Players', path: '/players', icon: Users, desc: 'PDGA player search' },
-  { name: 'Bag Builder', path: '/bag-builder', icon: ShoppingBag, desc: 'Build your perfect bag' },
-  { name: 'Guides', path: '/guides', icon: BookOpen, desc: 'Gear reviews & tips' },
   { name: 'Return', path: '/disc-return', icon: Shield, desc: 'Lost disc network' },
   { name: 'Blog', path: '/blog', icon: Newspaper, desc: 'Daily intel' },
 ] as const;

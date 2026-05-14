@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
 import { Disc, ArrowRight, MapPin, Trophy, Zap, QrCode, ShoppingBag, BookOpen, Users, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -96,10 +96,11 @@ const STATS = [
 export function Home() {
   return (
     <div className="pb-8 lg:pb-12">
-      <Helmet>
-        <title>The Disc Mill | National Disc Golf Intelligence</title>
-        <meta name="description" content="Find discs, courses, players, and events. Free, open-data disc golf platform." />
-      </Helmet>
+      <SEO 
+        title="The Disc Mill | Disc Golf Database, Reviews & Gear" 
+        description="The ultimate disc golf intelligence platform. Browse 10,000+ discs, find local courses, and build your perfect bag." 
+        canonicalUrl="https://thediscmill.com/" 
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-900 py-28 sm:py-36">
         <div className="absolute inset-0">
