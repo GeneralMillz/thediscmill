@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { SEO } from '../components/SEO';
-import { Search, Plus, X, ShoppingBag, Disc, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { Search, Plus, X, ShoppingBag, Disc, ArrowRight, ChevronUp, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useDiscs } from '../hooks/useDiscs';
 import { Disc as DiscType } from '../types';
 import { WhereToBuy } from '../components/monetization/WhereToBuy';
 
-// ─── Bag slot definitions ────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface SlotDef {
   id: string;
@@ -14,23 +14,76 @@ interface SlotDef {
   label: string;
   description: string;
   category: string;
-  color: string;
-  bg: string;
+  accent: string;
+  accentBg: string;
+  accentBorder: string;
 }
 
+// ─── Slot definitions ─────────────────────────────────────────────────────────
+
 const BAG_SLOTS: SlotDef[] = [
-  { id: 'putter1',   role: 'Putter',          label: 'Putter #1',          description: 'Your go-to putting disc',              category: 'Putter',   color: 'text-blue-600',    bg: 'bg-blue-50' },
-  { id: 'putter2',   role: 'Putter',          label: 'Putter #2 / Roller', description: 'Second putter or throwing putter',     category: 'Putter',   color: 'text-blue-600',    bg: 'bg-blue-50' },
-  { id: 'mid1',      role: 'Midrange',        label: 'Midrange #1',        description: 'Straight-flying midrange',             category: 'Midrange', color: 'text-green-600',   bg: 'bg-green-50' },
-  { id: 'mid2',      role: 'Midrange',        label: 'Midrange #2',        description: 'Overstable approach disc',             category: 'Midrange', color: 'text-green-600',   bg: 'bg-green-50' },
-  { id: 'fairway1',  role: 'Fairway Driver',  label: 'Fairway #1',         description: 'Controlled fairway driver',            category: 'Fairway Driver', color: 'text-orange-600', bg: 'bg-orange-50' },
-  { id: 'fairway2',  role: 'Fairway Driver',  label: 'Fairway #2',         description: 'Hyzer flip or flex shot',              category: 'Fairway Driver', color: 'text-orange-600', bg: 'bg-orange-50' },
-  { id: 'driver1',   role: 'Distance Driver', label: 'Driver #1',          description: 'Primary distance driver',              category: 'Distance Driver', color: 'text-red-600',   bg: 'bg-red-50' },
-  { id: 'driver2',   role: 'Distance Driver', label: 'Driver #2',          description: 'Overstable driver for headwinds',      category: 'Distance Driver', color: 'text-red-600',   bg: 'bg-red-50' },
-  { id: 'driver3',   role: 'Distance Driver', label: 'Driver #3',          description: 'Understable roller or turnover',       category: 'Distance Driver', color: 'text-red-600',   bg: 'bg-red-50' },
+  { id: 'putter1', role: 'Putter', label: 'Putter #1', description: 'Your go-to putting disc', category: 'Putter', accent: '#60a5fa', accentBg: 'rgba(59,130,246,0.1)', accentBorder: 'rgba(96,165,250,0.25)' },
+  { id: 'putter2', role: 'Putter', label: 'Putter #2 / Roller', description: 'Second putter or throwing putter', category: 'Putter', accent: '#60a5fa', accentBg: 'rgba(59,130,246,0.1)', accentBorder: 'rgba(96,165,250,0.25)' },
+  { id: 'mid1', role: 'Midrange', label: 'Midrange #1', description: 'Straight-flying midrange', category: 'Midrange', accent: '#34d399', accentBg: 'rgba(16,185,129,0.1)', accentBorder: 'rgba(52,211,153,0.25)' },
+  { id: 'mid2', role: 'Midrange', label: 'Midrange #2', description: 'Overstable approach disc', category: 'Midrange', accent: '#34d399', accentBg: 'rgba(16,185,129,0.1)', accentBorder: 'rgba(52,211,153,0.25)' },
+  { id: 'fairway1', role: 'Fairway Driver', label: 'Fairway #1', description: 'Controlled fairway driver', category: 'Fairway Driver', accent: '#fb923c', accentBg: 'rgba(249,115,22,0.1)', accentBorder: 'rgba(251,146,60,0.25)' },
+  { id: 'fairway2', role: 'Fairway Driver', label: 'Fairway #2', description: 'Hyzer flip or flex shot', category: 'Fairway Driver', accent: '#fb923c', accentBg: 'rgba(249,115,22,0.1)', accentBorder: 'rgba(251,146,60,0.25)' },
+  { id: 'driver1', role: 'Distance Driver', label: 'Driver #1', description: 'Primary distance driver', category: 'Distance Driver', accent: '#f87171', accentBg: 'rgba(239,68,68,0.1)', accentBorder: 'rgba(248,113,113,0.25)' },
+  { id: 'driver2', role: 'Distance Driver', label: 'Driver #2', description: 'Overstable driver for headwinds', category: 'Distance Driver', accent: '#f87171', accentBg: 'rgba(239,68,68,0.1)', accentBorder: 'rgba(248,113,113,0.25)' },
+  { id: 'driver3', role: 'Distance Driver', label: 'Driver #3', description: 'Understable roller or turnover disc', category: 'Distance Driver', accent: '#f87171', accentBg: 'rgba(239,68,68,0.1)', accentBorder: 'rgba(248,113,113,0.25)' },
 ];
 
-// ─── Disc picker modal ────────────────────────────────────────────────────────
+const SLOT_GROUPS = [
+  { label: 'Putters', slots: ['putter1', 'putter2'], accent: '#60a5fa' },
+  { label: 'Midranges', slots: ['mid1', 'mid2'], accent: '#34d399' },
+  { label: 'Fairway Drivers', slots: ['fairway1', 'fairway2'], accent: '#fb923c' },
+  { label: 'Distance Drivers', slots: ['driver1', 'driver2', 'driver3'], accent: '#f87171' },
+];
+
+const BAG_TIPS = [
+  'Start with a putter you trust. Consistency in putting wins more than distance.',
+  'A stable midrange covers more situations than any other disc.',
+  'Beginners: skip the distance driver until you can throw 250 ft consistently.',
+  'Carry at least one overstable disc for headwinds and spike hyzer shots.',
+  'Your bag should have a disc for every shot shape: hyzer, flat, and anhyzer.',
+];
+
+// ─── Shared inline style tokens ───────────────────────────────────────────────
+
+const T = {
+  surface: 'var(--color-surface-2)',
+  surface1: 'var(--color-surface-1)',
+  border: 'var(--color-border)',
+  borderHover: 'var(--color-border-hover)',
+  textPrimary: 'var(--color-text-primary)',
+  textSecondary: 'var(--color-text-secondary)',
+  textMuted: 'var(--color-text-muted)',
+  accent: 'var(--color-accent)',
+  accentGlow: 'var(--color-accent-glow)',
+  fontDisplay: 'var(--font-display)',
+  fontSans: 'var(--font-sans)',
+  fontMono: 'var(--font-mono)',
+};
+
+// ─── FlightPill ───────────────────────────────────────────────────────────────
+
+function FlightPill({ disc }: { disc: DiscType }) {
+  if (!disc.speed) return null;
+  const nums = [disc.speed, disc.glide, disc.turn, disc.fade];
+  const labels = ['SPD', 'GLI', 'TRN', 'FAD'];
+  return (
+    <div className="flight-strip" style={{ fontSize: 11 }}>
+      {nums.map((n, i) => (
+        <div key={i} className="flight-strip-cell">
+          <span className="flight-strip-label">{labels[i]}</span>
+          <span style={{ color: T.textPrimary, fontFamily: T.fontMono, fontWeight: 700 }}>{n}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── DiscPicker modal ─────────────────────────────────────────────────────────
 
 interface PickerProps {
   slot: SlotDef;
@@ -44,93 +97,161 @@ function DiscPicker({ slot, discs, onSelect, onClose }: PickerProps) {
 
   const suggestions = useMemo(() => {
     const cat = slot.category.toLowerCase();
-    return discs.filter(d => {
-      const matchCat = d.category.toLowerCase().includes(cat) || cat.includes(d.category.toLowerCase());
-      return matchCat;
-    });
+    return discs.filter(d =>
+      d.category.toLowerCase().includes(cat) || cat.includes(d.category.toLowerCase())
+    );
   }, [discs, slot.category]);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return suggestions.slice(0, 24);
     const q = query.toLowerCase();
-    return discs
-      .filter(d => d.name.toLowerCase().includes(q) || d.brand.toLowerCase().includes(q))
-      .slice(0, 24);
+    return discs.filter(d =>
+      d.name.toLowerCase().includes(q) || d.brand.toLowerCase().includes(q)
+    ).slice(0, 24);
   }, [discs, suggestions, query]);
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-4">
+    <div style={{
+      position: 'fixed', inset: 0, zIndex: 50,
+      background: 'rgba(5,8,16,0.8)',
+      backdropFilter: 'blur(12px)',
+      display: 'flex', alignItems: 'flex-end', justifyContent: 'center',
+      padding: 16,
+    }}>
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 48 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 40 }}
-        className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl w-full max-w-lg max-h-[85vh] flex flex-col overflow-hidden"
+        exit={{ opacity: 0, y: 48 }}
+        transition={{ type: 'spring', damping: 28, stiffness: 300 }}
+        style={{
+          background: T.surface,
+          border: `1px solid ${T.border}`,
+          borderRadius: 20,
+          width: '100%', maxWidth: 520,
+          maxHeight: '82vh',
+          display: 'flex', flexDirection: 'column',
+          overflow: 'hidden',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.6)',
+        }}
       >
-        {/* Header */}
-        <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
-          <div>
-            <h3 className="font-bold text-gray-900 dark:text-white">Choose {slot.label}</h3>
-            <p className="text-xs text-gray-400 dark:text-gray-500">{slot.description}</p>
+        {/* Modal header */}
+        <div style={{
+          padding: '18px 20px 16px',
+          borderBottom: `1px solid ${T.border}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
+        }}>
+          <div style={{
+            width: 36, height: 36, borderRadius: 10, flexShrink: 0,
+            background: slot.accentBg,
+            border: `1px solid ${slot.accentBorder}`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}>
+            <Disc size={16} color={slot.accent} strokeWidth={1.75} />
           </div>
-          <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors dark:text-gray-400">
-            <X className="w-4 h-4" />
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontFamily: T.fontDisplay, fontWeight: 700, fontSize: 15, color: T.textPrimary }}>
+              Choose {slot.label}
+            </div>
+            <div style={{ fontSize: 11, color: T.textMuted, marginTop: 1 }}>{slot.description}</div>
+          </div>
+          <button
+            onClick={onClose}
+            style={{
+              width: 32, height: 32, borderRadius: 8, flexShrink: 0,
+              background: 'transparent', border: `1px solid ${T.border}`,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', color: T.textMuted,
+              transition: 'background 0.15s, border-color 0.15s',
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = T.surface1)}
+            onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+          >
+            <X size={14} />
           </button>
         </div>
 
-        {/* Search */}
-        <div className="px-4 py-3 border-b border-gray-50 dark:border-gray-700">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
+        {/* Search input */}
+        <div style={{ padding: '12px 16px', borderBottom: `1px solid ${T.border}` }}>
+          <div style={{ position: 'relative' }}>
+            <Search size={14} color={T.textMuted} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
             <input
               autoFocus
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="Search all discs by name or brand..."
-              className="w-full pl-9 pr-4 py-2.5 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 dark:text-white dark:placeholder-gray-500 rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Search by name or brand…"
+              style={{
+                width: '100%', paddingLeft: 36, paddingRight: 12,
+                height: 38, borderRadius: 10,
+                background: T.surface1,
+                border: `1px solid ${T.border}`,
+                color: T.textPrimary,
+                fontFamily: T.fontSans, fontSize: 13,
+                outline: 'none',
+                boxSizing: 'border-box',
+              }}
+              onFocus={e => e.currentTarget.style.borderColor = T.accent}
+              onBlur={e => e.currentTarget.style.borderColor = T.border}
             />
           </div>
           {!query && (
-            <p className="text-xs text-gray-400 mt-2 px-1">
-              Showing {suggestions.length} suggested {slot.category.toLowerCase()}s
-            </p>
+            <div style={{ fontSize: 10, color: T.textMuted, marginTop: 8, letterSpacing: '0.08em' }}>
+              {suggestions.length} suggested {slot.category.toLowerCase()}s
+            </div>
           )}
         </div>
 
-        {/* Disc list */}
-        <div className="overflow-y-auto flex-1 p-3 space-y-1.5">
+        {/* Results list */}
+        <div style={{ overflowY: 'auto', flex: 1, padding: '8px 10px' }}>
           {filtered.length === 0 ? (
-            <div className="text-center py-8 text-gray-400 text-sm">No discs found</div>
-          ) : (
-            filtered.map(disc => (
-              <button
-                key={disc.id}
-                onClick={() => onSelect(disc)}
-                className="w-full text-left flex items-center gap-3 p-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-colors group"
-              >
-                <div className={`w-9 h-9 ${slot.bg} rounded-lg flex items-center justify-center shrink-0`}>
-                  <Disc className={`w-5 h-5 ${slot.color}`} />
+            <div style={{ textAlign: 'center', padding: '40px 0', color: T.textMuted, fontSize: 13 }}>
+              No discs found
+            </div>
+          ) : filtered.map(disc => (
+            <button
+              key={disc.id}
+              onClick={() => onSelect(disc)}
+              style={{
+                width: '100%', textAlign: 'left',
+                display: 'flex', alignItems: 'center', gap: 12,
+                padding: '10px 12px', borderRadius: 12,
+                background: 'transparent', border: 'none', cursor: 'pointer',
+                transition: 'background 0.12s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = slot.accentBg)}
+              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+            >
+              <div style={{
+                width: 36, height: 36, borderRadius: 9, flexShrink: 0,
+                background: slot.accentBg,
+                border: `1px solid ${slot.accentBorder}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <Disc size={16} color={slot.accent} strokeWidth={1.75} />
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontFamily: T.fontDisplay, fontWeight: 700, fontSize: 13, color: T.textPrimary, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {disc.name}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="font-bold text-sm text-gray-900 dark:text-white truncate">{disc.name}</div>
-                  <div className="text-xs text-gray-400 dark:text-gray-500 truncate">{disc.brand}</div>
+                <div style={{ fontSize: 11, color: T.textMuted, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {disc.brand}
                 </div>
-                {disc.speed > 0 && (
-                  <div className="text-xs text-gray-400 font-mono shrink-0">
-                    {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}
-                  </div>
-                )}
-                <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-indigo-500 transition-colors shrink-0" />
-              </button>
-            ))
-          )}
+              </div>
+              {disc.speed > 0 && (
+                <div style={{ fontFamily: T.fontMono, fontSize: 11, color: T.textMuted, flexShrink: 0, letterSpacing: '0.04em' }}>
+                  {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}
+                </div>
+              )}
+              <ArrowRight size={13} color={T.textMuted} style={{ flexShrink: 0 }} />
+            </button>
+          ))}
         </div>
       </motion.div>
     </div>
   );
 }
 
-// ─── Slot card ────────────────────────────────────────────────────────────────
+// ─── SlotCard ─────────────────────────────────────────────────────────────────
 
 interface SlotCardProps {
   slot: SlotDef;
@@ -141,117 +262,246 @@ interface SlotCardProps {
 
 function SlotCard({ slot, disc, onAdd, onRemove }: SlotCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <div className={`bg-white dark:bg-gray-800 border rounded-2xl overflow-hidden transition-all ${disc ? 'border-gray-200 dark:border-gray-700 shadow-sm' : 'border-dashed border-gray-300 dark:border-gray-600'}`}>
-      <div className="p-4 flex items-center gap-3">
+    <div
+      style={{
+        background: disc ? T.surface : 'transparent',
+        border: disc
+          ? `1px solid ${hovered ? T.borderHover : T.border}`
+          : `1px dashed ${T.border}`,
+        borderRadius: 14,
+        overflow: 'hidden',
+        transition: 'border-color 0.2s, box-shadow 0.2s',
+        boxShadow: disc && hovered ? '0 8px 28px rgba(0,0,0,0.35)' : 'none',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 16px' }}>
         {/* Icon */}
-        <div className={`w-10 h-10 ${slot.bg} rounded-xl flex items-center justify-center shrink-0`}>
-          <Disc className={`w-5 h-5 ${slot.color}`} />
+        <div style={{
+          width: 40, height: 40, borderRadius: 10, flexShrink: 0,
+          background: disc ? slot.accentBg : 'rgba(148,163,184,0.06)',
+          border: `1px solid ${disc ? slot.accentBorder : T.border}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          transition: 'background 0.2s',
+        }}>
+          <Disc size={18} color={disc ? slot.accent : T.textMuted} strokeWidth={1.75} />
         </div>
 
-        {/* Slot info */}
-        <div className="flex-1 min-w-0">
-          <div className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">{slot.role}</div>
-          <div className="font-bold text-gray-900 dark:text-white text-sm truncate">{disc ? disc.name : slot.label}</div>
-          {disc ? (
-            <div className="text-xs text-gray-400 dark:text-gray-500">{disc.brand} · {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}</div>
-          ) : (
-            <div className="text-xs text-gray-400 dark:text-gray-500">{slot.description}</div>
-          )}
+        {/* Text */}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{
+            fontSize: 9, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase',
+            color: disc ? slot.accent : T.textMuted,
+            fontFamily: T.fontSans, marginBottom: 2,
+          }}>
+            {slot.role}
+          </div>
+          <div style={{
+            fontFamily: T.fontDisplay, fontWeight: 700, fontSize: 14,
+            color: T.textPrimary,
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>
+            {disc ? disc.name : slot.label}
+          </div>
+          <div style={{ fontSize: 11, color: T.textMuted, marginTop: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {disc ? `${disc.brand}` : slot.description}
+          </div>
         </div>
 
         {/* Actions */}
         {disc ? (
-          <div className="flex items-center gap-2 shrink-0">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
             <button
               onClick={() => setExpanded(v => !v)}
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-400 dark:text-gray-500"
               title={expanded ? 'Collapse' : 'Where to buy'}
+              style={{
+                width: 32, height: 32, borderRadius: 8,
+                background: expanded ? slot.accentBg : 'transparent',
+                border: `1px solid ${expanded ? slot.accentBorder : T.border}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', color: expanded ? slot.accent : T.textMuted,
+                transition: 'all 0.15s',
+              }}
+              onMouseEnter={e => { if (!expanded) e.currentTarget.style.background = T.surface1; }}
+              onMouseLeave={e => { if (!expanded) e.currentTarget.style.background = 'transparent'; }}
             >
-              {expanded ? <ChevronUp className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
+              {expanded ? <ChevronUp size={14} /> : <ShoppingBag size={14} />}
             </button>
             <button
               onClick={onRemove}
-              className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-red-50 hover:text-red-500 transition-colors text-gray-300"
               title="Remove"
+              style={{
+                width: 32, height: 32, borderRadius: 8,
+                background: 'transparent',
+                border: `1px solid ${T.border}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                cursor: 'pointer', color: T.textMuted,
+                transition: 'all 0.15s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(239,68,68,0.1)'; e.currentTarget.style.borderColor = 'rgba(248,113,113,0.3)'; e.currentTarget.style.color = '#f87171'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = T.border; e.currentTarget.style.color = T.textMuted; }}
             >
-              <X className="w-4 h-4" />
+              <X size={14} />
             </button>
           </div>
         ) : (
           <button
             onClick={onAdd}
-            className="flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-3 py-2 rounded-xl text-xs font-bold transition-colors shrink-0"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: 5,
+              background: 'rgba(129,140,248,0.1)',
+              border: '1px solid rgba(129,140,248,0.25)',
+              color: T.accent,
+              padding: '7px 12px', borderRadius: 10,
+              fontFamily: T.fontSans, fontSize: 12, fontWeight: 600,
+              cursor: 'pointer', flexShrink: 0,
+              transition: 'background 0.15s, border-color 0.15s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(129,140,248,0.18)'; e.currentTarget.style.borderColor = 'rgba(129,140,248,0.4)'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(129,140,248,0.1)'; e.currentTarget.style.borderColor = 'rgba(129,140,248,0.25)'; }}
           >
-            <Plus className="w-3.5 h-3.5" />
+            <Plus size={12} strokeWidth={2.5} />
             Add Disc
           </button>
         )}
       </div>
 
-      {/* Expandable WhereToBuy */}
-      {disc && expanded && (
-        <div className="border-t border-gray-100 dark:border-gray-700 p-4">
-          <WhereToBuy sku={disc.name.toLowerCase().replace(/\s+/g, '-')} />
+      {/* Flight numbers strip */}
+      {disc && (
+        <div style={{ padding: '0 16px 14px' }}>
+          <FlightPill disc={disc} />
         </div>
       )}
+
+      {/* WhereToBuy expand */}
+      <AnimatePresence>
+        {disc && expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            style={{ overflow: 'hidden' }}
+          >
+            <div style={{ borderTop: `1px solid ${T.border}`, padding: 16 }}>
+              <WhereToBuy sku={disc.name.toLowerCase().replace(/\s+/g, '-')} />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
-// ─── Bag summary ─────────────────────────────────────────────────────────────
+// ─── BagSummary sidebar ───────────────────────────────────────────────────────
 
 function BagSummary({ bag }: { bag: Record<string, DiscType | null> }) {
-  const filled = Object.values(bag).filter(Boolean);
+  const filled = Object.values(bag).filter(Boolean) as DiscType[];
   const total = BAG_SLOTS.length;
   const pct = Math.round((filled.length / total) * 100);
 
   return (
-    <div className="bg-indigo-900 text-white rounded-3xl p-6">
-      <h3 className="font-bold mb-4">Bag Progress</h3>
-      <div className="flex items-center gap-3 mb-4">
-        <div className="flex-1 bg-indigo-800 rounded-full h-2.5">
-          <div
-            className="bg-indigo-300 h-2.5 rounded-full transition-all"
-            style={{ width: `${pct}%` }}
+    <div style={{
+      background: 'linear-gradient(160deg, #0c1222 0%, #111827 100%)',
+      border: `1px solid rgba(129,140,248,0.15)`,
+      borderRadius: 16, padding: 24,
+      position: 'relative', overflow: 'hidden',
+    }}>
+      {/* Subtle glow */}
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.1), transparent)',
+      }} />
+
+      <div style={{ position: 'relative' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <span style={{ fontFamily: T.fontDisplay, fontWeight: 700, fontSize: 14, color: T.textPrimary }}>
+            Bag Progress
+          </span>
+          <span style={{ fontFamily: T.fontDisplay, fontWeight: 900, fontSize: 18, color: T.accent }}>
+            {filled.length}/{total}
+          </span>
+        </div>
+
+        {/* Progress track */}
+        <div style={{ height: 4, background: 'rgba(148,163,184,0.1)', borderRadius: 4, marginBottom: 20, overflow: 'hidden' }}>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${pct}%` }}
+            transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
+            style={{
+              height: '100%', borderRadius: 4,
+              background: 'linear-gradient(90deg, #3730a3, #818cf8)',
+              boxShadow: '0 0 10px rgba(129,140,248,0.5)',
+            }}
           />
         </div>
-        <span className="font-black text-indigo-300">{filled.length}/{total}</span>
-      </div>
 
-      {filled.length === 0 ? (
-        <p className="text-indigo-300 text-sm">Add discs to start building your bag.</p>
-      ) : (
-        <div className="space-y-2">
-          {filled.map(disc => (
-            <div key={disc!.id} className="flex items-center justify-between text-sm">
-              <span className="text-indigo-100 truncate">{disc!.name}</span>
-              <span className="text-indigo-400 font-mono text-xs">{disc!.speed}/{disc!.glide}/{disc!.turn}/{disc!.fade}</span>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {filled.length > 0 && (
-        <div className="mt-4 pt-4 border-t border-indigo-800">
-          <p className="text-xs text-indigo-400">
-            Click the bag icon on any disc to see where to buy with affiliate links.
+        {filled.length === 0 ? (
+          <p style={{ fontFamily: T.fontSans, fontSize: 13, color: T.textMuted, lineHeight: 1.6 }}>
+            Add discs to start building your bag.
           </p>
-        </div>
-      )}
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {filled.map(disc => (
+              <div key={disc.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+                <span style={{ fontFamily: T.fontSans, fontSize: 12, color: T.textSecondary, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1 }}>
+                  {disc.name}
+                </span>
+                <span style={{ fontFamily: T.fontMono, fontSize: 10, color: T.textMuted, flexShrink: 0 }}>
+                  {disc.speed}/{disc.glide}/{disc.turn}/{disc.fade}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {filled.length > 0 && (
+          <div style={{ marginTop: 16, paddingTop: 16, borderTop: `1px solid rgba(148,163,184,0.08)` }}>
+            <p style={{ fontFamily: T.fontSans, fontSize: 11, color: T.textMuted, lineHeight: 1.6 }}>
+              Click the bag icon on any disc to see where to buy.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-// ─── Category groups ──────────────────────────────────────────────────────────
+// ─── Tips sidebar card ────────────────────────────────────────────────────────
 
-const SLOT_GROUPS = [
-  { label: 'Putters', slots: ['putter1', 'putter2'], color: 'text-blue-600' },
-  { label: 'Midranges', slots: ['mid1', 'mid2'], color: 'text-green-600' },
-  { label: 'Fairway Drivers', slots: ['fairway1', 'fairway2'], color: 'text-orange-600' },
-  { label: 'Distance Drivers', slots: ['driver1', 'driver2', 'driver3'], color: 'text-red-600' },
-];
+function BagTips() {
+  return (
+    <div style={{
+      background: T.surface,
+      border: `1px solid ${T.border}`,
+      borderRadius: 16, padding: 24,
+    }}>
+      <div style={{ fontFamily: T.fontDisplay, fontWeight: 700, fontSize: 14, color: T.textPrimary, marginBottom: 16 }}>
+        Bag Building Tips
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        {BAG_TIPS.map((tip, i) => (
+          <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+            <span style={{
+              fontFamily: T.fontMono, fontSize: 11, fontWeight: 700,
+              color: T.accent, flexShrink: 0, paddingTop: 1,
+            }}>
+              0{i + 1}
+            </span>
+            <p style={{ fontFamily: T.fontSans, fontSize: 12, fontWeight: 300, lineHeight: 1.65, color: T.textSecondary, margin: 0 }}>
+              {tip}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 
@@ -272,76 +522,98 @@ export function BagBuilder() {
   };
 
   return (
-    <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
+    <div style={{ paddingTop: 80, paddingBottom: 48, paddingLeft: 20, paddingRight: 20, maxWidth: 1280, margin: '0 auto' }}>
       <SEO
-        title="Bag Builder | Virtual Bag Organizer"
+        title="Bag Builder | The Disc Mill"
         description="Build your disc golf bag slot by slot with flight data and expert recommendations."
         canonicalUrl="https://thediscmill.com/bag-builder"
       />
-      {/* Header */}
-      <div className="mb-10">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-200">
-            <ShoppingBag className="text-white w-5 h-5" />
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">Bag Builder</h1>
-        </div>
-        <p className="text-lg text-gray-500 dark:text-gray-400 ml-0 sm:ml-[52px]">
-          Build your perfect disc golf bag. Click any slot to search {loading ? '...' : discs.length.toLocaleString()} discs.
-        </p>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* ── Page header ──────────────────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        style={{ marginBottom: 48 }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 10 }}>
+          <div style={{
+            width: 44, height: 44, borderRadius: 12,
+            background: 'rgba(129,140,248,0.12)',
+            border: '1px solid rgba(129,140,248,0.25)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 0 20px rgba(99,102,241,0.2)',
+          }}>
+            <ShoppingBag size={20} color={T.accent} strokeWidth={1.75} />
+          </div>
+          <h1 style={{ fontFamily: T.fontDisplay, fontWeight: 900, fontSize: 'clamp(32px, 5vw, 48px)', letterSpacing: '-0.025em', lineHeight: 1, color: T.textPrimary, margin: 0 }}>
+            Bag Builder
+          </h1>
+        </div>
+        <p style={{ fontFamily: T.fontSans, fontSize: 15, fontWeight: 300, lineHeight: 1.6, color: T.textMuted, margin: 0, paddingLeft: 58 }}>
+          Build your perfect disc golf bag. Click any slot to search{' '}
+          <span style={{ color: T.accent, fontWeight: 500 }}>
+            {loading ? '…' : discs.length.toLocaleString()} discs
+          </span>.
+        </p>
+      </motion.div>
+
+      {/* ── Main layout ──────────────────────────────────────────────── */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 280px', gap: 28, alignItems: 'start' }}
+        className="bag-layout"
+      >
         {/* Slot groups */}
-        <div className="lg:col-span-2 space-y-8">
-          {SLOT_GROUPS.map(group => (
-            <div key={group.label}>
-              <h2 className={`text-sm font-black uppercase tracking-widest mb-3 ${group.color}`}>
-                {group.label}
-              </h2>
-              <div className="space-y-3">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 36 }}>
+          {SLOT_GROUPS.map((group, gi) => (
+            <motion.div
+              key={group.label}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: gi * 0.07, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14,
+              }}>
+                <div style={{ width: 3, height: 16, borderRadius: 2, background: group.accent, flexShrink: 0 }} />
+                <span style={{
+                  fontFamily: T.fontSans, fontSize: 10, fontWeight: 700,
+                  letterSpacing: '0.22em', textTransform: 'uppercase',
+                  color: group.accent,
+                }}>
+                  {group.label}
+                </span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {group.slots.map(slotId => {
                   const slot = BAG_SLOTS.find(s => s.id === slotId)!;
                   return (
-                    <React.Fragment key={slotId}>
-                      <SlotCard
-                        slot={slot}
-                        disc={bag[slotId]}
-                        onAdd={() => setActiveSlot(slot)}
-                        onRemove={() => removeDisc(slotId)}
-                      />
-                    </React.Fragment>
+                    <SlotCard
+                      key={slotId}
+                      slot={slot}
+                      disc={bag[slotId]}
+                      onAdd={() => setActiveSlot(slot)}
+                      onRemove={() => removeDisc(slotId)}
+                    />
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-6">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, position: 'sticky', top: 88 }}>
           <BagSummary bag={bag} />
-
-          {/* Tips */}
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-3xl p-6">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Bag Building Tips</h3>
-            <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-              {[
-                'Start with a putter you trust. Consistency in putting wins more than distance.',
-                'A stable midrange covers more situations than any other disc.',
-                'Beginners: skip the distance driver until you can throw 250ft consistently.',
-                'Carry at least one overstable disc for headwind and spike hyzer shots.',
-                'Your bag should have a disc for every shot shape: hyzer, flat, and anhyzer.',
-              ].map((tip, i) => (
-                <div key={i} className="flex gap-2">
-                  <span className="text-indigo-400 font-bold shrink-0">{i + 1}.</span>
-                  <p>{tip}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <BagTips />
         </div>
       </div>
+
+      {/* Responsive: stack on mobile */}
+      <style>{`
+        @media (max-width: 768px) {
+          .bag-layout { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
 
       {/* Disc picker modal */}
       <AnimatePresence>
