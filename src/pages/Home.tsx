@@ -94,7 +94,7 @@ const STATS = [
 ];
 
 // Inline styles that rely on your CSS token system
-const S = {
+const S: Record<string, React.CSSProperties> = {
   // ── hero ──────────────────────────────────────────────────────────────────
   hero: {
     position: 'relative',
@@ -397,7 +397,7 @@ export function Home() {
               to="/discs"
               style={S.ctaPrimary}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow as string; }}
             >
               <Search size={16} strokeWidth={2.5} />
               Find Your Disc
@@ -407,7 +407,7 @@ export function Home() {
               to="/disc-return"
               style={S.ctaSecondary}
               onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(148,163,184,0.25)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = S.ctaSecondary.background; e.currentTarget.style.borderColor = S.ctaSecondary.border; }}
+              onMouseLeave={e => { e.currentTarget.style.background = S.ctaSecondary.background as string; e.currentTarget.style.borderColor = S.ctaSecondary.border as string; }}
             >
               <QrCode size={16} />
               Disc Return Network
@@ -477,7 +477,7 @@ export function Home() {
               to="/disc-return"
               style={S.ctaPrimary}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow as string; }}
             >
               Create a Free Return Tag
               <ArrowRight size={16} strokeWidth={2.5} />

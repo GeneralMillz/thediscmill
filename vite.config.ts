@@ -23,6 +23,9 @@ export default defineConfig(({ mode }) => {
       react(), 
       tailwindcss(),
       // Prerender only during build to avoid slowing down dev
+      // NOTE: Disabled for Vercel deployment as Vercel build environment 
+      // does not support Puppeteer by default.
+      /*
       mode === 'production' && prerender({
         routes: [
           '/', '/discs', '/courses', '/gear', '/blog', '/disc-finder', '/analyzer', '/disc-return',
@@ -40,6 +43,7 @@ export default defineConfig(({ mode }) => {
           );
         }
       })
+      */
     ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
