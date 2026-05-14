@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Courses } from './pages/Courses';
 import { CourseFinder } from './pages/CourseFinder';
@@ -27,6 +27,20 @@ import { Manufacturers } from './pages/Manufacturers';
 import { ManufacturerDetail } from './pages/ManufacturerDetail';
 import { Gear } from './pages/Gear';
 import SplashScreen from './components/SplashScreen';
+// ── New pages ─────────────────────────────────────────────────────────────────
+import { BestDiscsPage } from './pages/BestDiscsPage';
+import { CompareDiscs } from './pages/CompareDiscs';
+import { SimilarDiscsPage } from './pages/SimilarDiscsPage';
+import { Recommend } from './pages/Recommend';
+import { Glossary } from './pages/Glossary';
+import { Releases } from './pages/Releases';
+import { Deals } from './pages/Deals';
+import { StateHub } from './pages/StateHub';
+import { Footer } from './components/Footer';
+import OutboundAnalytics from './pages/admin/OutboundAnalytics';
+import Partners from './pages/Partners';
+import DyersIndex from './pages/dyer/DyersIndex';
+import DyerDetail from './pages/dyer/DyerDetail';
 
 export default function App() {
   const [showSplash, setShowSplash] = React.useState(true);
@@ -73,10 +87,43 @@ export default function App() {
             <Route path="/guides" element={<Guides />} />
             <Route path="/guides/:id" element={<GuideDetail />} />
             <Route path="/bag-builder" element={<BagBuilder />} />
-            {/* Fallback routes for missing pages */}
-            <Route path="*" element={<div className="pt-20 text-center">Page coming soon!</div>} />
+            {/* ── High-intent SEO landing pages ─────────────────────────── */}
+            <Route path="/best/:slug" element={<BestDiscsPage />} />
+            {/* ── Tools ─────────────────────────────────────────────────── */}
+            <Route path="/compare/:slug" element={<CompareDiscs />} />
+            <Route path="/similar/:slug" element={<SimilarDiscsPage />} />
+            <Route path="/recommend" element={<Recommend />} />
+            {/* ── Content ───────────────────────────────────────────────── */}
+            <Route path="/glossary" element={<Glossary />} />
+            <Route path="/releases" element={<Releases />} />
+            <Route path="/deals" element={<Deals />} />
+            <Route path="/news" element={<Navigate to="/blog" replace />} />
+            {/* ── State hubs ────────────────────────────────────────────── */}
+            <Route path="/michigan"   element={<StateHub />} />
+            <Route path="/texas"      element={<StateHub />} />
+            <Route path="/california" element={<StateHub />} />
+            <Route path="/ohio"       element={<StateHub />} />
+            <Route path="/florida"    element={<StateHub />} />
+            {/* ── Manufacturer vanity redirects (avoid duplicate content) ── */}
+            <Route path="/innova"        element={<Navigate to="/manufacturer/innova" replace />} />
+            <Route path="/discraft"      element={<Navigate to="/manufacturer/discraft" replace />} />
+            <Route path="/mvp"           element={<Navigate to="/manufacturer/mvp" replace />} />
+            <Route path="/axiom"         element={<Navigate to="/manufacturer/axiom" replace />} />
+            <Route path="/kastaplast"    element={<Navigate to="/manufacturer/kastaplast" replace />} />
+            <Route path="/dynamic-discs" element={<Navigate to="/manufacturer/dynamic-discs" replace />} />
+            <Route path="/discmania"     element={<Navigate to="/manufacturer/discmania" replace />} />
+            <Route path="/latitude-64"   element={<Navigate to="/manufacturer/latitude-64" replace />} />
+            {/* ── Admin / Internal ────────────────────────────────────── */}
+            <Route path="/admin/outbound-analytics" element={<OutboundAnalytics />} />
+            <Route path="/partners" element={<Partners />} />
+            {/* ── Creators / Dyers ────────────────────────────────────── */}
+            <Route path="/dyers" element={<DyersIndex />} />
+            <Route path="/dyer/:slug" element={<DyerDetail />} />
+            {/* ── Fallback ──────────────────────────────────────────────── */}
+            <Route path="*" element={<div className="pt-20 text-center text-gray-500 dark:text-gray-400 py-24">Page coming soon!</div>} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

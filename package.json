@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
+    "rollup-clicks": "node scripts/rollup-outbound-clicks.js",
     "generate:courses": "node scripts/generate-courses-fallback.js"
   },
   "dependencies": {

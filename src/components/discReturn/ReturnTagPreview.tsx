@@ -8,14 +8,18 @@ interface ReturnTagPreviewProps {
 }
 
 export function ReturnTagPreview({ encodedData, ownerInfo }: ReturnTagPreviewProps) {
+  const [returnUrl, setReturnUrl] = React.useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const returnUrl = `${window.location.origin}/return?data=${encodedData}`;
 
   useEffect(() => {
-    if (canvasRef.current) {
-      generateQRCode(returnUrl, canvasRef.current);
+    if (typeof window !== 'undefined') {
+      const url = `${window.location.origin}/return?data=${encodedData}`;
+      setReturnUrl(url);
+      if (canvasRef.current) {
+        generateQRCode(url, canvasRef.current);
+      }
     }
-  }, [returnUrl]);
+  }, [encodedData]);
 
   const handlePrint = () => {
     window.print();

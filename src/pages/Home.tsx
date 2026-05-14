@@ -1,489 +1,245 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SEO } from '../components/SEO';
 import { motion } from 'motion/react';
-import { Disc, ArrowRight, MapPin, Trophy, Zap, QrCode, ShoppingBag, BookOpen, Users, Search, ChevronRight } from 'lucide-react';
+import { 
+  Disc, ArrowRight, MapPin, Trophy, Zap, QrCode, 
+  ShoppingBag, BookOpen, Users, Search, ChevronRight,
+  ExternalLink, Calendar, Target, Palette, Star
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
+import DiscOfTheDay from '../components/DiscOfTheDay';
+import DyerSpotlight from '../components/DyerSpotlight';
+import { trackOutboundClick } from '../utils/outboundAnalytics';
 
-const FEATURES = [
-  {
-    icon: Disc,
-    title: 'Disc Catalog',
-    desc: '200+ PDGA-approved discs with flight numbers, stability ratings, and honest beginner notes.',
-    link: '/discs',
-    cta: 'Browse Discs',
-    accent: '#818cf8',
-    accentBg: 'rgba(99,102,241,0.08)',
-    accentBorder: 'rgba(99,102,241,0.2)',
-  },
-  {
-    icon: MapPin,
-    title: 'National Courses',
-    desc: 'Every course in the PDGA directory. Location, holes, and ratings updated live.',
-    link: '/courses',
-    cta: 'Find Courses',
-    accent: '#60a5fa',
-    accentBg: 'rgba(59,130,246,0.08)',
-    accentBorder: 'rgba(59,130,246,0.2)',
-  },
-  {
-    icon: ShoppingBag,
-    title: 'Bag Builder',
-    desc: 'Build your perfect bag slot-by-slot. Search any disc, compare flight numbers, and buy instantly.',
-    link: '/bag-builder',
-    cta: 'Build My Bag',
-    accent: '#34d399',
-    accentBg: 'rgba(16,185,129,0.08)',
-    accentBorder: 'rgba(16,185,129,0.2)',
-  },
-  {
-    icon: QrCode,
-    title: 'Disc Return Network',
-    desc: 'Lost disc? Create a free QR return tag. Found one? Scan to return it. No app needed.',
-    link: '/disc-return',
-    cta: 'Create My Tag',
-    accent: '#a78bfa',
-    accentBg: 'rgba(139,92,246,0.08)',
-    accentBorder: 'rgba(139,92,246,0.2)',
-  },
-  {
-    icon: Trophy,
-    title: 'PDGA Events',
-    desc: 'Live tournament results and leaderboards, pulled directly from PDGA.com.',
-    link: '/events',
-    cta: 'View Events',
-    accent: '#fb923c',
-    accentBg: 'rgba(249,115,22,0.08)',
-    accentBorder: 'rgba(249,115,22,0.2)',
-  },
-  {
-    icon: Users,
-    title: 'Player Search',
-    desc: 'Search any PDGA player by name or number. Live ratings, classification, and career stats.',
-    link: '/players',
-    cta: 'Search Players',
-    accent: '#f472b6',
-    accentBg: 'rgba(236,72,153,0.08)',
-    accentBorder: 'rgba(236,72,153,0.2)',
-  },
-  {
-    icon: Zap,
-    title: 'Flight Path Simulator',
-    desc: 'BETA: Our physics-based engine simulates disc flight paths based on your arm speed, wind, and terrain.',
-    link: '/analyzer',
-    cta: 'Try Simulator',
-    accent: '#fbbf24',
-    accentBg: 'rgba(245,158,11,0.08)',
-    accentBorder: 'rgba(245,158,11,0.2)',
-  },
-  {
-    icon: BookOpen,
-    title: 'Gear Guides',
-    desc: '8 honest, evergreen buying guides covering every category. No hype, just what works.',
-    link: '/guides',
-    cta: 'Read Guides',
-    accent: '#2dd4bf',
-    accentBg: 'rgba(20,184,166,0.08)',
-    accentBorder: 'rgba(20,184,166,0.2)',
-  },
+const MI_COURSES = [
+  { name: 'Addison Oaks', city: 'Leonard', url: 'https://www.udisc.com/courses/addison-oaks-p-x-D' },
+  { name: 'Stony Creek', city: 'Shelby Twp', url: 'https://www.udisc.com/courses/stony-creek-metropark-green-D0X1' },
+  { name: 'River Bends', city: 'Shelby Twp', url: 'https://www.udisc.com/courses/river-bends-park-r-p-g-r' },
+  { name: 'Firefighters', city: 'Troy', url: 'https://www.udisc.com/courses/firefighters-park-o2zC' },
+  { name: 'Kensington', city: 'Milford', url: 'https://www.udisc.com/courses/kensington-metropark-black-locust-north-s-n-r-U' },
 ];
 
-const STATS = [
-  { value: '200+', label: 'PDGA Discs', icon: Disc },
-  { value: '14,000+', label: 'Courses Nationwide', icon: MapPin },
-  { value: '250k+', label: 'PDGA Players', icon: Users },
+const GUIDES = [
+  { title: 'Best for Beginners', slug: 'beginners', icon: Star },
+  { title: 'Best Putters', slug: 'putters', icon: Disc },
+  { title: 'Best Drivers', slug: 'distance-drivers', icon: Zap },
+  { title: 'Glow Discs', slug: 'glow-discs', icon: Target },
 ];
-
-// Inline styles that rely on your CSS token system
-const S: Record<string, React.CSSProperties> = {
-  // ── hero ──────────────────────────────────────────────────────────────────
-  hero: {
-    position: 'relative',
-    overflow: 'hidden',
-    background: 'linear-gradient(135deg, #050810 0%, #0c1222 50%, #111827 100%)',
-    padding: 'clamp(80px, 12vw, 140px) 24px clamp(80px, 12vw, 140px)',
-  },
-  heroNoise: {
-    position: 'absolute', inset: 0, pointerEvents: 'none',
-    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")`,
-  },
-  heroGlow1: {
-    position: 'absolute', width: '60vw', height: '60vw', maxWidth: 700, maxHeight: 700,
-    borderRadius: '50%', top: '-20%', left: '-10%', pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 65%)',
-  },
-  heroGlow2: {
-    position: 'absolute', width: '50vw', height: '50vw', maxWidth: 600, maxHeight: 600,
-    borderRadius: '50%', bottom: '-20%', right: '-5%', pointerEvents: 'none',
-    background: 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 65%)',
-  },
-  heroGrid: {
-    position: 'absolute', inset: 0, pointerEvents: 'none',
-    backgroundImage: 'linear-gradient(rgba(148,163,184,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,0.04) 1px,transparent 1px)',
-    backgroundSize: '60px 60px',
-  },
-
-  // ── badge ─────────────────────────────────────────────────────────────────
-  badge: {
-    display: 'inline-flex', alignItems: 'center', gap: 8,
-    background: 'rgba(129,140,248,0.1)',
-    border: '1px solid rgba(129,140,248,0.25)',
-    color: '#a5b4fc',
-    fontSize: 11, fontWeight: 700,
-    letterSpacing: '0.12em', textTransform: 'uppercase',
-    padding: '6px 14px', borderRadius: 999,
-    marginBottom: 28,
-  },
-
-  // ── headline ──────────────────────────────────────────────────────────────
-  h1: {
-    fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(52px, 10vw, 96px)',
-    fontWeight: 900, lineHeight: 0.9,
-    letterSpacing: '-0.03em',
-    color: '#f1f5f9',
-    margin: '0 0 8px',
-  },
-  h1Accent: { color: '#818cf8' },
-  heroSub: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: 'clamp(16px, 2.5vw, 20px)',
-    fontWeight: 300, lineHeight: 1.65,
-    color: 'rgba(148,163,184,0.75)',
-    maxWidth: 540, margin: '20px auto 40px',
-  },
-
-  // ── CTA buttons ───────────────────────────────────────────────────────────
-  ctaPrimary: {
-    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-    background: '#818cf8',
-    color: '#050810',
-    padding: '14px 28px', borderRadius: 14,
-    fontFamily: 'var(--font-display)',
-    fontSize: 15, fontWeight: 800,
-    textDecoration: 'none', border: 'none', cursor: 'pointer',
-    boxShadow: '0 0 32px rgba(99,102,241,0.35), 0 4px 16px rgba(0,0,0,0.4)',
-    transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-  },
-  ctaSecondary: {
-    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-    background: 'rgba(255,255,255,0.05)',
-    backdropFilter: 'blur(12px)',
-    color: '#e2e8f0',
-    padding: '14px 28px', borderRadius: 14,
-    fontFamily: 'var(--font-display)',
-    fontSize: 15, fontWeight: 700,
-    textDecoration: 'none',
-    border: '1px solid rgba(148,163,184,0.15)',
-    transition: 'background 0.15s ease, border-color 0.15s ease',
-  },
-
-  // ── stats ─────────────────────────────────────────────────────────────────
-  statsWrap: {
-    display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: 1,
-    marginTop: 72,
-    background: 'rgba(148,163,184,0.08)',
-    border: '1px solid rgba(148,163,184,0.08)',
-    borderRadius: 16, overflow: 'hidden',
-  },
-  statCell: {
-    padding: '28px 16px', textAlign: 'center',
-    background: 'rgba(12,18,34,0.6)',
-    backdropFilter: 'blur(12px)',
-  },
-  statValue: {
-    fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(28px, 4vw, 40px)',
-    fontWeight: 900, lineHeight: 1,
-    color: '#f1f5f9', display: 'block',
-  },
-  statLabel: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: 11, fontWeight: 400,
-    letterSpacing: '0.14em', textTransform: 'uppercase',
-    color: 'rgba(148,163,184,0.5)',
-    display: 'block', marginTop: 6,
-  },
-
-  // ── features section ──────────────────────────────────────────────────────
-  featureSection: {
-    background: 'var(--color-surface-0)',
-    padding: 'clamp(60px, 8vw, 100px) 24px',
-  },
-  sectionEyebrow: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: 10, fontWeight: 700,
-    letterSpacing: '0.3em', textTransform: 'uppercase',
-    color: '#818cf8', marginBottom: 12, display: 'block',
-  },
-  sectionTitle: {
-    fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(32px, 5vw, 52px)',
-    fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.05,
-    color: '#f1f5f9', margin: '0 0 12px',
-  },
-  sectionDesc: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: 15, fontWeight: 300, lineHeight: 1.7,
-    color: 'rgba(148,163,184,0.6)',
-    maxWidth: 420, margin: '0 auto',
-  },
-
-  // ── feature card ──────────────────────────────────────────────────────────
-  featureGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-    gap: 16, marginTop: 56,
-  },
-
-  // ── CTA strip ─────────────────────────────────────────────────────────────
-  ctaStrip: {
-    position: 'relative', overflow: 'hidden',
-    background: 'linear-gradient(135deg, #0c1222 0%, #111827 100%)',
-    padding: 'clamp(60px, 8vw, 96px) 24px',
-    borderTop: '1px solid rgba(148,163,184,0.06)',
-  },
-  ctaStripGlow: {
-    position: 'absolute', inset: 0, pointerEvents: 'none',
-    background: 'radial-gradient(ellipse 60% 80% at 50% 100%, rgba(99,102,241,0.12), transparent)',
-  },
-  ctaStripIcon: {
-    width: 64, height: 64, borderRadius: 18,
-    background: 'rgba(129,140,248,0.1)',
-    border: '1px solid rgba(129,140,248,0.2)',
-    display: 'flex', alignItems: 'center', justifyContent: 'center',
-    margin: '0 auto 24px',
-  },
-  ctaStripH: {
-    fontFamily: 'var(--font-display)',
-    fontSize: 'clamp(28px, 5vw, 48px)',
-    fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.1,
-    color: '#f1f5f9', margin: '0 0 16px',
-  },
-  ctaStripP: {
-    fontFamily: 'var(--font-sans)',
-    fontSize: 16, fontWeight: 300, lineHeight: 1.7,
-    color: 'rgba(148,163,184,0.6)',
-    maxWidth: 480, margin: '0 auto 36px',
-  },
-};
-
-function FeatureCard({ feature, index }) {
-  const Icon = feature.icon;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.04, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-    >
-      <Link
-        to={feature.link}
-        className="disc-card"
-        style={{
-          display: 'block', padding: '24px',
-          textDecoration: 'none', height: '100%',
-          borderColor: 'rgba(148,163,184,0.1)',
-        }}
-        onMouseEnter={e => e.currentTarget.style.borderColor = feature.accentBorder}
-        onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(148,163,184,0.1)'}
-      >
-        <div style={{
-          width: 44, height: 44, borderRadius: 12,
-          background: feature.accentBg,
-          border: `1px solid ${feature.accentBorder}`,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          marginBottom: 16,
-        }}>
-          <Icon size={20} color={feature.accent} strokeWidth={1.75} />
-        </div>
-
-        <div style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 15, fontWeight: 700,
-          color: '#f1f5f9', marginBottom: 8,
-        }}>
-          {feature.title}
-        </div>
-
-        <p style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 13, fontWeight: 300, lineHeight: 1.65,
-          color: 'rgba(148,163,184,0.55)',
-          margin: '0 0 20px',
-        }}>
-          {feature.desc}
-        </p>
-
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: 4,
-          fontFamily: 'var(--font-sans)',
-          fontSize: 12, fontWeight: 600,
-          color: feature.accent,
-          letterSpacing: '0.02em',
-        }}>
-          {feature.cta}
-          <ChevronRight size={13} strokeWidth={2.5} />
-        </div>
-
-        {/* Subtle bottom accent line */}
-        <div style={{
-          position: 'absolute', bottom: 0, left: 24, right: 24, height: 1,
-          background: `linear-gradient(90deg, transparent, ${feature.accent}30, transparent)`,
-          opacity: 0,
-          transition: 'opacity 0.3s ease',
-        }} className="card-accent-line" />
-      </Link>
-    </motion.div>
-  );
-}
 
 export function Home() {
+  const [stats, setStats] = useState({ discs: 0, brands: 0, clicks: 0, blogs: 0 });
+  const [events, setEvents] = useState<any[]>([]);
+
+  useEffect(() => {
+    // Fetch real stats
+    Promise.all([
+      fetch('/data/discs.json').then(res => res.json()),
+      fetch('/data/manufacturers.json').then(res => res.json()),
+      fetch('/data/blog.json').then(res => res.json()),
+      fetch('/data/rollups/clicks_by_manufacturer_monthly.json').then(res => res.json()).catch(() => ({})),
+      fetch('/data/events.json').then(res => res.json()).catch(() => []),
+    ]).then(([discs, mfgs, blogs, clicksData, eventsData]) => {
+      // Calculate total clicks from rollups
+      let totalClicks = 0;
+      Object.values(clicksData).forEach((month: any) => {
+        Object.values(month).forEach((count: any) => {
+          totalClicks += count;
+        });
+      });
+
+      setStats({
+        discs: discs.length,
+        brands: mfgs.length,
+        clicks: totalClicks,
+        blogs: blogs.length
+      });
+      setEvents(eventsData.slice(0, 3));
+    });
+  }, []);
+
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-950 transition-colors">
       <SEO
-        title="The Disc Mill | Disc Golf Database, Reviews & Gear"
-        description="The ultimate disc golf intelligence platform. Browse 10,000+ discs, find local courses, and build your perfect bag."
+        title="The Disc Mill | Disc Golf Intelligence Hub"
+        description="Your high-performance disc golf database. Browse 200+ discs, find local courses, and support independent disc dyers."
         canonicalUrl="https://thediscmill.com/"
         isRootEntity={true}
       />
 
-      {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section style={S.hero}>
-        <div style={S.heroNoise} />
-        <div style={S.heroGrid} />
-        <div style={S.heroGlow1} />
-        <div style={S.heroGlow2} />
-
-        <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-
+      {/* ── Real Data Hero ─────────────────────────────────────────── */}
+      <section className="relative pt-32 pb-20 overflow-hidden bg-gray-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.15),transparent)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-8"
           >
-            <span style={S.badge}>
-              <Disc size={12} />
-              The #1 Open-Data Disc Golf Platform
-            </span>
+            <Zap size={12} className="fill-current" /> Intelligence Hub
           </motion.div>
+          <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tight leading-[0.9]">
+            The Disc <br /><span className="text-indigo-500">Mill.</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+            Professionalizing the creator economy. National course intelligence, live analytics, and verified dyer spotlights.
+          </p>
 
-          <motion.h1
-            style={S.h1}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          >
-            The Disc<br />
-            <span style={S.h1Accent}>Mill</span>
-          </motion.h1>
-
-          <motion.p
-            style={S.heroSub}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.18, duration: 0.5 }}
-          >
-            National course intelligence, live PDGA data, and disc analytics.
-            Everything you need to master the game — free, forever.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.5 }}
-            style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}
-          >
-            <Link
-              to="/discs"
-              style={S.ctaPrimary}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow as string; }}
-            >
-              <Search size={16} strokeWidth={2.5} />
-              Find Your Disc
-              <ArrowRight size={16} strokeWidth={2.5} />
+          <div className="flex flex-wrap justify-center gap-4 mb-20">
+            <Link to="/discs" className="px-10 py-5 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-2xl shadow-indigo-500/20">
+              Find your new disc <ArrowRight size={20} />
             </Link>
-            <Link
-              to="/disc-return"
-              style={S.ctaSecondary}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.09)'; e.currentTarget.style.borderColor = 'rgba(148,163,184,0.25)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = S.ctaSecondary.background as string; e.currentTarget.style.borderColor = S.ctaSecondary.border as string; }}
-            >
-              <QrCode size={16} />
-              Disc Return Network
+            <Link to="/dyers" className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-2xl hover:bg-white/10 transition-all flex items-center gap-2 backdrop-blur-xl">
+              Meet Creators <Palette size={20} />
             </Link>
-          </motion.div>
+          </div>
 
-          {/* Stats */}
-          <motion.div
-            style={S.statsWrap}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.42, duration: 0.55 }}
-          >
-            {STATS.map(({ value, label, icon: Icon }) => (
-              <div key={label} style={S.statCell}>
-                <Icon size={14} color="rgba(129,140,248,0.4)" style={{ margin: '0 auto 8px' }} />
-                <span style={S.statValue}>{value}</span>
-                <span style={S.statLabel}>{label}</span>
-              </div>
-            ))}
-          </motion.div>
+          {/* Live Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1 bg-white/5 rounded-[3rem] overflow-hidden border border-white/10 backdrop-blur-2xl">
+            <div className="p-8 border-r border-white/5">
+              <div className="text-3xl font-black mb-1">{stats.discs}</div>
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Discs Cataloged</div>
+            </div>
+            <div className="p-8 border-r border-white/5">
+              <div className="text-3xl font-black mb-1">{stats.brands}</div>
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Manufacturers</div>
+            </div>
+            <div className="p-8">
+              <div className="text-3xl font-black mb-1">{stats.blogs}</div>
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Intelligence Briefs</div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── Feature Grid ─────────────────────────────────────────────── */}
-      <section style={S.featureSection}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ textAlign: 'center', marginBottom: 0 }}
-          >
-            <span style={S.sectionEyebrow}>Everything You Need</span>
-            <h2 style={S.sectionTitle}>One platform.<br />The entire game.</h2>
-            <p style={S.sectionDesc}>
-              Live data from PDGA.com. No accounts. No paywalls.
-            </p>
-          </motion.div>
+      {/* ── Disc of the Day ────────────────────────────────────────── */}
+      <DiscOfTheDay />
 
-          <div style={S.featureGrid}>
-            {FEATURES.map((f, i) => (
-              <FeatureCard key={f.title} feature={f} index={i} />
+      {/* ── Featured Guides ────────────────────────────────────────── */}
+      <section className="py-24 bg-gray-50 dark:bg-gray-900 transition-colors">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <h2 className="text-[10px] font-black text-indigo-600 uppercase tracking-[0.2em] mb-4">Market Intelligence</h2>
+              <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">The Best Discs <br />for 2025.</h3>
+            </div>
+            <Link to="/guides" className="flex items-center gap-2 text-indigo-600 font-black hover:gap-3 transition-all">
+              All Buying Guides <ArrowRight size={20} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {GUIDES.map(guide => (
+              <Link 
+                key={guide.slug} 
+                to={`/best/${guide.slug}`}
+                className="group p-8 bg-white dark:bg-gray-800 rounded-[2.5rem] border border-gray-100 dark:border-gray-700 hover:border-indigo-500 transition-all shadow-sm"
+              >
+                <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mb-6">
+                  <guide.icon size={24} />
+                </div>
+                <h4 className="text-xl font-black text-gray-900 dark:text-white mb-2">{guide.title}</h4>
+                <p className="text-sm text-gray-500 mb-6">Explore the highest rated discs in this category.</p>
+                <span className="inline-flex items-center gap-1 text-xs font-black text-indigo-600 uppercase tracking-widest group-hover:gap-2 transition-all">
+                  View Guide <ChevronRight size={14} />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Disc Return CTA ──────────────────────────────────────────── */}
-      <section style={S.ctaStrip}>
-        <div style={S.ctaStripGlow} />
-        <div style={{ position: 'relative', maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div style={S.ctaStripIcon}>
-              <QrCode size={28} color="#818cf8" strokeWidth={1.5} />
+      {/* ── Creator Spotlight ──────────────────────────────────────── */}
+      <DyerSpotlight />
+
+      {/* ── Two Column: Courses & Events ──────────────────────────── */}
+      <section className="py-24 bg-white dark:bg-gray-950 transition-colors">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Michigan Courses */}
+            <div>
+              <div className="flex items-center justify-between mb-10">
+                <h3 className="text-2xl font-black text-gray-900 dark:text-white flex items-center gap-3">
+                  <MapPin className="text-indigo-600" /> Top MI Courses
+                </h3>
+                <Link to="/michigan" className="text-xs font-black text-indigo-600 uppercase tracking-widest hover:underline">
+                  State Hub →
+                </Link>
+              </div>
+              <div className="space-y-4">
+                {MI_COURSES.map(course => (
+                  <a 
+                    key={course.name}
+                    href={course.url}
+                    onClick={() => trackOutboundClick({ url: course.url, label: course.name, pageSource: 'home_courses', category: 'course_click' })}
+                    target="_blank"
+                    rel="noopener"
+                    className="flex items-center justify-between p-6 bg-gray-50 dark:bg-gray-900/50 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-indigo-500 transition-all group"
+                  >
+                    <div>
+                      <div className="font-bold text-gray-900 dark:text-white">{course.name}</div>
+                      <div className="text-xs text-gray-500">{course.city}, MI</div>
+                    </div>
+                    <ExternalLink size={18} className="text-gray-400 group-hover:text-indigo-600 transition-colors" />
+                  </a>
+                ))}
+              </div>
             </div>
-            <h2 style={S.ctaStripH}>Lost a disc?<br />We can help.</h2>
-            <p style={S.ctaStripP}>
-              The Disc Hero Return Network creates free QR return tags encoded with your contact info.
-              No app, no server, no account. Just your disc coming home.
+
+            {/* Recent Events */}
+            <div>
+              <div className="flex items-center justify-between mb-10">
+                <h3 className="text-2xl font-black text-gray-900 dark:text-white flex items-center gap-3">
+                  <Trophy className="text-indigo-600" /> Recent Events
+                </h3>
+                <Link to="/events" className="text-xs font-black text-indigo-600 uppercase tracking-widest hover:underline">
+                  Full Schedule →
+                </Link>
+              </div>
+              <div className="space-y-4">
+                {events.length > 0 ? events.map(event => (
+                  <a 
+                    key={event.id}
+                    href={event.url}
+                    onClick={() => trackOutboundClick({ url: event.url, label: event.name, pageSource: 'home_events', category: 'event_click' })}
+                    target="_blank"
+                    rel="noopener"
+                    className="flex items-center gap-6 p-6 bg-indigo-50 dark:bg-indigo-900/10 rounded-2xl border border-indigo-100 dark:border-indigo-800/50 hover:border-indigo-500 transition-all group"
+                  >
+                    <div className="text-center">
+                      <div className="text-xs font-black text-indigo-600 uppercase tracking-widest">Aug</div>
+                      <div className="text-2xl font-black text-indigo-900 dark:text-white leading-none">15</div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-bold text-gray-900 dark:text-white line-clamp-1">{event.name}</div>
+                      <div className="text-xs text-gray-500">{event.location}</div>
+                    </div>
+                    <ArrowRight size={20} className="text-indigo-400 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                )) : (
+                  <p className="text-gray-500">Loading events...</p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Disc Return Network (CTA) ──────────────────────────────── */}
+      <section className="py-24 bg-indigo-600 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[100px]" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="bg-white/10 backdrop-blur-2xl border border-white/20 p-12 md:p-20 rounded-[4rem] text-center text-white">
+            <div className="w-20 h-20 bg-white text-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-2xl">
+              <QrCode size={40} />
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 tracking-tight">Lost a disc? <br />We'll bring it home.</h2>
+            <p className="text-xl text-indigo-100 max-w-2xl mx-auto mb-12 leading-relaxed">
+              Join the National Disc Return Network. Create a free QR tag for your bag. No app, no fees, just community.
             </p>
-            <Link
-              to="/disc-return"
-              style={S.ctaPrimary}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 0 48px rgba(99,102,241,0.5), 0 8px 24px rgba(0,0,0,0.5)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = S.ctaPrimary.boxShadow as string; }}
-            >
-              Create a Free Return Tag
-              <ArrowRight size={16} strokeWidth={2.5} />
+            <Link to="/disc-return" className="inline-flex items-center gap-3 px-12 py-5 bg-white text-indigo-600 font-black rounded-2xl hover:bg-indigo-50 transition-all shadow-2xl">
+              Create My Free Tag <ArrowRight size={24} />
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

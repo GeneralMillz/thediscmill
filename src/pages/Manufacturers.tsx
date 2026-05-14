@@ -4,18 +4,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Factory, ExternalLink } from 'lucide-react';
 import { fetchManufacturers } from '../services/manufacturers';
+import { Manufacturer } from '../types';
 
-interface Manufacturer {
-  id: string;
-  name: string;
-  shortName: string;
-  country: string;
-  website: string;
-  founded?: number | null;
-  description: string;
-  trilogy?: boolean;
-  mvpFamily?: boolean;
-}
+
 
 const FLAG: Record<string, string> = {
   US: '🇺🇸', SE: '🇸🇪', FI: '🇫🇮', DE: '🇩🇪', CA: '🇨🇦', AU: '🇦🇺', GB: '🇬🇧',

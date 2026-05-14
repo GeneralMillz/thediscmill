@@ -11,6 +11,7 @@ import { useDiscs } from '../hooks/useDiscs';
 import { useInternalLinks } from '../utils/internalLinks';
 import { brandSlug } from '../utils/brandSlug';
 import { DiscCard } from '../components/DiscCard';
+import { trackOutboundClick } from '../utils/outboundAnalytics';
 
 export function BlogDetail() {
   const { id } = useParams<{ id: string }>();
@@ -20,6 +21,33 @@ export function BlogDetail() {
   const { pathname } = useLocation();
   const { data: discs = [] } = useDiscs();
   const { injectInternalLinks } = useInternalLinks();
+  const articleRef = React.useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleOutboundClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (!anchor || !anchor.href) return;
+
+      const url = anchor.href;
+      const isInternal = url.includes(window.location.hostname) || url.startsWith('/');
+      
+      if (!isInternal) {
+        trackOutboundClick({
+          url,
+          label: anchor.innerText || 'Blog Link',
+          pageSource: `blog_${id}`,
+          category: 'blog_outbound'
+        });
+      }
+    };
+
+    const article = articleRef.current;
+    if (article) {
+      article.addEventListener('click', handleOutboundClick);
+      return () => article.removeEventListener('click', handleOutboundClick);
+    }
+  }, [id, post]);
 
   useEffect(() => {
     fetch('/data/blog.json')
@@ -94,7 +122,10 @@ export function BlogDetail() {
         Back to Briefs
       </Link>
 
-      <article className="bg-white dark:bg-gray-900/50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl shadow-indigo-900/5 border border-gray-100 dark:border-gray-800 backdrop-blur-xl">
+      <article 
+        ref={articleRef}
+        className="bg-white dark:bg-gray-900/50 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl shadow-indigo-900/5 border border-gray-100 dark:border-gray-800 backdrop-blur-xl"
+      >
         <div className="flex flex-wrap items-center gap-4 text-xs font-black text-indigo-500 uppercase tracking-widest mb-6 bg-indigo-50 dark:bg-indigo-900/20 w-fit px-4 py-2 rounded-full border border-indigo-100 dark:border-indigo-800">
           <span>{post.category}</span>
           <span className="text-indigo-300 dark:text-indigo-700">•</span>

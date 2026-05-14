@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mi-state-champs-2025",
+    "name": "Michigan State Championships",
+    "date": "2025-08-15",
+    "location": "Ludington, MI",
+    "url": "https://www.pdga.com/tour/event/82001"
+  },
+  {
+    "id": "ledgestone-2025",
+    "name": "Ledgestone Open",
+    "date": "2025-08-01",
+    "location": "Peoria, IL",
+    "url": "https://www.pdga.com/tour/event/82002"
+  },
+  {
+    "id": "mvp-open-2025",
+    "name": "MVP Open at Maple Hill",
+    "date": "2025-09-12",
+    "location": "Leicester, MA",
+    "url": "https://www.pdga.com/tour/event/82003"
+  }
+]

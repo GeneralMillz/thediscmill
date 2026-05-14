@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Disc } from '../types';
 import { DiscImage } from './DiscImage';
+import { Globe } from 'lucide-react';
+import { buildManufacturerLink } from '../utils/manufacturerLinks';
+import { trackManufacturerClick } from '../utils/outboundAnalytics';
+import { fetchManufacturers } from '../services/manufacturers';
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  STABILITY LOGIC
@@ -294,6 +298,15 @@ interface DiscCardProps {
 }
 
 export function DiscCard({ disc, className = '' }: DiscCardProps) {
+  const [mfgWebsite, setMfgWebsite] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    fetchManufacturers().then(mfgs => {
+      const mfg = mfgs.find(m => m.name === disc.brand || m.shortName === disc.brand);
+      if (mfg?.website) setMfgWebsite(mfg.website);
+    });
+  }, [disc.brand]);
+
   const stability = deriveStability(disc.turn, disc.fade, disc.stability);
   const stabCfg   = STABILITY_CONFIG[stability] ?? STABILITY_CONFIG['Neutral'];
   const catCfg    = CATEGORY_CONFIG[disc.category] ?? { chip: 'text-slate-400 bg-slate-500/10 border border-slate-500/25', abbr: '—' };
@@ -367,6 +380,28 @@ export function DiscCard({ disc, className = '' }: DiscCardProps) {
               className="w-full h-full"
             />
           </div>
+          
+          {/* Outbound Manufacturer Link — separate from parent Link */}
+          {mfgWebsite && (
+            <a
+              href={buildManufacturerLink({
+                url: mfgWebsite,
+                brandName: disc.brand,
+                pageType: 'disc_detail', // Using disc_detail as default but contextually it's a card
+                discSlug: disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+              })}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                trackManufacturerClick(disc.brand, mfgWebsite, 'listing_card');
+                window.open(e.currentTarget.href, '_blank', 'noopener,noreferrer');
+              }}
+              className="absolute top-12 right-5 z-20 p-1.5 bg-slate-800/80 text-slate-400 hover:text-indigo-400 border border-slate-700/50 rounded-lg transition-all opacity-0 group-hover:opacity-100"
+              title={`Visit ${disc.brand} official site`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+            </a>
+          )}
         </div>
 
         {/* ── Divider ── */}

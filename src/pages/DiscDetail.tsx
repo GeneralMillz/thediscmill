@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { SEO } from '../components/SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Globe } from 'lucide-react';
 import { useDiscById, useDiscBySlug } from '../hooks/useDiscById';
 import { useDiscs } from '../hooks/useDiscs';
 import { buildAmazonLink } from '../utils/amazon';
@@ -17,6 +17,9 @@ import {
 } from '../utils/seo';
 import { brandSlug } from '../utils/brandSlug';
 import { DiscImage } from '../components/DiscImage';
+import { buildManufacturerLink } from '../utils/manufacturerLinks';
+import { trackManufacturerClick } from '../utils/outboundAnalytics';
+import { fetchManufacturers } from '../services/manufacturers';
 
 function FlightTile({ label, value, sub, color }: { label: string; value: number; sub: string; color: string }) {
   return (
@@ -34,6 +37,7 @@ export function DiscDetail() {
   const { id, brandSlug: paramBrandSlug, discSlug } = useParams<{ id?: string, brandSlug?: string, discSlug?: string }>();
   const { pathname } = useLocation();
   const [ogImage, setOgImage] = useState<string | undefined>(undefined);
+  const [mfgWebsite, setMfgWebsite] = useState<string | null>(null);
 
   const { data: discById, loading: loadingById } = useDiscById(id);
   const { data: discBySlug, loading: loadingBySlug } = useDiscBySlug(paramBrandSlug, discSlug);
@@ -58,6 +62,15 @@ export function DiscDetail() {
     } catch {
       // canvas may fail in prerender env — fall through to default
     }
+  }, [disc]);
+
+  // Fetch manufacturer website for outbound link
+  useEffect(() => {
+    if (!disc?.brand) return;
+    fetchManufacturers().then(mfgs => {
+      const mfg = mfgs.find(m => m.name === disc.brand || m.shortName === disc.brand);
+      if (mfg?.website) setMfgWebsite(mfg.website);
+    });
   }, [disc]);
 
   if (loading) {
@@ -233,10 +246,27 @@ export function DiscDetail() {
               </Link>
               <Link
                 to={`/manufacturer/${mfgSlug}`}
-                className="w-full block text-center bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold text-sm py-2.5 rounded-xl hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors"
+                className="w-full block text-center bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold text-sm py-2.5 rounded-xl hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors mb-2"
               >
                 View all {disc.brand} discs →
               </Link>
+              {mfgWebsite && (
+                <a
+                  href={buildManufacturerLink({
+                    url: mfgWebsite,
+                    brandName: disc.brand,
+                    pageType: 'disc_detail',
+                    discSlug: discSlug || disc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+                  })}
+                  onClick={() => trackManufacturerClick(disc.brand, mfgWebsite, 'disc_detail')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 text-xs font-bold text-gray-400 hover:text-indigo-500 transition-colors py-2 border border-transparent hover:border-indigo-100 dark:hover:border-indigo-900 rounded-xl"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  Official Website
+                </a>
+              )}
             </div>
 
             {/* Quick specs */}

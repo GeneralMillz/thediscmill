@@ -7,20 +7,12 @@ import { buildCanonical, SITE_URL } from '../utils/seo';
 import { brandSlug as makeBrandSlug } from '../utils/brandSlug';
 import { fetchManufacturers } from '../services/manufacturers';
 import { fetchDiscs } from '../services/discs';
-import { Disc } from '../types';
+import { Disc, Manufacturer } from '../types';
 import { DiscCard, CATEGORY_CONFIG } from '../components/DiscCard';
+import { buildManufacturerLink } from '../utils/manufacturerLinks';
+import { trackManufacturerClick } from '../utils/outboundAnalytics';
 
-interface Manufacturer {
-  id: string;
-  name: string;
-  shortName: string;
-  country: string;
-  website: string;
-  founded?: number | null;
-  description: string;
-  trilogy?: boolean;
-  mvpFamily?: boolean;
-}
+
 
 const FLAG: Record<string, string> = {
   US: '🇺🇸', SE: '🇸🇪', FI: '🇫🇮', DE: '🇩🇪', CA: '🇨🇦', AU: '🇦🇺', GB: '🇬🇧',
@@ -131,7 +123,12 @@ export function ManufacturerDetail() {
               </div>
               {manufacturer.website && (
                 <a
-                  href={manufacturer.website}
+                  href={buildManufacturerLink({
+                    url: manufacturer.website,
+                    brandName: manufacturer.name,
+                    pageType: 'manufacturer_hub'
+                  })}
+                  onClick={() => trackManufacturerClick(manufacturer.id, manufacturer.website, 'manufacturer_hub')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 text-sm font-bold text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-2.5 hover:border-indigo-300 dark:hover:border-indigo-600 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all"
