@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -44,7 +44,7 @@ export function Footer() {
               <li><Link to="/partners" className="hover:text-indigo-600 transition-colors">Partner with Us</Link></li>
               <li><Link to="/manufacturers" className="hover:text-indigo-600 transition-colors">Manufacturers</Link></li>
               <li><Link to="/deals" className="hover:text-indigo-600 transition-colors">Curated Deals</Link></li>
-              <li><Link to="/audit" className="hover:text-indigo-600 transition-colors flex items-center gap-2"><Shield className="w-3.5 h-3.5" /> System Status</Link></li>
+
             </ul>
           </div>
         </div>
