@@ -50,10 +50,18 @@ export function CourseDetail() {
                 </div>
               </div>
               <div className="flex gap-2">
-                <button className="p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  aria-label="Save to favorites"
+                  title="Save to favorites"
+                  className="p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+                >
                   <Heart className="w-5 h-5 text-gray-400" />
                 </button>
-                <button className="p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                <button
+                  aria-label="Share course"
+                  title="Share course"
+                  className="p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+                >
                   <Share2 className="w-5 h-5 text-gray-400" />
                 </button>
               </div>
