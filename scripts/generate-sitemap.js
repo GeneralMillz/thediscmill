@@ -49,20 +49,22 @@ async function generateSitemap() {
   });
 
   // Dynamic routes - Manufacturers
-  const brands = new Set(discs.map(d => d.brand));
+  const brands = new Set(discs.map(d => d.brand).filter(Boolean));
   brands.forEach(brand => {
     const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
     urls.push(`  <url>\n    <loc>${SITE_URL}/manufacturer/${slug}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
   });
 
-  // Dynamic routes - Blog
+  // Dynamic routes - Blog & Guides
   blogs.forEach(post => {
-    urls.push(`  <url>\n    <loc>${SITE_URL}/blog/${post.id}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>`);
+    // If it's a guide, prioritize it higher
+    const isGuide = post.category?.toLowerCase().includes('guide');
+    urls.push(`  <url>\n    <loc>${SITE_URL}/blog/${post.id}</loc>\n    <changefreq>${isGuide ? 'weekly' : 'monthly'}</changefreq>\n    <priority>${isGuide ? '0.9' : '0.8'}</priority>\n  </url>`);
   });
 
   // Dynamic routes - Courses
   courses.forEach(course => {
-    urls.push(`  <url>\n    <loc>${SITE_URL}/course/${course.id}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>`);
+    urls.push(`  <url>\n    <loc>${SITE_URL}/course/${course.id}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`);
   });
 
   const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>

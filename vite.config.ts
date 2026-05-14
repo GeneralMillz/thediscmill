@@ -4,46 +4,50 @@ import path from 'path';
 import fs from 'fs';
 import { defineConfig, loadEnv } from 'vite';
 import prerender from '@prerenderer/rollup-plugin';
-import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
+import JSDOMRenderer from '@prerenderer/renderer-jsdom';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
   
-  // Read dynamic routes for blog/guides
+  // Read dynamic routes for blog/guides/manufacturers
   let extraRoutes = [];
   try {
     const blogData = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'public/data/blog.json'), 'utf-8'));
-    extraRoutes = blogData.map(post => `/blog/${post.id}`);
+    const discsData = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'public/data/discs.json'), 'utf-8'));
+    
+    // Blog posts & Guides
+    extraRoutes.push(...blogData.map(post => `/blog/${post.id}`));
+    
+    // Manufacturers
+    const brands = new Set(discsData.map(d => d.brand).filter(Boolean));
+    brands.forEach(brand => {
+      const slug = brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+      extraRoutes.push(`/manufacturer/${slug}`);
+    });
   } catch(e) {
-    console.warn("Could not load blog data for prerendering");
+    console.warn("Could not load dynamic data for prerendering");
   }
 
   return {
     plugins: [
       react(), 
       tailwindcss(),
-      // Prerender only during build to avoid slowing down dev
-      // NOTE: Disabled for Vercel deployment as Vercel build environment 
-      // does not support Puppeteer by default.
-      /*
+      // Prerender all major routes to static HTML for SEO (Vercel compatible via JSDOM)
       mode === 'production' && prerender({
         routes: [
-          '/', '/discs', '/courses', '/gear', '/blog', '/disc-finder', '/analyzer', '/disc-return',
+          '/', '/discs', '/courses', '/gear', '/blog', '/disc-finder', '/analyzer', '/disc-return', '/bag-builder', '/manufacturers', '/players', '/events',
           ...extraRoutes
         ],
-        renderer: new PuppeteerRenderer({
-          // Wait for Helmet to inject tags before capturing HTML
-          renderAfterTime: 2000,
+        renderer: new JSDOMRenderer({
+          renderAfterTime: 1200,
         }),
         postProcess(renderedRoute) {
-          // Keep the hydration marker for React 19
           renderedRoute.html = renderedRoute.html.replace(
             '<div id="root">',
             '<div id="root" data-server-rendered="true">'
           );
         }
       })
-      */
     ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

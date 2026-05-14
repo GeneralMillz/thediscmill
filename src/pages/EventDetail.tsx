@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useParams, Link } from 'react-router-dom';
 import { fetchEventDetail } from '../services/events';
 import { Event } from '../types';
@@ -24,10 +24,10 @@ export function EventDetail() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>{event!.name} | Disc Golf Tournament — The Disc Mill</title>
-        <meta name="description" content={`${event!.name} — ${event!.tier} event in ${event!.location}. Date: ${event!.date}.`} />
-      </Helmet>
+      <SEO
+        title={`${event.name} | Live Leaderboard`}
+        description={`Follow live scores and leaderboards for ${event.name}. ${event.tier} event in ${event.location}. Powered by The Disc Mill.`}
+      />
       <Link to="/events" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline">
         <ArrowLeft className="mr-2 w-4 h-4" />
         Back to Events

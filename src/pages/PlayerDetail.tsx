@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useParams, Link } from 'react-router-dom';
 import { fetchPlayer } from '../services/players';
 import { Player } from '../types';
@@ -25,10 +25,10 @@ export function PlayerDetail() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>{player!.name} — PDGA #{player!.pdgaNumber} | The Disc Mill</title>
-        <meta name="description" content={`${player!.name}, PDGA #${player!.pdgaNumber}. Rating: ${player!.rating}. ${player!.location}.`} />
-      </Helmet>
+      <SEO
+        title={`${player.name} | PDGA Profile #${player.pdgaNumber}`}
+        description={`View the professional disc golf profile for ${player.name} (PDGA #${player.pdgaNumber}). Current Rating: ${player.rating}. Career wins: ${player.careerWins}.`}
+      />
       <Link to="/players" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline">
         <ArrowLeft className="mr-2 w-4 h-4" />
         Back to Players

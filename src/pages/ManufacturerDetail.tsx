@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, Globe, Factory } from 'lucide-react';
-import { buildCanonical } from '../utils/seo';
+import { buildCanonical, SITE_URL } from '../utils/seo';
 import { brandSlug as makeBrandSlug } from '../utils/brandSlug';
 import { fetchManufacturers } from '../services/manufacturers';
 import { fetchDiscs } from '../services/discs';
@@ -90,11 +90,12 @@ export function ManufacturerDetail() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>{manufacturer!.name} Discs | The Disc Mill</title>
-        <meta name="description" content={`Browse all ${manufacturer!.name} disc golf discs — ${discs.length} discs including putters, midranges, fairway and distance drivers.`} />
-        <link rel="canonical" href={buildCanonical(pathname)} />
-      </Helmet>
+      <SEO
+        title={`${manufacturer.name} Discs | Brand Catalog`}
+        description={`Browse all ${manufacturer.name} disc golf discs — ${discs.length} models including putters, midranges, fairway and distance drivers.`}
+        canonicalUrl={buildCanonical(pathname)}
+        image={`${SITE_URL}/logo.png`}
+      />
       <Link to="/manufacturers" className="inline-flex items-center text-indigo-600 font-bold mb-8 hover:underline text-sm">
         <ArrowLeft className="mr-1.5 w-4 h-4" />
         All Brands

@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { Users, Search, Star, MapPin, Award, Loader2, AlertCircle, UserCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -103,10 +103,10 @@ export function Players() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>PDGA Player Search | The Disc Mill</title>
-        <meta name="description" content="Search PDGA-rated disc golf players, ratings, and career stats." />
-      </Helmet>
+      <SEO
+        title="PDGA Player Search | Player Intelligence"
+        description="Search for PDGA-rated disc golf players. Access live ratings, career statistics, and classification profiles for professional and amateur players."
+      />
       {/* Header */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">

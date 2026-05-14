@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Helmet } from 'react-helmet-async';
+import { SEO } from '../components/SEO';
 import { useEvents } from '../hooks/useEvents';
 import { Calendar, MapPin, Trophy, Search, Loader2, AlertCircle, Filter, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -72,10 +72,10 @@ export function Events() {
 
   return (
     <div className="pt-20 pb-8 px-4 max-w-7xl mx-auto">
-      <Helmet>
-        <title>Disc Golf Events | The Disc Mill</title>
-        <meta name="description" content="Find PDGA disc golf tournaments and events by state." />
-      </Helmet>
+      <SEO
+        title="PDGA Events & Tournaments | Live Leaderboards"
+        description="Find PDGA disc golf tournaments and live events by state. Real-time intelligence and results for the professional tour."
+      />
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
         <div>

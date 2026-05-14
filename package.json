@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.29.0",
+    "@prerenderer/renderer-jsdom": "^1.1.9",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.14",
     "@types/qrcode": "^1.5.6",
