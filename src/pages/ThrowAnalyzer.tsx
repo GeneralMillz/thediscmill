@@ -51,7 +51,15 @@ export function ThrowAnalyzer() {
         description="Analyze your disc golf form using AI to get actionable feedback and improve your game."
         canonicalUrl="https://thediscmill.com/analyzer"
       />
-      <div className="mb-12">
+        <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-4 mb-8 flex items-start gap-3">
+          <Info className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-bold text-amber-900 dark:text-amber-200">Work In Progress</p>
+            <p className="text-xs text-amber-700 dark:text-amber-400 mt-1">
+              This physics engine is currently in beta. Calculations may vary based on real-world conditions.
+            </p>
+          </div>
+        </div>
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white flex items-center mb-4">
           <Activity className="mr-3 text-indigo-600 w-10 h-10" />
           Flight Simulator & Analyzer
@@ -59,7 +67,6 @@ export function ThrowAnalyzer() {
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl">
           Our physics-based engine simulates disc flight paths based on your arm speed, wind conditions, and terrain.
         </p>
-      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4 space-y-8">

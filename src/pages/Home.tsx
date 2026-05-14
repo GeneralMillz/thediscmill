@@ -67,10 +67,10 @@ const FEATURES = [
   },
   {
     icon: Zap,
-    title: 'Throw Analyzer',
-    desc: 'AI-powered flight path simulation and form analysis. Powered by Gemini.',
+    title: 'Flight Path Simulator',
+    desc: 'BETA: Our physics-based engine simulates disc flight paths based on your arm speed, wind, and terrain.',
     link: '/analyzer',
-    cta: 'Analyze Throw',
+    cta: 'Try Simulator',
     accent: '#fbbf24',
     accentBg: 'rgba(245,158,11,0.08)',
     accentBorder: 'rgba(245,158,11,0.2)',
