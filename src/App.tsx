@@ -30,7 +30,7 @@ import SplashScreen from './components/SplashScreen';
 
 export default function App() {
   const [showSplash, setShowSplash] = React.useState(true);
-  const [theme, setTheme] = React.useState<'dark' | 'light'>(() => (localStorage.getItem('theme') as 'dark' | 'light') || 'light');
+  const [theme, setTheme] = React.useState<'dark' | 'light'>(() => (localStorage.getItem('theme') as 'dark' | 'light') || 'dark');
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
