@@ -15,14 +15,14 @@ import { useState, useEffect, useRef } from "react";
  */
 
 const BG_DISCS = [
-  { w: 72,  top: "7%",  left: "4%",   delay: 0 },
-  { w: 44,  top: "13%", right: "7%",  delay: 1.1 },
-  { w: 56,  top: "62%", left: "3%",   delay: 2.0 },
-  { w: 38,  top: "72%", right: "5%",  delay: 0.6 },
-  { w: 26,  top: "42%", left: "1%",   delay: 2.8 },
-  { w: 48,  top: "50%", right: "2%",  delay: 1.5 },
-  { w: 20,  top: "85%", left: "12%",  delay: 0.3 },
-  { w: 32,  top: "20%", left: "16%",  delay: 3.2 },
+  { w: 72, top: "7%", left: "4%", delay: 0 },
+  { w: 44, top: "13%", right: "7%", delay: 1.1 },
+  { w: 56, top: "62%", left: "3%", delay: 2.0 },
+  { w: 38, top: "72%", right: "5%", delay: 0.6 },
+  { w: 26, top: "42%", left: "1%", delay: 2.8 },
+  { w: 48, top: "50%", right: "2%", delay: 1.5 },
+  { w: 20, top: "85%", left: "12%", delay: 0.3 },
+  { w: 32, top: "20%", left: "16%", delay: 3.2 },
 ];
 
 const css = `
@@ -252,9 +252,9 @@ export default function SplashScreen({
   duration = 2800,
 }) {
   const [progress, setProgress] = useState(0);
-  const [exiting, setExiting]   = useState(false);
-  const [gone, setGone]         = useState(false);
-  const rafRef   = useRef(null);
+  const [exiting, setExiting] = useState(false);
+  const [gone, setGone] = useState(false);
+  const rafRef = useRef(null);
   const startRef = useRef(null);
 
   useEffect(() => {
@@ -317,14 +317,14 @@ export default function SplashScreen({
           <span className="dm-name">
             DISC <span className="dm-name-accent">MILL</span>
           </span>
-          <span className="dm-tag">Disc golf course finder</span>
+          <span className="dm-tag">The #1 Open-Data Disc Golf Platform</span>
         </div>
 
         <div className="dm-divider" />
 
         <div className="dm-progress">
           <div className="dm-prog-meta">
-            <span>Loading courses</span>
+            <span>Buffering the MVP Discs . . .</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <div className="dm-prog-track">
