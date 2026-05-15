@@ -29,7 +29,7 @@ export const Featured: React.FC<FeaturedPlacementProps> = ({ title, description,
       </div>
       {image && (
         <div className="absolute -right-4 -bottom-4 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity">
-          <img src={image} alt="" className="w-full h-full object-contain" loading="lazy" referrerPolicy="no-referrer" />
+          <img src={image} alt="" className="w-full h-full object-contain" loading="lazy" decoding="async" referrerPolicy="no-referrer" />
         </div>
       )}
     </div>

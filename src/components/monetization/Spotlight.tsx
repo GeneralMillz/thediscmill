@@ -27,7 +27,7 @@ export function Spotlight({ name, logo, description, link }: SpotlightProps) {
             alt={name}
             className="w-full h-full object-contain"
             referrerPolicy="no-referrer"
-            loading="lazy"
+            loading="lazy" decoding="async"
           />
         </div>
 

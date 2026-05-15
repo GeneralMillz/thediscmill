@@ -85,7 +85,7 @@ export default function DyerSpotlight() {
           >
             <div className="absolute -top-10 -left-10 w-64 h-64 rounded-full blur-[100px] opacity-20" style={{ background: dyer.brandAccent }} />
             <div className="relative z-10 aspect-square rounded-[4rem] overflow-hidden border-8 border-white dark:border-gray-900 shadow-2xl">
-              <img src={dyer.avatar} alt={dyer.name} className="w-full h-full object-cover" />
+              <img src={dyer.avatar} alt={dyer.name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
             </div>
           </motion.div>
           <div className="w-full md:w-1/2">

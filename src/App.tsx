@@ -1,4 +1,5 @@
 import React from 'react';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Navbar } from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from './pages/Home';
@@ -37,7 +38,7 @@ import { Releases } from './pages/Releases';
 import { Deals } from './pages/Deals';
 import { StateHub } from './pages/StateHub';
 import { Footer } from './components/Footer';
-import OutboundAnalytics from './pages/admin/OutboundAnalytics';
+import { OutboundAnalytics } from './pages/admin/OutboundAnalytics';
 import Partners from './pages/Partners';
 import DyersIndex from './pages/dyer/DyersIndex';
 import DyerDetail from './pages/dyer/DyerDetail';

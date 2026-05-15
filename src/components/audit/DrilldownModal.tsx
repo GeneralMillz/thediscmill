@@ -37,6 +37,7 @@ export function DrilldownModal({ isOpen, onClose, serviceName, audit }: Drilldow
             <button
               onClick={onClose}
               className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors"
+              aria-label="Close modal"
             >
               <X className="w-6 h-6 text-gray-500 dark:text-gray-400" />
             </button>
