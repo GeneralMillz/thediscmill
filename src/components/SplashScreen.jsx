@@ -127,7 +127,7 @@ const css = `
   /* mill wheel */
   .dm-wheel {
     position: relative;
-    width: 148px; height: 148px;
+    width: 180px; height: 180px;
     margin-bottom: 42px;
     animation: dmDropIn 0.7s cubic-bezier(0.16,1,0.3,1) both;
   }
@@ -136,11 +136,11 @@ const css = `
     border: 1px solid rgba(129,140,248,0.2);
   }
   .dm-ring-1 { inset: 0;    animation: dmRingBreath 3.2s ease-in-out infinite 0s; }
-  .dm-ring-2 { inset: 16px; animation: dmRingBreath 3.2s ease-in-out infinite 0.45s; }
-  .dm-ring-3 { inset: 32px; animation: dmRingBreath 3.2s ease-in-out infinite 0.9s; }
+  .dm-ring-2 { inset: 19px; animation: dmRingBreath 3.2s ease-in-out infinite 0.45s; }
+  .dm-ring-3 { inset: 38px; animation: dmRingBreath 3.2s ease-in-out infinite 0.9s; }
 
   .dm-disc-body {
-    position: absolute; inset: 40px; border-radius: 50%;
+    position: absolute; inset: 48px; border-radius: 50%;
     background: radial-gradient(circle at 35% 28%, #1e2d6e 0%, #111827 55%, #0c1222 100%);
     border: 1.5px solid rgba(129,140,248,0.5);
     box-shadow:
@@ -150,10 +150,10 @@ const css = `
     animation: dmDiscSpin 4s linear infinite;
     display: flex; align-items: center; justify-content: center;
   }
-  .dm-groove-1 { position: absolute; inset: 4px;  border-radius: 50%; border: 1px solid rgba(129,140,248,0.15); }
-  .dm-groove-2 { position: absolute; inset: 10px; border-radius: 50%; border: 1px solid rgba(129,140,248,0.1); }
+  .dm-groove-1 { position: absolute; inset: 5px;  border-radius: 50%; border: 1px solid rgba(129,140,248,0.15); }
+  .dm-groove-2 { position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(129,140,248,0.1); }
   .dm-hub {
-    width: 20px; height: 20px; border-radius: 50%;
+    width: 24px; height: 24px; border-radius: 50%;
     background: radial-gradient(circle at 38% 32%, #818cf8, #3730a3);
     border: 1px solid rgba(129,140,248,0.6);
     box-shadow: 0 0 14px rgba(99,102,241,0.55);
@@ -183,7 +183,7 @@ const css = `
   .dm-the {
     display: block;
     font-family: var(--font-sans);
-    font-size: 13px; font-weight: 300;
+    font-size: 15px; font-weight: 300;
     letter-spacing: 0.45em;
     text-transform: uppercase;
     color: rgba(129,140,248,0.5);
@@ -192,7 +192,7 @@ const css = `
   .dm-name {
     display: block;
     font-family: var(--font-display);
-    font-size: clamp(56px, 12vw, 80px);
+    font-size: clamp(64px, 14vw, 96px);
     font-weight: 900;
     line-height: 0.88;
     letter-spacing: -0.03em;
@@ -202,7 +202,7 @@ const css = `
   .dm-tag {
     display: block;
     font-family: var(--font-sans);
-    font-size: 11px; font-weight: 300;
+    font-size: 13px; font-weight: 300;
     letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--color-text-muted);
     margin-top: 16px;
@@ -218,12 +218,12 @@ const css = `
   /* progress */
   .dm-progress {
     position: absolute; bottom: 48px;
-    width: min(280px, 68vw);
+    width: min(340px, 75vw);
     animation: dmWordIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.4s both;
   }
   .dm-prog-meta {
     display: flex; justify-content: space-between;
-    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
     color: rgba(148,163,184,0.28);
     margin-bottom: 8px;
   }
@@ -241,24 +241,45 @@ const css = `
   }
   .dm-version {
     position: absolute; bottom: 20px;
-    font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     color: rgba(148,163,184,0.15);
   }
 `;
+
+
+const PHRASES = [
+  "Buffering the Prodigy Discs",
+  "Smoothing the Prodigy flashing",
+  "Stabilizing your overstable drivers",
+  "Finding the domey ones in the stack",
+  "Measuring the puddle tops for accuracy",
+  "Sorting the MVP gyro rims",
+  "Flattening your wobbly putts",
+  "Calibrating the flight numbers again",
+  "Checking if this run is actually stable",
+  "Warming up the forehand flicks",
+  "Searching for the perfect hyzer angle",
+];
 
 export default function SplashScreen({
   onComplete,
   version = "1.0.0",
   duration = 2800,
 }) {
+
   const [progress, setProgress] = useState(0);
+  const [phrase, setPhrase] = useState("");
+
   const [exiting, setExiting] = useState(false);
   const [gone, setGone] = useState(false);
   const rafRef = useRef(null);
   const startRef = useRef(null);
 
+
   useEffect(() => {
+    setPhrase(PHRASES[Math.floor(Math.random() * PHRASES.length)]);
     startRef.current = performance.now();
+
 
     function tick(now) {
       const p = Math.min(100, ((now - startRef.current) / duration) * 100);
@@ -324,7 +345,7 @@ export default function SplashScreen({
 
         <div className="dm-progress">
           <div className="dm-prog-meta">
-            <span>Buffering the MVP Discs . . .</span>
+            <span>{phrase} . . .</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <div className="dm-prog-track">
