@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../../services/products';
-import { ShoppingBag, Star, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { Featured } from '../monetization/Featured';
 import { Sponsored } from '../monetization/Sponsored';
 import { WhereToBuy } from '../monetization/WhereToBuy';
