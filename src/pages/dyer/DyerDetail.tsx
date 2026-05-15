@@ -132,7 +132,7 @@ export default function DyerDetail() {
                   {isExample ? (
                     <span className="text-[10px] font-black text-gray-300 dark:text-gray-700 uppercase tracking-[0.3em]">Avatar</span>
                   ) : (
-                    <img src={dyer.avatar} alt={dyer.name} className="w-full h-full object-cover" />
+                    <img src={dyer.avatar} alt={dyer.name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   )}
                 </div>
                 <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-3 tracking-tight">{dyer.name}</h1>
@@ -183,7 +183,7 @@ export default function DyerDetail() {
                          {isExample ? (
                            <span className="text-[10px] font-black text-gray-200 dark:text-gray-700 uppercase tracking-[0.4em]">Artwork</span>
                          ) : (
-                           <img src={img.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={img.label} />
+                           <img src={img.url} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={img.label} loading="lazy" decoding="async" />
                          )}
                       </div>
                    ))}

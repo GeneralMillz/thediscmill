@@ -16,6 +16,11 @@ export interface OutboundClickEvent {
  * Generic outbound click tracker.
  */
 export async function trackOutboundClick(data: Omit<OutboundClickEvent, 'timestamp'>) {
+  // Prevent logging example data
+  if (data.url.includes('example.com') || data.url.includes('sample')) {
+    return;
+  }
+
   const event: OutboundClickEvent = {
     ...data,
     timestamp: Date.now()
@@ -23,17 +28,13 @@ export async function trackOutboundClick(data: Omit<OutboundClickEvent, 'timesta
 
   console.log('[Analytics] Outbound:', event);
 
-  try {
-    await fetch('/api/outbound-click', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(event)
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'outbound_click', {
+      event_category: data.category || 'Outbound Link',
+      event_label: data.label || data.manufacturer || 'Click',
+      link_url: data.url,
+      page_source: data.pageSource
     });
-  } catch (error) {
-    // Fallback to local
-    const existing = JSON.parse(localStorage.getItem('outbound_clicks') || '[]');
-    existing.push(event);
-    localStorage.setItem('outbound_clicks', JSON.stringify(existing));
   }
 }
 

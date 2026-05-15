@@ -38,7 +38,7 @@ export function WhereToBuy({ asin, amazonShort, amazonQuery, sku, brand }: Where
           >
             <div className="flex items-center gap-3">
               <div className="bg-white dark:bg-gray-100 p-1.5 rounded-lg shadow-sm">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-4 w-auto" loading="lazy" referrerPolicy="no-referrer" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-4 w-auto" loading="lazy" decoding="async" referrerPolicy="no-referrer" />
               </div>
               <span className="font-bold text-indigo-900 dark:text-indigo-200 group-hover:text-indigo-700 dark:group-hover:text-indigo-100 transition-colors">Shop on Amazon</span>
             </div>

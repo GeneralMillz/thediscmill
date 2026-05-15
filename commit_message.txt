@@ -1,0 +1,8 @@
+chore: Phase 1 architecture compliance and performance optimizations
+
+- Removed package-lock.json to enforce pnpm
+- Deleted /api backend routes to strictly enforce client-only architecture
+- Refactored outbound analytics to strictly use GA4 custom events
+- Injected global React ErrorBoundary to catch parser drift
+- Added ARIA labels to icon-only buttons
+- Added lazy-loading and async decoding to image components
