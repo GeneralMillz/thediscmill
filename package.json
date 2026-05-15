@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/**/*.test.ts",
     "generate:courses": "node scripts/generate-courses-fallback.js"
   },
   "dependencies": {
