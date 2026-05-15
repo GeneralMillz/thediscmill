@@ -25,11 +25,12 @@ export default function DiscOfTheDay() {
 
   const disc = useMemo(() => {
     if (allDiscs.length === 0) return null;
+    const validDiscs = allDiscs.filter(d => d.category !== 'Unknown');
     // Seeded random by date
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const index = seed % allDiscs.length;
-    return allDiscs[index];
+    const index = seed % validDiscs.length;
+    return validDiscs[index];
   }, [allDiscs]);
 
   if (loading || !disc) return null;
