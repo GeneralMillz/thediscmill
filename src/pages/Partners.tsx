@@ -24,7 +24,7 @@ export default function Partners() {
       else throw new Error('Failed');
     } catch {
       setStatus('idle');
-      alert('Failed to send inquiry. Please try again or email hello@thediscmill.com');
+      alert('Failed to send inquiry. Please try again or email thediscmill@gmail.com');
     }
   };
 
@@ -53,13 +53,13 @@ export default function Partners() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a 
-            href="mailto:hello@thediscmill.com?subject=Partnership Inquiry"
+            href="mailto:thediscmill@gmail.com?subject=Partnership Inquiry"
             className="px-8 py-4 bg-indigo-600 text-white font-black rounded-2xl hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-xl shadow-indigo-500/20"
           >
             Contact Business Development <Mail className="w-5 h-5" />
           </a>
           <a 
-            href="mailto:hello@thediscmill.com?subject=Media Kit Request"
+            href="mailto:thediscmill@gmail.com?subject=Media Kit Request"
             className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-black rounded-2xl hover:border-indigo-500 transition-all"
           >
             Request Media Kit (2025)
