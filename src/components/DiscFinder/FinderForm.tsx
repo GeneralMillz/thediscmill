@@ -16,11 +16,12 @@ export function FinderForm({ criteria, onChange }: FinderFormProps) {
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm space-y-8">
       <div>
-        <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-4 flex items-center">
+        <label htmlFor="arm-speed" className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-4 flex items-center">
           <Zap className="w-4 h-4 mr-2 text-indigo-600" />
           Arm Speed (Estimated MPH)
         </label>
         <input
+          id="arm-speed"
           type="range"
           min="20"
           max="70"
@@ -45,9 +46,11 @@ export function FinderForm({ criteria, onChange }: FinderFormProps) {
           {(['understable', 'stable', 'overstable'] as const).map((s) => (
             <button
               key={s}
+              type="button"
+              aria-pressed={criteria.stability === s}
               onClick={() => handleChange('stability', s)}
               className={cn(
-                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider",
+                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none",
                 criteria.stability === s
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
                   : "bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500"
@@ -68,9 +71,11 @@ export function FinderForm({ criteria, onChange }: FinderFormProps) {
           {(['straight', 'hyzer', 'anhyzer'] as const).map((s) => (
             <button
               key={s}
+              type="button"
+              aria-pressed={criteria.shotShape === s}
               onClick={() => handleChange('shotShape', s)}
               className={cn(
-                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider",
+                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none",
                 criteria.shotShape === s
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
                   : "bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500"
@@ -91,9 +96,11 @@ export function FinderForm({ criteria, onChange }: FinderFormProps) {
           {(['beginner', 'intermediate', 'advanced'] as const).map((s) => (
             <button
               key={s}
+              type="button"
+              aria-pressed={criteria.experience === s}
               onClick={() => handleChange('experience', s)}
               className={cn(
-                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider",
+                "px-3 py-2 rounded-xl text-xs font-bold border transition-all uppercase tracking-wider focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none",
                 criteria.experience === s
                   ? "bg-indigo-600 text-white border-indigo-600 shadow-md"
                   : "bg-white dark:bg-gray-700 text-gray-500 dark:text-gray-300 border-gray-200 dark:border-gray-600 hover:border-indigo-300 dark:hover:border-indigo-500"

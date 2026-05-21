@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing programmatic form associations & custom input accessibility
+**Learning:** In React form components utilizing custom UI elements (like segmented controls or custom radios), developers frequently use `<div>` or `<button>` without `aria-pressed` or `type="button"`, causing both screen-reader silence on state changes and unexpected form submissions. Additionally, standard inputs often lack explicit `<label htmlFor="id">` associations, hindering screen-reader navigation.
+**Action:** Always check custom interactive elements for `type="button"`, `aria-pressed`, and explicit keyboard focus styling (`focus-visible`). Ensure all form inputs have strict `id` and `htmlFor` pairings on their labels.
